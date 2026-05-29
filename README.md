@@ -9,5 +9,4 @@ There is no node software, chain implementation, contract system, or deployment 
 For now, the canonical public context lives in:
 
 - [Bitsocial Network docs](https://bitsocial.net/docs/bitsocial-network/)
-- [Bitsocial master plan](https://bitsocial.net/#master-plan)
-
+- [Phase 2 of the Bitsocial master plan](https://bitsocial.net/#master-plan-phase-2)
