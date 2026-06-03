@@ -87,6 +87,25 @@ function listPortlessRouteHosts() {
   return new Set(matches.map((url) => new URL(url).hostname));
 }
 
+function isRouteBusy(activeRouteHosts, appName) {
+  return activeRouteHosts.has(`${appName}.localhost`);
+}
+
+function getPreferredPortlessAppName(baseName, activeRouteHosts) {
+  const branch = getCurrentBranch();
+  const scopedLabel = sanitizeLabel(branch || path.basename(repoRoot) || "current");
+
+  if (branch && !canonicalBranches.has(branch)) {
+    return `${scopedLabel}.${baseName}`;
+  }
+
+  if (isRouteBusy(activeRouteHosts, baseName)) {
+    return `${scopedLabel}.${baseName}`;
+  }
+
+  return baseName;
+}
+
 export function getPortlessPublicUrl(appName) {
   return `https://${appName}.localhost`;
 }
@@ -108,18 +127,22 @@ export function ensurePortlessProxy() {
 }
 
 export function getPortlessAppName(baseName) {
-  const branch = getCurrentBranch();
-  const scopedLabel = sanitizeLabel(branch || path.basename(repoRoot) || "current");
+  const activeRouteHosts = listPortlessRouteHosts();
+  const preferredAppName = getPreferredPortlessAppName(baseName, activeRouteHosts);
 
-  if (branch && !canonicalBranches.has(branch)) {
-    return `${scopedLabel}.${baseName}`;
+  if (!isRouteBusy(activeRouteHosts, preferredAppName)) {
+    return preferredAppName;
   }
 
-  if (listPortlessRouteHosts().has(`${baseName}.localhost`)) {
-    return `${scopedLabel}.${baseName}`;
+  for (let suffix = 2; suffix < 1000; suffix += 1) {
+    const candidate = `${preferredAppName}-${suffix}`;
+
+    if (!isRouteBusy(activeRouteHosts, candidate)) {
+      return candidate;
+    }
   }
 
-  return baseName;
+  return `${preferredAppName}-${Date.now()}`;
 }
 
 export async function ensurePinnedNodeVersion(scriptUrl) {
