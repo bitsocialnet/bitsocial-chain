@@ -1,0 +1,31 @@
+{
+  "name": "@bitsocial/bso-network-resolver",
+  "version": "0.1.0",
+  "description": "Minimal .bso resolver SDK for the Bitsocial Network POC, shape-compatible with @bitsocial/bso-resolver.",
+  "license": "GPL-3.0-or-later",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b"
+  },
+  "dependencies": {
+    "@bitsocial/bso-network-protocol": "0.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bitsocialnet/bitsocial-network.git",
+    "directory": "resolver"
+  }
+}

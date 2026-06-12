@@ -1,0 +1,35 @@
+{
+  "name": "@bitsocial/bso-network-node",
+  "version": "0.1.0",
+  "description": "Deterministic derivation node for the Bitsocial Network POC: derives .bso registry state from Ethereum L1 history and serves a read API.",
+  "license": "GPL-3.0-or-later",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "bso-network-node": "dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b"
+  },
+  "dependencies": {
+    "@bitsocial/bso-network-protocol": "0.1.0",
+    "viem": "2.52.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bitsocialnet/bitsocial-network.git",
+    "directory": "node"
+  }
+}

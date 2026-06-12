@@ -1,0 +1,21 @@
+{
+  "name": "@bitsocial/bso-network-demo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Runnable end-to-end demo of the Bitsocial Network .bso naming POC.",
+  "license": "GPL-3.0-or-later",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "demo": "tsx src/run-demo.ts"
+  },
+  "dependencies": {
+    "@bitsocial/bso-network-node": "0.1.0",
+    "@bitsocial/bso-network-protocol": "0.1.0",
+    "@bitsocial/bso-network-resolver": "0.1.0",
+    "viem": "2.52.2"
+  }
+}

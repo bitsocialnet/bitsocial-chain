@@ -1,0 +1,31 @@
+{
+  "name": "@bitsocial/bso-network-protocol",
+  "version": "0.1.0",
+  "description": "Deterministic .bso registry protocol: intent encoding, name normalization, and state transition rules for the Bitsocial Network POC.",
+  "license": "GPL-3.0-or-later",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b"
+  },
+  "dependencies": {
+    "viem": "2.52.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bitsocialnet/bitsocial-network.git",
+    "directory": "protocol"
+  }
+}
