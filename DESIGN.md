@@ -24,6 +24,22 @@ Bitsocial communities and identities are keypair-controlled objects addressed by
 - Posts, comments, votes, moderation state, member lists, and feeds never appear in intents, derived state, or the read API — the intent schema has nowhere to put them, by construction.
 - If Bitsocial Network disappeared tomorrow, communities and identities would keep working; only the human-readable naming (and future economic features) would degrade.
 
+## Privacy compatibility is a design requirement
+
+Bitsocial is social software, and social software is often used for speech, association, organizing, donations, and public argument. The economic layer must not make it unnecessarily easy for chain analysts, platforms, employers, or governments to reconstruct a user's social graph and finances just because they tip, receive awards, or pay for app features.
+
+The core Bitsocial Network appchain is therefore **transparent by default, privacy-compatible by design**:
+
+- **The core protocol does not implement privacy tech itself.** This repo should not become a bespoke mixer, shielded pool, private wallet, or Monero-style privacy chain. Those systems need specialist cryptography, audits, and legal/regulatory risk analysis. Bitsocial Network should instead expose simple, composable protocol surfaces that third-party privacy projects can integrate with.
+- **The protocol must not assume one address is one person.** Future economic intents should work with fresh addresses, account-abstraction wallets, delegated execution, relayers, and privacy-preserving wallets. Address rotation must be treated as normal user behavior, not suspicious behavior or a broken edge case.
+- **Tipping and payments should avoid mandatory identity linkage.** A future tipping primitive should not require a tipper to write their `.bso` name, profile key, post ID, or long-lived app account into public appchain state. Public attribution can be an opt-in app-layer feature; private or pseudonymous tipping must remain possible.
+- **Privacy adapters should be welcome at the edges.** If projects like Railgun-style shielded pools, stealth-address wallets, private bridges, zero-knowledge membership proofs, or other privacy tools want to support Bitsocial Network, the chain should make that boring: stable intent formats, no protocol-level blocklists against privacy contracts, and no special dependency on a single official wallet or RPC.
+- **The chain should accept proofs and commitments without knowing everything.** Future schemas should be able to represent claims such as "a valid tip was paid", "this user is eligible", or "this account owns a capability" using commitments, nullifiers, receipts, or zero-knowledge proofs, without forcing every underlying sender, receiver, amount, or wallet history into public state.
+- **Read privacy matters too.** Users should be able to run their own derivation node, query several nodes, or use privacy-preserving network paths. A production roadmap should leave room for private-read techniques such as light-client verification, Tor-friendly endpoints, private information retrieval, and client-side proof verification.
+- **Selective disclosure beats forced disclosure.** Apps can still offer public badges, public award counts, public donation pages, and reputation features, but those should be choices made by the user or app community. The base chain should preserve a path for users who need unlinkability between their speech identity and their wallet activity.
+
+This mirrors the [Ethereum privacy framing](https://ethereum.org/privacy/): public ledgers are powerful because anyone can verify them, but privacy for writes, reads, and proofs is required for real-world safety. [Monero](https://www.getmonero.org/get-started/what-is-monero/) shows the opposite end of the design space, with sender, receiver, and amount privacy built in by default. Bitsocial Network intentionally does not make that default promise; it should instead remain a transparent L2/appchain whose schemas, clients, wallets, and bridges are easy for external privacy systems to shield later.
+
 ## How L1 intents become appchain state
 
 The design follows the Ethscriptions/Facet derivation pattern:
@@ -86,6 +102,7 @@ Stage 2 (per L2Beat-style maturity standards) needs more than "no admin keys", w
 5. **Economics** — registration pricing/anti-squatting, fee routing, and the renewal/expiry question (the POC has none).
 6. **Security review** of the spec (normalization edge cases, intent malleability) and implementations.
 7. **Real state commitments** (verkle/merkle state root) replacing the canonical-JSON sha256.
+8. **A privacy-compatibility review** before adding tipping, awards, payments, or shared liquidity: every new intent should be checked for unnecessary linkage between social identity, wallet identity, amounts, counterparties, and read/query metadata.
 
 ## How this expands to the rest of Bitsocial Network
 
@@ -96,3 +113,5 @@ The pattern generalizes: every future primitive is *intents on L1 → determinis
 - **Shared liquidity**: token/AMM-style primitives are exactly what graduating to the real Ethscriptions/Facet-style appchain stack (path A) is for.
 
 Each addition is a new intent namespace and a new reducer over the same inbox pattern — the social layer never moves on-chain, and apps/RPCs/discovery stay replaceable.
+
+For economic features, the reducer should store the minimum public state required for verification and UX. A tip can be publicly displayed when the sender wants credit, but the protocol should not require public sender identity, public recipient identity, and public amount to all be linked forever. Where practical, future designs should prefer opaque receipts, commitments, nullifiers, proof-verifiable entitlements, and app-layer display choices over hard-coding a fully transparent social-financial graph.

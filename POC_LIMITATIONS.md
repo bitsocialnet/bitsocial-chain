@@ -17,6 +17,7 @@ Every important shortcut in this proof of concept, stated plainly. See DESIGN.md
 
 ## Protocol shortcuts
 
+- **No built-in privacy or shielding.** `.bso` owner addresses, intent transactions, timestamps, and state changes are public to anyone following L1 or the derived read API. This POC only documents a future compatibility requirement: economic features such as tipping and payments should be designed so users can later use external privacy tools without the base protocol forcing permanent links between social identity, wallet identity, counterparties, and amounts.
 - **Permanent tombstones.** Revoked names can never be re-registered. A release/expiry policy is future work and will require a schema version bump.
 - **Single-label names only.** No subdomains; max label length 63; no Unicode/IDN support — the conservative ASCII subset avoids homograph questions the POC doesn't want to answer yet.
 - **Receipt status is not checked.** Safe while the inbox address has no code (such transactions cannot revert), and nobody can deploy code to a vanity address without its key; documented here for full transparency.

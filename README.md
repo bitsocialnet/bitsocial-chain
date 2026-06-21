@@ -12,11 +12,13 @@ This POC implements exactly one primitive: **decentralized `.bso` names** whose 
 - Registry state is a **pure function of L1 history**: anyone can run the derivation node and reconstruct byte-identical state (the demo and tests verify matching state hashes across independent derivation runs).
 - A name resolves to a **Bitsocial public key / community address** — the same IPNS-style keys Bitsocial clients resolve through the [`bitsocial` ENS TXT record](https://bitsocial.net/docs/infrastructure/bso-resolver/) today — through a resolver SDK that is shape-compatible with [`@bitsocial/bso-resolver`](https://github.com/bitsocialnet/bso-resolver).
 - Social content stays peer-to-peer: nothing social goes on-chain. Names are a locator/ownership primitive, not a data layer.
+- The long-term appchain posture is **transparent by default, privacy-compatible by design**: this POC does not shield activity, but future tipping/payment schemas should avoid forced linkage between social identity and wallet history, and should leave room for external privacy systems such as shielded pools, stealth addresses, relayers, and zero-knowledge proofs. See [DESIGN.md](DESIGN.md#privacy-compatibility-is-a-design-requirement).
 
 ## What it does not prove
 
 - No production proof system, fault proofs, or challenge rules — derived state is verified by re-derivation, not by proofs.
 - No mainnet deployment, no audited code, no economics or pricing, no governance.
+- No built-in privacy system: `.bso` ownership and intent transactions are public in this POC. Privacy is a compatibility requirement for future economic features, not an implemented feature here.
 - See [POC_LIMITATIONS.md](POC_LIMITATIONS.md) for the full honest list.
 
 ## How it works
