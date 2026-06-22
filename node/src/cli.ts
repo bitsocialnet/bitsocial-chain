@@ -2,7 +2,7 @@
 import { parseArgs } from "node:util";
 import { DerivationNode, type NodeLogger } from "./derivation.js";
 import { startReadApi } from "./server.js";
-import { FileStateStore } from "./store.js";
+import { FileStateStore, TursoStateStore, type StateStore } from "./store.js";
 
 const consoleLogger: NodeLogger = {
   info: (message) => console.log(`[bso-network-node] ${message}`),
@@ -15,6 +15,7 @@ async function main(): Promise<void> {
       "rpc-url": { type: "string", default: "http://127.0.0.1:8545" },
       port: { type: "string", default: "4150" },
       db: { type: "string", default: ".bso-network-data/state.json" },
+      store: { type: "string", default: "file" },
       "start-block": { type: "string", default: "0" },
       confirmations: { type: "string", default: "0" },
       "poll-interval": { type: "string", default: "1000" },
@@ -28,16 +29,24 @@ async function main(): Promise<void> {
 Options:
   --rpc-url <url>        Ethereum L1 JSON-RPC endpoint (default http://127.0.0.1:8545)
   --port <port>          Read API port (default 4150)
-  --db <path>            State file path (default .bso-network-data/state.json)
+  --db <path>            State file/database path (default .bso-network-data/state.json)
+  --store <file|turso>   State storage backend (default file)
   --start-block <n>      First L1 block to derive from (default 0)
   --confirmations <n>    Blocks to lag behind head (default 0)
   --poll-interval <ms>   L1 poll interval (default 1000)`);
     return;
   }
 
+  const storeBackend = values.store ?? "file";
+  if (storeBackend !== "file" && storeBackend !== "turso") {
+    throw new Error(`unknown --store value "${storeBackend}"; expected "file" or "turso"`);
+  }
+  const store: StateStore =
+    storeBackend === "turso" ? new TursoStateStore(values.db) : new FileStateStore(values.db);
+
   const node = new DerivationNode({
     rpcUrl: values["rpc-url"],
-    store: new FileStateStore(values.db),
+    store,
     startBlock: Number(values["start-block"]),
     confirmations: Number(values.confirmations),
     pollIntervalMs: Number(values["poll-interval"]),
@@ -48,11 +57,12 @@ Options:
   node.start();
   const api = await startReadApi(node, { port: Number(values.port) });
   consoleLogger.info(`following L1 at ${values["rpc-url"]}`);
+  consoleLogger.info(`using ${storeBackend} state store at ${values.db}`);
   consoleLogger.info(`read API listening at ${api.endpoint}`);
 
   const shutdown = async () => {
     consoleLogger.info("shutting down");
-    node.stop();
+    await node.close();
     await api.close();
     process.exit(0);
   };

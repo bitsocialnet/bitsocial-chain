@@ -11,6 +11,7 @@ import {
   FileStateStore,
   MemoryStateStore,
   startReadApi,
+  TursoStateStore,
 } from "@bitsocial/bso-network-node";
 import { createPublicClient, createWalletClient, http, type Hex, type PublicClient } from "viem";
 import { privateKeyToAccount, type PrivateKeyAccount } from "viem/accounts";
@@ -146,6 +147,35 @@ describe("derivation node", () => {
       expect(sync.blocksApplied).toBe(0);
       expect(resumed.stateHash()).toBe(hash);
     } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
+  it("resumes from Turso persisted state without reprocessing old blocks", async () => {
+    const dir = mkdtempSync(join(tmpdir(), "bso-node-turso-"));
+    const file = join(dir, "state.db");
+    let node: DerivationNode | undefined;
+    let resumed: DerivationNode | undefined;
+    try {
+      node = new DerivationNode({ rpcUrl: chain.rpcUrl, store: new TursoStateStore(file) });
+      await node.init();
+      await node.syncOnce();
+      const hash = node.stateHash();
+      const processedTo = node.getStatus().lastProcessedBlock;
+      await node.close();
+      node = undefined;
+
+      resumed = new DerivationNode({ rpcUrl: chain.rpcUrl, store: new TursoStateStore(file) });
+      await resumed.init();
+      // Already caught up before syncing: persisted cursor was loaded.
+      expect(resumed.getStatus().lastProcessedBlock).toEqual(processedTo);
+      const sync = await resumed.syncOnce();
+      expect(sync.reorged).toBe(false);
+      expect(sync.blocksApplied).toBe(0);
+      expect(resumed.stateHash()).toBe(hash);
+    } finally {
+      await node?.close();
+      await resumed?.close();
       rmSync(dir, { recursive: true, force: true });
     }
   });

@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@bitsocial/bso-network-protocol": "0.1.0",
+    "@tursodatabase/database": "^0.6.1",
     "viem": "2.52.2"
   },
   "repository": {

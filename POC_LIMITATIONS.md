@@ -26,7 +26,7 @@ Every important shortcut in this proof of concept, stated plainly. See DESIGN.md
 
 ## Node and infrastructure shortcuts
 
-- **Storage/indexing choice is not final.** Derived state persists as one atomic-write JSON file behind a small `StateStore` interface. Fine for a registry POC; a real node would use a proper database (the existing BSO Resolver's SQLite/IndexedDB split is the likely shape) and indexed queries.
+- **Storage/indexing choice is not final.** Derived state can persist through the original atomic-write JSON file or an experimental local Turso Database store behind the same small `StateStore` interface. The Turso path is a useful step toward a real node, but this POC still stores one canonical state blob; production indexing, checkpointing, and query tables remain future work.
 - **Reorg handling is rebuild-from-genesis.** Correct and simple for small state, but a production node must follow L1 finality and checkpoint instead of re-deriving everything.
 - **Polling JSON-RPC follower.** No websocket subscriptions, no batched backfill, no rate-limit handling; long historical ranges would sync slowly.
 - **The read API is unauthenticated plain HTTP** with no commitment to the data it serves. It is a local convenience view, not an authority.

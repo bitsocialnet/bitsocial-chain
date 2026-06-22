@@ -10,7 +10,9 @@ export { startReadApi, type ReadApiHandle, type ReadApiOptions } from "./server.
 export {
   FileStateStore,
   MemoryStateStore,
+  TursoStateStore,
   type NodeState,
   type ProcessedBlockRef,
   type StateStore,
+  type TursoStateStoreOptions,
 } from "./store.js";

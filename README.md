@@ -102,10 +102,15 @@ npx hardhat node
 # terminal 2: the derivation node
 node node/dist/cli.js --rpc-url http://127.0.0.1:8545 --port 4150
 
+# optional: persist state in a local Turso Database file instead of JSON
+node node/dist/cli.js --rpc-url http://127.0.0.1:8545 --store turso --db .bso-network-data/state.db
+
 # resolve a name over the read API
 curl http://127.0.0.1:4150/v1/names/alice.bso
 curl http://127.0.0.1:4150/v1/status
 ```
+
+The default store is the original atomic JSON file. `--store turso` uses Turso Database as an embedded SQLite-compatible local database; in this POC it still persists the canonical node state as one blob, with indexed tables left for future node work.
 
 ## Resolver usage
 

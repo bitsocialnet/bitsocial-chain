@@ -104,7 +104,7 @@ export class DerivationNode {
   /** Connect to L1 and load (or initialize) persisted state. */
   async init(): Promise<void> {
     const chainId = await this.client.getChainId();
-    const persisted = this.store.load();
+    const persisted = await this.store.load();
     if (
       persisted !== undefined &&
       persisted.chainId === chainId &&
@@ -166,7 +166,7 @@ export class DerivationNode {
       this.logger.warn(
         `reorg detected: target block ${target} < last processed ${state.lastProcessed.number}; re-deriving`,
       );
-      this.resetDerivedState();
+      await this.resetDerivedState();
       reorged = true;
     }
 
@@ -181,7 +181,7 @@ export class DerivationNode {
         this.logger.warn(
           `reorg detected: block ${anchor.number} is now ${block.hash}, expected ${anchor.hash}; re-deriving`,
         );
-        this.resetDerivedState();
+        await this.resetDerivedState();
         reorged = true;
       }
     }
@@ -199,7 +199,7 @@ export class DerivationNode {
         this.logger.warn(
           `reorg detected: block ${cursor} parent ${block.parentHash} != processed ${lastProcessed.hash}; re-deriving`,
         );
-        this.resetDerivedState();
+        await this.resetDerivedState();
         reorged = true;
         cursor = this.startBlock;
         continue;
@@ -207,7 +207,7 @@ export class DerivationNode {
 
       this.applyBlock(this.state!.registry, block);
       this.state!.lastProcessed = { number: cursor, hash: block.hash ?? "" };
-      this.store.save(this.state!);
+      await this.store.save(this.state!);
       blocksApplied += 1;
       cursor += 1;
     }
@@ -215,10 +215,10 @@ export class DerivationNode {
     return { processedTo: this.state!.lastProcessed?.number ?? null, blocksApplied, reorged };
   }
 
-  private resetDerivedState(): void {
+  private async resetDerivedState(): Promise<void> {
     const state = this.requireState();
     this.state = this.freshState(state.chainId);
-    this.store.save(this.state);
+    await this.store.save(this.state);
   }
 
   private applyBlock(
@@ -286,6 +286,11 @@ export class DerivationNode {
       clearTimeout(this.pollTimer);
       this.pollTimer = null;
     }
+  }
+
+  async close(): Promise<void> {
+    this.stop();
+    await this.store.close?.();
   }
 
   /** Wait until the node has processed at least `blockNumber`. */
