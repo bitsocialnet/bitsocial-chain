@@ -1,0 +1,816 @@
+/* ============================================================
+   Narrative sections — one big question per section, mirroring
+   bitsocial.net's rhythm. Artifacts sit over the ambient mesh.
+   ============================================================ */
+
+.shell .section {
+  width: 100%;
+  padding: clamp(4rem, 9vw, 7rem) clamp(1.25rem, 4vw, 3.5rem);
+  scroll-margin-top: 5.5rem;
+}
+
+.section-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(100%, 72rem);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-eyebrow {
+  margin: 0 0 clamp(1.25rem, 3vw, 1.5rem);
+  font-family: var(--font-display);
+  font-size: clamp(0.75rem, 1.1vw, 0.875rem);
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--ink-faint) 50%, transparent);
+}
+
+.section-eyebrow a {
+  transition: color 160ms ease;
+}
+
+.section-eyebrow a:hover {
+  color: color-mix(in oklab, var(--ink-muted) 70%, transparent);
+}
+
+.section-title {
+  max-width: 20ch;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 6.5vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  color: var(--ink-muted);
+}
+
+.section-supporting {
+  max-width: 42rem;
+  margin: clamp(1.25rem, 3vw, 1.5rem) 0 clamp(3rem, 7vw, 4rem);
+  font-size: clamp(1rem, 1.35vw, 1.125rem);
+  line-height: 1.65;
+  color: var(--ink-muted);
+  text-wrap: pretty;
+}
+
+.section-artifact {
+  width: 100%;
+  margin-top: clamp(2.2rem, 5vw, 3.4rem);
+}
+
+.section-quote {
+  max-width: 42ch;
+  margin: clamp(2rem, 4vw, 3rem) 0 0;
+  font-size: 0.9rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--ink-faint);
+  text-wrap: balance;
+}
+
+/* ---------- Scroll reveal ---------- */
+.section .reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.section.is-visible .reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.section.is-visible .section-title {
+  transition-delay: 0.06s;
+}
+
+.section.is-visible .section-supporting {
+  transition-delay: 0.12s;
+}
+
+.section.is-visible .section-artifact {
+  transition-delay: 0.18s;
+}
+
+.section.is-visible .section-quote {
+  transition-delay: 0.26s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ============================================================
+   Sound money — the immutable contract spec
+   ============================================================ */
+.spec {
+  max-width: 40rem;
+  margin: 0 auto;
+  overflow: hidden;
+  text-align: left;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface-raised);
+}
+
+.spec-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(1rem, 3vw, 2rem);
+  padding: clamp(1.4rem, 3vw, 2rem);
+  border-bottom: 1px solid var(--line);
+}
+
+.spec-supply {
+  display: flex;
+  flex-direction: column;
+}
+
+.spec-figure {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.spec-cap {
+  margin-top: 0.4rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  color: var(--ink-faint);
+}
+
+.spec-traits {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.spec-traits li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+}
+
+.spec-traits svg {
+  flex: none;
+  color: var(--signal);
+}
+
+.spec-locks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--line);
+}
+
+.lock {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: clamp(0.9rem, 2.4vw, 1.2rem) clamp(1.1rem, 3vw, 1.6rem);
+  background: var(--surface-raised);
+}
+
+.lock-icon {
+  flex: none;
+  color: var(--signal);
+}
+
+.lock-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.lock-label {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.lock-note {
+  font-size: 0.76rem;
+  color: var(--ink-faint);
+}
+
+.spec-foot {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0;
+  padding: clamp(1rem, 2.5vw, 1.3rem) clamp(1.1rem, 3vw, 1.6rem);
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+}
+
+.spec-foot svg {
+  flex: none;
+  color: var(--signal);
+}
+
+/* ============================================================
+   Settlement layer — community L3s settling to BSO
+   ============================================================ */
+.stack-tree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.tree-tier {
+  width: 100%;
+}
+
+.tree-l3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(0.6rem, 2vw, 1rem);
+}
+
+.tree-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 1rem 0.6rem;
+  text-align: center;
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  background: var(--surface-raised);
+}
+
+.tree-node svg {
+  color: var(--ink-muted);
+}
+
+.tree-node-name {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.tree-node-meta {
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-faint);
+}
+
+.tree-flow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.7rem;
+}
+
+.tree-flow::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 50%;
+  width: 1px;
+  background: linear-gradient(var(--signal), var(--line));
+  transform: translateX(-50%);
+}
+
+.tree-flow span {
+  position: relative;
+  padding: 0.22rem 0.7rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--signal);
+  background: var(--surface-raised);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+
+.tree-flow-plain {
+  height: 1.8rem;
+}
+
+.tree-flow-plain::before {
+  background: linear-gradient(var(--line-strong), var(--line));
+}
+
+.tree-l2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: clamp(1rem, 2.6vw, 1.4rem);
+  border: 1px solid var(--signal);
+  border-radius: 1rem;
+  background: var(--surface-raised);
+  box-shadow: var(--glow-box);
+}
+
+.tree-l2 svg {
+  flex: none;
+  color: var(--signal);
+}
+
+.tree-l2-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.tree-l2-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.tree-l2-meta {
+  font-size: 0.76rem;
+  color: var(--ink-muted);
+}
+
+.tree-l1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  background: var(--surface-raised);
+}
+
+.tree-l1 svg {
+  flex: none;
+  color: var(--ink-faint);
+}
+
+/* ============================================================
+   Value accrual — the no-emissions flywheel
+   ============================================================ */
+.flywheel {
+  max-width: 52rem;
+  margin: 0 auto;
+}
+
+.flow-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.flow-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: clamp(1.1rem, 2.6vw, 1.6rem) 0.8rem;
+  text-align: center;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--surface-raised);
+}
+
+.flow-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  color: var(--signal);
+  background: var(--signal-soft);
+  border-radius: 999px;
+}
+
+.flow-label {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.flow-note {
+  font-size: 0.74rem;
+  color: var(--ink-faint);
+}
+
+.flow-arrow {
+  position: absolute;
+  top: 50%;
+  right: -0.5rem;
+  z-index: 1;
+  color: var(--ink-faint);
+  transform: translate(50%, -50%);
+}
+
+.flow-loop {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  max-width: 46ch;
+  margin: clamp(1.4rem, 3vw, 2rem) auto 0;
+  font-size: 0.88rem;
+  color: var(--ink-muted);
+}
+
+.flow-loop svg {
+  flex: none;
+  color: var(--signal);
+}
+
+/* ============================================================
+   Immutable upgrade — three-generation lineage
+   ============================================================ */
+.lineage {
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.lineage-rail {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(0.7rem, 2.4vw, 1.4rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: clamp(1.1rem, 2.6vw, 1.5rem);
+  text-align: left;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--surface-raised);
+}
+
+.gen-next {
+  border-color: var(--signal);
+  box-shadow: var(--glow-box);
+}
+
+.gen + .gen::before {
+  content: "1:1";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  padding: 0.1rem 0.34rem;
+  font-family: var(--font-display);
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+}
+
+.gen-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.gen-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.gen-badge {
+  padding: 0.16rem 0.5rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+
+.gen-badge-now {
+  color: var(--warning);
+  border-color: color-mix(in oklab, var(--warning) 50%, transparent);
+}
+
+.gen-badge-next {
+  color: var(--signal);
+  border-color: var(--signal);
+}
+
+.gen-chain {
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+}
+
+.gen-addr {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  transition: color 160ms ease;
+}
+
+a.gen-addr:hover {
+  color: var(--signal);
+}
+
+.gen-addr-pending {
+  color: var(--ink-faint);
+}
+
+.gen-status {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.76rem;
+  color: var(--ink-faint);
+}
+
+.gen-next .gen-status {
+  color: var(--signal);
+}
+
+.gen-status svg {
+  flex: none;
+}
+
+.lineage-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  max-width: 48rem;
+  margin: clamp(1.4rem, 3vw, 2rem) auto 0;
+  padding: 0.9rem 1.2rem;
+  text-align: left;
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  background: var(--surface-raised);
+}
+
+.lineage-note svg {
+  flex: none;
+  margin-top: 0.1rem;
+  color: var(--signal);
+}
+
+/* ============================================================
+   Master plan — vertical roadmap
+   ============================================================ */
+.roadmap {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.phase {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(1rem, 3vw, 1.6rem);
+  padding-bottom: clamp(1.4rem, 3vw, 2.2rem);
+}
+
+.phase-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.phase-dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--ink-muted);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-raised);
+}
+
+.phase-line {
+  flex: 1;
+  width: 1px;
+  margin-top: 0.45rem;
+  background: linear-gradient(var(--line), transparent);
+}
+
+.phase:last-child {
+  padding-bottom: 0;
+}
+
+.phase:last-child .phase-line {
+  display: none;
+}
+
+.phase-active .phase-dot {
+  color: var(--signal);
+  border-color: var(--signal);
+  box-shadow: var(--glow-box);
+}
+
+.phase-body {
+  padding-top: 0.3rem;
+}
+
+.phase-label {
+  display: inline-block;
+  margin-bottom: 0.32rem;
+  font-family: var(--font-display);
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.phase-active .phase-label {
+  color: var(--signal);
+}
+
+.phase-title {
+  margin: 0 0 0.3rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.phase-desc {
+  max-width: 44ch;
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--ink-muted);
+}
+
+/* ============================================================
+   Get BSO — verify-first contract card
+   ============================================================ */
+.verify {
+  display: grid;
+  gap: clamp(0.8rem, 2vw, 1.1rem);
+  max-width: 40rem;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.verify-addr {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  padding: clamp(1.1rem, 2.6vw, 1.5rem);
+  border: 1px solid var(--signal);
+  border-radius: 1rem;
+  background: var(--surface-raised);
+  box-shadow: var(--glow-box);
+}
+
+.verify-addr-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.verify-addr-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.verify-addr-value {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+
+.verify-badge {
+  padding: 0.3rem 0.7rem;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--signal);
+  border: 1px solid var(--signal);
+  border-radius: 999px;
+}
+
+.verify-warn {
+  display: flex;
+  gap: 0.7rem;
+  padding: 1rem 1.2rem;
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: var(--ink-muted);
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  background: var(--surface-raised);
+}
+
+.verify-warn svg {
+  flex: none;
+  margin-top: 0.15rem;
+  color: var(--warning);
+}
+
+.verify-warn code {
+  padding: 0.05em 0.35em;
+  font-size: 0.86em;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 0.4rem;
+}
+
+.verify-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.verify-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-muted);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  transition:
+    color 160ms ease,
+    border-color 160ms ease;
+}
+
+.verify-link:hover {
+  color: var(--ink);
+  border-color: var(--signal);
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 720px) {
+  .flow-steps {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .flow-arrow {
+    display: none;
+  }
+
+  .lineage-rail {
+    grid-template-columns: 1fr;
+  }
+
+  .gen + .gen::before {
+    display: none;
+  }
+}
+
+@media (max-width: 460px) {
+  .flow-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .spec-locks {
+    grid-template-columns: 1fr;
+  }
+}

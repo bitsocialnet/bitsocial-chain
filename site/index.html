@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0c0c10" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+    <link rel="icon" type="image/png" sizes="576x576" href="/favicon-576.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- Preload the locally hosted Exo display font -->
+    <link rel="preload" href="/fonts/exo/latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/exo/latin-ext.woff2" as="font" type="font/woff2" crossorigin />
+    <link
+      rel="preload"
+      href="/fonts/exo/vietnamese.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta
+      name="description"
+      content="BSO is the token powering Bitsocial Chain, the planned Ethereum L2 and missing economic layer for sovereign Bitsocial communities."
+    />
+
+    <!-- Open Graph / social. Set og:url, canonical and og:image once a domain + share image exist. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="BSO / Bitsocial Chain" />
+    <meta property="og:title" content="BSO — The missing layer of crypto" />
+    <meta property="og:description" content="The token powering the planned Bitsocial Chain." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="BSO — The missing layer of crypto" />
+    <meta name="twitter:description" content="The token powering the planned Bitsocial Chain." />
+
+    <script>
+      (() => {
+        try {
+          const storedTheme = window.localStorage.getItem("bso-theme");
+          const theme =
+            storedTheme === "light" || storedTheme === "dark"
+              ? storedTheme
+              : window.matchMedia("(prefers-color-scheme: light)").matches
+                ? "light"
+                : "dark";
+          document.documentElement.dataset.theme = theme;
+        } catch {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
+    <title>BSO — The missing layer of crypto</title>
+    <!-- React Grab: hold Cmd/Ctrl + C and click any element to hand it to an AI coding agent (dev only) -->
+    <script type="module">
+      if (import.meta.env.DEV) {
+        import("react-grab");
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

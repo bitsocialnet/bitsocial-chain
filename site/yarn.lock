@@ -11545,6 +11545,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"bitsocial-chain@workspace:chain":
+  version: 0.0.0-use.local
+  resolution: "bitsocial-chain@workspace:chain"
+  dependencies:
+    lucide-react: "npm:0.563.0"
+    react: "npm:19.2.4"
+    react-dom: "npm:19.2.4"
+    tailwindcss: "npm:3.4.19"
+  languageName: unknown
+  linkType: soft
+
 "bitsocial-docs@workspace:docs":
   version: 0.0.0-use.local
   resolution: "bitsocial-docs@workspace:docs"

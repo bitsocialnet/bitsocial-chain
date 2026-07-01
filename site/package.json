@@ -1,0 +1,21 @@
+{
+  "name": "bitsocial-chain",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Bitsocial Chain landing site (BSO token and L2).",
+  "license": "AGPL-3.0-only",
+  "author": "Bitsocial Forge",
+  "type": "module",
+  "dependencies": {
+    "lucide-react": "0.563.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.19"
+  },
+  "engines": {
+    "node": "22.x"
+  },
+  "packageManager": "yarn@4.13.0"
+}
