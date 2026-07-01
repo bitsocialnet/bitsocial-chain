@@ -1,6 +1,6 @@
-# Bitsocial Network
+# Bitsocial Chain
 
-Proof of concept for **Bitsocial Network**, the proposed Ethereum L2/appchain economic layer for [Bitsocial](https://bitsocial.net) apps ([Phase 2 of the master plan](https://bitsocial.net/#master-plan-phase-2)).
+Proof of concept for **Bitsocial Chain**, the proposed Ethereum L2 economic layer for [Bitsocial](https://bitsocial.net) apps ([Phase 2 of the master plan](https://bitsocial.net/#master-plan-phase-2)).
 
 This POC implements exactly one primitive: **decentralized `.bso` names** whose registry state is derived deterministically from Ethereum L1 history, in the spirit of [Ethscriptions](https://github.com/ethscriptions-protocol) and [Facet](https://github.com/0xFacet).
 
@@ -12,7 +12,7 @@ This POC implements exactly one primitive: **decentralized `.bso` names** whose 
 - Registry state is a **pure function of L1 history**: anyone can run the derivation node and reconstruct byte-identical state (the demo and tests verify matching state hashes across independent derivation runs).
 - A name resolves to a **Bitsocial public key / community address** — the same IPNS-style keys Bitsocial clients resolve through the [`bitsocial` ENS TXT record](https://bitsocial.net/docs/infrastructure/bso-resolver/) today — through a resolver SDK that is shape-compatible with [`@bitsocial/bso-resolver`](https://github.com/bitsocialnet/bso-resolver).
 - Social content stays peer-to-peer: nothing social goes on-chain. Names are a locator/ownership primitive, not a data layer.
-- The long-term appchain posture is **transparent by default, privacy-compatible by design**: this POC does not shield activity, but future tipping/payment schemas should avoid forced linkage between social identity and wallet history, and should leave room for external privacy systems such as shielded pools, stealth addresses, relayers, and zero-knowledge proofs. See [DESIGN.md](DESIGN.md#privacy-compatibility-is-a-design-requirement).
+- The long-term posture is **transparent by default, privacy-compatible by design**: this POC does not shield activity, but future tipping/payment schemas should avoid forced linkage between social identity and wallet history, and should leave room for external privacy systems such as shielded pools, stealth addresses, relayers, and zero-knowledge proofs. See [DESIGN.md](DESIGN.md#privacy-compatibility-is-a-design-requirement).
 
 ## What it does not prove
 
@@ -71,8 +71,8 @@ Docs: [SPEC.md](SPEC.md) (normative protocol rules) · [DESIGN.md](DESIGN.md) (r
 Requires Node.js >= 22 (see `.nvmrc`).
 
 ```bash
-git clone https://github.com/bitsocialnet/bitsocial-network.git
-cd bitsocial-network
+git clone https://github.com/bitsocialnet/bitsocial-chain.git
+cd bitsocial-chain
 npm install
 npm run build
 ```
@@ -137,7 +137,7 @@ await resolver.destroy();
 
 Bitsocial communities and identities are controlled by keys and addressed by public-key hashes; apps, RPCs, discovery, and hosting are all replaceable. What `.bso` names add is a durable, human-readable, **ownable** locator for those keys that no registrar, DNS provider, or platform can seize — because the registry rules live in open derivation code over Ethereum history rather than in any operator's database. Posts, votes, moderation, and feeds never touch the chain; a client resolves `alice.bso` to a public key once, then talks to the P2P network exactly as it does today.
 
-The same L1-derived pattern is meant to later carry the rest of Bitsocial Network (awards, tipping, payments, shared liquidity) without ever putting social content on-chain — see [DESIGN.md](DESIGN.md).
+The same L1-derived pattern is meant to later carry the rest of Bitsocial Chain (awards, tipping, payments, shared liquidity) without ever putting social content on-chain — see [DESIGN.md](DESIGN.md).
 
 ## Stage 2 disclaimer
 
