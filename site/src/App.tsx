@@ -29,7 +29,7 @@ export default function App() {
                 this: an unstoppable, fully decentralized Ethereum{" "}
                 <a
                   className="sub-link"
-                  href="https://ethereum.org/en/layer-2/"
+                  href="https://l2beat.com/glossary#application-specific-rollup"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
