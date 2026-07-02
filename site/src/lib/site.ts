@@ -11,7 +11,11 @@ export const COINGECKO_URL = "https://coingecko.com/coins/bitsocial" as const;
 
 export const BITSOCIAL_URL = "https://bitsocial.net" as const;
 
-export const DOCS_URL = "https://bitsocial.net/docs" as const;
+export const ABOUT_URL = "https://bitsocial.net/about" as const;
+
+export const BLOG_URL = "https://bitsocial.net/blog" as const;
+
+export const PROOF_OF_CONCEPT_URL = "https://github.com/bitsocialnet/bitsocial-chain" as const;
 
 export const GITHUB_URL = "https://github.com/bitsocialnet" as const;
 

@@ -1,10 +1,12 @@
 import { Github, Send } from "lucide-react";
 import {
+  ABOUT_URL,
   BITSOCIAL_URL,
+  BLOG_URL,
   CONTRIBUTE_URL,
-  DOCS_URL,
   FOOTER_TOKEN_LINKS,
   GITHUB_URL,
+  PROOF_OF_CONCEPT_URL,
   TELEGRAM_URL,
   TWITTER_URL,
   type ExternalLink,
@@ -78,13 +80,23 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href={DOCS_URL} className={linkClassName}>
-                  Docs
+                <a
+                  href={PROOF_OF_CONCEPT_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={linkClassName}
+                >
+                  Proof of Concept
                 </a>
               </li>
               <li>
-                <a href="#mailing-list" className={linkClassName}>
-                  Newsletter
+                <a href={ABOUT_URL} className={linkClassName}>
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href={BLOG_URL} className={linkClassName}>
+                  Blog
                 </a>
               </li>
             </ul>
