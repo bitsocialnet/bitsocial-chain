@@ -75,8 +75,8 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2.5">
               <li>
-                <a href={BITSOCIAL_URL} className={linkClassName}>
-                  Main Site
+                <a href={BLOG_URL} className={linkClassName}>
+                  Blog
                 </a>
               </li>
               <li>
@@ -95,8 +95,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href={BLOG_URL} className={linkClassName}>
-                  Blog
+                <a href={BITSOCIAL_URL} className={linkClassName}>
+                  Main Site
                 </a>
               </li>
             </ul>
