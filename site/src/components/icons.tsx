@@ -1,21 +1,24 @@
 import { cn } from "@/lib/utils";
 
-function MonochromeBrandIcon({ src, className }: { src: string; className?: string }) {
+// Official brand assets only. Sources:
+// - CoinGecko: https://brand.coingecko.com/resources/brand-kit (CG-Symbol-1, CG-Symbol-2)
+// - Etherscan: https://etherscan.io/brandassets (logo circle + light variant)
+// - Uniswap: https://github.com/Uniswap/brand-assets (icon black + white)
+
+function ThemeBrandIcon({
+  lightSrc,
+  darkSrc,
+  className,
+}: {
+  lightSrc: string;
+  darkSrc: string;
+  className?: string;
+}) {
   return (
-    <span
-      aria-hidden="true"
-      className={cn("inline-block shrink-0 bg-current", className)}
-      style={{
-        WebkitMaskImage: `url(${src})`,
-        maskImage: `url(${src})`,
-        WebkitMaskRepeat: "no-repeat",
-        maskRepeat: "no-repeat",
-        WebkitMaskPosition: "center",
-        maskPosition: "center",
-        WebkitMaskSize: "contain",
-        maskSize: "contain",
-      }}
-    />
+    <>
+      <img src={lightSrc} alt="" aria-hidden="true" className={cn(className, "dark:hidden")} />
+      <img src={darkSrc} alt="" aria-hidden="true" className={cn(className, "hidden dark:block")} />
+    </>
   );
 }
 
@@ -28,13 +31,31 @@ export function XIcon({ className }: { className?: string }) {
 }
 
 export function CoinGeckoIcon({ className }: { className?: string }) {
-  return <MonochromeBrandIcon src="/icons/coingecko.svg" className={className} />;
+  return (
+    <ThemeBrandIcon
+      lightSrc="/icons/coingecko-symbol-light.svg"
+      darkSrc="/icons/coingecko-symbol-dark.svg"
+      className={className}
+    />
+  );
 }
 
 export function UniswapIcon({ className }: { className?: string }) {
-  return <MonochromeBrandIcon src="/icons/uniswap.svg" className={className} />;
+  return (
+    <ThemeBrandIcon
+      lightSrc="/icons/uniswap-icon-black.svg"
+      darkSrc="/icons/uniswap-icon-white.svg"
+      className={className}
+    />
+  );
 }
 
 export function EtherscanIcon({ className }: { className?: string }) {
-  return <MonochromeBrandIcon src="/icons/etherscan.svg" className={className} />;
+  return (
+    <ThemeBrandIcon
+      lightSrc="/icons/etherscan-circle.svg"
+      darkSrc="/icons/etherscan-circle-light.svg"
+      className={className}
+    />
+  );
 }
