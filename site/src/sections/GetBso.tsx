@@ -1,4 +1,10 @@
 import { ArrowUpRight, ListTree, ShieldAlert } from "lucide-react";
+import {
+  BSO_TOKEN_ADDRESS,
+  BSO_TOKEN_ADDRESS_SHORT,
+  ETHERSCAN_TOKEN_URL,
+  UNISWAP_TOKEN_URL,
+} from "@/lib/site";
 import Section from "./Section";
 
 export default function GetBso() {
@@ -7,30 +13,37 @@ export default function GetBso() {
       id="get-bso"
       eyebrow="Get BSO"
       question="How to get BSO, safely."
-      supporting="The immutable contract launches with its official address published here and on Bitsocial’s official channels. Always verify the full address yourself before sending anything."
+      supporting="The immutable BSO contract is live on Ethereum. Always verify the full address yourself before sending anything."
     >
       <div className="verify">
         <div className="verify-addr">
           <span className="verify-addr-main">
             <span className="verify-addr-label">Official BSO contract</span>
-            <span className="verify-addr-value">0x⋯b50</span>
+            <a
+              className="verify-addr-value"
+              href={ETHERSCAN_TOKEN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {BSO_TOKEN_ADDRESS_SHORT}
+            </a>
           </span>
-          <span className="verify-badge">Published at launch</span>
+          <span className="verify-badge">Live on Ethereum</span>
         </div>
 
         <p className="verify-warn">
           <ShieldAlert aria-hidden size={18} strokeWidth={1.85} />
           <span>
-            Verify before you trust. The address ending in <code>b50</code> is branding, not proof.
-            Always check the full official address on this site and Bitsocial’s official channels,
-            and beware impersonators.
+            Verify before you trust. The address ending in <code>DaB5A</code> is branding, not
+            proof. Always check the full official address <code dir="ltr">{BSO_TOKEN_ADDRESS}</code>{" "}
+            on this site and Bitsocial’s official channels, and beware impersonators.
           </span>
         </p>
 
         <div className="verify-links">
           <a
             className="verify-link"
-            href="https://app.uniswap.org/"
+            href={UNISWAP_TOKEN_URL}
             target="_blank"
             rel="noopener noreferrer"
           >

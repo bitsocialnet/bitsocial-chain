@@ -4,7 +4,8 @@ import { createRoot } from "react-dom/client";
 import App from "./App";
 import { GraphicsModeProvider } from "./lib/graphics-mode";
 import { ThemeProvider } from "./lib/useTheme";
-import "./styles.css";
+import "./index.css";
+import "./theme-bridge.css";
 import "./app.css";
 import "./sections.css";
 

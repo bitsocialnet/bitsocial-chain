@@ -1,0 +1,39 @@
+/* Maps legacy chain section CSS variables onto the shared about-site token system. */
+:root {
+  --surface: hsl(var(--background));
+  --surface-raised: hsl(var(--card));
+  --surface-sunk: hsl(var(--secondary));
+  --ink: hsl(var(--foreground));
+  --ink-muted: hsl(var(--muted-foreground));
+  --ink-faint: hsl(var(--muted-foreground) / 0.72);
+  --line: hsl(var(--border) / 0.55);
+  --line-strong: hsl(var(--border));
+  --signal: #2563eb;
+  --signal-soft: rgba(37, 99, 235, 0.12);
+  --signal-strong: #1a4fd0;
+  --glow-text: 0 0 10px rgba(37, 99, 235, 0.3);
+  --glow-box: 0 0 18px rgba(37, 99, 235, 0.22);
+  --glow-drop: 0 0 4px rgba(37, 99, 235, 0.4);
+  --warning: #d97706;
+  --danger: hsl(var(--destructive));
+  --shadow: rgba(0, 0, 0, 0.12);
+  --grid: rgba(0, 0, 0, 0.05);
+  --grid-hot: rgba(37, 99, 235, 0.16);
+  --switch-track: #ececec;
+  --font-display: "Exo", sans-serif;
+  --font-body: "Manrope", sans-serif;
+  --focus-ring: var(--focus-app-ring);
+}
+
+.dark {
+  --surface-sunk: #0a0a0d;
+  --ink-faint: hsl(var(--muted-foreground) / 0.82);
+  --line: hsl(var(--border) / 0.65);
+  --signal-soft: rgba(37, 99, 235, 0.18);
+  --glow-text: 0 0 12px rgba(37, 99, 235, 0.55);
+  --glow-box: 0 0 20px rgba(37, 99, 235, 0.35);
+  --shadow: rgba(0, 0, 0, 0.6);
+  --grid: rgba(255, 255, 255, 0.06);
+  --grid-hot: rgba(37, 99, 235, 0.22);
+  --switch-track: #1a1a1a;
+}

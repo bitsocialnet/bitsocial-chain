@@ -1,4 +1,5 @@
 import { BadgeCheck, Gift, ShieldCheck, TriangleAlert } from "lucide-react";
+import { BSO_TOKEN_ADDRESS_SHORT, ETHERSCAN_TOKEN_URL } from "@/lib/site";
 import Section from "./Section";
 
 type Gen = {
@@ -26,22 +27,22 @@ const GENS: Gen[] = [
   {
     gen: "Gen 2",
     chain: "Ethereum",
-    when: "current",
+    when: "2024",
     addr: "0xEA81…Bd8f",
     href: "https://etherscan.io/token/0xEA81DaB2e0EcBc6B5c4172DE4c22B6Ef6E55Bd8f",
     status: "upgradeable proxy",
-    badge: "now",
-    badgeLabel: "Current",
+    badge: "past",
+    badgeLabel: "Previous",
   },
   {
     gen: "Gen 3",
     chain: "Ethereum",
-    when: "upcoming",
-    addr: "0x⋯b50",
-    href: null,
+    when: "2025",
+    addr: BSO_TOKEN_ADDRESS_SHORT,
+    href: ETHERSCAN_TOKEN_URL,
     status: "immutable · adminless",
-    badge: "next",
-    badgeLabel: "Final",
+    badge: "now",
+    badgeLabel: "Current",
   },
 ];
 
@@ -51,13 +52,13 @@ export default function ImmutableUpgrade() {
       id="immutable-upgrade"
       eyebrow="An immutable upgrade"
       question="Where BSO came from, and what’s changing."
-      supporting="Three generations, each migrated 1:1 and verifiable on-chain. The current token is an upgradeable proxy; the final one is fully immutable. Holders do nothing: a passive 1:1 airdrop delivers the new token automatically."
+      supporting="Three generations, each migrated 1:1 and verifiable on-chain. The current token is fully immutable and adminless. Holders received the final token through a passive 1:1 airdrop."
       quote="For a provenance coin, the history is the point."
     >
       <div className="lineage">
         <ol className="lineage-rail">
           {GENS.map((g) => (
-            <li key={g.gen} className={`gen${g.badge === "next" ? " gen-next" : ""}`}>
+            <li key={g.gen} className={`gen${g.badge === "now" ? " gen-next" : ""}`}>
               <span className="gen-head">
                 <span className="gen-name">{g.gen}</span>
                 <span className={`gen-badge gen-badge-${g.badge}`}>{g.badgeLabel}</span>
@@ -73,9 +74,9 @@ export default function ImmutableUpgrade() {
                 <span className="gen-addr gen-addr-pending">{g.addr}</span>
               )}
               <span className="gen-status">
-                {g.badge === "now" ? (
+                {g.badge === "past" && g.status === "upgradeable proxy" ? (
                   <TriangleAlert aria-hidden size={13} strokeWidth={1.9} />
-                ) : g.badge === "next" ? (
+                ) : g.badge === "now" ? (
                   <ShieldCheck aria-hidden size={13} strokeWidth={1.9} />
                 ) : (
                   <BadgeCheck aria-hidden size={13} strokeWidth={1.9} />
@@ -88,8 +89,8 @@ export default function ImmutableUpgrade() {
 
         <p className="lineage-note">
           <Gift aria-hidden size={16} strokeWidth={1.8} />
-          The migration is a passive 1:1 airdrop. You keep the same tokens and do nothing; the new
-          immutable contract simply shows the correct Bitsocial branding everywhere.
+          The migration was a passive 1:1 airdrop. You keep the same tokens and do nothing; the new
+          immutable contract shows the correct Bitsocial branding everywhere.
         </p>
       </div>
     </Section>
