@@ -11,7 +11,7 @@ const LOCKS = [
 export default function SoundMoney() {
   return (
     <Section
-      id="sound-money"
+      id="tokenomics"
       eyebrow="tokenomics"
       question="Sound money."
       supporting="BSO is a fixed-supply ERC-20: 210 million, no inflation, deflationary by design. Its final contract is immutable and adminless, so the rules are fixed forever."
