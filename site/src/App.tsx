@@ -22,14 +22,22 @@ export default function App() {
               </h1>
               <p className="sub">
                 Crypto became a casino because web2 owns its distribution. Bitsocial Chain fixes
-                this: an unstoppable, fully decentralized Ethereum{" "}
+                this: an unstoppable, fully decentralized{" "}
+                <a
+                  className="sub-link"
+                  href="https://ethereum.org/layer-2/learn/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Ethereum L2
+                </a>{" "}
                 <a
                   className="sub-link"
                   href="https://l2beat.com/glossary#application-specific-rollup"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  L2 appchain
+                  appchain
                 </a>{" "}
                 where communities own their networks, their tokens and their revenue.
               </p>
