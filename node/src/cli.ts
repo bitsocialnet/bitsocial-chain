@@ -5,8 +5,8 @@ import { startReadApi } from "./server.js";
 import { FileStateStore, TursoStateStore, type StateStore } from "./store.js";
 
 const consoleLogger: NodeLogger = {
-  info: (message) => console.log(`[bso-network-node] ${message}`),
-  warn: (message) => console.warn(`[bso-network-node] ${message}`),
+  info: (message) => console.log(`[bso-chain-node] ${message}`),
+  warn: (message) => console.warn(`[bso-chain-node] ${message}`),
 };
 
 async function main(): Promise<void> {
@@ -14,7 +14,7 @@ async function main(): Promise<void> {
     options: {
       "rpc-url": { type: "string", default: "http://127.0.0.1:8545" },
       port: { type: "string", default: "4150" },
-      db: { type: "string", default: ".bso-network-data/state.json" },
+      db: { type: "string", default: ".bso-chain-data/state.json" },
       store: { type: "string", default: "file" },
       "start-block": { type: "string", default: "0" },
       confirmations: { type: "string", default: "0" },
@@ -24,12 +24,12 @@ async function main(): Promise<void> {
   });
 
   if (values.help) {
-    console.log(`bso-network-node — deterministic .bso derivation node
+    console.log(`bso-chain-node — deterministic .bso derivation node
 
 Options:
   --rpc-url <url>        Ethereum L1 JSON-RPC endpoint (default http://127.0.0.1:8545)
   --port <port>          Read API port (default 4150)
-  --db <path>            State file/database path (default .bso-network-data/state.json)
+  --db <path>            State file/database path (default .bso-chain-data/state.json)
   --store <file|turso>   State storage backend (default file)
   --start-block <n>      First L1 block to derive from (default 0)
   --confirmations <n>    Blocks to lag behind head (default 0)

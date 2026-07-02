@@ -1,5 +1,5 @@
 /**
- * End-to-end demo of the Bitsocial Network .bso naming POC.
+ * End-to-end demo of the Bitsocial Chain .bso naming POC.
  *
  * Starts a local Ethereum L1 dev chain, runs a derivation node against it,
  * then drives the full name lifecycle with plain L1 transactions:
@@ -16,9 +16,9 @@ import {
   encodeIntentCalldata,
   isValidBitsocialPublicKey,
   type BsoIntent,
-} from "@bitsocial/bso-network-protocol";
-import { DerivationNode, FileStateStore, MemoryStateStore, startReadApi } from "@bitsocial/bso-network-node";
-import { BsoNetworkResolver } from "@bitsocial/bso-network-resolver";
+} from "@bitsocial/bso-chain-protocol";
+import { DerivationNode, FileStateStore, MemoryStateStore, startReadApi } from "@bitsocial/bso-chain-node";
+import { BsoChainResolver } from "@bitsocial/bso-chain-resolver";
 import { createPublicClient, createWalletClient, http, type Hex } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
 import { hardhat } from "viem/chains";
@@ -57,7 +57,7 @@ async function main(): Promise<void> {
   assert(isValidBitsocialPublicKey(ALICE_PUBLIC_KEY), "alice fixture key is valid");
   assert(isValidBitsocialPublicKey(BOB_PUBLIC_KEY), "bob fixture key is valid");
 
-  console.log("Bitsocial Network POC demo — decentralized .bso names derived from Ethereum L1");
+  console.log("Bitsocial Chain POC demo — decentralized .bso names derived from Ethereum L1");
   console.log(`Intent inbox address: ${BSO_INTENT_ADDRESS}`);
 
   step("Start a local Ethereum L1 dev chain (Hardhat node)");
@@ -75,7 +75,7 @@ async function main(): Promise<void> {
   };
 
   step("Start the derivation node and its read API");
-  const stateFile = fileURLToPath(new URL("../../.bso-network-data/demo-state.json", import.meta.url));
+  const stateFile = fileURLToPath(new URL("../../.bso-chain-data/demo-state.json", import.meta.url));
   rmSync(stateFile, { force: true });
   const node = new DerivationNode({
     rpcUrl: chain.rpcUrl,
@@ -91,7 +91,7 @@ async function main(): Promise<void> {
   ok(`derivation node following L1, read API at ${api.endpoint}`);
   ok(`derived state persisted to ${stateFile}`);
 
-  const resolver = new BsoNetworkResolver({ endpoint: api.endpoint });
+  const resolver = new BsoChainResolver({ endpoint: api.endpoint });
 
   const sendIntent = async (who: "alice" | "bob", intent: BsoIntent): Promise<void> => {
     const hash = await wallets[who].sendTransaction({

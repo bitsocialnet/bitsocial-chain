@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { isValidBsoName, normalizeBsoName } from "@bitsocial/bso-network-protocol";
+import { isValidBsoName, normalizeBsoName } from "@bitsocial/bso-chain-protocol";
 
 describe("normalizeBsoName", () => {
   it("accepts simple lowercase names", () => {

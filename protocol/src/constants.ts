@@ -2,7 +2,7 @@
  * Protocol identifier carried in every intent payload. Transactions whose
  * payload declares a different protocol are rejected deterministically.
  */
-export const PROTOCOL_ID = "bso-network";
+export const PROTOCOL_ID = "bso-chain";
 
 /** Intent payload schema version understood by this implementation. */
 export const INTENT_SCHEMA_VERSION = 1;

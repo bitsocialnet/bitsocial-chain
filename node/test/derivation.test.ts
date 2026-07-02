@@ -5,14 +5,14 @@ import {
   BSO_INTENT_ADDRESS,
   encodeIntentCalldata,
   type BsoIntent,
-} from "@bitsocial/bso-network-protocol";
+} from "@bitsocial/bso-chain-protocol";
 import {
   DerivationNode,
   FileStateStore,
   MemoryStateStore,
   startReadApi,
   TursoStateStore,
-} from "@bitsocial/bso-network-node";
+} from "@bitsocial/bso-chain-node";
 import { createPublicClient, createWalletClient, http, type Hex, type PublicClient } from "viem";
 import { privateKeyToAccount, type PrivateKeyAccount } from "viem/accounts";
 import { hardhat } from "viem/chains";

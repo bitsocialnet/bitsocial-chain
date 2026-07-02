@@ -1,6 +1,6 @@
 import { createServer, type Server } from "node:http";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import { BsoNetworkResolver } from "@bitsocial/bso-network-resolver";
+import { BsoChainResolver } from "@bitsocial/bso-chain-resolver";
 
 const RECORD = {
   name: "alice.bso",
@@ -58,9 +58,9 @@ afterAll(() => {
   return new Promise<void>((resolve) => server.close(() => resolve()));
 });
 
-describe("BsoNetworkResolver", () => {
+describe("BsoChainResolver", () => {
   it("canResolve accepts well-formed .bso names only", () => {
-    const resolver = new BsoNetworkResolver({ endpoint });
+    const resolver = new BsoChainResolver({ endpoint });
     expect(resolver.canResolve({ name: "alice.bso" })).toBe(true);
     expect(resolver.canResolve({ name: "ALICE.bso" })).toBe(true);
     expect(resolver.canResolve({ name: "alice.eth" })).toBe(false);
@@ -69,7 +69,7 @@ describe("BsoNetworkResolver", () => {
   });
 
   it("resolves an active name to the documented result shape", async () => {
-    const resolver = new BsoNetworkResolver({ endpoint });
+    const resolver = new BsoChainResolver({ endpoint });
     const result = await resolver.resolve({ name: "alice.bso" });
     expect(result).toEqual({
       name: "alice.bso",
@@ -81,25 +81,25 @@ describe("BsoNetworkResolver", () => {
   });
 
   it("omits metadataUri when the record has none", async () => {
-    const resolver = new BsoNetworkResolver({ endpoint });
+    const resolver = new BsoChainResolver({ endpoint });
     const result = await resolver.resolve({ name: "bare.bso" });
     expect(result).toBeDefined();
     expect(result && "metadataUri" in result).toBe(false);
   });
 
   it("returns undefined for unregistered and revoked names", async () => {
-    const resolver = new BsoNetworkResolver({ endpoint });
+    const resolver = new BsoChainResolver({ endpoint });
     expect(await resolver.resolve({ name: "missing.bso" })).toBeUndefined();
     expect(await resolver.resolve({ name: "revoked.bso" })).toBeUndefined();
   });
 
   it("throws on unexpected node errors", async () => {
-    const resolver = new BsoNetworkResolver({ endpoint });
+    const resolver = new BsoChainResolver({ endpoint });
     await expect(resolver.resolve({ name: "broken.bso" })).rejects.toThrow(/500/);
   });
 
   it("honors caller abort signals", async () => {
-    const resolver = new BsoNetworkResolver({ endpoint });
+    const resolver = new BsoChainResolver({ endpoint });
     const aborted = AbortSignal.abort();
     await expect(resolver.resolve({ name: "alice.bso", abortSignal: aborted })).rejects.toThrow(
       /aborted/i,
@@ -112,7 +112,7 @@ describe("BsoNetworkResolver", () => {
   });
 
   it("destroy aborts in-flight resolutions and blocks further use", async () => {
-    const resolver = new BsoNetworkResolver({ endpoint });
+    const resolver = new BsoChainResolver({ endpoint });
     const pending = resolver.resolve({ name: "slow.bso" });
     await resolver.destroy();
     await expect(pending).rejects.toThrow();
@@ -120,7 +120,7 @@ describe("BsoNetworkResolver", () => {
   });
 
   it("uses the bso-resolver key convention", () => {
-    expect(new BsoNetworkResolver({ endpoint }).key).toBe("bso-network");
-    expect(new BsoNetworkResolver({ endpoint, key: "custom" }).key).toBe("custom");
+    expect(new BsoChainResolver({ endpoint }).key).toBe("bso-chain");
+    expect(new BsoChainResolver({ endpoint, key: "custom" }).key).toBe("custom");
   });
 });

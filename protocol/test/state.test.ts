@@ -10,7 +10,7 @@ import {
   type BsoIntent,
   type DerivedTxContext,
   type RegistryState,
-} from "@bitsocial/bso-network-protocol";
+} from "@bitsocial/bso-chain-protocol";
 
 const KEY_A = "12D3KooWN5rLmRJ8fWMwTtkDN7w2RgPPGRM4mtWTnfbjpi1Sh7zR";
 const KEY_B = "12D3KooWN5rLmRJ8fWMwTtkDN7w2RgPPGRM4mtWTnfbjpi1Sh7zA";

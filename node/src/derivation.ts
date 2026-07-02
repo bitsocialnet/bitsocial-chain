@@ -8,7 +8,7 @@ import {
   type DerivedTxContext,
   type RegistryState,
   type ResolveOutcome,
-} from "@bitsocial/bso-network-protocol";
+} from "@bitsocial/bso-chain-protocol";
 import { createPublicClient, http, type PublicClient } from "viem";
 import { MemoryStateStore, type NodeState, type StateStore } from "./store.js";
 

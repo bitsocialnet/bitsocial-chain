@@ -1,17 +1,17 @@
-import { isValidBsoName } from "@bitsocial/bso-network-protocol";
+import { isValidBsoName } from "@bitsocial/bso-chain-protocol";
 
-export interface BsoNetworkResolverOptions {
+export interface BsoChainResolverOptions {
   /** Base URL of a derivation node read API, e.g. "http://127.0.0.1:4150". */
   endpoint: string;
   /**
    * Identifier for this resolver instance, mirroring the `key` field of
    * `@bitsocial/bso-resolver` so it can slot into the same `nameResolvers`
-   * arrays. Default "bso-network".
+   * arrays. Default "bso-chain".
    */
   key?: string;
 }
 
-export interface BsoNetworkResolveResult {
+export interface BsoChainResolveResult {
   name: string;
   owner: string;
   publicKey: string;
@@ -27,7 +27,7 @@ function createAbortError(): Error {
 }
 
 /**
- * Minimal .bso resolver backed by a Bitsocial Network derivation node.
+ * Minimal .bso resolver backed by a Bitsocial Chain derivation node.
  *
  * API shape mirrors `@bitsocial/bso-resolver` (the ENS-TXT-record based
  * resolver Bitsocial clients use today): `canResolve({ name })`,
@@ -38,16 +38,16 @@ function createAbortError(): Error {
  * same way a light Ethereum client trusts its RPC. Anyone can run their own
  * node against L1 and point the resolver at it; see POC_LIMITATIONS.md.
  */
-export class BsoNetworkResolver {
+export class BsoChainResolver {
   readonly key: string;
   readonly endpoint: string;
 
   private readonly destroyController = new AbortController();
   private destroyed = false;
 
-  constructor({ endpoint, key }: BsoNetworkResolverOptions) {
+  constructor({ endpoint, key }: BsoChainResolverOptions) {
     this.endpoint = endpoint.replace(/\/+$/, "");
-    this.key = key ?? "bso-network";
+    this.key = key ?? "bso-chain";
   }
 
   /** True when the name is a well-formed .bso name this resolver handles. */
@@ -65,7 +65,7 @@ export class BsoNetworkResolver {
   }: {
     name: string;
     abortSignal?: AbortSignal;
-  }): Promise<BsoNetworkResolveResult | undefined> {
+  }): Promise<BsoChainResolveResult | undefined> {
     if (this.destroyed) {
       throw new Error("Cannot resolve after destroy() has been called.");
     }
@@ -92,8 +92,8 @@ export class BsoNetworkResolver {
       );
     }
 
-    const record = (await response.json()) as BsoNetworkResolveResult;
-    const result: BsoNetworkResolveResult = {
+    const record = (await response.json()) as BsoChainResolveResult;
+    const result: BsoChainResolveResult = {
       name: record.name,
       owner: record.owner,
       publicKey: record.publicKey,

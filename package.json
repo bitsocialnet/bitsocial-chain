@@ -1,7 +1,7 @@
 {
-  "name": "bitsocial-network-monorepo",
+  "name": "bitsocial-chain-monorepo",
   "private": true,
-  "description": "Proof of concept for Bitsocial Network: decentralized .bso names derived from Ethereum L1 history.",
+  "description": "Proof of concept for Bitsocial Chain: decentralized .bso names derived from Ethereum L1 history.",
   "license": "GPL-3.0-or-later",
   "type": "module",
   "engines": {
@@ -31,6 +31,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bitsocialnet/bitsocial-network.git"
+    "url": "git+https://github.com/bitsocialnet/bitsocial-chain.git"
   }
 }

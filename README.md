@@ -59,10 +59,10 @@ There is deliberately **no L1 contract** in the intent path: an intent is any tr
 
 | Directory   | Package                           | What it is |
 | ----------- | --------------------------------- | ---------- |
-| `protocol/` | `@bitsocial/bso-network-protocol` | Deterministic core: intent calldata codec, name normalization, state transition rules, canonical state hash |
-| `node/`     | `@bitsocial/bso-network-node`     | Derivation node: follows L1 over JSON-RPC, applies the protocol, persists state, serves the read API, handles reorgs |
-| `resolver/` | `@bitsocial/bso-network-resolver` | Minimal resolver SDK, shape-compatible with `@bitsocial/bso-resolver` |
-| `demo/`     | `@bitsocial/bso-network-demo`     | Runnable end-to-end demo on a local L1 dev chain |
+| `protocol/` | `@bitsocial/bso-chain-protocol` | Deterministic core: intent calldata codec, name normalization, state transition rules, canonical state hash |
+| `node/`     | `@bitsocial/bso-chain-node`     | Derivation node: follows L1 over JSON-RPC, applies the protocol, persists state, serves the read API, handles reorgs |
+| `resolver/` | `@bitsocial/bso-chain-resolver` | Minimal resolver SDK, shape-compatible with `@bitsocial/bso-resolver` |
+| `demo/`     | `@bitsocial/bso-chain-demo`     | Runnable end-to-end demo on a local L1 dev chain |
 
 Docs: [SPEC.md](SPEC.md) (normative protocol rules) · [DESIGN.md](DESIGN.md) (rationale and roadmap fit) · [POC_LIMITATIONS.md](POC_LIMITATIONS.md) (shortcuts taken).
 
@@ -103,7 +103,7 @@ npx hardhat node
 node node/dist/cli.js --rpc-url http://127.0.0.1:8545 --port 4150
 
 # optional: persist state in a local Turso Database file instead of JSON
-node node/dist/cli.js --rpc-url http://127.0.0.1:8545 --store turso --db .bso-network-data/state.db
+node node/dist/cli.js --rpc-url http://127.0.0.1:8545 --store turso --db .bso-chain-data/state.db
 
 # resolve a name over the read API
 curl http://127.0.0.1:4150/v1/names/alice.bso
@@ -115,9 +115,9 @@ The default store is the original atomic JSON file. `--store turso` uses Turso D
 ## Resolver usage
 
 ```ts
-import { BsoNetworkResolver } from "@bitsocial/bso-network-resolver";
+import { BsoChainResolver } from "@bitsocial/bso-chain-resolver";
 
-const resolver = new BsoNetworkResolver({ endpoint: "http://127.0.0.1:4150" });
+const resolver = new BsoChainResolver({ endpoint: "http://127.0.0.1:4150" });
 
 resolver.canResolve({ name: "alice.bso" }); // true
 await resolver.resolve({ name: "alice.bso" });

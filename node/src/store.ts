@@ -1,6 +1,6 @@
 import { mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
-import type { RegistryState } from "@bitsocial/bso-network-protocol";
+import type { RegistryState } from "@bitsocial/bso-chain-protocol";
 import { connect } from "@tursodatabase/database";
 import type { Database } from "@tursodatabase/database";
 

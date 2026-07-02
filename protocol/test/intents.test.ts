@@ -5,7 +5,7 @@ import {
   encodeIntentCalldata,
   INTENT_DATA_URI_PREFIX,
   type BsoIntent,
-} from "@bitsocial/bso-network-protocol";
+} from "@bitsocial/bso-chain-protocol";
 
 const PUBLIC_KEY = "12D3KooWN5rLmRJ8fWMwTtkDN7w2RgPPGRM4mtWTnfbjpi1Sh7zR";
 
@@ -66,12 +66,12 @@ describe("encodeIntentCalldata / decodeIntentCalldata", () => {
       kind: "invalid",
       reason: "UNSUPPORTED_PROTOCOL",
     });
-    expect(decodeIntentCalldata(calldataFor({ ...base, p: "bso-network", v: 2 }))).toMatchObject({
+    expect(decodeIntentCalldata(calldataFor({ ...base, p: "bso-chain", v: 2 }))).toMatchObject({
       kind: "invalid",
       reason: "UNSUPPORTED_VERSION",
     });
     expect(
-      decodeIntentCalldata(calldataFor({ p: "bso-network", v: 1, op: "destroy", name: "a.bso" })),
+      decodeIntentCalldata(calldataFor({ p: "bso-chain", v: 1, op: "destroy", name: "a.bso" })),
     ).toMatchObject({ kind: "invalid", reason: "UNSUPPORTED_OP" });
   });
 
@@ -79,7 +79,7 @@ describe("encodeIntentCalldata / decodeIntentCalldata", () => {
     expect(
       decodeIntentCalldata(
         calldataFor({
-          p: "bso-network",
+          p: "bso-chain",
           v: 1,
           op: "revoke",
           name: "alice.bso",
@@ -92,26 +92,26 @@ describe("encodeIntentCalldata / decodeIntentCalldata", () => {
   it("normalizes names while decoding and surfaces name rejections", () => {
     expect(
       decodeIntentCalldata(
-        calldataFor({ p: "bso-network", v: 1, op: "revoke", name: "ALICE.bso" }),
+        calldataFor({ p: "bso-chain", v: 1, op: "revoke", name: "ALICE.bso" }),
       ),
     ).toEqual({ kind: "intent", intent: { op: "revoke", name: "alice.bso" } });
 
     expect(
       decodeIntentCalldata(
-        calldataFor({ p: "bso-network", v: 1, op: "revoke", name: "sub.alice.bso" }),
+        calldataFor({ p: "bso-chain", v: 1, op: "revoke", name: "sub.alice.bso" }),
       ),
     ).toMatchObject({ kind: "invalid", reason: "NAME_NESTED_LABELS" });
   });
 
   it("validates register fields", () => {
     expect(
-      decodeIntentCalldata(calldataFor({ p: "bso-network", v: 1, op: "register", name: "a.bso" })),
+      decodeIntentCalldata(calldataFor({ p: "bso-chain", v: 1, op: "register", name: "a.bso" })),
     ).toMatchObject({ kind: "invalid", reason: "INVALID_PUBLIC_KEY" });
 
     expect(
       decodeIntentCalldata(
         calldataFor({
-          p: "bso-network",
+          p: "bso-chain",
           v: 1,
           op: "register",
           name: "a.bso",
@@ -123,7 +123,7 @@ describe("encodeIntentCalldata / decodeIntentCalldata", () => {
     expect(
       decodeIntentCalldata(
         calldataFor({
-          p: "bso-network",
+          p: "bso-chain",
           v: 1,
           op: "register",
           name: "a.bso",
@@ -136,7 +136,7 @@ describe("encodeIntentCalldata / decodeIntentCalldata", () => {
     expect(
       decodeIntentCalldata(
         calldataFor({
-          p: "bso-network",
+          p: "bso-chain",
           v: 1,
           op: "register",
           name: "a.bso",
@@ -149,12 +149,12 @@ describe("encodeIntentCalldata / decodeIntentCalldata", () => {
 
   it("rejects updates that change nothing", () => {
     expect(
-      decodeIntentCalldata(calldataFor({ p: "bso-network", v: 1, op: "update", name: "a.bso" })),
+      decodeIntentCalldata(calldataFor({ p: "bso-chain", v: 1, op: "update", name: "a.bso" })),
     ).toMatchObject({ kind: "invalid", reason: "EMPTY_UPDATE" });
   });
 
   it("validates transfer recipients and lowercases them", () => {
-    const base = { p: "bso-network", v: 1, op: "transfer", name: "a.bso" };
+    const base = { p: "bso-chain", v: 1, op: "transfer", name: "a.bso" };
     expect(decodeIntentCalldata(calldataFor({ ...base, to: "0x1234" }))).toMatchObject({
       kind: "invalid",
       reason: "INVALID_RECIPIENT",

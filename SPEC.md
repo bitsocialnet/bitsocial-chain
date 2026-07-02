@@ -8,7 +8,7 @@ Status: proof of concept, schema version 1. See [POC_LIMITATIONS.md](POC_LIMITAT
 
 | Parameter | Value |
 | --- | --- |
-| Protocol ID (`p`) | `bso-network` |
+| Protocol ID (`p`) | `bso-chain` |
 | Intent schema version (`v`) | `1` |
 | Intent inbox address | `0x0000000000000000000000000000000000b50b50` (compared lowercase) |
 | Calldata prefix | `data:application/vnd.bso.intent+json,` (UTF-8, exact match) |
@@ -37,7 +37,7 @@ Common required fields:
 
 | Field | Rule | Rejection |
 | --- | --- | --- |
-| `p` | must equal `bso-network` | `UNSUPPORTED_PROTOCOL` |
+| `p` | must equal `bso-chain` | `UNSUPPORTED_PROTOCOL` |
 | `v` | must equal `1` | `UNSUPPORTED_VERSION` |
 | `op` | one of `register`, `update`, `transfer`, `revoke` | `UNSUPPORTED_OP` |
 | `name` | normalizes per §4 | name rejection reasons (§4) |
@@ -47,7 +47,7 @@ Fields outside the allowed set for the op are rejected with `UNKNOWN_FIELD` (str
 ### register
 
 ```json
-{ "p": "bso-network", "v": 1, "op": "register", "name": "alice.bso",
+{ "p": "bso-chain", "v": 1, "op": "register", "name": "alice.bso",
   "publicKey": "12D3Koo…", "metadataUri": "ipfs://…" }
 ```
 
@@ -57,7 +57,7 @@ Fields outside the allowed set for the op are rejected with `UNKNOWN_FIELD` (str
 ### update
 
 ```json
-{ "p": "bso-network", "v": 1, "op": "update", "name": "alice.bso",
+{ "p": "bso-chain", "v": 1, "op": "update", "name": "alice.bso",
   "publicKey": "12D3Koo…", "metadataUri": "ipfs://…" }
 ```
 
@@ -68,7 +68,7 @@ Fields outside the allowed set for the op are rejected with `UNKNOWN_FIELD` (str
 ### transfer
 
 ```json
-{ "p": "bso-network", "v": 1, "op": "transfer", "name": "alice.bso", "to": "0x…" }
+{ "p": "bso-chain", "v": 1, "op": "transfer", "name": "alice.bso", "to": "0x…" }
 ```
 
 - `to` (required): a 20-byte `0x` hex address, not the zero address, else `INVALID_RECIPIENT`. Stored lowercase.
@@ -76,7 +76,7 @@ Fields outside the allowed set for the op are rejected with `UNKNOWN_FIELD` (str
 ### revoke
 
 ```json
-{ "p": "bso-network", "v": 1, "op": "revoke", "name": "alice.bso" }
+{ "p": "bso-chain", "v": 1, "op": "revoke", "name": "alice.bso" }
 ```
 
 No additional fields.
