@@ -89,25 +89,6 @@
   padding: clamp(1.5rem, 4vw, 3rem) clamp(1.25rem, 4vw, 3.5rem) clamp(4rem, 8vh, 6rem);
 }
 
-.shell .eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
-  margin: 0 0 clamp(1.2rem, 3vw, 1.8rem);
-  font-family: var(--font-display);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-
-.shell .eyebrow .tick {
-  width: 1.6rem;
-  height: 2px;
-  background: var(--signal);
-}
-
 /* Mirrors bitsocial.net's hero: Exo regular (400), mid-size, deliberately quiet.
    The dominant Exo 600 display scale is reserved for section question headlines. */
 .shell .title {

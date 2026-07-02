@@ -17,10 +17,6 @@ export default function App() {
         <div className="hero-panel">
           <div className="hero">
             <div className="copy">
-              <p className="eyebrow">
-                <span className="tick" aria-hidden="true" />
-                BSO / Bitsocial Chain
-              </p>
               <h1 className="title">
                 The missing <span className="mark">layer</span> of crypto
               </h1>
