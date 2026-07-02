@@ -1,3 +1,24 @@
+import { cn } from "@/lib/utils";
+
+function MonochromeBrandIcon({ src, className }: { src: string; className?: string }) {
+  return (
+    <span
+      aria-hidden="true"
+      className={cn("inline-block shrink-0 bg-current", className)}
+      style={{
+        WebkitMaskImage: `url(${src})`,
+        maskImage: `url(${src})`,
+        WebkitMaskRepeat: "no-repeat",
+        maskRepeat: "no-repeat",
+        WebkitMaskPosition: "center",
+        maskPosition: "center",
+        WebkitMaskSize: "contain",
+        maskSize: "contain",
+      }}
+    />
+  );
+}
+
 export function XIcon({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
@@ -7,34 +28,13 @@ export function XIcon({ className }: { className?: string }) {
 }
 
 export function CoinGeckoIcon({ className }: { className?: string }) {
-  return (
-    <img
-      src="https://static.coingecko.com/gecko-logo-new-color.svg"
-      alt=""
-      className={className}
-      aria-hidden="true"
-    />
-  );
+  return <MonochromeBrandIcon src="/icons/coingecko.svg" className={className} />;
 }
 
 export function UniswapIcon({ className }: { className?: string }) {
-  return (
-    <img
-      src="https://raw.githubusercontent.com/Uniswap/brand-assets/main/Uniswap%20Brand%20Assets/Uniswap_icon_pink.svg"
-      alt=""
-      className={className}
-      aria-hidden="true"
-    />
-  );
+  return <MonochromeBrandIcon src="/icons/uniswap.svg" className={className} />;
 }
 
 export function EtherscanIcon({ className }: { className?: string }) {
-  return (
-    <img
-      src="https://etherscan.io/images/brandassets/etherscan-logo-circle.svg"
-      alt=""
-      className={className}
-      aria-hidden="true"
-    />
-  );
+  return <MonochromeBrandIcon src="/icons/etherscan.svg" className={className} />;
 }
