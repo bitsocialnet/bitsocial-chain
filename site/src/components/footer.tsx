@@ -1,10 +1,11 @@
-import { Github } from "lucide-react";
+import { Github, Send } from "lucide-react";
 import {
   BITSOCIAL_URL,
   CONTRIBUTE_URL,
   DOCS_URL,
   FOOTER_TOKEN_LINKS,
   GITHUB_URL,
+  TELEGRAM_URL,
   TWITTER_URL,
   type ExternalLink,
 } from "@/lib/site";
@@ -114,6 +115,17 @@ export default function Footer() {
                 >
                   <XIcon className="h-3.5 w-3.5" />
                   Twitter
+                </a>
+              </li>
+              <li>
+                <a
+                  href={TELEGRAM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${linkClassName} inline-flex items-center gap-2`}
+                >
+                  <Send className="h-3.5 w-3.5" />
+                  Telegram
                 </a>
               </li>
             </ul>

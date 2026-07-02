@@ -17,6 +17,8 @@ export const GITHUB_URL = "https://github.com/bitsocialnet" as const;
 
 export const TWITTER_URL = "https://twitter.com/bitsocialnet" as const;
 
+export const TELEGRAM_URL = "https://t.me/bitsocialnet" as const;
+
 export const CONTRIBUTE_URL =
   "https://github.com/bitsocialnet/bitsocial-web/tree/master/chain" as const;
 
