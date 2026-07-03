@@ -11,7 +11,13 @@ import {
   TWITTER_URL,
   type ExternalLink,
 } from "@/lib/site";
-import { CoinGeckoIcon, EtherscanIcon, UniswapIcon, XIcon } from "@/components/icons";
+import {
+  CoinGeckoIcon,
+  DexScreenerIcon,
+  EtherscanIcon,
+  UniswapIcon,
+  XIcon,
+} from "@/components/icons";
 
 const linkClassName = "text-muted-foreground hover:text-foreground transition-colors text-sm";
 
@@ -21,6 +27,9 @@ function FooterLinkIcon({ icon }: { icon: ExternalLink["icon"] }) {
   }
   if (icon === "uniswap") {
     return <UniswapIcon className="h-3.5 w-3.5" />;
+  }
+  if (icon === "dexscreener") {
+    return <DexScreenerIcon className="h-3.5 w-3.5" />;
   }
   if (icon === "etherscan") {
     return <EtherscanIcon className="h-3.5 w-3.5" />;

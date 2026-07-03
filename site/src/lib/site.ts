@@ -7,6 +7,11 @@ export const ETHERSCAN_TOKEN_URL = `https://etherscan.io/token/${BSO_TOKEN_ADDRE
 export const UNISWAP_TOKEN_URL =
   `https://app.uniswap.org/explore/tokens/ethereum/${BSO_TOKEN_ADDRESS}` as const;
 
+export const DEXSCREENER_PAIR_ADDRESS = "0xae8d1a28c8fa6b71c4099ede2d7924672dc51e32" as const;
+
+export const DEXSCREENER_TOKEN_URL =
+  `https://dexscreener.com/ethereum/${DEXSCREENER_PAIR_ADDRESS}` as const;
+
 export const COINGECKO_URL = "https://coingecko.com/coins/bitsocial" as const;
 
 export const BITSOCIAL_URL = "https://bitsocial.net" as const;
@@ -29,7 +34,7 @@ export const CONTRIBUTE_URL =
 export type ExternalLink = {
   label: string;
   href: string;
-  icon?: "etherscan" | "coingecko" | "uniswap";
+  icon?: "etherscan" | "coingecko" | "uniswap" | "dexscreener";
 };
 
 export const TOPBAR_LINKS: ExternalLink[] = [
@@ -43,4 +48,5 @@ export const FOOTER_TOKEN_LINKS: ExternalLink[] = [
   { label: "Etherscan", href: ETHERSCAN_TOKEN_URL, icon: "etherscan" },
   { label: "CoinGecko", href: COINGECKO_URL, icon: "coingecko" },
   { label: "Uniswap", href: UNISWAP_TOKEN_URL, icon: "uniswap" },
+  { label: "DEX Screener", href: DEXSCREENER_TOKEN_URL, icon: "dexscreener" },
 ];

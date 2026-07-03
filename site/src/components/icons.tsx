@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 // - CoinGecko: https://brand.coingecko.com/resources/brand-kit (CG-Symbol-1, CG-Symbol-2)
 // - Etherscan: https://etherscan.io/brandassets (logo circle + light variant)
 // - Uniswap: https://github.com/Uniswap/brand-assets (icon black + white)
+// - DexScreener: https://dexscreener.com/manifest.json (/icon-512x512.png)
 
 function ThemeBrandIcon({
   lightSrc,
@@ -48,6 +49,10 @@ export function UniswapIcon({ className }: { className?: string }) {
       className={className}
     />
   );
+}
+
+export function DexScreenerIcon({ className }: { className?: string }) {
+  return <img src="/icons/dexscreener-icon.png" alt="" aria-hidden="true" className={className} />;
 }
 
 export function EtherscanIcon({ className }: { className?: string }) {
