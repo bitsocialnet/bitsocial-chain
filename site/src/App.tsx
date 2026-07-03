@@ -1,3 +1,5 @@
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import ChainStatusCta from "@/components/chain-status-cta";
 import MissingLayer from "./MissingLayer";
 import BackToTop from "@/components/back-to-top";
@@ -61,6 +63,8 @@ export default function App() {
           <Footer />
         </div>
       </main>
+      <Analytics />
+      <SpeedInsights />
     </div>
   );
 }
