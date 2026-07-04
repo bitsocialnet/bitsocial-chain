@@ -110,7 +110,7 @@ The pattern generalizes: every future primitive is *intents on L1 → determinis
 
 - **Awards/tipping**: intents referencing a recipient public key or `.bso` name; derived balances/award records; clients render them next to P2P content they fetched themselves.
 - **Payments/monetization**: payment intents settle value on L1 (or a real L2); derived state only indexes receipts/entitlements that clients may choose to honor (e.g. badge challenges).
-- **Shared liquidity**: token/AMM-style primitives are exactly what graduating to the real Ethscriptions/Facet-style appchain stack (path A) is for.
+- **Shared liquidity**: token/AMM-style primitives are exactly what graduating to the real Ethscriptions/Facet-style appchain stack (path A) is for. The open burn-vs-liquidity design debate and its Stage 2 constraints are captured in [ECONOMICS_DISCUSSION.md](ECONOMICS_DISCUSSION.md).
 
 Each addition is a new intent namespace and a new reducer over the same inbox pattern — the social layer never moves on-chain, and apps/RPCs/discovery stay replaceable.
 

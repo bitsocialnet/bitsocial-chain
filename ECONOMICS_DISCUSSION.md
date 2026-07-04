@@ -1,0 +1,95 @@
+# Economics Discussion — Burn, Liquidity, and the Stage 2 Constraint
+
+**Status: open design discussion, not a spec.** Nothing here is normative or committed. Companion to [DESIGN.md](DESIGN.md) (architecture reasoning) and [POC_LIMITATIONS.md](POC_LIMITATIONS.md), which both defer economics to future work. This document captures a recurring design debate so it survives outside chat logs. Last updated July 2026.
+
+## Context
+
+The public tokenomics story for BSO (see [chain.bitsocial.net](https://chain.bitsocial.net)) is burn-centric: network layers settle in BSO, a share of fees is burned, the rest pays for security; community ad revenue burns the community's token at settlement ("burn at the point of revenue, not buyback from a treasury"). Phase 5 of the master plan proposes AgoraSwap, a community DEX where every ecosystem token pairs with BSO.
+
+In July 2026 a community discussion raised a serious challenge to the burn-centric framing, summarized below. This doc records the argument, the counterarguments, the hard constraints, and the design space that survives them.
+
+## The challenge: burns have diminishing returns; liquidity might matter more
+
+The argument, steelmanned:
+
+1. **A burn on a fixed-supply token is a pro-rata buyback.** It is value accrual, but it does nothing *functional* for the network. On a token that is already fixed-supply and zero-emission, extra scarcity has diminishing narrative and economic returns.
+2. **Liquidity migrates to CEXes as tokens mature.** A v2-style pool is good price discovery at high uncertainty — its inefficiency covers every possible price — but once a token approaches a fair market price with lower volatility, traders stop tolerating high price impact and fees, and volume moves to order books. That migration makes the token custodial and USD-denominated, weakening both the token's and BSO's money properties.
+3. **Therefore**: the BSO fee flow that would be burned might be better spent on a "smart liquidity" system — dynamic, concentrated, protocol-owned liquidity around ecosystem tokens that gets close enough to order-book execution that marginal trading stays on-chain.
+4. **Prerequisite**: this only works for tokens with immutable value accrual that can settle around a fair price. Volatile tokens without intrinsic value can't be market-made tightly.
+5. **The numeraire prize**: if ecosystem trading happens on-chain against BSO pairs instead of on CEXes against USD, BSO gains moneyness — medium-of-exchange and reserve-asset demand, the way ETH and SOL accrued monetary premium from being the pair asset of their ecosystems.
+
+Points 1, 2, and 5 are substantially correct. Point 3 is where the problems start.
+
+## What protocol-owned "smart liquidity" actually costs
+
+**A protocol market maker is a risky trading business, not a mechanism.** Concentrated liquidity positioned around a believed fair price is adversely selected every time the price moves: the rebalancing losses (loss-versus-rebalancing, LVR — Milionis, Moallemi, Roughgarden & Zhang 2022) are paid by whoever owns the position. If the protocol owns it, the bleed comes out of the exact fee flow that would otherwise be burned. A burn is riskless accrual; protocol-owned market making is spending revenue to subsidize tight spreads and hoping fee income exceeds the adverse-selection loss. The honest framing is "liquidity as subsidized infrastructure," which may be a good trade — but it has a P&L, and the P&L can be negative indefinitely.
+
+**The fair-price oracle problem.** Liquidity that repositions "intelligently" needs to know where fair price is. An external oracle reintroduces a trusted, manipulable dependency. A purely reactive on-chain rule (e.g. TWAP-following) is dumb liquidity again, and its rebalancing transactions are themselves front-runnable. This is the core unsolved problem of the proposal, not an implementation detail.
+
+**Precedents cut both ways.** Lifinity (Solana) ran oracle-anchored protocol-owned market making and reported sustained profitability — an existence proof that it can work. Bancor v2.1/v3 offered impermanent-loss insurance backed by the protocol and had to suspend it in 2022 when the liabilities compounded — the canonical failure. OlympusDAO popularized protocol-owned liquidity via bonding with mixed long-term results. The base rate is not encouraging, and none of these operated under a full-decentralization constraint.
+
+**One counter-argument to the numeraire thesis.** The market has shown revealed preference for stable numeraires: ETH pairs lost most flow to USDC pairs on Uniswap over time, because volatile-vs-volatile pairs are harsher on LPs and users think in USD. Solana memecoin flow cuts the other way. "Everything pairs with BSO" has a real LP-risk and UX cost that should be weighed, not assumed away.
+
+## The Stage 2 constraint
+
+Bitsocial Chain intends to be a fully decentralized, Stage 2 chain in the Facet/Ethscriptions mold. Facet's current shape (facet.org, docs.facet.org, and L2Beat's assessment, checked 2026-07-04) is the reference point:
+
+- L2Beat rates Facet **Stage 2**: "the project passes the walkaway test." It is a based rollup — no sequencer, "no privileged entity that sequences transactions or produces blocks."
+- Its rollup contract is immutable: "no guardians, security councils, or admin keys." Upgrades are fork-based: deploy new rules, old versions run forever, users choose.
+- There is **no treasury and no protocol-owned fund of any kind**. FCT is minted only by burning ETH for L1 calldata, and FCT used as gas is burned — because there is no operator to pay.
+- Arbitrary EVM contracts deploy permissionlessly (FacetSWAP, an AMM DEX, already runs on Facet).
+
+Two conclusions follow directly:
+
+1. **Burn is the uniquely Stage-2-native fee sink.** It requires zero custody, zero strategy, zero oracle, and zero governance. Every alternative use of fee flow — including routing it to a liquidity system — adds decision surface, and decision surface is precisely what Stage 2 eliminates. This is a stronger defense of the burn than "scarcity": the burn is not just simple, it is the only value-accrual mechanism with no one to trust.
+2. **The line is discretion, not liquidity.** Immutable AMMs, immutable vaults, and permissionless LPing are fully Stage-2-compatible. What breaks the model is a protocol-*run* strategy: an operator with discretion, an external price oracle in the trust path, or governance-updatable parameters. Protocol-owned "smart liquidity," taken literally, is all three.
+
+## The physics constraint
+
+The strict Facet pattern imposes limits no mechanism design can route around (Facet's live numbers, July 2026):
+
+- **12-second blocks, no soft confirmations**, ordering fixed by L1 inclusion, base-fee only (no priority fees).
+- **No batching yet** — each L2 transaction is its own L1 transaction; L2Beat measures ~$2.94 average cost per user operation over the past year. Activity is on the order of tens of operations per day.
+
+On this architecture, *no* venue — AMM, order book, or hybrid — competes with CEX execution: quotes go stale for 12 seconds at a time, arbitrageurs pick off every stale price, and per-swap costs of dollars kill small trades. If competitive on-chain execution ever becomes a goal, the binding work is architectural (batch submission, blob DA, faster or app-specific sequencing — the "graduate to the real appchain stack" path in DESIGN.md), and it must come before liquidity mechanism design, not after.
+
+One mitigating interaction: LVR scales with the square of volatility, so slow blocks hurt volatile pairs far more than stable ones. The prerequisite in the original argument — ecosystem tokens need genuine value accrual and low volatility *first* — independently mitigates the slow-chain problem. The sequencing (value accrual before liquidity engineering) is right for a reason beyond the one originally given.
+
+## The design space that survives: trustless "smart" liquidity
+
+There is a well-developed menu for getting most of the benefit of smart liquidity without a trusted operator. Guiding principle:
+
+> **The protocol is never the market maker. It is the immutable venue that makes market making permissionless and fair.**
+
+Candidate mechanisms, all compatible with an immutable, adminless deployment:
+
+- **Per-block batch auctions** (CoW-style uniform clearing price). Every order in a block clears at one price, eliminating sandwiching and intra-block ordering games. Unusually well suited to a slow based chain: if the venue cannot be fast, it can be fair — and fairness, not speed, is what a Stage 2 chain can credibly offer that Binance cannot.
+- **Auction-managed AMMs** (am-AMM — Adams, Moallemi, Reynolds & Robinson 2024). The right to manage a pool's liquidity is continuously auctioned on-chain; the winning manager pays rent that flows to LPs or is burned. The "smartness" is outsourced to permissionless competition instead of trusted to the protocol.
+- **Intent/solver settlement** (UniswapX-style Dutch auctions). Competing fillers give users near-CEX execution; the contract only verifies settlement. The protocol takes no inventory risk.
+- **Immutable backstop liquidity, if protocol-owned liquidity exists at all**: full-range, funded one-shot, never rebalanced, no withdrawal path. Dumb-but-wide backstop liquidity is the "safety net" that historically *attracts* independent market makers (they quote inside it), and it requires no discretion.
+- **Dynamic fees from on-chain-only signals** (e.g. volatility-responsive fees computed from pool state). Deterministic rule, no oracle.
+
+This also answers the open question from the original discussion — whether protocol liquidity attracts or repels independent MMs: backstop liquidity plus permissionless inside-the-spread competition is the configuration that attracts them, mirroring how designated-market-maker structures work in traditional venues.
+
+## Resolution (as of July 2026)
+
+- **Burn vs. liquidity is a false binary.** The published design already splits fees (burn share + security share); a liquidity leg would be an extension, not a reversal. But any liquidity leg must be an immutable, permissionless mechanism from the menu above — never a managed treasury position. The existing "no treasury, no buyback bot, no trusted middleman" framing for community ad-revenue burns is correct and stands.
+- **Burn remains the default sink** for any fee flow that lacks a trustless better use, because it is the only zero-trust option.
+- **The real Phase 5 (AgoraSwap) blocker is physics, not mechanism**: batching/DA/sequencing decisions determine whether any liquidity design is viable. Mechanism choice (batch auction vs. am-AMM vs. hybrid) comes after.
+
+## Open questions
+
+1. **Numeraire policy**: BSO pairs only, or BSO + stable pairs? What does the ETH-pairs-lost-to-USDC precedent imply for LP incentives and the moneyness thesis?
+2. **Fee-split immutability**: can burn/security/liquidity percentages be fixed forever at deployment, or do they need adjustment — and if they need adjustment, what replaces governance? (Fork-based upgrades, per Facet, are the current best answer.)
+3. **Volatility prerequisite**: can community tokens with immutable value accrual actually reach the low-volatility regime where tight liquidity is viable, and on what timescale?
+4. **MEV under based sequencing**: ordering is decided by L1 builders, so the chain cannot internalize MEV at the protocol level. Do per-block batch auctions at the app layer capture enough of it?
+5. **Bridge and settlement**: Facet is Stage 2 *without* a canonical bridge; value enters externally. What does that imply for how BSO itself reaches the appchain?
+6. **Regulatory shape**: a protocol operating a discretionary market-making strategy looks like an investment scheme; mechanical burns and permissionless venues look like protocol rules. Another reason the discretion line matters.
+
+## References
+
+- Facet: [facet.org](https://facet.org/), [docs.facet.org](https://docs.facet.org/), [L2Beat — Facet](https://l2beat.com/scaling/projects/facet) (Stage 2 assessment, risk analysis, cost and activity data; checked 2026-07-04).
+- Milionis, Moallemi, Roughgarden, Zhang — *Automated Market Making and Loss-Versus-Rebalancing* (2022): the adverse-selection cost of passive liquidity.
+- Adams, Moallemi, Reynolds, Robinson — *am-AMM: An Auction-Managed Automated Market Maker* (2024): trustless dynamic pool management via on-chain auctions.
+- CoW Protocol (batch auctions, uniform clearing prices), UniswapX (intent-based Dutch-auction settlement): solver-competition execution models.
+- Lifinity (oracle-anchored protocol-owned MM, positive precedent), Bancor v2.1/v3 IL insurance suspension 2022 (negative precedent), OlympusDAO bonding (protocol-owned liquidity, mixed).
