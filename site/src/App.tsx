@@ -25,8 +25,9 @@ export default function App() {
                 The missing <span className="mark">social layer</span> of crypto
               </h1>
               <p className="sub">
-                Crypto became a casino because web2 owns its distribution. Bitsocial Chain fixes
-                this: an unstoppable, fully decentralized{" "}
+                Crypto became a casino because Web2, TradFi, and centralized infrastructure own the
+                distribution rails and bend the incentives. Bitsocial Chain fixes this: an
+                unstoppable, fully decentralized{" "}
                 <a
                   className="sub-link"
                   href="https://ethereum.org/layer-2/learn/"
