@@ -1,6 +1,6 @@
 # Economics Discussion — Burn, Liquidity, and the Stage 2 Constraint
 
-**Status: open design discussion, not a spec.** Nothing here is normative or committed. Companion to [DESIGN.md](DESIGN.md) (architecture reasoning) and [POC_LIMITATIONS.md](POC_LIMITATIONS.md), which both defer economics to future work. This document captures a recurring design debate so it survives outside chat logs. Last updated July 2026.
+**Status: open design discussion, not a spec.** Nothing here is normative or committed. Companion to [DESIGN.md](DESIGN.md) (architecture reasoning) and [POC_LIMITATIONS.md](POC_LIMITATIONS.md), which both defer economics to future work. This document captures a recurring design debate so it survives outside chat logs. Last updated 2026-07-05.
 
 ## Context
 
@@ -77,6 +77,30 @@ This also answers the open question from the original discussion — whether pro
 - **Burn remains the default sink** for any fee flow that lacks a trustless better use, because it is the only zero-trust option.
 - **The real Phase 5 (AgoraSwap) blocker is physics, not mechanism**: batching/DA/sequencing decisions determine whether any liquidity design is viable. Mechanism choice (batch auction vs. am-AMM vs. hybrid) comes after.
 
+## Round 2: refinements from the follow-up discussion (July 5, 2026)
+
+The discussion continued and the proposal sharpened. Recorded positions and what they change:
+
+**The purpose is venue capture, not yield.** Protocol-owned liquidity is not meant to make money; it is meant to take spot market share away from custodial USD venues. The sustainability condition is a budget, not a profit target: average losses must stay comfortably inside swap-fee income (e.g. with a 5 bps fee, losses under roughly half of fee revenue). This matches this doc's "liquidity as subsidized infrastructure" framing — the disagreement dissolves once stated this way. What remains is an engineering requirement: the subsidy must be measured (rebalancing P&L tracked on-chain) so the budget is enforceable rather than aspirational. One caution stands: LVR is not uniform in time — it scales with the square of volatility and concentrates in exactly the tail events — so "loses a little on average" can mean "one three-day crash eats a year of fees" unless the tail is engineered for specifically.
+
+**"Smart" means retreat, not pursuit.** The refined definition: concentrated liquidity that widens or withdraws when volatility spikes and returns when it stabilizes — not liquidity that chases fair price like a CEX market maker. Normal appreciation (a 10x over six months) is in scope; memecoin regimes (10x and −90% in a day) are out of scope, with no demand for tight liquidity there anyway. Two consequences:
+
+- This is *more* tractable under the Stage 2 constraint than the original framing: volatility-responsive width and fees can be a deterministic function of on-chain state (realized volatility from the pool's own history). No operator, no external oracle, no discretion.
+- It concentrates the entire difficulty into tail latency. A reactive rule cannot respond faster than one block, and under based sequencing the arbitrageur reaches the stale quote before the retreat rule can fire. On 12-second blocks, "move out of the way" loses the race by construction; per-block batch auctions (below) are currently the most credible defense, because they neutralize intra-block pickoff instead of trying to outrun it.
+
+**No external oracle: fair price ≈ current price, layered over a dumb base.** The refined design keeps full-range x·y=k liquidity underneath permanently (price discovery, never breaks) and adds the concentrated smart layer on top, only for tokens past the maturity threshold where liquidity historically migrates to order books (~$50–100M mcap). There is a battle-tested reference design for exactly this: **Curve v2 crypto pools**, which concentrate liquidity around an internal EMA price derived from the pool's own trades (no external oracle) and only repeg when accumulated fees cover the rebalancing loss (profit-gated rebalancing). Caveats needing design attention:
+
+- A repositioning rule keyed to the pool's own price can be gamed: push the price against the dumb base layer, trigger the reposition, profit on the reversal. EMA smoothing and profit-gating blunt this but do not eliminate it; attack cost needs quantifying.
+- Curve v2's parameters are DAO-tunable; a Stage 2 deployment would fix parameters at deployment and change them only by fork, which raises the cost of mis-tuning.
+
+**Batch auctions complement protocol liquidity; they do not bypass it.** (Answering a direct question from the discussion.) In CoW-style batch auctions, direct order-vs-order matches are a minority of volume; most flow still executes against underlying liquidity — solvers are an execution layer, not a liquidity source. The important interaction runs the other way: a uniform clearing price per block removes sandwiching and stale-quote pickoff *within* the block, and arbitrageur competition inside the auction returns part of what would have been LVR to the pool (see the FM-AMM batch-trading research). Batch auctions shrink the adverse-selection bleed of whoever provides the liquidity — including the protocol. The proposal and this doc's mechanism menu describe the same system from different ends: dumb full-range base + policy-driven concentrated layer + per-block uniform clearing + independent MMs quoting inside.
+
+**The numeraire battle is fought with flow, not only spreads.** Agreed on both sides: USD pairs win if they have lower volatility *and* lower spreads; BSO pairs need competitive spreads for the battle to exist at all. The addition recorded here: market makers follow order flow, not numeraire comfort — Binance has MMs because it has flow. Bitsocial's native distribution means retail order flow originates inside Bitsocial apps; if apps route that flow to AgoraSwap BSO pairs by default, MMs come to serve it and hedge the BSO leg elsewhere. Design implications: the system needs one deep canonical BSO/stable market as the hedging and entry leg (the SOL model: SOL/USDC deep, everything else pairs against SOL), and splitting venues — dumb canonical BSO liquidity on L1, where BSO already trades, smart eco-token/BSO liquidity on the appchain — is coherent and mirrors the mainnet/L2 structure the wider ecosystem already has.
+
+**Gas fees and swap fees are different flows.** The published burn + security split refers to chain gas fees. Swap fees on AgoraSwap are venue revenue, a separate flow. The refined claim is narrower than the original challenge: not "replace the burn" but "the surplus BSO flow not needed for security should not default 100% to burn when a liquidity leg could buy venue capture." Burn remains the zero-trust default for any flow without a trustless better use.
+
+**Community tokens are companies; the chain is not.** The trust framing from the discussion, recorded: community coins sit closer to companies than to L1 assets, and their central risk is the owner rugging the token to reincorporate the community's value as an off-chain company. Immutable value accrual (revenue that burns and settles in-contract, per the ad-auction design) plus native web3 distribution is the anti-rug mechanism — it converts "trust the community owner" into "verify the contract," the same move Facet makes at the chain level. BSO-level liquidity policy is a separate trust object: "programmatic" is acceptable there only if it means immutable rules over on-chain state, never managed discretion.
+
 ## Open questions
 
 1. **Numeraire policy**: BSO pairs only, or BSO + stable pairs? What does the ETH-pairs-lost-to-USDC precedent imply for LP incentives and the moneyness thesis?
@@ -86,6 +110,13 @@ This also answers the open question from the original discussion — whether pro
 5. **Bridge and settlement**: Facet is Stage 2 *without* a canonical bridge; value enters externally. What does that imply for how BSO itself reaches the appchain?
 6. **Regulatory shape**: a protocol operating a discretionary market-making strategy looks like an investment scheme; mechanical burns and permissionless venues look like protocol rules. Another reason the discretion line matters.
 
+Added after round 2:
+
+7. **Tail latency**: can any retreat rule win the race on a based 12-second chain, or is per-block batch clearing the only real defense? What block cadence would the appchain need for the smart layer to be viable, and is that cadence compatible with staying based and Stage 2?
+8. **Manipulation resistance**: for internal-price repositioning rules (EMA lookback, profit gates), what does the attack cost — capital needed to move the dumb base layer and trigger an exploitable reposition — look like versus defense parameters?
+9. **The hedge leg**: where does the deep canonical BSO/stable market live (L1 vs appchain), and how deep must it be before independent MMs will quote eco-token/BSO pairs?
+10. **Subsidy accounting**: how to measure rebalancing P&L / LVR on-chain so the "losses within fee budget" condition is enforced by rule (e.g. the smart layer auto-widens or retreats when its running P&L breaches budget) rather than monitored socially.
+
 ## References
 
 - Facet: [facet.org](https://facet.org/), [docs.facet.org](https://docs.facet.org/), [L2Beat — Facet](https://l2beat.com/scaling/projects/facet) (Stage 2 assessment, risk analysis, cost and activity data; checked 2026-07-04).
@@ -93,3 +124,5 @@ This also answers the open question from the original discussion — whether pro
 - Adams, Moallemi, Reynolds, Robinson — *am-AMM: An Auction-Managed Automated Market Maker* (2024): trustless dynamic pool management via on-chain auctions.
 - CoW Protocol (batch auctions, uniform clearing prices), UniswapX (intent-based Dutch-auction settlement): solver-competition execution models.
 - Lifinity (oracle-anchored protocol-owned MM, positive precedent), Bancor v2.1/v3 IL insurance suspension 2022 (negative precedent), OlympusDAO bonding (protocol-owned liquidity, mixed).
+- Egorov — *Automatic market-making with dynamic peg* (Curve v2 whitepaper, 2021): concentrated liquidity around an internal EMA price with profit-gated rebalancing — the closest existing implementation of oracle-free "smart" liquidity.
+- Canidio & Fritsch — *Arbitrageurs' profits, LVR, and sandwich attacks: batch trading as an AMM design response* (2023, FM-AMM): per-block uniform clearing prices reduce LVR and sandwiching for the liquidity underneath.
