@@ -1,6 +1,6 @@
 # Economics Discussion — Burn, Liquidity, and the Stage 2 Constraint
 
-**Status: open design discussion, not a spec.** Nothing here is normative or committed. Companion to [DESIGN.md](DESIGN.md) (architecture reasoning) and [POC_LIMITATIONS.md](POC_LIMITATIONS.md), which both defer economics to future work. This document captures a recurring design debate so it survives outside chat logs. Last updated 2026-07-05.
+**Status: open design discussion, not a spec.** Nothing here is normative or committed. Companion to [DESIGN.md](DESIGN.md) (architecture reasoning) and [POC_LIMITATIONS.md](POC_LIMITATIONS.md), which both defer economics to future work. This document captures a recurring design debate so it survives outside chat logs. Last updated 2026-07-06.
 
 ## Context
 
@@ -101,6 +101,18 @@ The discussion continued and the proposal sharpened. Recorded positions and what
 
 **Community tokens are companies; the chain is not.** The trust framing from the discussion, recorded: community coins sit closer to companies than to L1 assets, and their central risk is the owner rugging the token to reincorporate the community's value as an off-chain company. Immutable value accrual (revenue that burns and settles in-contract, per the ad-auction design) plus native web3 distribution is the anti-rug mechanism — it converts "trust the community owner" into "verify the contract," the same move Facet makes at the chain level. BSO-level liquidity policy is a separate trust object: "programmatic" is acceptable there only if it means immutable rules over on-chain state, never managed discretion.
 
+## Round 3: community-token issuance and the "PvE" thesis (July 6, 2026)
+
+Follow-up ideas from the same community discussion, recorded as input to Phase 4/5 design:
+
+**The PvE thesis.** On memecoin chains, asset supply grows without bound while the user base stagnates, so every new token competes for the same exit liquidity and the market is adversarial by construction ("PvP"): traders dump fundamentally sound assets to chase rotations, and long-term holders are the exit liquidity. If token issuance is structurally tied to real communities — one community, one token — then the number of assets scales with adoption rather than with hype, and the ecosystem is "PvE": holders are exposed to the growth of the network, not to each other's rotation games. Recorded as a positioning thesis, not a theorem: the strong version ("aggregate fiat value increases forever") assumes user growth and ignores repricing, but the structural claim (asset count tracking community count changes market character) is sound and follows from the existing one-token-per-community design.
+
+**Issuance gating.** The sharper proposal: communities should not be able to launch a token until they clear real-activity thresholds. A 50-member community with a token is structurally a victim-hunting machine, and incentive patches (sniper taxes, diamond-hand rewards) are gameable copes; only a barrier to entry changes the game. The Stage 2 tension is immediate: gating needs a judge. Governance judgment is not Stage 2, and naive on-chain metrics (member counts, activity counters) are sybilable for free, especially since the social layer is P2P and the chain cannot natively verify that a community is real. The most promising direction recorded here: **use revenue history as the threshold** — a community becomes token-eligible only after some cumulative value has settled through its on-chain ad/tipping contracts over some minimum period. That metric is deterministic (Stage 2-clean), and it is costly to counterfeit precisely because faking it requires actually burning real value through the same contracts the token economy will run on. Costly signals beat clean-looking counters.
+
+**"51/49."** A design philosophy was teased under this name but not defined; placeholder pending a real writeup.
+
+**In-app liquidity.** "The difference between a unicorn crypto project and a low cap comes down to in-app liquidity" — consistent with rounds 1 and 2: native distribution routes order flow to in-app venues, and venue quality is what keeps it there.
+
 ## Open questions
 
 1. **Numeraire policy**: BSO pairs only, or BSO + stable pairs? What does the ETH-pairs-lost-to-USDC precedent imply for LP incentives and the moneyness thesis?
@@ -116,6 +128,11 @@ Added after round 2:
 8. **Manipulation resistance**: for internal-price repositioning rules (EMA lookback, profit gates), what does the attack cost — capital needed to move the dumb base layer and trigger an exploitable reposition — look like versus defense parameters?
 9. **The hedge leg**: where does the deep canonical BSO/stable market live (L1 vs appchain), and how deep must it be before independent MMs will quote eco-token/BSO pairs?
 10. **Subsidy accounting**: how to measure rebalancing P&L / LVR on-chain so the "losses within fee budget" condition is enforced by rule (e.g. the smart layer auto-widens or retreats when its running P&L breaches budget) rather than monitored socially.
+
+Added after round 3:
+
+11. **Issuance gating**: what deterministic, sybil-resistant threshold can gate community-token creation on a Stage 2 chain? Leading candidate: cumulative revenue settled through the community's own on-chain contracts over a minimum period, since it is expensive to counterfeit by construction. What are the right magnitudes, and does gating create a perverse pre-token revenue meta?
+12. **The "51/49" model**: undefined teaser from the community discussion; capture the actual definition when it is written up, then evaluate it against the Stage 2 filter like everything else.
 
 ## References
 
