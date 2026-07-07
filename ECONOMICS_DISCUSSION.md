@@ -1,6 +1,6 @@
 # Economics Discussion — Burn, Liquidity, and the Stage 2 Constraint
 
-**Status: open design discussion, not a spec.** Nothing here is normative or committed. Companion to [DESIGN.md](DESIGN.md) (architecture reasoning) and [POC_LIMITATIONS.md](POC_LIMITATIONS.md), which both defer economics to future work. This document captures a recurring design debate so it survives outside chat logs. Last updated 2026-07-06.
+**Status: open design discussion, not a spec.** Nothing here is normative or committed. Companion to [DESIGN.md](DESIGN.md) (architecture reasoning) and [POC_LIMITATIONS.md](POC_LIMITATIONS.md), which both defer economics to future work. This document captures a recurring design debate so it survives outside chat logs. Last updated 2026-07-07.
 
 ## Context
 
@@ -112,6 +112,13 @@ Follow-up ideas from the same community discussion, recorded as input to Phase 4
 **"51/49."** A design philosophy was teased under this name but not defined; placeholder pending a real writeup.
 
 **In-app liquidity.** "The difference between a unicorn crypto project and a low cap comes down to in-app liquidity" — consistent with rounds 1 and 2: native distribution routes order flow to in-app venues, and venue quality is what keeps it there.
+
+## Round 4: governance attack surface (July 7, 2026)
+
+The BONK DAO treasury drain (June 30 to July 5, 2026, roughly $20M per Chainalysis's public investigation: an anonymous proposal to drain the treasury, passed by an attacker who accumulated voting power in the preceding days, then liquidated) circulated in the community discussion as evidence against token-holder governance. Two notes for this doc:
+
+- **It validates the burn-at-revenue design directly.** Governance attack surface scales with what governance controls. A community whose revenue burns and settles mechanically at the point of sale (the ad-auction and tipping design) accumulates no pooled treasury worth draining; the honeypot never forms. Where community DAOs do hold funds, the classic mitigations (timelocks, exit windows, bounded treasuries, quorum floors) reduce but do not eliminate the attack, because the attack is economic, not technical: if control of the pot costs less than the pot, someone will buy control.
+- **"AI delegate voting" was floated as a fix** (every holder's delegated AI agent votes honestly on their behalf, making quorum-sniping attacks impossible). Recorded skeptically: it raises attacker cost by raising participation, which is real, but it presumes an "honest" agent layer that is itself attackable (compromised delegates, manipulated inputs), and it does not change the structural fact that governance with something to steal is a market for control. The Stage 2 posture stays primary: minimize what any vote can touch; prefer immutable mechanisms and fork-based upgrades over votes; where community DAOs exist (Phase 4), design their scope so that capturing them is not worth the price.
 
 ## Open questions
 
