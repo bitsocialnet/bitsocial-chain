@@ -1,6 +1,6 @@
 # Economics Discussion — Burn, Liquidity, and the Stage 2 Constraint
 
-**Status: open design discussion, not a spec.** Nothing here is normative or committed. Companion to [DESIGN.md](DESIGN.md) (architecture reasoning) and [POC_LIMITATIONS.md](POC_LIMITATIONS.md), which both defer economics to future work. This document captures a recurring design debate so it survives outside chat logs. Last updated 2026-08-08.
+**Status: open design discussion, not a spec.** Nothing here is normative or committed. Companion to [DESIGN.md](DESIGN.md) (architecture reasoning) and [POC_LIMITATIONS.md](POC_LIMITATIONS.md), which both defer economics to future work. This document captures a recurring design debate so it survives outside chat logs. Last updated 2026-08-18.
 
 ## Context
 
@@ -147,6 +147,16 @@ The "different communities need different systems" position concedes this archit
 
 **The registry is the deliverable.** The claimed 100–200 considerations are exactly what this document exists to capture, and the standing invitation from this round is to write them down. Format: failure mode → causal mechanism → design constraint that prevents it → which template(s) it binds. Constraints universal to all templates (immutable monetary core, enforced allocation transparency, revenue-gated issuance) separate from per-template choices. This registry — not parameter values — is the Phase 4/5 design artifact: parameters are chosen last, inside constraints that survived both the registry and the Stage 2 filter.
 
+## Round 6: correlated pairs and bridge liquidity (August 18, 2026)
+
+Hayden Adams's [tweet](https://x.com/haydenzadams/status/2089531754004554215) introducing [*Correlated Pairs: How AMMs Win the Biggest Markets*](https://x.com/i/article/2089523718137466880) provides an independent market-structure lens on the existing numeraire debate. Its central observation is that on-chain liquidity tends to organize into clusters of correlated assets connected by a small number of higher-risk bridge pairs. LPs can provide the correlated pairs more cheaply because the two inventories move together; active market makers concentrate on the bridge pairs because those pairs carry more flow and justify the cost of hedging.
+
+**What this strengthens.** The pattern matches round 2's proposed liquidity graph: community-token/BSO markets connected to the wider economy through one deep canonical BSO/stable bridge. That bridge is not a concession to dollar denomination; it is the entry, exit, and hedge leg that can make BSO-denominated markets practical. Native Bitsocial order flow can further attract independent market makers to the community-token/BSO side of the graph.
+
+**What it does not establish.** Ecosystem membership does not make a community token and BSO correlated by definition. The relationship must emerge from actual price co-movement, shared economic exposure, LP demand to hold both inventories, or enough order flow to pay for the uncorrelated risk. Declaring a BSO pair selects a routing and settlement asset; it does not supply liquidity or make the pair cheap to market-make. The article also does not choose between external LPs and protocol-funded liquidity, passive and concentrated strategies, or continuous and batch execution. Its discussion of customizable AMMs does not solve LVR, tail latency, manipulation resistance, the Stage 2 discretion boundary, or the current Facet-style architecture's execution constraints.
+
+**Design implication.** Treat correlated-pair structure as an eligibility test, not a slogan. AgoraSwap's long-term thesis remains a connected on-chain economy with BSO as the common routing asset, but the mechanism should not assume every community-token/BSO market deserves equally tight or subsidized liquidity. Where correlation is weak, a full-range base, wider spreads, retreat-on-volatility, batch clearing, and the BSO/stable hedge leg matter more—not less.
+
 ## Open questions
 
 1. **Numeraire policy**: BSO pairs only, or BSO + stable pairs? What does the ETH-pairs-lost-to-USDC precedent imply for LP incentives and the moneyness thesis?
@@ -176,6 +186,10 @@ Added after round 5:
 16. **Transparency enforcement**: which insider disclosures can the protocol enforce by construction (allocations, vesting, owner wallets declared at issuance) versus merely encourage — and how much does enforced legibility actually shrink the misattribution problem?
 17. **The failure-mode registry**: collect the full claimed 100–200-item list into failure → mechanism → constraint → template-scope form; determine which constraints are universal versus per-template, and which questions dissolve under the Stage 2 filter before parameterization ever starts.
 
+Added after round 6:
+
+18. **Correlation and route eligibility**: what evidence—realized correlation, LP P&L, durable order flow, or shared value exposure—justifies tighter community-token/BSO liquidity, and when should routing tolerate a direct stable pair instead of forcing every trade through BSO?
+
 ## References
 
 - Facet: [facet.org](https://facet.org/), [docs.facet.org](https://docs.facet.org/), [L2Beat — Facet](https://l2beat.com/scaling/projects/facet) (Stage 2 assessment, risk analysis, cost and activity data; checked 2026-07-04).
@@ -186,3 +200,4 @@ Added after round 5:
 - Egorov — *Automatic market-making with dynamic peg* (Curve v2 whitepaper, 2021): concentrated liquidity around an internal EMA price with profit-gated rebalancing — the closest existing implementation of oracle-free "smart" liquidity.
 - Canidio & Fritsch — *Arbitrageurs' profits, LVR, and sandwich attacks: batch trading as an AMM design response* (2023, FM-AMM): per-block uniform clearing prices reduce LVR and sandwiching for the liquidity underneath.
 - Balancer Liquidity Bootstrapping Pools (LBPs): descending-price launch auctions — the time-stretched form of uniform-clearing fair launch referenced in round 5.
+- Hayden Adams — [introductory tweet](https://x.com/haydenzadams/status/2089531754004554215) and [*Correlated Pairs: How AMMs Win the Biggest Markets*](https://x.com/i/article/2089523718137466880) (2026): tokenized assets organizing into correlated-pair clusters connected by a few higher-risk bridge pairs; supports the BSO/stable hedge-leg framing without prescribing a protocol-owned strategy.
