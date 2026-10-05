@@ -14,7 +14,7 @@ Names are the right first primitive because they are:
 
 ## How this fits the Bitsocial roadmap
 
-Phase 1 builds the wedge apps (5chan, Seedit) and the public RPC layer; Phase 2 adds the economic layer so those apps gain network effects that centralized competitors can't choke off; Phase 3+ build the flagship profile-based app on top. This repo is the first Phase-2 artifact: it proves the architecture Bitsocial Chain primitives should share — Ethereum-anchored, derivable by anyone, no operator in the trust path — on the smallest useful feature.
+Phase 1 builds the wedge apps (5chan, Seedit) and the public RPC layer; Phase 2 adds the economic layer so those apps gain network effects that centralized competitors can't choke off; Phase 3+ build the flagship profile-based app on top. This repo is the first Phase-2 artifact: it demonstrates the properties every Bitsocial Chain primitive must keep — Ethereum-anchored, derivable by anyone, no operator in the trust path — on the smallest useful feature. It does not settle the execution architecture for the rest of the chain; see [How this expands to the rest of Bitsocial Chain](#how-this-expands-to-the-rest-of-bitsocial-chain).
 
 ## Social data stays P2P
 
@@ -104,14 +104,17 @@ Stage 2 (per L2Beat-style maturity standards) needs more than "no admin keys", w
 7. **Real state commitments** (verkle/merkle state root) replacing the canonical-JSON sha256.
 8. **A privacy-compatibility review** before adding tipping, awards, payments, or shared liquidity: every new intent should be checked for unnecessary linkage between social identity, wallet identity, amounts, counterparties, and read/query metadata.
 
+A native rollup would get items 1, 2, and 7 from Ethereum's own proof infrastructure instead of a bespoke proof system; see [RESEARCH_NATIVE_ROLLUPS.md](RESEARCH_NATIVE_ROLLUPS.md).
+
 ## How this expands to the rest of Bitsocial Chain
 
-The pattern generalizes: every future primitive is *intents on L1 → deterministic derivation → small economic state*, never social content.
+The properties generalize; the L1-calldata derivation mechanism may not. It fits low-frequency ownership records like names. Primitives that need batching, cheap data availability, full EVM execution, and a sequencing choice — community tokens, payments at scale, AgoraSwap — likely need a full rollup. Native rollups are the leading candidate ([RESEARCH_NATIVE_ROLLUPS.md](RESEARCH_NATIVE_ROLLUPS.md)); the decision is open. On either architecture, economic state stays small and social content stays off-chain.
 
+- **Names**: if the chain becomes a rollup, `.bso` likely moves to a registry contract there. A fork of the ownerless `.gwei` name service is the candidate; it would replace this POC's SPEC rules (expiring, renewable names with burned fees instead of permanent registration).
 - **Awards/tipping**: intents referencing a recipient public key or `.bso` name; derived balances/award records; clients render them next to P2P content they fetched themselves.
 - **Payments/monetization**: payment intents settle value on L1 (or a real L2); derived state only indexes receipts/entitlements that clients may choose to honor (e.g. badge challenges).
-- **Shared liquidity**: token/AMM-style primitives are exactly what graduating to the real Ethscriptions/Facet-style appchain stack (path A) is for. The open burn-vs-liquidity design debate and its Stage 2 constraints are captured in [ECONOMICS_DISCUSSION.md](ECONOMICS_DISCUSSION.md).
+- **Shared liquidity**: token/AMM-style primitives need a full EVM rollup: graduating to the Ethscriptions/Facet-style appchain stack (path A) or a native rollup. The open burn-vs-liquidity design debate and its Stage 2 constraints are captured in [ECONOMICS_DISCUSSION.md](ECONOMICS_DISCUSSION.md).
 
-Each addition is a new intent namespace and a new reducer over the same inbox pattern — the social layer never moves on-chain, and apps/RPCs/discovery stay replaceable.
+On the derivation architecture, each addition is a new intent namespace and a new reducer over the same inbox pattern; on a rollup, each is an ordinary contract. Either way the social layer never moves on-chain, and apps/RPCs/discovery stay replaceable.
 
 For economic features, the reducer should store the minimum public state required for verification and UX. A tip can be publicly displayed when the sender wants credit, but the protocol should not require public sender identity, public recipient identity, and public amount to all be linked forever. Where practical, future designs should prefer opaque receipts, commitments, nullifiers, proof-verifiable entitlements, and app-layer display choices over hard-coding a fully transparent social-financial graph.
