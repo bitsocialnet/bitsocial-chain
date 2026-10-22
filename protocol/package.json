@@ -21,7 +21,7 @@
     "build": "tsc -b"
   },
   "dependencies": {
-    "viem": "2.52.2"
+    "viem": "2.54.2"
   },
   "repository": {
     "type": "git",
