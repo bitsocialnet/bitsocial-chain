@@ -57,7 +57,7 @@ Permissions in the demo: the rollup contract has no owner. Only the sequencer ad
 | Item | What it is | Status |
 |---|---|---|
 | EIP-8079 | Native rollups via EXECUTE | Draft |
-| EIP-8025 | Optional execution proofs (consensus-layer proof infrastructure) | Draft; proposed for Hegotá |
+| EIP-8025 | Optional execution proofs (consensus-layer proof infrastructure) | Draft; **declined for Hegotá** on 2026-10-15 per the Native Rollups Book status page (l2beat.com/native-rollups still says proposed). EIP-8357 lists it as a requirement |
 | EIP-8142 | Block-in-Blobs: execution-payload data published in blobs | Draft; **declined for Hegotá**. Native rollups need it in a later fork or another way to bind L2 data |
 | EIP-8288 | In-mempool signature and STARK aggregation through an EIP-8141 frame mode; dependencies are folded into one recursive block-level STARK (Buterin, Coratger; created 2026-06-03) | Draft (merged September 2026, last updated 2026-10-15). Open questions on mempool proving costs and how the aggregate enters the block proof; it does not yet define LeanSTARK dependencies for arbitrary programs |
 | EIP-8357 | EVM verification key registry: a system contract with the canonical EVM verification key hash per L1 fork; requires EIP-8288 among others | Draft, merged 2026-10-14 (PR #12055); not in any client or fork |
@@ -161,7 +161,7 @@ Audit: the repo's `audit/` folder holds upstream wei-names audit notes (per its 
 ## 7. Options
 
 **A. Native rollup as the target, a GNS fork for names, plain EVM in the meantime. (Recommended direction, not a decision.)**
-Native rollups forbid custom precompiles, so anything that will eventually run on one is plain EVM and runs on any EVM chain today. Build and test the `.bso` GNS fork, and later the community-token and AgoraSwap contracts, as portable EVM contracts. Choose the chain once native proof verification has a fork date. This avoids both waiting idle and locking into an interim chain.
+Native rollups forbid custom precompiles, so anything that will eventually run on one is plain EVM and runs on any EVM chain today. Build and test the `.bso` GNS fork, and later the community-token and AgoraSwap contracts, as portable EVM contracts. Choose the chain once the native rollup proof path (EIP-8288 with EIP-8357) is scheduled for a named fork. This avoids both waiting idle and locking into an interim chain.
 
 **B. Ship on an existing Stage 2 EVM rollup now (for example Facet) and migrate later.**
 Real today, but Facet's limits (calldata DA, about $3 of L1 cost per operation, one batch per hour, a trusted fast bridge; RESEARCH_AZTEC_VS_FACET.md §3) are exactly AgoraSwap's blockers, and migrating names and balances later is costly.
@@ -184,7 +184,7 @@ Works today, but it creates the verifier-governance and upgrade burden that nati
 
 - **Timeline**: no scheduled fork, L2BEAT's roadmap no longer carries dates, and mandatory execution proofs are expected in K* at the earliest. Signals: EIP-8288 and EIP-8357 proposed for a named fork, real zkVM proofs on a public devnet, and a block data path to replace Block-in-Blobs after it missed Hegotá.
 - **Design churn**: the proof path has already changed twice (EXECUTE re-execution, then proof-carrying transactions, then EIP-8288 proof dependencies). Plain EVM contracts are insulated; anything that depends on the rollup-contract interface is not.
-- **Fork-boundary liveness**: a rollup that follows the current EVM key can halt at an L1 fork if no prover is ready under the new key; a pinned rollup keeps a key that is never revoked. Either way the exposure is fixed at deployment.
+- **Fork-boundary liveness**: a rollup that follows the current EVM key can halt at an L1 fork if no prover is ready under the new key; a pinned rollup keeps a key that is never revoked. The mode is fixed at deployment, but a following rollup faces the liveness risk again at every L1 fork, while a pinned one stays tied to the key it chose.
 - **Sequencer centralization**: the reference demo uses one sequencer. Adopting it unchanged would regress the POC's no-operator property.
 - **Fixed fees in BSO**: immutable constants in a volatile asset.
 - **Homograph exposure** if GNS label rules are adopted unchanged.
@@ -192,7 +192,7 @@ Works today, but it creates the verifier-governance and upgrade burden that nati
 
 ## 10. Sources
 
-- nativerollups.fyi: explorer home and About page ("What's real and what's mocked", "Contracts and permissions"), captured 2026-10-05 and again 2026-10-26; @donnoh_eth announcement post describing it as "a closed devnet based on frames-devnet-0 running a (half mocked) native rollup"
+- nativerollups.fyi: explorer home and About page ("What's real and what's mocked", "Contracts and permissions"), captured 2026-10-05 and again 2026-10-26; Native Rollups Book status page (`nativerollups.fyi/book/status.html`), captured 2026-10-26; @donnoh_eth announcement post describing it as "a closed devnet based on frames-devnet-0 running a (half mocked) native rollup"
 - L2BEAT: `l2beat.com/native-rollups` (design overview, customization surface, roadmap, "not part of any scheduled Ethereum hard fork", "What Ethereum still needs"), captured 2026-10-05 and again 2026-10-26; L2BEAT thread on native proof verification, 2026-10-26 (`x.com/l2beat/status/2114715822820143218`)
 - `eips.ethereum.org/EIPS/eip-8079` (Native rollups, Draft), `…/eip-8288` (In-mempool signature and proof aggregation, Draft), `…/eip-8142` (Block-in-Blobs, Draft), `…/eip-8025` (Optional Execution Proofs, Draft)
 - EIP-8357 (EVM Verification Key Registry): merged Draft text in `ethereum/EIPs` (`EIPS/eip-8357.md`, PR #12055, merged 2026-10-14; abstract, rationale "Current and pinned verification key hashes", security considerations) and the Ethereum Magicians thread
