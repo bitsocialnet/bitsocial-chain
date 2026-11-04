@@ -1,6 +1,6 @@
 # Native rollups and a .gwei fork for Bitsocial Chain
 
-Research snapshot, 2026-10-05; status updated 2026-10-26 after EIP-8357 was merged as a Draft. Sources: nativerollups.fyi (live explorer and its About page), l2beat.com/native-rollups, EIP-8079, EIP-8288, EIP-8357 (merged Draft text), EIP-8142, coverage of the Hegotá fork scope, and github.com/lucadonnoh/gwei-names. Companion docs: [DESIGN.md](DESIGN.md), [ECONOMICS_DISCUSSION.md](ECONOMICS_DISCUSSION.md), [RESEARCH_AZTEC_VS_FACET.md](RESEARCH_AZTEC_VS_FACET.md).
+Research snapshot, 2026-10-05; status updated 2026-10-26 after EIP-8357 was merged as a Draft; cross-references updated 2026-11-05 for BSIP-13 and [RESEARCH_EEZ.md](RESEARCH_EEZ.md). Sources: nativerollups.fyi (live explorer and its About page), l2beat.com/native-rollups, EIP-8079, EIP-8288, EIP-8357 (merged Draft text), EIP-8142, coverage of the Hegotá fork scope, and github.com/lucadonnoh/gwei-names. Companion docs: [DESIGN.md](DESIGN.md), [ECONOMICS_DISCUSSION.md](ECONOMICS_DISCUSSION.md), [RESEARCH_AZTEC_VS_FACET.md](RESEARCH_AZTEC_VS_FACET.md).
 
 **Status of this document: candidate evaluation, not a decision.** The `.bso` POC in this repo remains the reference for the naming primitive. Nothing described here is implemented.
 
@@ -13,7 +13,7 @@ Research snapshot, 2026-10-05; status updated 2026-10-26 after EIP-8357 was merg
 - **Sequencing becomes the main open decision.** A native rollup's contract chooses centralized sequencing with preconfirmations, based sequencing, or a staked set. That choice decides whether the POC's "no operator" property survives. It is ECONOMICS_DISCUSSION.md open question 7 in concrete form.
 - **Following or pinning L1's EVM is the second.** EIP-8357 lets a rollup contract follow the current EVM verification key, inheriting every L1 execution upgrade, or pin a historical one. For an ownerless, non-upgradeable rollup contract the choice is permanent. Following risks a halt at an L1 fork if no prover is ready; pinning keeps a key that is never revoked even if later found insecure. Recommended direction: follow (section 4).
 - **A fork of the .gwei name service (GNS) is a strong candidate for `.bso` on that chain.** GNS is ownerless, non-upgradeable, MIT-licensed, and ENS-compatible, including text records, so the `bitsocial` record clients already read carries over. It has fixed burned fees, expiry, and anti-snipe premiums, which is the economics the POC lacks. It would replace this POC's [SPEC.md](SPEC.md) rules, not extend them.
-- **Recommendation:** name native rollups as the leading candidate for the production chain without committing to it, and keep everything built in the meantime as plain EVM contracts so it can move. The Bitsocial-side work that is useful now is a `.bso` fork of GNS on a local or test EVM chain.
+- **Recommendation:** name native rollups as the leading candidate for the production chain without committing to it, and keep everything built in the meantime as plain EVM contracts so it can move. The Bitsocial-side work that is useful now is a `.bso` fork of GNS, which [BSIP-13](https://bsips.bitsocial.net/bsip-13) now specifies as an interim registry on Ethereum mainnet.
 
 ---
 
@@ -140,7 +140,7 @@ What a `.bso` fork would change:
 - **TLD**: `.gwei` → `.bso`.
 - **Fee asset**: GNS charges `msg.value` in the chain's native token. On a native rollup with BSO as the gas token, the same code would charge and lock native BSO, which matches the burn-centric tokenomics. On a chain where BSO is an ERC-20, the fee path needs rewriting. Either way, fee levels need re-deriving in BSO terms, and immutable constants in a volatile asset can drift toward trivially cheap (squatting) or prohibitive.
 - **Records**: the `bitsocial` text record the BSO Resolver reads from ENS today would be read from the fork's contract on the L2 instead.
-- **Migration**: current `.bso` names are `.eth` aliases resolved through ENS (DESIGN.md). A native registry needs a claim or migration policy for existing holders. gwei.domains lists an "ENS to GNS Migrator" integration worth studying.
+- **Migration**: current `.bso` names are `.eth` aliases resolved through ENS (DESIGN.md). [BSIP-13](https://bsips.bitsocial.net/bsip-13) (Draft, 2026-11-04) now sets the policy: an interim GNS fork on Ethereum mainnet is seeded from every `.eth` name with a `bitsocial` record at a snapshot block, and when Bitsocial Chain launches it can be frozen and its state imported onto the chain at no charge. BSIP-13 sends fees to a fixed multisig instead of burning them.
 
 What it changes relative to this POC's SPEC.md:
 
@@ -172,13 +172,16 @@ Fine for names. ECONOMICS_DISCUSSION.md already concludes it cannot host competi
 **D. Build a bespoke ZK rollup now (OP-Succinct or SP1 style, as Facet did).**
 Works today, but it creates the verifier-governance and upgrade burden that native rollups exist to remove.
 
+**E. An Ethereum Economic Zone rollup (added 2026-11-05).**
+Needs no hard fork and adds synchronous calls to L1, which suits AgoraSwap's liquidity needs better than any other option. Today it carries upgradeable shared contracts, owner-chosen provers, ECDSA attestations and a centralized first instance. Evaluated in [RESEARCH_EEZ.md](RESEARCH_EEZ.md), which keeps option A as the direction and lists triggers for revisiting.
+
 ## 8. Next steps
 
-1. **`.bso` GNS-fork spike** on a local EVM chain (Hardhat or anvil): rename the TLD, charge fees in the native token, and resolve a `bitsocial` text record end to end through a resolver shaped like `@bitsocial/bso-resolver`. Decide label rules (ASCII-only on-chain, or ENSIP-15 in clients), fee levels, and whether fixed constants in BSO are acceptable.
+1. **`.bso` GNS fork**: superseded by [BSIP-13](https://bsips.bitsocial.net/bsip-13), which specifies the fork for Ethereum mainnet (TLD, label rules with ENSIP-15 in clients, upstream ETH prices, fees to a multisig) ahead of Bitsocial Chain. Fee levels in BSO remain open for the chain's own registry BSIP.
 2. **Sequencing decision** in ECONOMICS_DISCUSSION.md (question 7), together with AgoraSwap's mechanism choice.
 3. **Follow-or-pin decision** for the rollup contract's EVM verification key (section 4), including how prover readiness at each L1 fork would be organized without an admin key.
 4. **Track L1 milestones** (L2BEAT's roadmap is now undated): EIP-8288 and EIP-8357 proposed together for a named fork, EIP-8357 in clients, a block data path after Block-in-Blobs was declined for Hegotá, real zkVM proofs replacing the devnet's signed mocks, and the fork that brings mandatory execution proofs (K* at the earliest).
-5. **Migration policy** for current ENS-alias `.bso` holders.
+5. **Migration policy** for current ENS-alias `.bso` holders: specified by BSIP-13 (seed list at a snapshot block, then a frozen-state import when the chain launches).
 
 ## 9. Risks and monitoring signals
 
