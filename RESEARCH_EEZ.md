@@ -76,7 +76,7 @@ In short, Gnosis is giving up a large independent validator set in exchange for 
 [BSIP-13](https://bsips.bitsocial.net/bsip-13) (Draft, 2026-11-04) puts `.bso` names in an ownerless, non-upgradeable fork of GNS on Ethereum mainnet now. It is temporary: when Bitsocial Chain launches, the fee recipient may call `sunset()`, which freezes the registry after 30 days, and a later BSIP for the chain's registry must import the frozen state at no charge. Two consequences for this evaluation:
 
 1. **Names are no longer the reason to pick a chain.** The chain's job is payments, community tokens and AgoraSwap. Those are exactly the features where access to liquidity decides whether the venue works.
-2. **BSIP-13 is architecture-neutral, so it needs no change.** The registry is plain EVM with the ENS `text(node, key)` interface, so it runs unchanged on any EVM chain, which is the strategy both this document and RESEARCH_NATIVE_ROLLUPS.md recommend. Nothing in BSIP-13 forces a sunset, so if an EEZ-style chain could read the L1 registry synchronously, keeping names on L1 and never migrating would remain an option.
+2. **BSIP-13 is architecture-neutral, so it needs no change.** The registry is plain EVM with the ENS `text(node, key)` interface, so its code ports to any EVM chain, which is the strategy both this document and RESEARCH_NATIVE_ROLLUPS.md recommend. Its prices are fixed ETH amounts charged through `msg.value`, so on a chain whose gas token is BSO or xDAI they would have to be re-derived; BSIP-13 leaves the chain registry's fees to a later BSIP. Nothing in BSIP-13 forces a sunset, so if an EEZ-style chain could read the L1 registry synchronously, keeping names on L1 and never migrating would remain an option.
 
 ### Where the EEZ fits
 
