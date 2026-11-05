@@ -84,6 +84,8 @@ Within B, two intent transports were considered: an **immutable Solidity inbox c
 - **Authentication**: ownership is L1 signature possession; no platform account, no recovery backdoor.
 - **Exit/fork-ability**: because state is derived, the community can fork the rules and re-derive — the history can't be held hostage.
 
+This is the main difference from [Namecoin](https://www.namecoin.org/), the original dedicated name chain: Namecoin secures names with its own merge-mined proof of work, where a single mining pool [held more than half the hash rate for months in 2014](https://www.usenix.org/system/files/conference/atc16/atc16_paper-ali.pdf), while `.bso` names on Bitsocial Chain are ordered by Ethereum and registered with ordinary transactions from any Ethereum wallet.
+
 ## Trust assumptions remaining in the POC
 
 - **You trust the derivation node you query** (like trusting an RPC). Mitigations available now: run your own node (`npm install` + a JSON-RPC endpoint) or cross-check `stateHash` across independent nodes. Mitigation needed for production: proofs (below).
