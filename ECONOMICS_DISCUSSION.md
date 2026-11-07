@@ -2,6 +2,33 @@
 
 **Status: open design discussion, not a spec.** Nothing here is normative or committed. Companion to [DESIGN.md](DESIGN.md) (architecture reasoning) and [POC_LIMITATIONS.md](POC_LIMITATIONS.md), which both defer economics to future work. This document captures a recurring design debate so it survives outside chat logs. Last updated 2026-11-07.
 
+## Where this stands
+
+For an engineer picking this up: what the rounds below have converged on, what blocks building, and what can wait. The settled positions are not a spec, but treat them as constraints unless a later round reverses one.
+
+**Settled**
+
+- **BSO stays as it is.** Fixed 210M supply, immutable, no mint. Nothing on the chain changes BSO itself (round 7).
+- **Stage 2, no discretion.** No operator, external oracle, or tunable parameter in any trust path. Immutable AMMs, vaults, and permissionless LPing are fine; a protocol-run strategy is not (The Stage 2 constraint).
+- **Burn is the default sink.** Any fee flow without a trustless better use is burned. Gas fees and swap fees are separate flows (Resolution, round 2).
+- **The protocol is never the market maker.** Protocol-owned liquidity, if any, follows fixed rules and has no withdrawal path: a full-range base, or single-sided at launch. A rule-driven concentrated layer on top is still open (rounds 1, 2, 7).
+- **No treasury in the value path.** Community revenue settles and burns in-contract at the point of sale, so nothing pools for a vote or an owner to spend (rounds 2, 4).
+- **Monetary rules freeze per token; designs iterate per template.** Each community token's supply, allocations, vesting, and value-accrual rules are fixed at deployment. Improvements ship as new template versions for new communities (round 5).
+- **No mechanism that needs a judge.** Anything that must identify snipers, whales, influencers, or contributors is out; entry barriers, distribution shape, and time are in (round 5).
+- **Fair launch by auction, not anti-snipe taxes.** Uniform-clearing batch auctions or descending (Dutch) auctions at genesis (rounds 5, 7).
+- **BSO is the common routing asset,** with one deep canonical BSO/stable market as the entry, exit, and hedge leg (rounds 2, 6).
+- **Architecture before mechanism.** No liquidity or venue design is final until batching, data availability, and sequencing are decided (Resolution).
+
+**Blocking, in order**
+
+1. **Chain architecture and sequencing:** native rollup, Ethereum Economic Zone, or another Stage 2 design, and based or sequenced blocks ([README](README.md#production-architecture-open)). Everything below depends on it; questions 4, 5, and 7 are part of it.
+2. **Gas-fee split:** the burn and security shares, and whether they can be fixed forever at deployment (question 2).
+3. **Community-token template v1:** whether it issues at all (19), owner allocation and vesting (14), the creation gate (11), enforced disclosures (16), and how revenue splits between the community's own burn, a BSO burn share, and tips (15, 20).
+4. **AgoraSwap routing:** BSO-only pairs or BSO plus stable pairs, and where the hedge leg lives (1, 9, 18).
+5. **Legal review** of the token and fee design before any launch (6).
+
+**Can wait:** the concentrated "smart" liquidity layer (3, 8, 10) until tokens reach the maturity threshold; template discovery (13) until a v2 exists; the "51/49" placeholder (12) until someone defines it. The failure-mode registry (17) is ongoing and feeds item 3.
+
 ## Context
 
 The public tokenomics story for BSO (see [chain.bitsocial.net](https://chain.bitsocial.net)) is burn-centric: network layers settle in BSO, a share of fees is burned, the rest pays for security; community ad revenue burns the community's token at settlement ("burn at the point of revenue, not buyback from a treasury"). Phase 5 of the master plan proposes AgoraSwap, a community DEX where every ecosystem token pairs with BSO.
