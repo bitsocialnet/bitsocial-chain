@@ -1,6 +1,6 @@
 # Economics Discussion — Burn, Liquidity, and the Stage 2 Constraint
 
-**Status: open design discussion, not a spec.** Nothing here is normative or committed. Companion to [DESIGN.md](DESIGN.md) (architecture reasoning) and [POC_LIMITATIONS.md](POC_LIMITATIONS.md), which both defer economics to future work. This document captures a recurring design debate so it survives outside chat logs. Last updated 2026-08-18.
+**Status: open design discussion, not a spec.** Nothing here is normative or committed. Companion to [DESIGN.md](DESIGN.md) (architecture reasoning) and [POC_LIMITATIONS.md](POC_LIMITATIONS.md), which both defer economics to future work. This document captures a recurring design debate so it survives outside chat logs. Last updated 2026-11-07.
 
 ## Context
 
@@ -157,6 +157,41 @@ Hayden Adams's [tweet](https://x.com/haydenzadams/status/2089531754004554215) in
 
 **Design implication.** Treat correlated-pair structure as an eligibility test, not a slogan. AgoraSwap's long-term thesis remains a connected on-chain economy with BSO as the common routing asset, but the mechanism should not assume every community-token/BSO market deserves equally tight or subsidized liquidity. Where correlation is weak, a full-range base, wider spreads, retreat-on-volatility, batch clearing, and the BSO/stable hedge leg matter more—not less.
 
+## Round 7: The Standard Reserve and what survives as a launch template (November 7, 2026)
+
+A community member proposed that, however it performs, the model of [The Standard Reserve](https://www.standardreserve.xyz/) (`$STANDARD`, live on Robinhood Chain since its genesis charter sale on September 14, 2026) should be applied to Bitsocial tokens. Standard calls itself a "sovereign onchain central bank" and descends from OlympusDAO's (3,3) design. Its mechanism, from its whitepaper and live parameters page (checked 2026-11-07):
+
+- **Supply.** 1B hard cap. The only pre-mint is 100M placed single-sided above the launch price in a hooked Uniswap v4 ETH pool, as protocol-owned liquidity with no withdrawal path; buyers' ETH becomes the liquidity beneath the price. The other 900M is an issuance budget. Every burn, and every ledger removal, permanently lowers the mintable ceiling.
+- **Issuance goes to operators, not holders.** A charter (a soulbound NFT; 1,000 sold at genesis for 0.15 ETH, then daily Dutch auctions in ETH) runs 1 to 10 branches, and each branch streams an equal share of 700,000 × m tokens per day. Issuance is a ledger balance, minted only on withdrawal. Holding the token earns nothing.
+- **One policy signal.** Net ETH flow through the canonical pool. The multiplier m moves between 0.2× and 1.25× on a trailing two-epoch signal (3-day epochs): −0.15 immediately on a negative signal, +0.10 only from the second consecutive positive epoch. Fee routing follows the current epoch's sign.
+- **Fee engine.** A protocol tax paid in ETH (opened at 90% buy / 90% sell as anti-snipe, decayed to 2% / 3% within an hour): 70% to the expansion vault (buys tokenized gold as reserves) or the contraction vault (rate-limited buyback and burn) by flow sign, 15% to buybacks held in an incentives vault, 15% to the team.
+- **Sinks.** Extra branches require expansion licenses, Dutch-auctioned in `$STANDARD` and 100% burned. Withdrawing retires the branch that earned it and pays a resolution fee from 2% to 60%, quadratic in 7-day system-wide exit pressure; half burns, half goes to the bankers who stayed. Charters inactive for 30 days can be reported by anyone and pay a 70% revocation fee.
+- **Since launch.** A "Second Mandate" repositions it as a liquidity reservoir for Robinhood stock tokens, with a token launchpad (whose tokens can drop up to 80% of their supply to charter holders), a trading-points season seeded with $1.1M from the Reserve, and S-Bills: fixed-term `$STANDARD` deposits quoted at 80–100% APR, with the yield source not stated in the docs.
+
+**Live state (2026-11-07).** Max supply 969.1M after 30.9M burned or retired. 79.7M minted (32.9M still in the genesis pool position, 44.3M in wallets, 2.5M in the incentives vault), 10.5M accrued inside banks and not yet minted, 879.0M unissued. Minted plus accrued (90.1M) plus removed (30.9M) minus the 100M genesis puts issuance since launch at about 21M, so supply has contracted. The multiplier has fallen from 1.0× to 0.3×, so negative-flow signals have outweighed positive ones. Price about $0.21, market cap about $17M, roughly 53% below its high (CoinGecko). Two months is too short to judge the design by price; recorded as context only.
+
+**Scope: not BSO.** BSO is a fixed 210M supply, fully distributed, with an immutable, adminless contract and no mint function. A central-bank model needs an issuance budget and a privileged issuing contract, so applying it to BSO means a new token, which would discard the provenance BSO's token history exists to establish. The proposal can only apply to community tokens and community L3s.
+
+**The central-bank core does not carry over.** Most of Standard's machinery exists to steer emissions: flow-reactive issuance, paid seats, expansion licenses, and the reserve/buyback fee engine. Community tokens in the current design are fixed-supply with value accrual from revenue burns, so that machinery has nothing to steer. As deployed, it also fails the Stage 2 filter:
+
+- **Discretion.** The contracts are non-upgradeable, but the owner (a Safe on Robinhood Chain; threshold not checked) can change taxes (up to 10%), fee splits (team up to 20%), epoch length, and auction floors with no timelock; runs the buybacks; is the only party allowed to buy reserves; can replace the launchpad's entire config in one call; and reserves the right to cut points-season payouts. Rounds 1–2 draw the line at discretion, and every item here is on the wrong side of it.
+- **A treasury.** The expansion vault is a pooled, owner-spent reserve: the honeypot round 4 says burn-at-revenue avoids, and what chain.bitsocial.net explicitly rules out ("no buyback treasury for anyone to capture").
+- **Circular yield.** Issuance, S-Bill premiums, and fee revenue are funded mostly by trading in the token itself and by new entrants. Circular trading transfers value among participants and charges them for it; it does not create value. Bitsocial's thesis is accrual from external revenue (ad auctions, tips, names).
+- **Seats bought with capital.** Standard's answer to "who earns issuance" is whoever buys a charter. That needs no judge, which is why it works on-chain, but it makes issuance a return on capital paid for by dilution: the (3,3) shape round 3's PvE thesis is meant to avoid. The alternative that sounds better for communities, issuance to moderators, seeders, or curators, needs a judge and fails round 5's rule.
+- **Chain.** Robinhood Chain runs a Robinhood-operated sequencer; it is not Stage 2.
+
+If a future template does issue, flow-reactive issuance with an asymmetric response (cut fast, raise slowly) is a deterministic, oracle-free rule over the canonical pool's own state, and Stage 2-clean if frozen at deployment. On Bitsocial the signal would be net BSO flow through the community-token/BSO pool on AgoraSwap. Whether any template should issue at all is question 19.
+
+**What carries over: a launch template.** Three of Standard's mechanisms work independently of issuance, each a fixed rule with no judge:
+
+- **Non-withdrawable single-sided genesis liquidity.** Round 1's immutable backstop liquidity, with one improvement: it needs no seed capital. The community token is placed single-sided above the launch price in its canonical BSO pool, and buyers' BSO becomes the liquidity beneath the price.
+- **Dutch-auctioned launch.** The time-stretched fair-launch mechanism round 5 already favors.
+- **Exit-pressure fees paid to stayers.** A fee that rises with recent system-wide exits, half burned and half paid to those who stay, inverts the bank-run payoff mechanically. It needs a position people can leave, such as a lock or a stake; on plain spot sells it reduces to a volatility-responsive sell fee, which round 1's dynamic-fee item already covers.
+
+**BSO as a reserve asset: rejected in favor of a burn share.** Standard's expansion vault stacks tokenized gold, and a community template could stack BSO instead. A reserve with no withdrawal path is a BSO burn with extra steps, and its "backing" means nothing because nobody can redeem it. A spendable reserve is a pot: the round 4 honeypot. Routing a fixed share of settled community revenue to buy and burn BSO has the same effect on BSO supply and keeps the property that every community's growth becomes BSO demand, with no pot (question 20).
+
+**Disposition.** Standard's central-bank model is not adopted. Its surviving parts are recorded as a candidate launch template for round 5's versioned registry: non-withdrawable single-sided genesis liquidity, a Dutch-auctioned opening, and exit-pressure fees wherever a template has a position to exit, all fixed at deployment with no owner.
+
 ## Open questions
 
 1. **Numeraire policy**: BSO pairs only, or BSO + stable pairs? What does the ETH-pairs-lost-to-USDC precedent imply for LP incentives and the moneyness thesis?
@@ -190,6 +225,11 @@ Added after round 6:
 
 18. **Correlation and route eligibility**: what evidence—realized correlation, LP P&L, durable order flow, or shared value exposure—justifies tighter community-token/BSO liquidity, and when should routing tolerate a direct stable pair instead of forcing every trade through BSO?
 
+Added after round 7:
+
+19. **Issuance**: should any community template issue at all? If so, who receives it without a judge? Paid seats (Standard) are judge-free but make issuance a return on capital paid for by dilution; shares weighted by value a participant has settled through on-chain contracts may be the costly-signal equivalent of round 3's gating rule. And what does it cost to push a net-flow signal positive (buying ahead of an epoch boundary and selling after) at realistic community-token pool depths?
+20. **BSO burn share**: should templates route a fixed share of settled community revenue to buy and burn BSO? What share leaves the community's own value accrual intact, and how does it interact with tip coupling (question 15)?
+
 ## References
 
 - Facet: [facet.org](https://facet.org/), [docs.facet.org](https://docs.facet.org/), [L2Beat — Facet](https://l2beat.com/scaling/projects/facet) (Stage 2 assessment, risk analysis, cost and activity data; checked 2026-07-04).
@@ -201,3 +241,4 @@ Added after round 6:
 - Canidio & Fritsch — *Arbitrageurs' profits, LVR, and sandwich attacks: batch trading as an AMM design response* (2023, FM-AMM): per-block uniform clearing prices reduce LVR and sandwiching for the liquidity underneath.
 - Balancer Liquidity Bootstrapping Pools (LBPs): descending-price launch auctions — the time-stretched form of uniform-clearing fair launch referenced in round 5.
 - Hayden Adams — [introductory tweet](https://x.com/haydenzadams/status/2089531754004554215) and [*Correlated Pairs: How AMMs Win the Biggest Markets*](https://x.com/i/article/2089523718137466880) (2026): tokenized assets organizing into correlated-pair clusters connected by a few higher-risk bridge pairs; supports the BSO/stable hedge-leg framing without prescribing a protocol-owned strategy.
+- The Standard Reserve: [whitepaper v1.0](https://www.standardreserve.xyz/protocol/whitepaper/), [live parameters and contracts](https://www.standardreserve.xyz/protocol/live/), [launchpad docs](https://www.standardreserve.xyz/docs/king-of-the-markets/), [manifesto](https://www.standardreserve.xyz/manifesto/) (checked 2026-11-07): flow-reactive issuance to charter holders, non-withdrawable genesis liquidity, exit-pressure fees, owner-tunable parameters within bounds. Price data from [CoinGecko](https://www.coingecko.com/en/coins/standard); owner address confirmed as a Safe on [RobinScan](https://robin.etherscan.io/address/0x5c19F925E1e0D54E34681A6CB70d55c90b12A68c) (round 7).
