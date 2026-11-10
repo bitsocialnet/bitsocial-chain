@@ -1,6 +1,6 @@
 # Economics Discussion — Burn, Liquidity, and the Stage 2 Constraint
 
-**Status: open design discussion, not a spec.** Nothing here is normative or committed. Companion to [DESIGN.md](DESIGN.md) (architecture reasoning) and [POC_LIMITATIONS.md](POC_LIMITATIONS.md), which both defer economics to future work. This document captures a recurring design debate so it survives outside chat logs. Last updated 2026-11-07.
+**Status: open design discussion, not a spec.** Nothing here is normative or committed. Companion to [DESIGN.md](DESIGN.md) (architecture reasoning) and [POC_LIMITATIONS.md](POC_LIMITATIONS.md), which both defer economics to future work. This document captures a recurring design debate so it survives outside chat logs. Last updated 2026-11-10.
 
 ## Where this stands
 
@@ -23,11 +23,11 @@ For an engineer picking this up: what the rounds below have converged on, what b
 
 1. **Chain architecture and sequencing:** native rollup, Ethereum Economic Zone, or another Stage 2 design, and based or sequenced blocks ([README](README.md#production-architecture-open)). Everything below depends on it; questions 4, 5, and 7 are part of it.
 2. **Gas-fee split:** the burn and security shares, and whether they can be fixed forever at deployment (question 2).
-3. **Community-token template v1:** whether it issues at all (19), owner allocation and vesting (14), the creation gate (11), enforced disclosures (16), and how revenue splits between the community's own burn, a BSO burn share, and tips (15, 20).
+3. **Community-token template v1:** whether it issues at all (19), owner allocation and vesting (14), the creation gate (11), enforced disclosures (16), and how revenue splits between the community's own burn, a BSO burn share, tips, and any treasury (12, 15, 20).
 4. **AgoraSwap routing:** BSO-only pairs or BSO plus stable pairs, and where the hedge leg lives (1, 9, 18).
 5. **Legal review** of the token and fee design before any launch (6).
 
-**Can wait:** the concentrated "smart" liquidity layer (3, 8, 10) until tokens reach the maturity threshold; template discovery (13) until a v2 exists; the "51/49" placeholder (12) until someone defines it. The failure-mode registry (17) is ongoing and feeds item 3.
+**Can wait:** the concentrated "smart" liquidity layer (3, 8, 10) until tokens reach the maturity threshold; template discovery (13) until a v2 exists. The failure-mode registry (17) is ongoing and feeds item 3.
 
 ## Context
 
@@ -136,7 +136,7 @@ Follow-up ideas from the same community discussion, recorded as input to Phase 4
 
 **Issuance gating.** The sharper proposal: communities should not be able to launch a token until they clear real-activity thresholds. A 50-member community with a token is structurally a victim-hunting machine, and incentive patches (sniper taxes, diamond-hand rewards) are gameable copes; only a barrier to entry changes the game. The Stage 2 tension is immediate: gating needs a judge. Governance judgment is not Stage 2, and naive on-chain metrics (member counts, activity counters) are sybilable for free, especially since the social layer is P2P and the chain cannot natively verify that a community is real. The most promising direction recorded here: **use revenue history as the threshold** — a community becomes token-eligible only after some cumulative value has settled through its on-chain ad/tipping contracts over some minimum period. That metric is deterministic (Stage 2-clean), and it is costly to counterfeit precisely because faking it requires actually burning real value through the same contracts the token economy will run on. Costly signals beat clean-looking counters.
 
-**"51/49."** A design philosophy was teased under this name but not defined; placeholder pending a real writeup.
+**"51/49."** A design philosophy was teased under this name but not defined; placeholder pending a real writeup. Defined later; see question 12.
 
 **In-app liquidity.** "The difference between a unicorn crypto project and a low cap comes down to in-app liquidity" — consistent with rounds 1 and 2: native distribution routes order flow to in-app venues, and venue quality is what keeps it there.
 
@@ -238,7 +238,7 @@ Added after round 2:
 Added after round 3:
 
 11. **Issuance gating**: what deterministic, sybil-resistant threshold can gate community-token creation on a Stage 2 chain? Leading candidate: cumulative revenue settled through the community's own on-chain contracts over a minimum period, since it is expensive to counterfeit by construction. What are the right magnitudes, and does gating create a perverse pre-token revenue meta?
-12. **The "51/49" model**: undefined teaser from the community discussion; capture the actual definition when it is written up, then evaluate it against the Stage 2 filter like everything else.
+12. **The "51/49" model**: defined in November 2026 as a fixed split of community revenue: 51% buys back and burns the community token, 49% goes to a community treasury, unchangeable after deployment. Seat-auction proceeds, in any template that has them, go entirely to the treasury. The fixed split fits the per-token freeze; the treasury conflicts with "no treasury in the value path." Open: what restrictions bind the treasury (who can spend it, on what, with what cap), and do they keep it from becoming round 4's honeypot?
 
 Added after round 5:
 
