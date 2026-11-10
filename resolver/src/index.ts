@@ -57,7 +57,9 @@ export class BsoChainResolver {
 
   /**
    * Resolve a .bso name to its registry record, or `undefined` when the name
-   * is not registered (or has been revoked).
+   * is not registered (or has been revoked). Throws on any other node answer,
+   * including 503 while the node is still syncing and cannot give a final
+   * answer.
    */
   async resolve({
     name,

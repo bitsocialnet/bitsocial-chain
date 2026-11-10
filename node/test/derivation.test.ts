@@ -12,6 +12,8 @@ import {
   MemoryStateStore,
   startReadApi,
   TursoStateStore,
+  type NodeState,
+  type StateStore,
 } from "@bitsocial/bso-chain-node";
 import { createPublicClient, createWalletClient, http, type Hex, type PublicClient } from "viem";
 import { privateKeyToAccount, type PrivateKeyAccount } from "viem/accounts";
@@ -73,6 +75,43 @@ async function rpc(method: string, params: unknown[] = []): Promise<unknown> {
     throw new Error(`${method} failed: ${body.error.message}`);
   }
   return body.result;
+}
+
+/**
+ * In-memory store whose next save() blocks until released, so a test can
+ * observe a node in the middle of a sync.
+ */
+class PausingStore implements StateStore {
+  private state: NodeState | undefined;
+  private gate: { reached: () => void; resume: Promise<void> } | null = null;
+
+  load(): NodeState | undefined {
+    return this.state;
+  }
+
+  async save(state: NodeState): Promise<void> {
+    this.state = state;
+    const gate = this.gate;
+    if (gate !== null) {
+      this.gate = null;
+      gate.reached();
+      await gate.resume;
+    }
+  }
+
+  /** Block the next save(); `reached` resolves once a sync is parked there. */
+  pauseNextSave(): { reached: Promise<void>; release: () => void } {
+    let reached!: () => void;
+    let release!: () => void;
+    const reachedPromise = new Promise<void>((resolve) => {
+      reached = resolve;
+    });
+    const resume = new Promise<void>((resolve) => {
+      release = resolve;
+    });
+    this.gate = { reached, resume };
+    return { reached: reachedPromise, release };
+  }
 }
 
 describe("derivation node", () => {
@@ -250,5 +289,67 @@ describe("derivation node", () => {
 
     const clean = await freshDerivation();
     expect(node.stateHash()).toBe(clean.stateHash());
+  });
+
+  it("answers 503 on derived-state routes while a fresh node backfills", async () => {
+    await sendIntent(bob, { op: "register", name: "gina.bso", publicKey: KEY_B });
+    const store = new PausingStore();
+    const node = new DerivationNode({ rpcUrl: chain.rpcUrl, store });
+    await node.init();
+    const api = await startReadApi(node, { port: 0 });
+    const paused = store.pauseNextSave();
+    try {
+      const sync = node.syncOnce();
+      await paused.reached;
+      // Parked after the first block: the registry is only a prefix of L1
+      // history, so gina.bso (registered later) must not be reported missing.
+      expect((await fetch(`${api.endpoint}/v1/names/gina.bso`)).status).toBe(503);
+      expect((await fetch(`${api.endpoint}/v1/names`)).status).toBe(503);
+      expect((await fetch(`${api.endpoint}/v1/rejected`)).status).toBe(503);
+      // Answers that do not depend on derived state stay deterministic.
+      expect((await fetch(`${api.endpoint}/v1/names/not%20a%20name`)).status).toBe(400);
+      expect((await fetch(`${api.endpoint}/v1/names/gina.bso/extra`)).status).toBe(404);
+      const status = (await (await fetch(`${api.endpoint}/v1/status`)).json()) as Record<string, unknown>;
+      expect(status.phase).toBe("syncing");
+
+      paused.release();
+      await sync;
+      expect(node.getStatus().phase).toBe("synced");
+      expect((await fetch(`${api.endpoint}/v1/names/gina.bso`)).status).toBe(200);
+    } finally {
+      paused.release();
+      await api.close();
+    }
+  });
+
+  it("answers 503 while re-deriving after a reorg instead of serving the genesis prefix", async () => {
+    await sendIntent(bob, { op: "register", name: "hank.bso", publicKey: KEY_B });
+    const store = new PausingStore();
+    const node = new DerivationNode({ rpcUrl: chain.rpcUrl, store });
+    await node.init();
+    await node.syncOnce();
+    const api = await startReadApi(node, { port: 0 });
+    const snapshot = await rpc("evm_snapshot");
+    await sendIntent(alice, { op: "register", name: "frank.bso", publicKey: KEY_A });
+    await node.syncOnce();
+    await rpc("evm_revert", [snapshot]);
+    const paused = store.pauseNextSave();
+    try {
+      expect((await fetch(`${api.endpoint}/v1/names/hank.bso`)).status).toBe(200);
+      const sync = node.syncOnce();
+      await paused.reached;
+      // Parked on the reset to genesis: hank.bso is still registered on L1.
+      expect((await fetch(`${api.endpoint}/v1/names/hank.bso`)).status).toBe(503);
+      expect(node.getStatus().phase).toBe("syncing");
+
+      paused.release();
+      expect((await sync).reorged).toBe(true);
+      expect(node.getStatus().phase).toBe("synced");
+      expect((await fetch(`${api.endpoint}/v1/names/hank.bso`)).status).toBe(200);
+      expect((await fetch(`${api.endpoint}/v1/names/frank.bso`)).status).toBe(404);
+    } finally {
+      paused.release();
+      await api.close();
+    }
   });
 });
