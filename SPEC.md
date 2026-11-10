@@ -143,8 +143,8 @@ Full derived state is `{ schemaVersion, names, rejected, acceptedIntents }`. The
 
 The node records `{ number, hash }` of the last processed block and, per sync:
 
-1. **Head regression** — if the target height drops below the cursor, reorg.
-2. **Anchor check** — if the block at the cursor height no longer has the recorded hash, reorg (catches same/greater-height divergence).
+1. **Head regression** — a target height below the cursor is not a reorg by itself. If the block at the cursor height is unchanged (rule 2), for example because `confirmations` was raised on restart or the RPC reports a lagging head, the node keeps its state and waits for the target to catch up.
+2. **Anchor check** — if the block at the cursor height no longer has the recorded hash, reorg (catches same/greater-height divergence). If that block is missing, reorg only when head is below the cursor (the chain got shorter); with head at or past the cursor the RPC is lagging, so the sync fails and is retried on the next poll with derived state kept.
 3. **Parent linkage** — while advancing, each new block's `parentHash` must match the previous processed hash, else reorg.
 
 On reorg the POC node discards derived state and re-derives from `startBlock` — registries are small, and full re-derivation is the simplest provably-correct recovery. A `confirmations` option lags the head as a cheap buffer; a production node would follow L1 finality and checkpoint instead. Both reorg paths are integration-tested against a dev chain using `evm_snapshot`/`evm_revert`.

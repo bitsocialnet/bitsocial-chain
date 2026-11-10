@@ -15,11 +15,19 @@ import {
   type NodeState,
   type StateStore,
 } from "@bitsocial/bso-chain-node";
-import { createPublicClient, createWalletClient, http, type Hex, type PublicClient } from "viem";
+import {
+  BlockNotFoundError,
+  createPublicClient,
+  createWalletClient,
+  http,
+  type Hex,
+  type PublicClient,
+} from "viem";
 import { privateKeyToAccount, type PrivateKeyAccount } from "viem/accounts";
 import { hardhat } from "viem/chains";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { startDevChain, type DevChainHandle } from "./dev-chain.js";
+import { startMockRpc } from "./mock-rpc.js";
 
 const alice = privateKeyToAccount(
   "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80",
@@ -289,6 +297,61 @@ describe("derivation node", () => {
 
     const clean = await freshDerivation();
     expect(node.stateHash()).toBe(clean.stateHash());
+  });
+
+  it("keeps its state when a larger confirmations setting puts the target below the cursor", async () => {
+    const store = new MemoryStateStore();
+    const node = new DerivationNode({ rpcUrl: chain.rpcUrl, store });
+    await node.init();
+    await node.syncOnce();
+    const processedTo = node.getStatus().lastProcessedBlock;
+    const hash = node.stateHash();
+
+    // Restart on the same store with confirmations 5: target = head - 5 is
+    // below the persisted cursor, but the processed block is still canonical.
+    const lagging = new DerivationNode({ rpcUrl: chain.rpcUrl, store, confirmations: 5 });
+    await lagging.init();
+    const waiting = await lagging.syncOnce();
+    expect(waiting).toEqual({ processedTo: processedTo?.number, blocksApplied: 0, reorged: false });
+    expect(lagging.getStatus().lastProcessedBlock).toEqual(processedTo);
+    expect(lagging.stateHash()).toBe(hash);
+    expect(lagging.getPhase()).toBe("synced");
+
+    // Once head moves past cursor + confirmations, it resumes from the cursor.
+    for (let i = 0; i < 6; i += 1) {
+      await rpc("evm_mine");
+    }
+    const resumed = await lagging.syncOnce();
+    expect(resumed).toEqual({ processedTo: (processedTo?.number ?? 0) + 1, blocksApplied: 1, reorged: false });
+  });
+
+  it("retries instead of re-deriving when a lagging RPC briefly cannot serve the processed block", async () => {
+    const mock = await startMockRpc();
+    try {
+      mock.head = 5;
+      const node = new DerivationNode({ rpcUrl: mock.rpcUrl });
+      await node.init();
+      await node.syncOnce();
+
+      // Head is past the cursor, but the backend answering getBlock lags and
+      // does not have block 5 yet: not a reorg, so keep state and retry.
+      mock.head = 6;
+      let dropped = false;
+      mock.onGetBlock = (blockNumber) => {
+        if (blockNumber === 5 && !dropped) {
+          dropped = true;
+          return "missing";
+        }
+        return "serve";
+      };
+      await expect(node.syncOnce()).rejects.toBeInstanceOf(BlockNotFoundError);
+      expect(node.getStatus().lastProcessedBlock?.number).toBe(5);
+      expect(node.getPhase()).toBe("synced");
+
+      expect(await node.syncOnce()).toEqual({ processedTo: 6, blocksApplied: 1, reorged: false });
+    } finally {
+      await mock.close();
+    }
   });
 
   it("answers 503 on derived-state routes while a fresh node backfills", async () => {
