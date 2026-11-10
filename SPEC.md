@@ -155,9 +155,11 @@ Served by the derivation node over HTTP, JSON responses, CORS `*`:
 
 | Route | Returns |
 | --- | --- |
-| `GET /v1/status` | `{ chainId, startBlock, intentAddress, lastProcessedBlock, stateHash, names, acceptedIntents, rejectedIntents }` |
+| `GET /v1/status` | `{ chainId, startBlock, intentAddress, phase, lastProcessedBlock, stateHash, names, acceptedIntents, rejectedIntents }` |
 | `GET /v1/names` | all records (active and tombstoned), sorted by name |
 | `GET /v1/names/:name` | `200` record · `400 INVALID_NAME` · `404 NAME_NOT_REGISTERED` · `410 NAME_REVOKED` (tombstone included) |
 | `GET /v1/rejected` | the deterministic rejection log |
+
+`phase` is `"syncing"` while the node catches up after start-up or re-derives from `startBlock` after a reorg, and `"synced"` once a sync has reached the target block. While syncing, the derived state is only a prefix of L1 history, so `GET /v1/names`, `GET /v1/names/:name` and `GET /v1/rejected` answer `503 NODE_SYNCING` instead of a `404` or an older record that would look final. A malformed name still gets `400 INVALID_NAME`.
 
 The read API is a convenience view over local derived state; it carries no authority. Clients that do not want to trust any read API can run the derivation themselves — that is the point of the architecture.

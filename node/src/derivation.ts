@@ -47,10 +47,18 @@ export interface SyncResult {
   reorged: boolean;
 }
 
+/**
+ * "syncing" while the node is backfilling or re-deriving after a reorg, when
+ * its registry is only a prefix of L1 history; "synced" once a sync has
+ * reached the target block.
+ */
+export type SyncPhase = "syncing" | "synced";
+
 export interface NodeStatus {
   chainId: number;
   startBlock: number;
   intentAddress: string;
+  phase: SyncPhase;
   lastProcessedBlock: { number: number; hash: string } | null;
   stateHash: string;
   names: number;
@@ -85,6 +93,7 @@ export class DerivationNode {
   private readonly logger: NodeLogger;
 
   private state: NodeState | null = null;
+  private phase: SyncPhase = "syncing";
   private pollTimer: NodeJS.Timeout | null = null;
   private stopped = false;
   private syncing: Promise<SyncResult> | null = null;
@@ -105,6 +114,7 @@ export class DerivationNode {
   async init(): Promise<void> {
     const chainId = await this.client.getChainId();
     const persisted = await this.store.load();
+    this.phase = "syncing";
     if (
       persisted !== undefined &&
       persisted.chainId === chainId &&
@@ -212,12 +222,14 @@ export class DerivationNode {
       cursor += 1;
     }
 
+    this.phase = "synced";
     return { processedTo: this.state!.lastProcessed?.number ?? null, blocksApplied, reorged };
   }
 
   private async resetDerivedState(): Promise<void> {
     const state = this.requireState();
     this.state = this.freshState(state.chainId);
+    this.phase = "syncing";
     await this.store.save(this.state);
   }
 
@@ -314,6 +326,11 @@ export class DerivationNode {
     return resolveName(this.requireState().registry, name);
   }
 
+  /** Whether derived state is final up to the last sync target. See {@link SyncPhase}. */
+  getPhase(): SyncPhase {
+    return this.phase;
+  }
+
   stateHash(): string {
     return computeStateHash(this.requireState().registry);
   }
@@ -324,6 +341,7 @@ export class DerivationNode {
       chainId: state.chainId,
       startBlock: state.startBlock,
       intentAddress: state.intentAddress,
+      phase: this.phase,
       lastProcessedBlock: state.lastProcessed,
       stateHash: this.stateHash(),
       names: Object.keys(state.registry.names).length,
