@@ -9,7 +9,7 @@ import {
   type RegistryState,
   type ResolveOutcome,
 } from "@bitsocial/bso-chain-protocol";
-import { createPublicClient, http, type PublicClient } from "viem";
+import { BlockNotFoundError, createPublicClient, http, type PublicClient } from "viem";
 import { MemoryStateStore, type NodeState, type StateStore } from "./store.js";
 
 export interface NodeLogger {
@@ -78,10 +78,14 @@ export interface NodeStatus {
  * derives byte-identical state — verify with {@link DerivationNode.stateHash}.
  *
  * Reorg handling (POC rule, documented in SPEC.md): the node remembers the
- * hash of the last processed block. If the chain head moves backwards or the
- * next block's parentHash no longer matches, the node discards derived state
- * and re-derives from the start block. Registries are small, so full
- * re-derivation is acceptable here; checkpointing is future work.
+ * hash of the last processed block. If that block has a different hash, or is
+ * gone while head is below it, or the next block's parentHash no longer
+ * matches, the node discards derived state and re-derives from the start
+ * block. Registries are small, so full re-derivation is acceptable here;
+ * checkpointing is future work. A target below the cursor with the last
+ * processed block unchanged (a larger `confirmations`, a lagging RPC) is not a
+ * reorg: the node waits for head. If the block is missing while head is at or
+ * past it, the sync fails and is retried on the next poll.
  */
 export class DerivationNode {
   private readonly client: PublicClient;
@@ -170,29 +174,36 @@ export class DerivationNode {
     let reorged = false;
     let blocksApplied = 0;
 
-    // Head moved backwards past our cursor: reorg on a dev chain
-    // (e.g. evm_revert) or an RPC pointing at a different history.
-    if (state.lastProcessed !== null && target < state.lastProcessed.number) {
-      this.logger.warn(
-        `reorg detected: target block ${target} < last processed ${state.lastProcessed.number}; re-deriving`,
-      );
-      await this.resetDerivedState();
-      reorged = true;
-    }
-
     // Anchor check: the block we processed last must still be canonical.
     // Catches reorgs that rebuilt the chain to the same (or greater) height,
-    // which neither the regression check above nor the parentHash check
-    // below would see.
-    const anchor = this.state!.lastProcessed;
-    if (anchor !== null && target >= anchor.number) {
-      const block = await this.client.getBlock({ blockNumber: BigInt(anchor.number) });
-      if (block.hash !== anchor.hash) {
+    // which the parentHash check below would not see. A missing block is a
+    // reorg only when head is below it (the chain got shorter, e.g.
+    // evm_revert). With head at or past it, the RPC is lagging: getBlock
+    // throws, and the sync is retried on the next tick with state kept.
+    const anchor = state.lastProcessed;
+    if (anchor !== null) {
+      const block =
+        head < anchor.number
+          ? await this.getBlockIfExists(anchor.number)
+          : await this.client.getBlock({ blockNumber: BigInt(anchor.number) });
+      if (block === null) {
+        this.logger.warn(
+          `reorg detected: block ${anchor.number} is no longer on the chain (head ${head}); re-deriving`,
+        );
+        await this.resetDerivedState();
+        reorged = true;
+      } else if (block.hash !== anchor.hash) {
         this.logger.warn(
           `reorg detected: block ${anchor.number} is now ${block.hash}, expected ${anchor.hash}; re-deriving`,
         );
         await this.resetDerivedState();
         reorged = true;
+      } else if (target < anchor.number) {
+        // Target below the cursor but the processed block is unchanged: a
+        // larger confirmations setting or a lagging RPC, not a reorg. Keep the
+        // state and wait for head to catch up.
+        this.phase = "synced";
+        return { processedTo: anchor.number, blocksApplied: 0, reorged: false };
       }
     }
 
@@ -224,6 +235,17 @@ export class DerivationNode {
 
     this.phase = "synced";
     return { processedTo: this.state!.lastProcessed?.number ?? null, blocksApplied, reorged };
+  }
+
+  private async getBlockIfExists(blockNumber: number) {
+    try {
+      return await this.client.getBlock({ blockNumber: BigInt(blockNumber) });
+    } catch (error) {
+      if (error instanceof BlockNotFoundError) {
+        return null;
+      }
+      throw error;
+    }
   }
 
   private async resetDerivedState(): Promise<void> {
