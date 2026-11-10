@@ -25,7 +25,7 @@ import {
 } from "viem";
 import { privateKeyToAccount, type PrivateKeyAccount } from "viem/accounts";
 import { hardhat } from "viem/chains";
-import { afterAll, beforeAll, describe, expect, it } from "vitest";
+import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 import { startDevChain, type DevChainHandle } from "./dev-chain.js";
 import { startMockRpc } from "./mock-rpc.js";
 
@@ -87,17 +87,26 @@ async function rpc(method: string, params: unknown[] = []): Promise<unknown> {
 
 /**
  * In-memory store whose next save() blocks until released, so a test can
- * observe a node in the middle of a sync.
+ * observe a node in the middle of a sync. Counts saves made after close().
  */
 class PausingStore implements StateStore {
   private state: NodeState | undefined;
   private gate: { reached: () => void; resume: Promise<void> } | null = null;
+  private closed = false;
+  savesAfterClose = 0;
 
   load(): NodeState | undefined {
     return this.state;
   }
 
+  close(): void {
+    this.closed = true;
+  }
+
   async save(state: NodeState): Promise<void> {
+    if (this.closed) {
+      this.savesAfterClose += 1;
+    }
     this.state = state;
     const gate = this.gate;
     if (gate !== null) {
@@ -413,6 +422,105 @@ describe("derivation node", () => {
     } finally {
       paused.release();
       await api.close();
+    }
+  });
+
+  it("close() ends an in-flight sync before closing the store", async () => {
+    await rpc("evm_mine");
+    await rpc("evm_mine");
+    const store = new PausingStore();
+    const node = new DerivationNode({ rpcUrl: chain.rpcUrl, store });
+    await node.init();
+    const paused = store.pauseNextSave();
+    const sync = node.syncOnce();
+    await paused.reached;
+
+    // Close while the sync is parked on its first block, then let it resume.
+    const closing = node.close();
+    paused.release();
+    await closing;
+    const result = await sync;
+
+    expect(store.savesAfterClose).toBe(0);
+    expect(result.blocksApplied).toBe(1);
+    await expect(node.syncOnce()).rejects.toThrow(/closed/);
+    expect(() => node.start()).toThrow(/closed/);
+  });
+
+  it.each([
+    { step: "a block fetch", resumed: false },
+    { step: "the anchor lookup of a reorged block", resumed: true },
+  ])("close() does not wait for an RPC call pending in $step and saves nothing after", async ({ resumed }) => {
+    const mock = await startMockRpc();
+    let release = () => {};
+    try {
+      mock.head = 3;
+      const store = new PausingStore();
+      const node = new DerivationNode({ rpcUrl: mock.rpcUrl, store });
+      await node.init();
+      if (resumed) {
+        await node.syncOnce();
+        mock.fork = 1; // block 3 now has another hash: the sync would reset state
+      }
+
+      // Hold the RPC answer for the block the sync fetches next.
+      const heldBlock = resumed ? 3 : 0;
+      const reached = new Promise<void>((resolveReached) => {
+        const released = new Promise<void>((resolveReleased) => {
+          release = resolveReleased;
+        });
+        mock.onGetBlock = async (blockNumber) => {
+          if (blockNumber === heldBlock) {
+            resolveReached();
+            await released;
+          }
+          return "serve";
+        };
+      });
+      const sync = node.syncOnce();
+      await reached;
+
+      const closing = node.close();
+      const closedPromptly = await Promise.race([
+        closing.then(() => true),
+        new Promise<boolean>((resolveLate) => setTimeout(() => resolveLate(false), 2_000)),
+      ]);
+      release();
+      const result = await sync;
+      await closing;
+
+      expect(closedPromptly).toBe(true);
+      expect(store.savesAfterClose).toBe(0);
+      expect(result).toMatchObject({ blocksApplied: 0, reorged: false });
+    } finally {
+      release();
+      await mock.close();
+    }
+  });
+
+  it("stop() then start() during a tick keeps a single poll loop", async () => {
+    const pollIntervalMs = 4_321;
+    const store = new PausingStore();
+    const node = new DerivationNode({ rpcUrl: chain.rpcUrl, store, pollIntervalMs });
+    await node.init();
+    const paused = store.pauseNextSave();
+    const timeouts = vi.spyOn(globalThis, "setTimeout");
+    try {
+      node.start();
+      await paused.reached;
+      node.stop();
+      node.start();
+      paused.release();
+      // Joins the in-flight sync; both ticks have rescheduled (or not) by now.
+      await node.syncOnce();
+      await new Promise((resolve) => setImmediate(resolve));
+
+      const pollTimers = timeouts.mock.calls.filter(([, delay]) => delay === pollIntervalMs);
+      expect(pollTimers).toHaveLength(1);
+    } finally {
+      timeouts.mockRestore();
+      paused.release();
+      await node.close();
     }
   });
 });
