@@ -43,6 +43,11 @@ export async function startDevChain(): Promise<DevChainHandle> {
           rpcUrl,
           stop: () =>
             new Promise<void>((resolve) => {
+              // Already exited (crashed or killed): "exit" will not fire again.
+              if (child.exitCode !== null || child.signalCode !== null) {
+                resolve();
+                return;
+              }
               child.once("exit", () => resolve());
               child.kill("SIGINT");
               setTimeout(() => child.kill("SIGKILL"), 5000).unref();
