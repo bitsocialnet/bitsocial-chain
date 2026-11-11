@@ -27,6 +27,19 @@ export async function startDevChain(): Promise<DevChainHandle> {
     output += chunk.toString();
   });
 
+  // SIGINT first: npx forwards it to Hardhat. SIGKILL only ends npx itself.
+  const stop = () =>
+    new Promise<void>((resolve) => {
+      // Already exited (crashed or killed): "exit" will not fire again.
+      if (child.exitCode !== null || child.signalCode !== null) {
+        resolve();
+        return;
+      }
+      child.once("exit", () => resolve());
+      child.kill("SIGINT");
+      setTimeout(() => child.kill("SIGKILL"), 5000).unref();
+    });
+
   const deadline = Date.now() + 60_000;
   while (Date.now() < deadline) {
     if (child.exitCode !== null) {
@@ -39,15 +52,7 @@ export async function startDevChain(): Promise<DevChainHandle> {
         body: JSON.stringify({ jsonrpc: "2.0", id: 1, method: "eth_chainId", params: [] }),
       });
       if (response.ok) {
-        return {
-          rpcUrl,
-          stop: () =>
-            new Promise<void>((resolve) => {
-              child.once("exit", () => resolve());
-              child.kill("SIGINT");
-              setTimeout(() => child.kill("SIGKILL"), 5000).unref();
-            }),
-        };
+        return { rpcUrl, stop };
       }
     } catch {
       // Not up yet.
@@ -55,6 +60,6 @@ export async function startDevChain(): Promise<DevChainHandle> {
     await new Promise((resolve) => setTimeout(resolve, 200));
   }
 
-  child.kill("SIGKILL");
+  await stop();
   throw new Error(`timed out waiting for hardhat node on port ${rpcPort}:\n${output}`);
 }
