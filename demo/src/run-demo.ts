@@ -104,7 +104,7 @@ async function main(): Promise<void> {
   });
   await node.init();
   node.start();
-  teardown.push(() => node.stop());
+  teardown.push(() => node.close());
   const api = await startReadApi(node, { port: 0 });
   teardown.push(() => api.close());
   ok(`derivation node following L1, read API at ${api.endpoint}`);
