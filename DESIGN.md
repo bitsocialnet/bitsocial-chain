@@ -4,7 +4,7 @@ Companion to [SPEC.md](SPEC.md) (the normative rules) and [POC_LIMITATIONS.md](P
 
 ## Why .bso names are the first POC feature
 
-Phase 2 of the Bitsocial master plan proposes Bitsocial Chain as the economic layer for Bitsocial apps: "unstoppable financial structures, decentralized Bitsocial domains (.bso), awards and tipping, common liquidity, and practical monetization."
+Phase 3 of the Bitsocial master plan proposes Bitsocial Chain as the economic layer for Bitsocial apps: "unstoppable financial structures, decentralized Bitsocial domains (.bso), awards and tipping, common liquidity, and practical monetization."
 
 Names are the right first primitive because they are:
 
@@ -14,7 +14,7 @@ Names are the right first primitive because they are:
 
 ## How this fits the Bitsocial roadmap
 
-Phase 1 builds the wedge apps (5chan, Seedit) and the public RPC layer; Phase 2 adds the economic layer so those apps gain network effects that centralized competitors can't choke off; Phase 3+ build the flagship profile-based app on top. This repo is the first Phase-2 artifact: it demonstrates the properties every Bitsocial Chain primitive must keep — Ethereum-anchored, derivable by anyone, no operator in the trust path — on the smallest useful feature. It does not settle the execution architecture for the rest of the chain; see [How this expands to the rest of Bitsocial Chain](#how-this-expands-to-the-rest-of-bitsocial-chain).
+Phase 1 builds the wedge apps (5chan, Seedit) and the public RPC layer; Phase 2 builds the flagship profile-based app, which needs no chain (profiles run as profile nodes over non-custodial RPC, and `.bso` names start on the interim L1 registry in [BSIP-13](https://bsips.bitsocial.net/bsip-13)); Phase 3 adds the economic layer so those apps gain network effects that centralized competitors can't choke off. The chain comes later because it must not trade decentralization for an earlier launch. This repo is the first Bitsocial Chain artifact: it demonstrates the properties every Bitsocial Chain primitive must keep — Ethereum-anchored, derivable by anyone, no operator in the trust path — on the smallest useful feature. It does not settle the execution architecture for the rest of the chain; see [How this expands to the rest of Bitsocial Chain](#how-this-expands-to-the-rest-of-bitsocial-chain).
 
 ## Social data stays P2P
 
