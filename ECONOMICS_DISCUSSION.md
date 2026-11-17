@@ -1,6 +1,6 @@
 # Economics Discussion — Burn, Liquidity, and the Stage 2 Constraint
 
-**Status: open design discussion, not a spec.** Nothing here is normative or committed. Companion to [DESIGN.md](DESIGN.md) (architecture reasoning) and [POC_LIMITATIONS.md](POC_LIMITATIONS.md), which both defer economics to future work. This document captures a recurring design debate so it survives outside chat logs. Last updated 2026-11-10.
+**Status: open design discussion, not a spec.** Nothing here is normative or committed. Companion to [DESIGN.md](DESIGN.md) (architecture reasoning) and [POC_LIMITATIONS.md](POC_LIMITATIONS.md), which both defer economics to future work. This document captures a recurring design debate so it survives outside chat logs. Last updated 2026-11-17.
 
 ## Where this stands
 
@@ -256,6 +256,10 @@ Added after round 7:
 
 19. **Issuance**: should any community template issue at all? If so, who receives it without a judge? Paid seats (Standard) are judge-free but make issuance a return on capital paid for by dilution; shares weighted by value a participant has settled through on-chain contracts may be the costly-signal equivalent of round 3's gating rule. And what does it cost to push a net-flow signal positive (buying ahead of an epoch boundary and selling after) at realistic community-token pool depths?
 20. **BSO burn share**: should templates route a fixed share of settled community revenue to buy and burn BSO? What share leaves the community's own value accrual intact, and how does it interact with tip coupling (question 15)?
+
+Added November 2026:
+
+21. **Name fees and the fee switch**: the interim `.bso` registry on Ethereum mainnet ([BSIP-13](https://bsips.bitsocial.net/bsip-13)) charges in ETH and sends fees to a multisig that funds the maintainers. The stated intent is that this ends when `.bso` moves to Bitsocial Chain: name fees there are burned, or buy back and burn BSO by contract. Under "burn is the default sink", fees charged in BSO are simply burned and need no buyback. A buyback only arises if the chain registry charges in another asset, and it then needs a swap with no operator, external oracle, or pooled balance in the path. Open: the fee asset, whether any share goes to chain security like gas fees (question 2), and the prices themselves.
 
 ## References
 
