@@ -53,7 +53,7 @@ const MAX_RATE_LIMIT_WAIT_MS = 30 * 60 * 1000;
 async function getJson(url) {
   for (let attempt = 1; attempt <= 6; attempt += 1) {
     const response = await fetch(url, {
-      headers: { accept: "application/json", "user-agent": "bitsocial-web holder history" },
+      headers: { accept: "application/json", "user-agent": "bitsocial-chain holder history" },
     });
     if (response.ok) {
       return response.json();

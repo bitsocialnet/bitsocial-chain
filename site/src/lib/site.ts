@@ -42,7 +42,7 @@ export const TWITTER_URL = "https://twitter.com/bitsocialnet" as const;
 export const TELEGRAM_URL = "https://t.me/bitsocialnet" as const;
 
 export const CONTRIBUTE_URL =
-  "https://github.com/bitsocialnet/bitsocial-web/tree/master/chain" as const;
+  "https://github.com/bitsocialnet/bitsocial-chain/tree/master/site" as const;
 
 export const BSO_RESOLVER_URL = "https://github.com/bitsocialnet/bso-resolver" as const;
 
