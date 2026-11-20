@@ -80,6 +80,8 @@ There is deliberately **no L1 contract** in the intent path: an intent is any tr
 | `resolver/` | `@bitsocial/bso-chain-resolver` | Minimal resolver SDK, shape-compatible with `@bitsocial/bso-resolver` |
 | `demo/`     | `@bitsocial/bso-chain-demo`     | Runnable end-to-end demo on a local L1 dev chain |
 
+[`site/`](site) holds the landing site served at [chain.bitsocial.net](https://chain.bitsocial.net). It is a standalone Yarn project outside the npm workspaces above, so the root `npm` commands never touch it; see [site/README.md](site/README.md).
+
 Docs: [SPEC.md](SPEC.md) (normative protocol rules) · [DESIGN.md](DESIGN.md) (rationale and roadmap fit) · [POC_LIMITATIONS.md](POC_LIMITATIONS.md) (shortcuts taken).
 
 Research: [RESEARCH_NATIVE_ROLLUPS.md](RESEARCH_NATIVE_ROLLUPS.md) (production architecture candidate and a `.gwei` fork for names) · [RESEARCH_EEZ.md](RESEARCH_EEZ.md) (Ethereum Economic Zone, synchronous composability with L1) · [RESEARCH_AZTEC_VS_FACET.md](RESEARCH_AZTEC_VS_FACET.md) (privacy lane) · [RESEARCH_INTERFOLD_CRISP.md](RESEARCH_INTERFOLD_CRISP.md) (sealed-bid auctions, secret ballots) · [ECONOMICS_DISCUSSION.md](ECONOMICS_DISCUSSION.md) (burn vs. liquidity, AgoraSwap, community tokens).
@@ -163,4 +165,7 @@ This POC follows Stage-2-shaped design targets — no sequencer required for cor
 
 ## License
 
-[GPL-3.0-or-later](LICENSE)
+This repository holds code under two licenses:
+
+- Everything outside `site/` (the proof of concept and the research docs): [GPL-3.0-or-later](LICENSE).
+- The landing site in `site/`: [AGPL-3.0-only](site/LICENSE), the license it had in bitsocialnet/bitsocial-web.
