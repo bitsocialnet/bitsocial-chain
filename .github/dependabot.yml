@@ -1,0 +1,11 @@
+version: 2
+updates:
+  # The landing site in site/ is a standalone Yarn project outside the npm workspaces. A limit of 0
+  # keeps version-update pull requests off while still scoping security updates to its yarn.lock.
+  - package-ecosystem: "npm"
+    directory: "/site"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 0
+    commit-message:
+      prefix: "chore(deps)"
