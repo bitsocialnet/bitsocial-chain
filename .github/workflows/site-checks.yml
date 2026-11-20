@@ -1,0 +1,42 @@
+name: Site checks
+
+# The landing site in site/ is a standalone Yarn project, so only changes under it run these checks.
+on:
+  pull_request:
+    branches: [master]
+    paths: ["site/**", ".github/workflows/site-checks.yml"]
+  push:
+    branches: [master]
+    paths: ["site/**", ".github/workflows/site-checks.yml"]
+
+permissions:
+  contents: read
+
+# A newer push to the same pull request cancels its older run. Pushes to a branch never cancel each other.
+concurrency:
+  group: site-checks-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  site:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      - uses: actions/checkout@v4
+      # Vercel builds the site with Node 22.x.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: corepack enable
+      - run: corepack yarn deps:check-hardened
+      - run: corepack yarn deps:check-pinned
+      - run: corepack yarn typecheck
+      - run: corepack yarn lint
+      - run: corepack yarn format:check
+      - run: corepack yarn knip
+      - run: corepack yarn test
+      # The same build command the Vercel project runs.
+      - run: corepack yarn exec vite build --config vite.config.ts --outDir dist
