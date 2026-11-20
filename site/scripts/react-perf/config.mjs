@@ -57,42 +57,8 @@ async function typeAndClear({
 }
 
 export default {
-  doctorProjects: [{ cwd: "about" }, { cwd: "chain" }, { cwd: "docs" }],
+  doctorProjects: [{ cwd: "." }],
   targets: [
-    {
-      name: "about",
-      server: {
-        command: [
-          "corepack",
-          "yarn",
-          "vite",
-          "--config",
-          "about/vite.config.ts",
-          "--host",
-          "127.0.0.1",
-          "--port",
-          "{port}",
-          "--strictPort",
-        ],
-        env: { PORTLESS: "0", BROWSER: "none" },
-      },
-      scenarios: [
-        {
-          name: "apps-search",
-          path: "/projects?lang=en",
-          async run({ page, measure }) {
-            await page.locator(".apps-search-input").first().waitFor({ state: "visible" });
-            await typeAndClear({
-              page,
-              measure,
-              selector: ".apps-search-input",
-              component: "Apps",
-              queryNavigation: true,
-            });
-          },
-        },
-      ],
-    },
     {
       name: "chain",
       server: {
@@ -101,7 +67,7 @@ export default {
           "yarn",
           "vite",
           "--config",
-          "chain/vite.config.ts",
+          "vite.config.ts",
           "--host",
           "127.0.0.1",
           "--port",
@@ -119,42 +85,6 @@ export default {
               measure,
               selector: '#mailing-list input[type="email"]',
               component: "MailingList",
-            });
-          },
-        },
-      ],
-    },
-    {
-      name: "docs",
-      server: {
-        command: [
-          "corepack",
-          "yarn",
-          "workspace",
-          "bitsocial-docs",
-          "start",
-          "--host",
-          "127.0.0.1",
-          "--port",
-          "{port}",
-          "--locale",
-          "en",
-          "--no-open",
-        ],
-        env: { DOCS_START_MODE: "multilocale" },
-      },
-      scenarios: [
-        {
-          name: "language-search",
-          path: "/",
-          async run({ page, measure }) {
-            await page.locator('button.navbar__link[aria-haspopup="dialog"]').click();
-            await typeAndClear({
-              page,
-              measure,
-              selector: 'input[aria-label="Search languages"]',
-              component: "LocaleDropdownNavbarItem",
-              text: "Itali",
             });
           },
         },

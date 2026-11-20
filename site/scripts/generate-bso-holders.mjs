@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Snapshots every BSO holder and the current price into chain/src/data/bso-holders.json. The rich
+// Snapshots every BSO holder and the current price into src/data/bso-holders.json. The rich
 // list at chain.bitsocial.net/rich-list/ paints from this committed snapshot, then refreshes from
 // Blockscout in the browser; the snapshot is also what it shows when Blockscout is unreachable.
 import { mkdir, readFile, writeFile } from "node:fs/promises";
@@ -10,8 +10,8 @@ const BLOCKSCOUT_API = process.env.BLOCKSCOUT_API ?? "https://eth.blockscout.com
 const DECIMALS = 18n;
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const outputPath = path.join(repoRoot, "chain/src/data/bso-holders.json");
-const siteConfigPath = path.join(repoRoot, "chain/src/lib/site.ts");
+const outputPath = path.join(repoRoot, "src/data/bso-holders.json");
+const siteConfigPath = path.join(repoRoot, "src/lib/site.ts");
 
 // The official address is defined once, in the chain site's config.
 async function readBsoTokenAddress() {

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Rebuilds the daily BSO balance of every major holder, from the first PLEB on Avalanche in 2022 to
-// today, into chain/src/data/bso-holder-history.json for the trend lines of the rich list at
+// today, into src/data/bso-holder-history.json for the trend lines of the rich list at
 // chain.bitsocial.net/rich-list/. Every balance is replayed from the Transfer events of the token's
 // three contracts. Each migration re-issued every balance to the same address, so a holder's line
 // follows one contract until the next one starts trading, and amounts before the May 2026 rebase are
@@ -14,8 +14,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const outputPath = path.join(repoRoot, "chain/src/data/bso-holder-history.json");
-const priceHistoryPath = path.join(repoRoot, "chain/src/data/bso-price-history.json");
+const outputPath = path.join(repoRoot, "src/data/bso-holder-history.json");
+const priceHistoryPath = path.join(repoRoot, "src/data/bso-price-history.json");
 const cacheDir = path.join(repoRoot, "node_modules/.cache/bso-holder-history");
 
 // Avalanche logs come from Routescan's Etherscan-style API. Ethereum transfers come from
@@ -267,11 +267,11 @@ async function main() {
   const priceHistory = JSON.parse(await readFile(priceHistoryPath, "utf8"));
   // Every quoted address: listed wallets, former wallets and the wallets cited as evidence.
   const entityAddresses = await readAddresses(
-    "chain/src/lib/rich-list/data.ts",
+    "src/lib/rich-list/data.ts",
     /"(0x[0-9a-fA-F]{40})"/g,
   );
   const [poolAddress] = await readAddresses(
-    "chain/src/lib/site.ts",
+    "src/lib/site.ts",
     /DEXSCREENER_PAIR_ADDRESS = "(0x[0-9a-fA-F]{40})"/g,
   );
 

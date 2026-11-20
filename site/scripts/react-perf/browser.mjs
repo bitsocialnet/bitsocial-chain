@@ -5,6 +5,7 @@ import { createServer } from "node:net";
 import { createRequire } from "node:module";
 import { tmpdir } from "node:os";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { promisify } from "node:util";
 import { gzipSync } from "node:zlib";
 
@@ -57,7 +58,7 @@ export async function withBrowser(packageRoot, headed, run) {
   const driver = browserDriver();
   const { stdout } = await exec("git", ["rev-parse", "--show-toplevel"], { cwd: packageRoot });
   const repoRoot = stdout.trim();
-  const wrapper = path.join(repoRoot, "scripts/pw-session.sh");
+  const wrapper = path.join(path.dirname(fileURLToPath(import.meta.url)), "../pw-session.sh");
   if (!existsSync(wrapper)) throw new Error(`Browser ownership wrapper missing: ${wrapper}`);
   const session = `perf-${process.pid}-${Date.now().toString(36)}`;
   const port = await freePort();

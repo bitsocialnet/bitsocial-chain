@@ -11,7 +11,6 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export const repoRoot = path.resolve(__dirname, "..");
 export const isWindows = process.platform === "win32";
-const yarnBin = isWindows ? "yarn.cmd" : "yarn";
 const binDir = path.join(repoRoot, "node_modules", ".bin");
 const executableSuffix = isWindows ? ".cmd" : "";
 export const portlessBin = path.join(binDir, `portless${executableSuffix}`);
@@ -314,29 +313,4 @@ export function spawnDevServer(command, args, options, onExit) {
   });
 
   return child;
-}
-
-export function startVite(host, port) {
-  return spawnDevServer(
-    yarnBin,
-    [
-      "exec",
-      "vite",
-      "--config",
-      "about/vite.config.ts",
-      "--host",
-      host,
-      "--port",
-      String(port),
-      "--strictPort",
-    ],
-    {
-      cwd: repoRoot,
-      env: {
-        ...process.env,
-        PORTLESS: "0",
-      },
-      stdio: "inherit",
-    },
-  );
 }

@@ -21,7 +21,7 @@ if (!Number.isInteger(requestedPort) || requestedPort <= 0) {
 
 const port = usingPortless ? requestedPort : await resolvePort(requestedPort);
 const vite = await createViteServer({
-  configFile: path.join(repoRoot, "chain/vite.config.ts"),
+  configFile: path.join(repoRoot, "vite.config.ts"),
   server: {
     host,
     port,

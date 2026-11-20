@@ -27,8 +27,7 @@ const PAGES = {
 };
 
 const exec = promisify(execFile);
-const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const chainRoot = path.join(repoRoot, "chain");
+const siteRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const [pageName, pageUrl] = process.argv.slice(2);
 const page = Object.hasOwn(PAGES, pageName) ? PAGES[pageName] : undefined;
 if (!page || !pageUrl) {
@@ -38,11 +37,11 @@ if (!page || !pageUrl) {
   process.exit(1);
 }
 // The bones follow the English layout whatever the machine's locale. `lang` is LANGUAGE_QUERY_PARAM
-// in chain/src/lib/locales.ts, which the page reads before the browser's language.
+// in src/lib/locales.ts, which the page reads before the browser's language.
 const url = new URL(pageUrl);
 url.searchParams.set("lang", "en");
 
-await withBrowser(chainRoot, false, async (_browser, cdpUrl) => {
+await withBrowser(siteRoot, false, async (_browser, cdpUrl) => {
   const { stdout } = await exec(
     "yarn",
     [
@@ -59,8 +58,8 @@ await withBrowser(chainRoot, false, async (_browser, cdpUrl) => {
       "--wait",
       "1500",
     ],
-    { cwd: chainRoot, timeout: 300000 },
+    { cwd: siteRoot, timeout: 300000 },
   );
   process.stdout.write(stdout);
 });
-await exec("yarn", ["oxfmt", path.join("chain", page.out)], { cwd: repoRoot });
+await exec("yarn", ["oxfmt", page.out], { cwd: siteRoot });

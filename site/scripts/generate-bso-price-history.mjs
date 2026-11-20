@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Rebuilds BSO's daily price history, from its first trade on Avalanche in 2022 to today, into
-// chain/src/data/bso-price-history.json for the chart at chain.bitsocial.net/chart/. Every candle
+// src/data/bso-price-history.json for the chart at chain.bitsocial.net/chart/. Every candle
 // comes from the swap events of the DEX pools of the token's three contracts, priced in USD with
 // Coinbase's hourly AVAX and ETH rates, and carries that day's total supply, rebuilt from the
 // contract's mints and burns, for the market cap view. The page paints from this file, then tops
@@ -14,7 +14,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const outputPath = path.join(repoRoot, "chain/src/data/bso-price-history.json");
+const outputPath = path.join(repoRoot, "src/data/bso-price-history.json");
 const cacheDir = path.join(repoRoot, "node_modules/.cache/bso-price-history");
 
 const ROUTESCAN_API = "https://api.routescan.io/v2/network/mainnet/evm/43114/etherscan/api";
@@ -63,10 +63,10 @@ async function readAddress(file, name) {
 // PLEB_PER_BSO: all of Gen 1, and Gen 2 until the rebase. `fixedSupplyFrom` is the time from which
 // the supply is the final 210M.
 async function readEras() {
-  const gen1 = await readAddress("chain/src/lib/rich-list/data.ts", "GEN1_TOKEN_ADDRESS");
-  const gen2 = await readAddress("chain/src/lib/rich-list/data.ts", "GEN2_TOKEN_ADDRESS");
-  const bso = await readAddress("chain/src/lib/site.ts", "BSO_TOKEN_ADDRESS");
-  const pair = await readAddress("chain/src/lib/site.ts", "DEXSCREENER_PAIR_ADDRESS");
+  const gen1 = await readAddress("src/lib/rich-list/data.ts", "GEN1_TOKEN_ADDRESS");
+  const gen2 = await readAddress("src/lib/rich-list/data.ts", "GEN2_TOKEN_ADDRESS");
+  const bso = await readAddress("src/lib/site.ts", "BSO_TOKEN_ADDRESS");
+  const pair = await readAddress("src/lib/site.ts", "DEXSCREENER_PAIR_ADDRESS");
 
   return [
     {

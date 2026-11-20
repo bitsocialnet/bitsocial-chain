@@ -67,13 +67,11 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 /**
- * Translations live in the `about` workspace, not at the repo root, so running the documented
- * command from the root used to fail on every invocation. The workspace is resolved from the
- * current directory first (so `cd about && node ../scripts/...` keeps working), then from this
- * script's own location.
+ * Translations live in the site's `public/translations`. The workspace is resolved from the
+ * current directory first, then from this script's own location.
  */
-const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const WORKSPACE_CANDIDATES = [process.cwd(), path.join(REPO_ROOT, "about")];
+const SITE_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const WORKSPACE_CANDIDATES = [process.cwd(), SITE_ROOT];
 
 async function resolveWorkspaceDir() {
   for (const dir of WORKSPACE_CANDIDATES) {
