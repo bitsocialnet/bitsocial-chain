@@ -86,10 +86,7 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [react(), pagePreloadPlugin()],
   build: {
-    outDir: path.resolve(
-      __dirname,
-      mode === "profiling" ? "../dist-profile/chain" : "../dist-chain",
-    ),
+    outDir: path.resolve(__dirname, mode === "profiling" ? "dist-profile" : "dist"),
     minify: mode === "profiling" ? false : undefined,
     sourcemap: mode === "profiling",
     emptyOutDir: true,

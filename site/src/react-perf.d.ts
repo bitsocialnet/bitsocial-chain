@@ -1,1 +1,1 @@
-import type {} from "../../scripts/react-perf/collector.mjs";
+import type {} from "../scripts/react-perf/collector.mjs";
