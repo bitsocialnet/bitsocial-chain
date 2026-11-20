@@ -31,7 +31,8 @@ jobs:
         with:
           node-version: 22
       - run: corepack enable
-      - run: corepack yarn deps:check-hardened
+      # Same as `yarn deps:check-hardened`, called directly: `yarn run` needs an installed project.
+      - run: YARN_ENABLE_HARDENED_MODE=1 corepack yarn install --immutable
       - run: corepack yarn deps:check-pinned
       - run: corepack yarn typecheck
       - run: corepack yarn lint
