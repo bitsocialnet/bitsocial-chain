@@ -13,7 +13,7 @@ const DAY = 86_400;
 async function importChainModule(file) {
   const { outputFiles } = await build({
     entryPoints: [path.join(repoRoot, file)],
-    alias: { "@": path.join(repoRoot, "chain/src") },
+    alias: { "@": path.join(repoRoot, "src") },
     bundle: true,
     write: false,
     platform: "node",
@@ -25,7 +25,7 @@ async function importChainModule(file) {
 }
 
 const { COMMITTED_CANDLES, ERAS, mergeLiveCandles } = await importChainModule(
-  "chain/src/lib/chart/history.ts",
+  "src/lib/chart/history.ts",
 );
 
 function candle(time, close, extra = {}) {
@@ -65,7 +65,7 @@ test("live candles replace the partial last day, and quiet days repeat the last 
 });
 
 test("the live refresh tops up the committed history from the current pool", async (t) => {
-  const { fetchLivePriceHistory } = await importChainModule("chain/src/lib/chart/live.ts");
+  const { fetchLivePriceHistory } = await importChainModule("src/lib/chart/live.ts");
   const last = COMMITTED_CANDLES[COMMITTED_CANDLES.length - 1];
   t.mock.method(Date, "now", () => (last.time + 2 * DAY + 3600) * 1000);
   let requestedUrl = "";
@@ -167,12 +167,12 @@ for (const [gap, short] of [
     const fixture = await mkdtemp(path.join(os.tmpdir(), "bitsocial-price-history-"));
     t.after(() => rm(fixture, { recursive: true, force: true }));
     await mkdir(path.join(fixture, "scripts"), { recursive: true });
-    await mkdir(path.join(fixture, "chain/src/lib/rich-list"), { recursive: true });
+    await mkdir(path.join(fixture, "src/lib/rich-list"), { recursive: true });
     await cp(
       path.join(repoRoot, "scripts/generate-bso-price-history.mjs"),
       path.join(fixture, "scripts/generate-bso-price-history.mjs"),
     );
-    for (const file of ["chain/src/lib/site.ts", "chain/src/lib/rich-list/data.ts"]) {
+    for (const file of ["src/lib/site.ts", "src/lib/rich-list/data.ts"]) {
       await cp(path.join(repoRoot, file), path.join(fixture, file));
     }
     await writeFile(path.join(fixture, "offline-apis.mjs"), offlineApis);
@@ -202,7 +202,7 @@ for (const [gap, short] of [
     const recovered = run({});
     assert.equal(recovered.status, 0, recovered.stderr);
     const history = JSON.parse(
-      await readFile(path.join(fixture, "chain/src/data/bso-price-history.json"), "utf8"),
+      await readFile(path.join(fixture, "src/data/bso-price-history.json"), "utf8"),
     );
     assert.equal(history.eras[0].start, 1654041600);
     // Candles are [time, open, high, low, close, volume, era index, supply]; Gen 1 minted.

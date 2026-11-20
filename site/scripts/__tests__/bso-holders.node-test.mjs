@@ -86,8 +86,8 @@ function blockscout(holders, pageSize, issued = new Set()) {
 /** Fetches a live snapshot from `respond`, counting holder requests that continue a run. */
 async function fetchFrom(t, respond, issued = new Set()) {
   const { outputFiles } = await build({
-    entryPoints: [path.join(repoRoot, "chain/src/lib/rich-list/live.ts")],
-    alias: { "@": path.join(repoRoot, "chain/src") },
+    entryPoints: [path.join(repoRoot, "src/lib/rich-list/live.ts")],
+    alias: { "@": path.join(repoRoot, "src") },
     bundle: true,
     write: false,
     platform: "node",
@@ -112,7 +112,7 @@ async function fetchFrom(t, respond, issued = new Set()) {
 /** The committed snapshot as Blockscout serves it, with digits past the 4 decimals restored. */
 async function committedItems() {
   const { holders } = JSON.parse(
-    await readFile(path.join(repoRoot, "chain/src/data/bso-holders.json"), "utf8"),
+    await readFile(path.join(repoRoot, "src/data/bso-holders.json"), "utf8"),
   );
   return holders.map((holder, index) => ({
     address: { hash: holder.address, is_contract: holder.isContract },
@@ -177,15 +177,12 @@ test("snapshot generation uses the same delegated-wallet classification across p
   const fixture = await mkdtemp(path.join(os.tmpdir(), "bitsocial-holders-"));
   t.after(() => rm(fixture, { recursive: true, force: true }));
   await mkdir(path.join(fixture, "scripts"), { recursive: true });
-  await mkdir(path.join(fixture, "chain/src/lib"), { recursive: true });
+  await mkdir(path.join(fixture, "src/lib"), { recursive: true });
   await cp(
     path.join(repoRoot, "scripts/generate-bso-holders.mjs"),
     path.join(fixture, "scripts/generate-bso-holders.mjs"),
   );
-  await cp(
-    path.join(repoRoot, "chain/src/lib/site.ts"),
-    path.join(fixture, "chain/src/lib/site.ts"),
-  );
+  await cp(path.join(repoRoot, "src/lib/site.ts"), path.join(fixture, "src/lib/site.ts"));
 
   // Two a page, so the classification holds across pages.
   const respond = blockscout(items, 2);
@@ -205,7 +202,7 @@ test("snapshot generation uses the same delegated-wallet classification across p
   );
 
   const snapshot = JSON.parse(
-    await readFile(path.join(fixture, "chain/src/data/bso-holders.json"), "utf8"),
+    await readFile(path.join(fixture, "src/data/bso-holders.json"), "utf8"),
   );
   assert.deepEqual(snapshot.holders, expectedHolders);
   assert.equal(snapshot.holderCount, items.length);
@@ -215,7 +212,7 @@ test("snapshot generation uses the same delegated-wallet classification across p
 
 test("the committed fallback snapshot does not tag the reported delegated wallet as a contract", async () => {
   const snapshot = JSON.parse(
-    await readFile(path.join(repoRoot, "chain/src/data/bso-holders.json"), "utf8"),
+    await readFile(path.join(repoRoot, "src/data/bso-holders.json"), "utf8"),
   );
   const holder = snapshot.holders.find((entry) => entry.address === reportedAddress);
   assert.ok(holder, "the reported holder must be present in the fallback snapshot");
@@ -270,22 +267,22 @@ for (const [gap, env] of [
     const fixture = await mkdtemp(path.join(os.tmpdir(), "bitsocial-holder-history-"));
     t.after(() => rm(fixture, { recursive: true, force: true }));
     await mkdir(path.join(fixture, "scripts"), { recursive: true });
-    await mkdir(path.join(fixture, "chain/src/lib/rich-list"), { recursive: true });
-    await mkdir(path.join(fixture, "chain/src/data"), { recursive: true });
+    await mkdir(path.join(fixture, "src/lib/rich-list"), { recursive: true });
+    await mkdir(path.join(fixture, "src/data"), { recursive: true });
     await cp(
       path.join(repoRoot, "scripts/generate-bso-holder-history.mjs"),
       path.join(fixture, "scripts/generate-bso-holder-history.mjs"),
     );
     await writeFile(
-      path.join(fixture, "chain/src/lib/rich-list/data.ts"),
+      path.join(fixture, "src/lib/rich-list/data.ts"),
       'export const WALLET = "0x00000000000000000000000000000000000000aa";\n',
     );
     await writeFile(
-      path.join(fixture, "chain/src/lib/site.ts"),
+      path.join(fixture, "src/lib/site.ts"),
       `export const DEXSCREENER_PAIR_ADDRESS = "0x${"c".repeat(40)}";\n`,
     );
     await writeFile(
-      path.join(fixture, "chain/src/data/bso-price-history.json"),
+      path.join(fixture, "src/data/bso-price-history.json"),
       JSON.stringify({
         eras: [
           { id: "gen1", chain: "avalanche", token: `0x${"0".repeat(38)}b1`, start: 1654041600 },
@@ -312,7 +309,7 @@ for (const [gap, env] of [
     const recovered = run({});
     assert.equal(recovered.status, 0, recovered.stderr);
     const { wallets } = JSON.parse(
-      await readFile(path.join(fixture, "chain/src/data/bso-holder-history.json"), "utf8"),
+      await readFile(path.join(fixture, "src/data/bso-holder-history.json"), "utf8"),
     );
     // The line starts with the first contract's 100 BSO.
     assert.deepEqual(wallets["0x00000000000000000000000000000000000000aa"][0], [19144, 100]);

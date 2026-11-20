@@ -16,7 +16,7 @@ async function loadChainModule(file) {
   if (!bundles.has(file)) {
     const { outputFiles } = await build({
       entryPoints: [path.join(repoRoot, file)],
-      alias: { "@": path.join(repoRoot, "chain/src") },
+      alias: { "@": path.join(repoRoot, "src") },
       bundle: true,
       format: "esm",
       jsx: "automatic",
@@ -76,7 +76,7 @@ function chainBrowser(t, { system, storage = new Map() }) {
 
 test("the chain theme renders when the browser blocks site data", async (t) => {
   const { darkClass } = chainBrowser(t, { system: "light", storage: null });
-  const { ThemeProvider } = await loadChainModule("chain/src/lib/useTheme.tsx");
+  const { ThemeProvider } = await loadChainModule("src/lib/useTheme.tsx");
   const runner = createHookRunner(() => ThemeProvider({ children: null }));
 
   const context = runner.render().props.value;
@@ -90,7 +90,7 @@ test("the chain theme renders when the browser blocks site data", async (t) => {
 
 test("the chain theme follows the system until the reader picks one", async (t) => {
   const { darkClass, storage } = chainBrowser(t, { system: "light" });
-  const { ThemeProvider } = await loadChainModule("chain/src/lib/useTheme.tsx");
+  const { ThemeProvider } = await loadChainModule("src/lib/useTheme.tsx");
   const runner = createHookRunner(() => ThemeProvider({ children: null }));
 
   assert.equal(runner.render().props.value.theme, "light");
@@ -105,7 +105,7 @@ test("the chain theme follows the system until the reader picks one", async (t) 
 
 test("a stored chain theme wins over the system", async (t) => {
   chainBrowser(t, { system: "light", storage: new Map([["bso-theme", "dark"]]) });
-  const { ThemeProvider } = await loadChainModule("chain/src/lib/useTheme.tsx");
+  const { ThemeProvider } = await loadChainModule("src/lib/useTheme.tsx");
   const runner = createHookRunner(() => ThemeProvider({ children: null }));
 
   assert.equal(runner.render().props.value.theme, "dark");
@@ -113,7 +113,7 @@ test("a stored chain theme wins over the system", async (t) => {
 
 const DAY_MS = 86_400_000;
 const committedHistory = JSON.parse(
-  await readFile(path.join(repoRoot, "chain/src/data/bso-holder-history.json"), "utf8"),
+  await readFile(path.join(repoRoot, "src/data/bso-holder-history.json"), "utf8"),
 );
 const snapshotDay = Math.floor(Date.parse(committedHistory.generatedAt) / DAY_MS);
 
@@ -140,7 +140,7 @@ function blockscout(t, respond) {
 test("rich list history retries a failed top-up with the next live balances", async (t) => {
   let explorerUp = false;
   const requests = blockscout(t, () => (explorerUp ? { items: [], next_page_params: null } : 400));
-  const { useHolderHistory } = await loadChainModule("chain/src/lib/rich-list/history.ts");
+  const { useHolderHistory } = await loadChainModule("src/lib/rich-list/history.ts");
   let liveSnapshot = { generatedAt: "first refresh" };
   const runner = createHookRunner(() => useHolderHistory(true, liveSnapshot));
 
@@ -179,7 +179,7 @@ test("rich list history does not retry a top-up that needs more pages than it ma
     total: { value: "0" },
   };
   const requests = blockscout(t, () => ({ items: [transfer], next_page_params: { index: 1 } }));
-  const { useHolderHistory } = await loadChainModule("chain/src/lib/rich-list/history.ts");
+  const { useHolderHistory } = await loadChainModule("src/lib/rich-list/history.ts");
   let liveSnapshot = { generatedAt: "first refresh" };
   const runner = createHookRunner(() => useHolderHistory(true, liveSnapshot));
 
