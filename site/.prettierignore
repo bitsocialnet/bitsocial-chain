@@ -1,3 +1,10 @@
-# Keep bundled skill assets and generated compatibility copies byte-identical.
-.agents/skills/**
-.claude/skills/**
+.git
+.playwright-cli
+.vercel
+node_modules
+dist
+.vite
+.yarn/cache
+.yarn/install-state.gz
+.DS_Store
+.env.production
