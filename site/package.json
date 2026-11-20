@@ -1,0 +1,36 @@
+{
+  "name": "bitsocial-chain",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Bitsocial Chain landing site (BSO token and L2 appchain).",
+  "license": "AGPL-3.0-only",
+  "author": "Bitsocial Forge",
+  "type": "module",
+  "dependencies": {
+    "@radix-ui/react-dialog": "1.1.15",
+    "@radix-ui/react-slot": "1.2.4",
+    "@vercel/analytics": "2.0.1",
+    "@vercel/speed-insights": "2.0.0",
+    "boneyard-js": "1.10.0",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "framer-motion": "11.18.2",
+    "i18next": "25.8.18",
+    "i18next-browser-languagedetector": "8.2.1",
+    "i18next-http-backend": "4.0.2",
+    "lightweight-charts": "5.2.1",
+    "lucide-react": "0.563.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "react-i18next": "16.5.8",
+    "tailwind-merge": "3.5.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.19",
+    "tailwindcss-animate": "1.0.7"
+  },
+  "engines": {
+    "node": "22.x"
+  },
+  "packageManager": "yarn@4.13.0"
+}

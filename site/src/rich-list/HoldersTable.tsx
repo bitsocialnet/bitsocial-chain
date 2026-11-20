@@ -1,0 +1,372 @@
+import { type ReactNode, useId, useRef, useState } from "react";
+import { flushSync } from "react-dom";
+import { ChevronDown, Search } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { type HolderHistoryState, useHolderHistory } from "@/lib/rich-list/history";
+import { type RichListRow, getEntityIdForAddress } from "@/lib/rich-list/holders";
+import { useReveal } from "@/lib/useReveal";
+import { useEntityName, useRichList } from "./data-context";
+import { type Formatters, useFormatters } from "./format";
+import { entityCategory } from "@/lib/rich-list/data";
+import { cn } from "@/lib/utils";
+import BalanceTrend from "./BalanceTrend";
+import { AddressLink, CategoryBadge, LiveSkeleton, SegmentedControl } from "./primitives";
+
+const PAGE_SIZE = 25;
+
+const VIEWS = ["grouped", "wallets"] as const;
+type View = (typeof VIEWS)[number];
+
+function EntityName({ entityId }: { entityId: string }) {
+  const entityName = useEntityName();
+  const row = useRichList().entityRowById.get(entityId);
+
+  if (!row) {
+    return null;
+  }
+
+  const anchor = row.entity.kind === "linked" ? `#entity-${entityId}` : "#team";
+  return (
+    <span className="rl-holder-name">
+      <a href={anchor} className="rl-holder-label">
+        {entityName(entityId)}
+      </a>
+      <CategoryBadge category={entityCategory(row.entity)} />
+    </span>
+  );
+}
+
+export default function HoldersTable() {
+  const { t } = useTranslation();
+  const format = useFormatters();
+  const entityName = useEntityName();
+  const { groupedRows, walletRows, awaitingLive, snapshot } = useRichList();
+  const bodyRef = useRef<HTMLTableSectionElement>(null);
+  const searchId = useId();
+  const [view, setView] = useState<View>("grouped");
+  const [query, setQuery] = useState("");
+  const [limit, setLimit] = useState(PAGE_SIZE);
+  const [expanded, setExpanded] = useState<ReadonlySet<string>>(() => new Set());
+  // The balance history is a separate download, fetched only once the table nears the viewport,
+  // and fetched again with the next live balances when Blockscout could not top it up.
+  const { ref: tableRef, revealed } = useReveal<HTMLDivElement>({
+    threshold: 0,
+    rootMargin: "300px 0px",
+  });
+  const history = useHolderHistory(revealed, snapshot);
+
+  const normalizedQuery = query.trim().toLowerCase();
+  // A search lists matching wallets one by one, each still labelled with its holder, so a match
+  // inside a group is visible without expanding it.
+  const rows = normalizedQuery || view === "wallets" ? walletRows : groupedRows;
+  const matchesQuery = (row: RichListRow) => {
+    if (!normalizedQuery || row.type !== "wallet") {
+      return true;
+    }
+    const entityId = getEntityIdForAddress(row.holder.address);
+    return (
+      row.holder.address.toLowerCase().includes(normalizedQuery) ||
+      (entityId !== undefined && entityName(entityId).toLowerCase().includes(normalizedQuery))
+    );
+  };
+  const filtered = rows.filter(matchesQuery);
+  const visible = normalizedQuery ? filtered : filtered.slice(0, limit);
+  const remaining = filtered.length - visible.length;
+
+  // The buttons disappear once every row is shown, so focus moves to the first added row instead
+  // of falling back to the page, and keyboard users continue from where the list grew.
+  const reveal = (nextLimit: number) => {
+    const firstAdded = visible.length;
+    flushSync(() => setLimit(nextLimit));
+    bodyRef.current
+      ?.querySelectorAll(":scope > tr:not(.rl-subrow)")
+      [firstAdded]?.querySelector<HTMLElement>("a, button")
+      ?.focus();
+  };
+
+  const toggle = (id: string) =>
+    setExpanded((current) => {
+      const next = new Set(current);
+      if (next.has(id)) {
+        next.delete(id);
+      } else {
+        next.add(id);
+      }
+      return next;
+    });
+
+  return (
+    <div className="rl-holders">
+      <div className="rl-controls">
+        <SegmentedControl
+          label={t("richList.table.viewLabel")}
+          options={VIEWS}
+          value={view}
+          onChange={setView}
+          optionLabel={(option) => t(`richList.table.view.${option}`)}
+        />
+        <label className="rl-search" htmlFor={searchId}>
+          <Search aria-hidden size={16} strokeWidth={1.8} />
+          <span className="sr-only">{t("richList.table.searchLabel")}</span>
+          <input
+            id={searchId}
+            type="search"
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder={t("richList.table.searchPlaceholder")}
+            spellCheck={false}
+            autoComplete="off"
+          />
+        </label>
+      </div>
+
+      {/* On phones each row becomes a grid (rich-list.css), and some browsers drop a table's
+          semantics once its display changes, so the table roles are stated explicitly. The card
+          is the surface, so it stays outside the skeleton. */}
+      <div ref={tableRef} className="rl-table-scroll glass-card">
+        <LiveSkeleton name="rich-list-holders" loading={awaitingLive}>
+          <table className="rl-table rl-holders-table" role="table">
+            <caption className="sr-only">{t("richList.table.caption")}</caption>
+            <thead role="rowgroup">
+              <tr role="row">
+                <th scope="col" role="columnheader" className="rl-col-rank">
+                  <CellText>#</CellText>
+                </th>
+                <th scope="col" role="columnheader" className="rl-col-holder">
+                  <CellText>{t("richList.table.holder")}</CellText>
+                </th>
+                <th scope="col" role="columnheader" className="rl-col-num rl-col-balance">
+                  <CellText>{t("richList.table.balance")}</CellText>
+                </th>
+                <th scope="col" role="columnheader" className="rl-col-num rl-col-share">
+                  <CellText>{t("richList.table.share")}</CellText>
+                </th>
+                <th scope="col" role="columnheader" className="rl-col-num rl-col-usd">
+                  <CellText>{t("richList.table.value")}</CellText>
+                </th>
+                <th scope="col" role="columnheader" className="rl-col-trend">
+                  <CellText>{t("richList.table.history")}</CellText>
+                </th>
+              </tr>
+            </thead>
+            <tbody ref={bodyRef} role="rowgroup">
+              {visible.map((row) => {
+                if (row.type === "wallet") {
+                  const entityId = getEntityIdForAddress(row.holder.address);
+                  return (
+                    <tr key={row.holder.address} role="row">
+                      <td role="cell" className="rl-col-rank">
+                        <CellText>{row.rank}</CellText>
+                      </td>
+                      <td role="cell" className="rl-col-holder">
+                        <span className="rl-holder-name">
+                          <AddressLink address={row.holder.address} />
+                          {entityId ? (
+                            <EntityName entityId={entityId} />
+                          ) : row.holder.isContract ? (
+                            <span className="rl-tag">{t("richList.table.contract")}</span>
+                          ) : null}
+                        </span>
+                      </td>
+                      <AmountCells format={format} balance={row.holder.balance} />
+                      <TrendCell
+                        format={format}
+                        history={history}
+                        addresses={[row.holder.address]}
+                      />
+                    </tr>
+                  );
+                }
+
+                const { entity, wallets, balance } = row.row;
+                const heldWallets = wallets.filter((wallet) => wallet.balance > 0);
+                // The line counts every wallet, including ones that have since sold out and the
+                // emptied wallets the holder's tokens came from.
+                const allAddresses = [
+                  ...wallets.map((wallet) => wallet.address),
+                  ...(entity.formerWallets ?? []),
+                ];
+                const isOpen = expanded.has(entity.id);
+                const panelId = `rl-wallets-${entity.id}`;
+                return (
+                  <GroupRows
+                    key={entity.id}
+                    format={format}
+                    rank={row.rank}
+                    entityId={entity.id}
+                    balance={balance}
+                    wallets={heldWallets}
+                    allAddresses={allAddresses}
+                    history={history}
+                    isOpen={isOpen}
+                    panelId={panelId}
+                    onToggle={() => toggle(entity.id)}
+                    toggleLabel={t("richList.table.walletCount", { count: heldWallets.length })}
+                  />
+                );
+              })}
+              {visible.length === 0 ? (
+                <tr role="row">
+                  <td role="cell" colSpan={6} className="rl-empty">
+                    {t("richList.table.noMatch")}
+                  </td>
+                </tr>
+              ) : null}
+            </tbody>
+          </table>
+        </LiveSkeleton>
+      </div>
+
+      {!normalizedQuery && remaining > 0 ? (
+        <div className="rl-more">
+          {/* The site's standard button (see the newsletter form). */}
+          <button
+            type="button"
+            className={cn(
+              "inline-flex min-h-11 items-center justify-center rounded-full px-6 font-display text-sm font-semibold",
+              "border border-blue-core/30 bg-blue-core/[0.08] text-foreground/90",
+              "hover:border-blue-glow hover:bg-blue-core/[0.14] hover:text-foreground",
+              "ring-glow cta-glow transition-[box-shadow,border-color,background-color,color] duration-300",
+              "dark:border-blue-core/45 dark:bg-blue-core/[0.18] dark:hover:border-blue-glow dark:hover:bg-blue-core/[0.24]",
+            )}
+            onClick={() => reveal(limit + PAGE_SIZE)}
+          >
+            {t("richList.table.showMore", { count: Math.min(PAGE_SIZE, remaining) })}
+          </button>
+          <button
+            type="button"
+            className="rl-more-all"
+            onClick={() => reveal(Number.POSITIVE_INFINITY)}
+          >
+            {t("richList.table.showAll", { count: filtered.length })}
+          </button>
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+/**
+ * A cell's text as an element of its own, so the skeleton captures the text rather than the whole
+ * cell: boneyard takes a cell holding only text as one bone, and adjacent cells would join up.
+ */
+function CellText({ children }: { children: ReactNode }) {
+  return <span className="rl-cell-text">{children}</span>;
+}
+
+/** The balance, its share of the supply and its dollar value, which end every row. */
+function AmountCells({ format, balance }: { format: Formatters; balance: number }) {
+  const { shareOfSupply, usdValue } = useRichList();
+
+  return (
+    <>
+      <td role="cell" className="rl-col-num rl-col-balance">
+        <CellText>{format.integer(balance)}</CellText>
+      </td>
+      <td role="cell" className="rl-col-num rl-col-share">
+        <CellText>{format.percent(shareOfSupply(balance))}</CellText>
+      </td>
+      <td role="cell" className="rl-col-num rl-col-usd">
+        <CellText>{format.usd(usdValue(balance))}</CellText>
+      </td>
+    </>
+  );
+}
+
+/** The balance history: only rendered rows draw one, and only once the history has loaded. */
+function TrendCell({
+  format,
+  history,
+  addresses,
+}: {
+  format: Formatters;
+  history: HolderHistoryState;
+  addresses: readonly string[];
+}) {
+  return (
+    <td role="cell" className="rl-col-trend">
+      <BalanceTrend format={format} state={history} addresses={addresses} />
+    </td>
+  );
+}
+
+function GroupRows({
+  format,
+  rank,
+  entityId,
+  balance,
+  wallets,
+  allAddresses,
+  history,
+  isOpen,
+  panelId,
+  onToggle,
+  toggleLabel,
+}: {
+  format: Formatters;
+  rank: number;
+  entityId: string;
+  balance: number;
+  wallets: { address: string; balance: number }[];
+  allAddresses: readonly string[];
+  history: HolderHistoryState;
+  isOpen: boolean;
+  panelId: string;
+  onToggle: () => void;
+  toggleLabel: string;
+}) {
+  const expandable = wallets.length > 1;
+
+  return (
+    <>
+      <tr role="row" className={isOpen && expandable ? "rl-group is-open" : "rl-group"}>
+        <td role="cell" className="rl-col-rank">
+          <CellText>{rank}</CellText>
+        </td>
+        <td role="cell" className="rl-col-holder">
+          <span className="rl-holder-name">
+            <EntityName entityId={entityId} />
+            {expandable ? (
+              <button
+                type="button"
+                className="rl-expand"
+                aria-expanded={isOpen}
+                aria-controls={wallets.map((_, index) => `${panelId}-${index}`).join(" ")}
+                onClick={onToggle}
+              >
+                {toggleLabel}
+                <ChevronDown aria-hidden size={14} strokeWidth={2} />
+              </button>
+            ) : (
+              <AddressLink address={wallets[0]?.address ?? ""} />
+            )}
+          </span>
+        </td>
+        <AmountCells format={format} balance={balance} />
+        <TrendCell format={format} history={history} addresses={allAddresses} />
+      </tr>
+      {expandable
+        ? wallets.map((wallet, index) => (
+            <tr
+              key={wallet.address}
+              id={`${panelId}-${index}`}
+              role="row"
+              className="rl-subrow"
+              hidden={!isOpen}
+            >
+              <td role="cell" className="rl-col-rank" />
+              <td role="cell" className="rl-col-holder">
+                <AddressLink address={wallet.address} />
+              </td>
+              <AmountCells format={format} balance={wallet.balance} />
+              <TrendCell
+                format={format}
+                history={history}
+                addresses={isOpen ? [wallet.address] : []}
+              />
+            </tr>
+          ))
+        : null}
+    </>
+  );
+}

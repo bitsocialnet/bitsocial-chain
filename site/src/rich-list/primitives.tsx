@@ -1,0 +1,208 @@
+import type { ReactNode } from "react";
+import { Skeleton } from "boneyard-js/react";
+import { ArrowUpRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import type { Category, Chain, TxRef } from "@/lib/rich-list/data";
+import {
+  bsoHolderUrl,
+  explorerAddressUrl,
+  explorerTxUrl,
+  shortAddress,
+  telegramMessageUrl,
+} from "@/lib/rich-list/holders";
+
+/** A labelled page region with an anchor, a headline and an optional lead paragraph. */
+export function RichSection({
+  id,
+  title,
+  lead,
+  children,
+}: {
+  id: string;
+  title: string;
+  lead?: ReactNode;
+  children: ReactNode;
+}) {
+  return (
+    <section id={id} className="rl-section" aria-labelledby={`${id}-title`}>
+      <h2 id={`${id}-title`} className="rl-section-title">
+        <a href={`#${id}`}>{title}</a>
+      </h2>
+      {lead ? <p className="rl-section-lead">{lead}</p> : null}
+      {children}
+    </section>
+  );
+}
+
+/**
+ * Draws a view that live data changes hidden under skeleton bones while `loading`, so its first
+ * view is already up to date. The page's `<page>:bones` script captures the bones from the view.
+ * Keep the view's surface outside, because boneyard draws no bones for surfaces, and keep state
+ * that must survive inside the view, because boneyard mounts its children a render late.
+ */
+export function LiveSkeleton({
+  name,
+  loading,
+  children,
+}: {
+  name: string;
+  loading: boolean;
+  children: ReactNode;
+}) {
+  return (
+    // Bones are captured per viewport width, so the viewport picks them, not the container.
+    <Skeleton
+      name={name}
+      loading={loading}
+      // An empty cell would be captured whole, as a block across its row.
+      snapshotConfig={{ excludeSelectors: [".sr-only", "td:empty"] }}
+      select="viewport"
+      className="rl-skeleton"
+      color="var(--rl-bone)"
+      darkColor="var(--rl-bone)"
+      animate="solid"
+      boneClass="rl-bone"
+    >
+      {children}
+    </Skeleton>
+  );
+}
+
+/** A pill of mutually exclusive options, each a pressed-state toggle button. */
+export function SegmentedControl<T extends string>({
+  label,
+  options,
+  value,
+  onChange,
+  optionLabel,
+}: {
+  label: string;
+  options: readonly T[];
+  /** `null` when no option applies, as when a chart is panned away from every preset. */
+  value: T | null;
+  onChange: (option: T) => void;
+  optionLabel: (option: T) => string;
+}) {
+  return (
+    <div className="rl-segmented" role="group" aria-label={label}>
+      {options.map((option) => (
+        <button
+          key={option}
+          type="button"
+          aria-pressed={value === option}
+          className="rl-segmented-option"
+          onClick={() => onChange(option)}
+        >
+          {optionLabel(option)}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+export function CategoryBadge({ category }: { category: Category }) {
+  const { t } = useTranslation();
+  // The team and the pool are pills; a link's confidence is a quiet note beside the name.
+  const isConfidence = category === "confirmed" || category === "likely" || category === "possible";
+
+  return (
+    <span
+      className={
+        isConfidence ? `rl-confidence rl-confidence-${category}` : `rl-badge rl-badge-${category}`
+      }
+    >
+      {t(`richList.categories.${category}`)}
+    </span>
+  );
+}
+
+export function ExternalLink({
+  href,
+  children,
+  className,
+}: {
+  href: string;
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" className={className ?? "rl-link"}>
+      {children}
+    </a>
+  );
+}
+
+/** An address that opens its BSO holdings on Etherscan (or the address page on Avalanche). */
+export function AddressLink({
+  address,
+  chain = "ethereum",
+  full = false,
+}: {
+  address: string;
+  chain?: Chain;
+  full?: boolean;
+}) {
+  const href = chain === "ethereum" ? bsoHolderUrl(address) : explorerAddressUrl(chain, address);
+
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={full ? "rl-address rl-address-full" : "rl-address"}
+      title={address}
+      translate="no"
+      dir="ltr"
+    >
+      {full ? address : shortAddress(address)}
+    </a>
+  );
+}
+
+export function TxLinks({ txs }: { txs: TxRef[] }) {
+  const { t } = useTranslation();
+
+  return (
+    <ul className="rl-tx-list" aria-label={t("richList.evidenceLinks")}>
+      {txs.map((tx) => (
+        <li key={tx.hash}>
+          <a
+            href={explorerTxUrl(tx.chain, tx.hash)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rl-tx"
+            translate="no"
+            dir="ltr"
+          >
+            <span className="rl-tx-chain">{tx.chain === "avalanche" ? "AVAX" : "ETH"}</span>
+            {shortAddress(tx.hash)}
+            <ArrowUpRight aria-hidden size={12} strokeWidth={2} />
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+export function TelegramLinks({ messageIds }: { messageIds: number[] }) {
+  const { t } = useTranslation();
+
+  return (
+    <ul className="rl-tx-list" aria-label={t("richList.telegramSources")}>
+      {messageIds.map((id) => (
+        <li key={id}>
+          <a
+            href={telegramMessageUrl(id)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rl-tx"
+            translate="no"
+          >
+            <span className="rl-tx-chain">TG</span>#{id}
+            <ArrowUpRight aria-hidden size={12} strokeWidth={2} />
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
+}

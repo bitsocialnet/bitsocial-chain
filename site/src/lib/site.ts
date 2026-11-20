@@ -1,0 +1,62 @@
+export const BSO_TOKEN_ADDRESS = "0xB50cea4c109dc223A10d44c14f521CaeD91DaB5A" as const;
+
+/** The rich list is the site's second HTML entry, `chain/rich-list/index.html`. */
+export const RICH_LIST_PATH = "/rich-list/" as const;
+
+/** The price chart is the site's third HTML entry, `chain/chart/index.html`. */
+export const CHART_PATH = "/chart/" as const;
+
+export const ETHERSCAN_TOKEN_URL = `https://etherscan.io/token/${BSO_TOKEN_ADDRESS}` as const;
+
+export const UNISWAP_TOKEN_URL =
+  `https://app.uniswap.org/explore/tokens/ethereum/${BSO_TOKEN_ADDRESS}` as const;
+
+export const DEXSCREENER_PAIR_ADDRESS = "0xae8d1a28c8fa6b71c4099ede2d7924672dc51e32" as const;
+
+export const UNISWAP_POOL_URL =
+  `https://app.uniswap.org/explore/pools/ethereum/${DEXSCREENER_PAIR_ADDRESS}` as const;
+
+export const DEXSCREENER_TOKEN_URL =
+  `https://dexscreener.com/ethereum/${DEXSCREENER_PAIR_ADDRESS}` as const;
+
+export const COINGECKO_URL = "https://coingecko.com/coins/bitsocial" as const;
+
+export const BITSOCIAL_URL = "https://bitsocial.net" as const;
+
+export const ABOUT_URL = "https://bitsocial.net/about" as const;
+
+export const BLOG_URL = "https://bitsocial.net/blog" as const;
+
+export const FIVECHAN_URL = "https://5chan.app" as const;
+
+export const SEEDIT_URL = "https://seedit.app" as const;
+
+export const STATS_SITE_URL = "https://stats.bitsocial.net" as const;
+
+export const PROOF_OF_CONCEPT_URL = "https://github.com/bitsocialnet/bitsocial-chain" as const;
+
+export const GITHUB_URL = "https://github.com/bitsocialnet" as const;
+
+export const TWITTER_URL = "https://twitter.com/bitsocialnet" as const;
+
+export const TELEGRAM_URL = "https://t.me/bitsocialnet" as const;
+
+export const CONTRIBUTE_URL =
+  "https://github.com/bitsocialnet/bitsocial-web/tree/master/chain" as const;
+
+export const BSO_RESOLVER_URL = "https://github.com/bitsocialnet/bso-resolver" as const;
+
+export const BSO_REGISTRY_BSIP_URL = "https://bsips.bitsocial.net/bsip-13" as const;
+
+export type ExternalLink = {
+  label: string;
+  href: string;
+  icon?: "etherscan" | "coingecko" | "uniswap" | "dexscreener";
+};
+
+export const FOOTER_TOKEN_LINKS: ExternalLink[] = [
+  { label: "Etherscan", href: ETHERSCAN_TOKEN_URL, icon: "etherscan" },
+  { label: "CoinGecko", href: COINGECKO_URL, icon: "coingecko" },
+  { label: "Uniswap", href: UNISWAP_TOKEN_URL, icon: "uniswap" },
+  { label: "DEX Screener", href: DEXSCREENER_TOKEN_URL, icon: "dexscreener" },
+];

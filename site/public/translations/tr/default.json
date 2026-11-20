@@ -1,0 +1,748 @@
+{
+  "nav": {
+    "language": "Dil",
+    "theme": "Tema",
+    "bitsocial": "Bitsocial",
+    "faq": "SSS",
+    "richList": "Zengin listesi",
+    "chart": "Grafik"
+  },
+  "languageSelector": {
+    "title": "Dil seçin",
+    "searchPlaceholder": "Dil ara...",
+    "noResults": "Aramanızla eşleşen dil yok."
+  },
+  "meta": {
+    "title": "BSO - Kriptonun Eksik Sosyal Katmanı",
+    "description": "BSO, hiçbir şirketin sahip olmadığı peer-to-peer sosyal ağ Bitsocial'ın parasıdır. Toplulukların kendi ağlarına, token'larına ve gelirlerine sahip olduğu bir Ethereum L2 uygulama zinciri."
+  },
+  "topbar": {
+    "navLabel": "Bitsocial Chain sitesi gezinti menüsü",
+    "menu": "Menü",
+    "openMenu": "Menüyü aç",
+    "closeMenu": "Menüyü kapat"
+  },
+  "theme": {
+    "toggle": "Temayı değiştir"
+  },
+  "hero": {
+    "statusCta": "Zincir henüz yayında değil, güncellemeler için abone olun",
+    "title": "Kriptonun eksik <mark>sosyal katmanı</mark>",
+    "supporting": "Kripto bir kumarhaneye dönüştü, çünkü Web2, TradFi ve merkezi altyapı dağıtım raylarına sahip ve teşvikleri çarpıtıyor. Bitsocial Chain bunu düzeltir: toplulukların kendi ağlarına, token'larına ve gelirlerine sahip olduğu, durdurulamaz ve tamamen merkezi olmayan bir <l2Link>Ethereum L2</l2Link> <appchainLink>uygulama zinciri</appchainLink>."
+  },
+  "layers": {
+    "ariaLabel": "Kriptonun üst üste dizilmiş üç katmanı: en üstte Bitsocial ağındaki sosyal uygulamalar, en altta Ethereum L1 mutabakatı ve ikisinin arasındaki boşluğa oturan, parlayan eksik katman olarak alevlenen, BSO ile çalışan Ethereum L2 uygulama zinciri Bitsocial Chain. Katmanların içinden bir enerji omurgası geçiyor.",
+    "social": {
+      "title": "SOSYAL UYGULAMALAR",
+      "subtitle": "BITSOCIAL AĞI"
+    },
+    "bso": {
+      "title": "BITSOCIAL CHAIN",
+      "subtitle": "L2 UYGULAMA ZİNCİRİ · BSO"
+    },
+    "eth": {
+      "title": "ETHEREUM",
+      "subtitle": "L1 MUTABAKAT"
+    }
+  },
+  "contract": {
+    "label": "BSO sözleşmesi",
+    "copyAriaLabel": "BSO sözleşme adresini kopyala: {{address}}",
+    "copied": "Panoya kopyalandı"
+  },
+  "sections": {
+    "whyAChain": {
+      "title": "Bitsocial'ın kendisi bir blockchain üzerinde değil.",
+      "supporting": "<bitsocialLink>Bitsocial</bitsocialLink>'daki gönderiler, profiller, topluluklar ve moderasyon peer-to-peer'dir. Zincir yok, ücret yok, cüzdan yok: tüm ağı kriptoya hiç dokunmadan kullanabilirsiniz ve çoğu insan da öyle yapacak. Ama birkaç şey gerçekten bir zincire ihtiyaç duyar — size ait adlar, yabancılar arasında el değiştiren para, bir topluluğun gerçekten sahip olduğu token'lar. Bitsocial Chain tam olarak bunlar içindir, başka hiçbir şey için değil.",
+      "peerToPeer": {
+        "badge": "Peer-to-peer",
+        "note": "Sosyal ağ. Zincir devrede değil.",
+        "posts": "Gönderiler ve yorumlar",
+        "profiles": "Profiller ve topluluklar",
+        "moderation": "Moderasyon ve spam önleme"
+      },
+      "onChain": {
+        "badge": "On-chain",
+        "note": "Zincire ihtiyaç duyan birkaç parça.",
+        "names": ".bso adları",
+        "tipping": "Bahşiş ve ödüller",
+        "tokens": "Topluluk token'ları"
+      },
+      "caption": "Zincir isteğe bağlıdır. Sosyal ağ ise değil.",
+      "quote": "Merkezi olmayan bir sosyal ağ, merkezi olmayan bir paraya ihtiyaç duyar."
+    },
+    "tokenomics": {
+      "title": "Sağlam para.",
+      "supporting": "BSO, sabit arzlı bir ERC-20'dir: 210 milyon, enflasyon yok, tasarım gereği deflasyonist. 2022'de üç airdrop ve likidite madenciliği ödülleriyle ücretsiz dağıtıldı; ön satış ve ekip tahsisi olmadı. Sözleşmesi değiştirilemez ve yöneticisizdir, dolayısıyla kurallar sonsuza dek sabittir.",
+      "supply": {
+        "cap": "BSO maksimum arz · sonsuza dek sabit"
+      },
+      "traits": {
+        "airdropped": "Ekip tahsisi veya ön satış yok",
+        "fixedCap": "Sabit üst sınır, sıfır emisyon",
+        "deflationary": "Deflasyonist: arz yalnızca azalır"
+      },
+      "locks": {
+        "noMint": {
+          "label": "Mint yok",
+          "note": "arz asla artamaz"
+        },
+        "noOwner": {
+          "label": "Sahip yok",
+          "note": "asla yönetici anahtarı yok"
+        },
+        "noPause": {
+          "label": "Duraklatma yok",
+          "note": "transferler dondurulamaz"
+        },
+        "noProxy": {
+          "label": "Proxy yok",
+          "note": "kod başka bir kodla değiştirilemez"
+        }
+      },
+      "airdrop": {
+        "label": "Dağıtım",
+        "note": "Ocak ve Şubat 2022'de, 1.510 adresin talep ettiği üç airdrop turu. 1. turda referans bonuslu bir Telegram botu kullanıldı ve Esteban bu turdaki referansları kötüye kullanıma karşı elle inceledi; 2. ve 3. turlar Twitter ve Reddit'te yapıldı. Tüm BSO'nun yaklaşık %63'ü airdrop'larla, %34'ü ise likidite sağlayanlara ödül olarak dağıtıldı; geri kalanı lansman havuzlarının başlangıç likiditesi oldu. Ön satış yok, ekip tahsisi yok, hiçbir şey satılmadı.",
+        "richListLink": "Tüm sahipleri ve üç turun hepsini görün"
+      },
+      "contract": {
+        "label": "Sözleşmenin tamamı",
+        "note": "Tüm arz tek bir adrese mint edilir, çünkü geçiş bu şekilde işler: bakiyeler bire bir bu adrese yansıtıldı ve transferle geri ödendi, hem de hepsi on-chain. Geri kalan her şey değiştirilmemiş <openZeppelinLink>OpenZeppelin</openZeppelinLink> kodudur — Ethereum'da en çok kullanılan ve en çok incelenen token kodu. Özel hiçbir şey yok, kurnazca hiçbir numara yok. <etherscanLink>Etherscan</etherscanLink>'de okuyun."
+      },
+      "foot": "Değiştirilemez ve yöneticisiz: elde tutulacak yönetici anahtarı kalmadı, bu yüzden kimse onu değiştiremez, arzını artıramaz ya da donduramaz."
+    },
+    "unstoppable": {
+      "title": "Ethereum üzerine kurulu. Kimse tarafından işletilmiyor.",
+      "supporting": "Yeni bir blockchain, Ethereum'un zaten sahip olduğu güvenliği ve geliştirici tabanını yeniden inşa ederdi ve BSO zaten tamamen dağıtılmışken yeni bir token'a ihtiyaç duyardı. Bu yüzden Bitsocial Chain, operatörü olmayan bir Ethereum L2 olarak tasarlandı: her eylem, kimsenin kontrol etmediği bir adrese gönderilen sade bir Ethereum işlemidir ve herkes, aynı durumu Ethereum'un geçmişinden türeten bir düğüm çalıştırabilir. Baskı uygulanacak bir şirket ve kapatılacak bir şalter yok.",
+      "locks": {
+        "noSequencer": {
+          "label": "Sequencer gerekmez",
+          "note": "her işlemi Ethereum sıralar"
+        },
+        "noAdminKeys": {
+          "label": "Yönetici anahtarı yok",
+          "note": "kuralları sizin için kimse değiştirmez"
+        },
+        "noUpgradeableContract": {
+          "label": "Yükseltilebilir sözleşme yok",
+          "note": "Ethereum'da el konulacak hiçbir şey yok"
+        },
+        "noPrivilegedNode": {
+          "label": "Ayrıcalıklı düğüm yok",
+          "note": "herkes aynı durumu türetebilir"
+        }
+      },
+      "proofOfConcept": "Kavram kanıtı .bso adlarını şimdiden bu şekilde türetiyor, yerel bir geliştirme zincirinde. Üretim lansmanı için hâlâ bir kanıt sistemi, bir denetim ve nihai ekonomi gerekiyor. <proofLink>Kavram kanıtını okuyun</proofLink>."
+    },
+    "bsoNames": {
+      "title": ".bso adınız sizin kalır.",
+      "supporting": "Bitsocial uygulamaları, Ethereum cüzdanlarının kullandığı adlandırma sistemi ENS'yi ödünç alarak <resolverLink>.bso adlarını bugün çözümler</resolverLink>: mycommunity.bso aslında bir bitsocial kaydı taşıyan mycommunity.eth adıdır. Yerleşik bir kayıt defteri, kullanımda olan her adı onu elinde tutan cüzdana airdrop ile dağıtırdı — talep edilecek bir şey ve yeniden kaydedilecek bir şey yok.",
+      "ensBadge": "ENS · bugün",
+      "pointsTo": "işaret eder",
+      "communityKey": "topluluğun anahtarı",
+      "airdropAtLaunch": "lansmanda airdrop",
+      "bsoBadge": ".bso · Bitsocial Chain",
+      "owner": "sahip",
+      "sameWallet": "aynı cüzdan",
+      "fees": "Zincir var olana kadar .bso adları, ücretleri Bitsocial geliştiricilerini finanse eden <bsipLink>Ethereum üzerindeki geçici bir kayıt defterine</bsipLink> taşınıyor. Bitsocial Chain'de ise plan, ad ücretlerinin bunun yerine yakılması ya da BSO geri alıp yakmak için kullanılması. Mekanizma henüz kararlaştırılmadı."
+    },
+    "communityMoney": {
+      "title": "Birçok topluluğun altında tek bir varlık.",
+      "supporting": "Her topluluk kendi katmanını, yani kendi token'ına sahip bir L3'ü çalıştırabilir; ücretlerini, adlarını ve kirasını BSO ile ödeyebilir. L3'ler kripto dünyasında zaten var; Bitsocial Chain'de ise biri, hazır bir toplulukla birlikte gelirdi. Geliri kendi kendine işleyebilir: sözleşmeyle açık artırmaya çıkarılan reklam alanları, her satışın bir kısmı anında yakılır, geri kalanı topluluğa ödenir; kimsenin ele geçirebileceği bir geri alım hazinesi olmadan.",
+      "communityLayer": "Topluluk katmanı",
+      "ownToken": "kendi token'ı",
+      "feesFlow": "ücretler, adlar ve kira BSO ile ödenir",
+      "chainMeta": "Ethereum katmanı · durumu Ethereum'dan türetilir",
+      "ethereumMeta": "Ethereum L1 · güvenlik ve veri",
+      "caption": "Her ücretin bir kısmı yakılır; kalanı zincirin güvenliği için ödenir."
+    },
+    "privacy": {
+      "title": "Bahşiş vermek kimliğinizi ifşa etmemeli.",
+      "supporting": "Bitsocial Chain, Ethereum gibi varsayılan olarak herkese açıktır ve .bso adlarının görülmesi amaçlanır. Para farklıdır: bir bahşiş, yanına adınızı, profilinizi veya gönderinizi on-chain koymayı asla gerektirmemeli; yeni bir cüzdan da şüpheli değil, normal olmalı. Zincir kendi gizlilik sistemini kurmayacak. Mevcut sistemlerin izin istemeden bağlanabilmesine olanak tanıması amaçlanıyor: korumalı havuzlar, gizli (stealth) adresler, sıfır bilgi kanıtları.",
+      "publicOnPurpose": {
+        "heading": "Bilerek herkese açık",
+        "names": ".bso adları ve sahipleri",
+        "rules": "Her kural ve her durum değişikliği"
+      },
+      "neverRequired": {
+        "heading": "Asla gerekmez",
+        "profile": "Bahşişte adınız veya profiliniz",
+        "wallet": "Kişi başına tek cüzdan",
+        "app": "Resmi bir cüzdan veya uygulama"
+      }
+    },
+    "possibilities": {
+      "title": "Herkesin gözü önünde önerildi.",
+      "supporting": "Henüz yayında değil. BSO bugün Ethereum'da yayında; Bitsocial Chain bir öneridir ve ilk kavram kanıtı olan yerleşik .bso adları yerel bir geliştirme zincirinde çalışıyor. Aşağıdakilerin hiçbirinin tarihi yok. Kendi parası olan bir sosyal katmanın mümkün kılacağı şeyler bunlar: bir kısmı inşa edilecek, bir kısmının yerini daha iyi fikirler alacak, bir kısmını da henüz ortaya çıkmamış insanlar inşa edecek.",
+      "ideas": {
+        "chain": {
+          "note": "Ethereum L2 uygulama zincirinin kendisi ve BSO'nun mutabakat merkezi."
+        },
+        "registry": {
+          "label": "Yerleşik bir .bso kayıt defteri",
+          "note": "ENS'den ödünç alınmak yerine zincirde kaydedilen adlar ve kimlik."
+        },
+        "l3s": {
+          "label": "Topluluk L3'leri ve token'ları",
+          "note": "Kendi katmanı ve kendi token'ı olan, BSO üzerinden mutabakat sağlayan topluluklar."
+        },
+        "agoraswap": {
+          "note": "Topluluk token'larının BSO karşısında işlem gördüğü, likiditeyi on-chain tutan bir topluluk DEX'i."
+        },
+        "collectibles": {
+          "label": "İçerik üreticisi koleksiyonları",
+          "note": "İçerik üreticilerinin, bir platform komisyon almadan doğrudan bir şey satabilmesinin yolları."
+        },
+        "other": {
+          "label": "Uygun olan diğer her şey",
+          "note": "İstemci token'ları, merkezi olmayan sıralama ve henüz kimsenin önermediği fikirler."
+        }
+      }
+    },
+    "verify": {
+      "title": "Yalnızca tek bir adres BSO'dur.",
+      "supporting": "Herkes bir token oluşturup adına BSO diyebilir, bu yüzden gerçeğini ayırt eden tek şey sözleşme adresidir. Herhangi bir yere herhangi bir şey göndermeden önce 42 karakterin tamamını bu siteyle ve Bitsocial'ın resmi kanallarıyla karşılaştırın.",
+      "warning": "Resmi BSO sözleşmesi şudur: <contract>{{address}}</contract>. Bunun dışındaki hiçbir şey, adı ne olursa olsun ve nerede listelenirse listelensin, BSO değildir.",
+      "tradeOnUniswap": "Uniswap'ta işlem yap",
+      "provideLiquidity": "Likidite sağla",
+      "note": "Uniswap'taki likiditeyi bağımsız kişiler sağlar ve herkes buna katkıda bulunabilir. Bu bir tasarruf hesabı değildir: bir likidite pozisyonunun değeri düşebilir, yatırılan miktarın altına inmesi de dahil."
+    }
+  },
+  "common": {
+    "proposed": "Öneri",
+    "close": "Kapat"
+  },
+  "mailingList": {
+    "chainTitle": "Haberdar olun",
+    "chainDescription": "BSO token kilometre taşlarından, Bitsocial Chain'den ve ekosistem haberlerinden haberdar olun. Az sıklık, yüksek sinyal.",
+    "placeholder": "you@example.com",
+    "inputLabel": "E-posta adresi",
+    "subscribe": "Abone ol",
+    "subscribing": "Abone olunuyor…",
+    "chainSuccess": "Listedesiniz.",
+    "confirmationSent": "Aboneliğinizi onaylamak için e-postanızı kontrol edin.",
+    "chainError": "Bir şeyler ters gitti. Lütfen tekrar deneyin.",
+    "unavailable": "Bülten kaydı geçici olarak kullanılamıyor.",
+    "privacy": "Asla spam yok. İstediğiniz zaman abonelikten çıkabilirsiniz."
+  },
+  "faq": {
+    "eyebrow": "SSS",
+    "title": "Sık sorulan sorular.",
+    "supporting": "Bu sayfadaki her bölüm bunlardan birini yanıtlar. İlgili bölüme atlamak için bir soruya tıklayın.",
+    "navLabel": "Bu sayfada yanıtlanan sorular",
+    "answeredIn": "Yanıtlandığı bölüm: {{label}}",
+    "entries": {
+      "whyAChain": {
+        "eyebrow": "Neden Bir Zincir",
+        "question": "Peer-to-peer bir sosyal ağın neden bir zincire ihtiyacı var?"
+      },
+      "tokenomics": {
+        "eyebrow": "Tokenomi",
+        "question": "BSO'nun tokenomisi nedir? Kimler aldı?"
+      },
+      "unstoppable": {
+        "eyebrow": "Durdurulamaz",
+        "question": "Neden bir Ethereum L2? Onu kim işletiyor?"
+      },
+      "bsoNames": {
+        "eyebrow": "BSO Adları",
+        "question": ".bso adıma ne olur?"
+      },
+      "communityMoney": {
+        "eyebrow": "Topluluk Parası",
+        "question": "BSO ne için kullanılabilir?"
+      },
+      "privacy": {
+        "eyebrow": "Gizlilik",
+        "question": "Kime bahşiş verdiğimi herkes görecek mi?"
+      },
+      "possibilities": {
+        "eyebrow": "Olanaklar",
+        "question": "Yayında mı? Neler planlanıyor?"
+      },
+      "verify": {
+        "eyebrow": "Doğrula",
+        "question": "BSO'yu güvenli şekilde nasıl edinirim?"
+      }
+    },
+    "rows": {
+      "about": {
+        "label": "Hakkımızda",
+        "question": "Bitsocial Chain'in arkasında kim var?"
+      },
+      "mailingList": {
+        "label": "Bülten",
+        "question": "Nasıl haberdar olabilirim?"
+      }
+    },
+    "ask": {
+      "placeholder": "Başka bir şey sorun…",
+      "label": "Başka bir şey sorun",
+      "action": "ChatGPT'ye sorun"
+    }
+  },
+  "footer": {
+    "chainTagline": "Kriptonun Eksik Sosyal Katmanı",
+    "token": "Token",
+    "resources": "Kaynaklar",
+    "blog": "Blog",
+    "proofOfConcept": "Kavram Kanıtı",
+    "about": "Hakkımızda",
+    "mainSite": "Ana Site",
+    "community": "Topluluk",
+    "chainBottomTagline": "Kriptonun Sosyal Katmanını Onarın",
+    "contribute": "Bu sayfayı iyileştir"
+  },
+  "backToTop": {
+    "returnToOrigin": "Önceki konuma dön",
+    "toTop": "Başa dön",
+    "toBottom": "Sona git"
+  },
+  "richList": {
+    "meta": {
+      "title": "BSO Zengin Listesi - BSO Kimde",
+      "description": "Tüm BSO sahipleri; bağlantılı cüzdanlar gruplanmış, ekibin cüzdanları işaretlenmiş ve her bağlantının arkasındaki on-chain kanıtlarla birlikte. Ayrıca 2022'deki üç airdrop'un geçmişi."
+    },
+    "hero": {
+      "title": "BSO kimde",
+      "lead": "Tüm BSO cüzdanları: aynı sahibe ait cüzdanlar bir arada gruplanmış, ekibin cüzdanları işaretlenmiştir. Her bağlantı, arkasındaki işlemleri listeler; böylece kendiniz kontrol edebilirsiniz.",
+      "jumpLabel": "Bölümler",
+      "status": {
+        "live": "Zincirden canlı: {{count}} cüzdan, BSO fiyatı {{price}}. Güncelleme: {{ago}}.",
+        "loading": "{{date}} tarihli anlık görüntü: {{count}} cüzdan, BSO fiyatı {{price}}. Canlı veriler yükleniyor…",
+        "unavailable": "Canlı veriler şu anda kullanılamıyor, bu yüzden bu {{date}} tarihli anlık görüntüdür: {{count}} cüzdan, BSO fiyatı {{price}}."
+      }
+    },
+    "jump": {
+      "holders": "Sahipler",
+      "linked-wallets": "Bağlantılı cüzdanlar",
+      "team": "Çekirdek ekip",
+      "airdrops": "Airdrop'lar",
+      "history": "Geçmiş",
+      "method": "Yöntem"
+    },
+    "strip": {
+      "label": "210 milyonluk BSO arzında her grubun elindeki pay",
+      "team": "Çekirdek ekip",
+      "pool": "Uniswap havuzu",
+      "everyoneElse_one": "Diğer herkes ({{count}} cüzdan)",
+      "everyoneElse_other": "Diğer herkes ({{count}} cüzdan)"
+    },
+    "categories": {
+      "team": "Çekirdek ekip",
+      "pool": "Likidite havuzu",
+      "confirmed": "Doğrulanmış",
+      "likely": "Muhtemel",
+      "possible": "Olası",
+      "other": "Bağlantısız"
+    },
+    "table": {
+      "title": "Sahipler",
+      "lead": "Bağlantılı cüzdanlar tek bir satırda birleştirilir. Her adresi Etherscan'in listelediği şekilde görmek için Cüzdana göre görünümüne geçin.",
+      "viewLabel": "Sahipleri göster",
+      "view": {
+        "grouped": "Gruplanmış",
+        "wallets": "Cüzdana göre"
+      },
+      "searchLabel": "Adrese veya sahip adına göre ara",
+      "searchPlaceholder": "Bir adres arayın",
+      "caption": "Bakiyeye göre BSO sahipleri",
+      "holder": "Sahip",
+      "balance": "BSO",
+      "share": "Arz payı",
+      "value": "Değer",
+      "contract": "Sözleşme",
+      "walletCount_one": "{{count}} cüzdan",
+      "walletCount_other": "{{count}} cüzdan",
+      "noMatch": "Bu aramayla eşleşen sahip yok.",
+      "showAll_one": "{{count}} satırın tümünü göster",
+      "showAll_other": "{{count}} satırın tümünü göster",
+      "showMore": "{{count}} satır daha göster",
+      "history": "Geçmiş",
+      "historySummary": "{{start}} tarihinden bu yana bakiye: {{highDate}} tarihinde {{high}} BSO ile zirve, şu anda {{current}} BSO"
+    },
+    "evidenceLinks": "Kanıt işlemleri",
+    "telegramSources": "Telegram kaynakları",
+    "linked": {
+      "title": "Bağlantılı cüzdanlar",
+      "lead": "Cüzdanlar yalnızca zincir bir bağlantı gösterdiğinde gruplanır: aralarında token veya gas hareketi, ortak bir özel fon sağlayıcı, bir multisig sahibi ya da birebir aynı alım örüntüsü. Her grup, arkasındaki işlemleri listeler.",
+      "confidence": {
+        "confirmed": "Cüzdanlar birbirleriyle işlem yapar, ortak bir özel fon sağlayıcıyı paylaşır veya birbirlerini kontrol eder.",
+        "likely": "Başka bir şekilde açıklanması zor olan, tek bir kaynaktan gelen birden fazla transfer veya birebir aynı alım örüntüsü.",
+        "possible": "Bir satış ya da hediye de olabilecek tek bir bağlantı."
+      },
+      "holds_one": "{{amount}} BSO, arz payı {{share}}, {{count}} cüzdanda",
+      "holds_other": "{{amount}} BSO, arz payı {{share}}, {{count}} cüzdana dağılmış",
+      "walletList_one": "{{count}} cüzdan",
+      "walletList_other": "{{count}} cüzdanın tümü"
+    },
+    "walletRoles": {
+      "deployer": "deployer",
+      "estebanEns": "estebanabaroa.eth",
+      "safe": "Safe multisig",
+      "safeOwner": "Safe sahibi"
+    },
+    "entities": {
+      "pool": {
+        "name": "Uniswap BSO/ETH havuzu"
+      },
+      "holderA": {
+        "summary": "Transferler ve ortak bir özel fon sağlayıcıyla birbirine bağlı, Şubat 2022 ile Mayıs 2023 arasında Avalanche'ta alım yapan ve o günden beri hiç satmayan beş cüzdan.",
+        "evidence": {
+          "transfersToLpWallet": "Alım yapan cüzdanlardan ikisi üçüncü bir cüzdana token ve AVAX gönderdi; bu cüzdan bunları Trader Joe'da likidite ve farming için kullandı: 27 Şubat 2022'de 141 bin BSO ve 5 AVAX, ardından 28 Şubat ile 2 Mart arasında 1,01 milyon BSO ve 34 AVAX. Üçüncü cüzdan 0,013 AVAX'ı geri gönderdi.",
+          "sharedFunder": "Özel bir cüzdan, alım yapan cüzdanlardan üçüne fon sağladı ve başka hiçbir şey yapmadı. Gönderdiği her işlem sırayla onlara gitti: 0'dan 4'e kadar nonce'lar birincisine, 5'ten 7'ye kadar ikincisine, 8 ise üçüncüsüne.",
+          "neverSold": "Beş cüzdanın hiçbiri token'larını satmadı. Bakiyeleri her iki geçişten de değişmeden geçti."
+        }
+      },
+      "holderC": {
+        "summary": "Alım yapan aynı cüzdan çifti tarafından doldurulan iki cüzdan.",
+        "evidence": {
+          "commonSender": "Alım yapan bir cüzdan 19 Ağustos 2024'te birincisine 664 bin BSO gönderdi. 14 Kasım 2025'te ikincisine 7 bin BSO'luk bir test, 0,1 ETH ve ardından 2,17 milyon BSO gönderdi. Bu, ikinci cüzdanın aldığı tek ETH'dir ve bu cüzdan hiç işlem göndermedi.",
+          "secondSender": "Alım yapan ikinci bir cüzdan, Mayıs ile Ağustos 2024 arasında sekiz transferle birincisine diğer 7,3 milyon BSO'sunu ve ilk ETH'sini gönderdi, ondan da 4,35 ETH geri aldı.",
+          "sendersLinked": "Alım yapan iki cüzdan birbirine bağlı: biri 22 Şubat 2024'te diğerine 1,15 milyon BSO ve 0,1 ETH verdi, diğeri de 17 Ağustos 2024'te kalan 5,8 ETH'sini geri gönderdi."
+        }
+      },
+      "holderD": {
+        "summary": "Beş cüzdan: birbirine AVAX ve ETH gönderen iki cüzdan, ikisinin de doldurduğu üçüncü bir cüzdan ve üçüncünün kurduğu iki cüzdan daha.",
+        "evidence": {
+          "sharedRecipient": "Üçüncü cüzdan, 18 Kasım 2022'de birincisinden bir test transferi ve ardından 703 bin BSO, 1 Aralık 2022'de ise ikincisinden 1,16 milyon BSO aldı. Gas için bugüne kadar sahip olduğu tüm AVAX bu ikisinden geldi.",
+          "coinsBothWays": "İlk iki cüzdan 20 ay boyunca her iki zincirde de birbirine coin gönderdi: 24 Mart 2022'de bir yönde 0,5 AVAX ve dokuz dakika sonra geri 0,49, 31 Mayıs 2022'de 73 AVAX, 11 Mart 2023'te 0,09 ETH ve 7 Kasım 2023'te ters yönde 2 ETH.",
+          "newWallets": "Üçüncü cüzdan daha sonra iki yeni cüzdanı her seferinde aynı şekilde kurdu: gas için AVAX, bir test transferi, ardından 281 bin BSO; 24 Kasım 2022'de ve Nisan 2023'ün sonunda. İkisi de hiç işlem göndermedi."
+        }
+      },
+      "holderE": {
+        "summary": "Aynı kaynaktan doldurulan iki cüzdan.",
+        "evidence": {
+          "commonSender": "Bir cüzdan, Ekim 2024 ile Ocak 2025 arasında yedi transferle birincisine 5,53 milyon BSO, 22 Kasım 2025'te ikincisine 287 bin gönderdi.",
+          "onlyEth": "Aynı cüzdan, her birine o cüzdanın bugüne kadar aldığı tek ETH'yi, ilk token'larıyla aynı dakika içinde gönderdi: 0,1 ETH ve 0,12 ETH. İki cüzdan da hiç işlem göndermedi."
+        }
+      },
+      "holderF": {
+        "summary": "Token'larını ve 4 ETH'yi üç yeni cüzdana bölen bir cüzdan.",
+        "evidence": {
+          "split": "10 Mart 2024'te, yedi dakika içinde, bir cüzdan üç yeni cüzdana BSO'nun o zamanki adıyla PLEB cinsinden yuvarlak miktarlar (12 milyar, 8 milyar ve 4 milyar) gönderdi. Kendisi hâlâ BSO tutuyor.",
+          "ethBothWays": "Aynı dakikalarda üç cüzdana, her birine 1 ile 2 ETH arasında olmak üzere 4,05 ETH gönderdi. En çok alan cüzdan 24 Haziran 2024'te 1,5 ETH'yi geri gönderdi; diğer ikisi hiç işlem göndermedi."
+        }
+      },
+      "holderG": {
+        "summary": "Aynı gönderici tarafından üç yıl arayla fonlanan iki cüzdan ve bunlardan birinin bakiyesini taşıdığı üçüncü bir cüzdan.",
+        "evidence": {
+          "commonSender": "Bir cüzdan, Nisan 2022'de Avalanche'ta ikincisine 658 bin BSO, Ocak 2025'te Ethereum'da birincisine 843 bin gönderdi.",
+          "senderFunded": "Bu gönderici her iki cüzdana coin de gönderdi: ikincisine ilk AVAX'ını ve ertesi gün 17,4 AVAX verdi, birincisine de token'lardan üç dakika sonra elinde kalan 0,15 ETH'yi gönderdi.",
+          "movedOn": "3 Kasım 2026'da ikinci cüzdan üçüncüsüne gas için ETH, 100 BSO'luk bir test ve ardından 852 bin BSO'luk bakiyesinin tamamını gönderdi."
+        }
+      },
+      "holderH": {
+        "summary": "Biri diğerini fonlayan iki cüzdan.",
+        "evidence": {
+          "directTransfer": "24 Nisan 2022'de birinci cüzdan ikincisine ilk AVAX'ını ve iki dakika sonra 59 bin BSO gönderdi.",
+          "funding": "8 Mayıs 2022'de birinci cüzdan ikincisine altı transferle 23 AVAX gönderdi; ikincisi de her transferden sonraki dakikalar içinde bunun çoğunu BSO'ya çevirdi."
+        }
+      },
+      "holderI": {
+        "summary": "Biri tüm bakiyesini diğerine taşımadan önce birbirine ETH gönderen iki cüzdan.",
+        "evidence": {
+          "directTransfers": "İkinci cüzdan daha sonra elindeki her şeyi birincisine gönderdi: 30 Ekim 2023'te 1,85 milyon BSO, 8 Kasım 2023'te de 703 bin.",
+          "ethBothWays": "İkinci cüzdan, 16 Aralık 2022'de birincisine 0,77 ETH gönderdi; birincisi de ertesi gün 0,02 ETH geri gönderdi."
+        }
+      },
+      "holderJ": {
+        "summary": "Bir yılı aşkın süre boyunca birbirine karşılıklı AVAX gönderen iki cüzdan.",
+        "evidence": {
+          "coinsBothWays": "Birinci cüzdan ikincisine 7 Mayıs 2021'de ilk AVAX'ını, aynı yılın Ağustos ayında da ilk ETH'sini gönderdi. Temmuz 2022'ye kadar on iki transferle 331 AVAX göndermişti; ikincisi de iki transferle 15 AVAX geri göndermişti.",
+          "sameEveningLocks": "İkisi de Trader Joe'da BSO aldı ve 28 Nisan 2022'de ikisi de birbirinden en fazla yarım saat arayla aynı kilitleme sözleşmesine BSO kilitledi."
+        }
+      },
+      "holderK": {
+        "summary": "Aynı özel cüzdan tarafından fonlanan iki cüzdan.",
+        "evidence": {
+          "sharedFunder": "Özel bir cüzdan ikisini de fonladı. Birincisine Ekim 2021'de ilk AVAX'ını, 2023'ün sonuna kadar 21 transferle 194 AVAX ve iki transferle 3,49 milyon BSO gönderdi. İkincisine 14 Şubat 2022'de ilk AVAX'ını ve aynı yılın Nisan ayına kadar altı transferle 23 AVAX gönderdi. İkisi de küçük miktarlarda AVAX'ı geri gönderdi.",
+          "sharedRecipient": "İkisi ayrıca aynı yeni cüzdanı fonladı: ikincisi 17 Şubat 2022'de ona ilk 5,1 AVAX'ını gönderdi, birincisi de üç gün sonra ona 38,3 AVAX gönderdi."
+        }
+      },
+      "holderL": {
+        "summary": "Aynı özel cüzdandan fonlanan iki cüzdan; biri bir aracı cüzdan üzerinden.",
+        "evidence": {
+          "funderChain": "Özel bir cüzdan 12 Şubat 2022'de ikincisine ilk AVAX'ını gönderdi. Altı gün sonra kendi 597 bin BSO'sunu ve kalan AVAX'ını yeni bir cüzdana taşıdı; bu cüzdan da 22 Şubat'ta 597 bin BSO'yu, birinci cüzdanın ilk AVAX'ıyla birlikte birinci cüzdana aktardı.",
+          "directTransfer": "İkinci cüzdan, 27 Şubat 2022'de birincisine 0,005 AVAX gönderdi."
+        }
+      },
+      "holderM": {
+        "summary": "Şubat 2022 ile Mayıs 2023 arasında Avalanche'ta birbiri ardına alım yapmaktan başka hiçbir şey yapmayan ve o günden beri hiç satmayan on cüzdan.",
+        "evidence": {
+          "buyingPattern": "Her cüzdan yeniydi; Binance veya ChangeNOW üzerinden yaklaşık 2.000 ile 3.400 dolar arasındaki bir veya iki borsa çekimiyle fonlandı, tutarın tamamını token'a çevirdi ve bir daha hiç kullanılmadı. Yedisi 28 Şubat ile 31 Mart 2022 arasında birbiri ardına alım yaptı; üçü daha 12 Nisan ve 25 Haziran 2022'de ve 6 Mayıs 2023'te aynısını yaptı. Arzın en az %0,01'ini elinde tutan bugünkü sahipler arasında 21 cüzdan yalnızca Avalanche'ta alım yapmak için, en fazla dört işlemle kullanıldı: bu on cüzdan, başka bir gruba ait iki cüzdan ve her biri 410 dolardan az harcayan dokuz cüzdan daha.",
+          "neverSold": "Nisan 2022'de token'larını kilitleyen bir cüzdan dışında, on cüzdanın hiçbiri o zamandan beri token'larını satmadı veya taşımadı. Bakiyeleri her iki geçişten de değişmeden geçti."
+        }
+      }
+    },
+    "team": {
+      "title": "Ekip tahsisi yok",
+      "lead": "Ekip, yatırımcılar veya ön satış için hiçbir token ayrılmadı. Her BSO'nun nereden geldiği, ekibin cüzdanlarının bugün ne tuttuğu ve kurucunun o dönemde ne söylediği burada.",
+      "origin": {
+        "caption": "Her BSO'nun 2022 ve 2023'te ilk olarak nasıl mint edildiği",
+        "label": "İlk mint edilme şekline göre BSO payları",
+        "airdropClaims": {
+          "label": "Airdrop talepleri",
+          "note": "1.510 adresin üç turda talep ettiği {{amount}} BSO. Kimsenin talep etmediği tahsisler hiçbir zaman mint edilmedi."
+        },
+        "liquidityMining": {
+          "label": "Likidite madenciliği",
+          "note": "Şubat 2022'den Mayıs 2023'e kadar Trader Joe'da likidite stake eden kişilere ödenen {{amount}} BSO."
+        },
+        "liquiditySeed": {
+          "label": "Lansman likiditesi",
+          "note": "Deployer'a mint edilen ve 7 AVAX ile birlikte iki lansman havuzuna eklenen {{amount}} BSO."
+        }
+      },
+      "facts": {
+        "liquiditySeed": "Airdrop dışında bir ekip cüzdanına yapılan tek mint, lansman likiditesiydi: 14 Ocak 2022'de yedi dakika içinde Trader Joe havuzuna (5,6 milyon) ve Pangolin havuzuna (1,4 milyon) eklenen 7 milyon BSO.",
+        "teamClaims": "Üç ekip üyesi 1. turda talepte bulundu: Esteban 703 bin BSO, Tom 1,86 milyon BSO (767 talep arasında üçüncü en büyük) ve rinse12, token'ları daha sonra Safe'ine giden iki cüzdandan 1,1 milyon BSO. Üçü birlikte airdrop'larda talep edilen tüm token'ların %2,8'ini oluşturuyor.",
+        "migrationMintedNothing": "2026 geçişi kimse için yeni token oluşturmadı: 210 milyon BSO'nun tamamı, eski bakiyelerle orantılı olarak tek bir işlemde dağıtıldı.",
+        "farmRewards": "Bir ekip üyesi likidite madenciliği ödülü aldı: rinse12'ye ait bir cüzdan 5 Nisan 2022'de 2,3 milyon BSO topladı; bu, Avalanche'ta 208 adrese ödenen 60,9 milyon BSO içindeki dördüncü en büyük paydı. Ethereum'a geçiş sırasında hâlâ ödenmemiş olan 8 milyon ise bu ödülleri kazanmış olan stake edenlerin hesabına yazıldı."
+      },
+      "statementsTitle": "Kurucunun o dönemde söyledikleri",
+      "statementBy": "Esteban Abaroa, kurucu, {{date}}",
+      "walletsTitle": "Bugün ekip cüzdanları",
+      "person": "Kişi",
+      "wallet": "Cüzdan",
+      "total": "Ekip toplamı",
+      "walletsNote": "Anlık görüntü fiyatıyla değeri {{value}}. Her cüzdanın tüm geçmişi Etherscan'de herkese açıktır.",
+      "poolNote": "30 Ekim 2026'da Esteban'ın deployer cüzdanı ve estebanabaroa.eth, Uniswap havuzunun likidite token'larının %86,6'sını sıfır adrese gönderdi; oradan kimse onları çekemez. Ekipte %0,01'den azı kaldı, geri kalanı diğer likidite sağlayıcılarına ait. Yakılan payın değeri, anlık görüntü fiyatıyla BSO ve ETH olarak {{value}}."
+    },
+    "airdrops": {
+      "title": "Üç airdrop, 2022",
+      "lead": "BSO'nun ilk nesli olan PLEB, Avalanche'ta hiçbir satış yapılmadan piyasaya çıktı. Üç turda ücretsiz dağıtıldı ve her talep aynı oranla BSO'ya aktarıldı: 1 BSO için 7.114,6 PLEB.",
+      "caption": "Üç airdrop turu ve talep edilen token'ların bugünkü değeri",
+      "round": "{{number}}. tur",
+      "total": "Toplam",
+      "rounds": {
+        "telegram": {
+          "name": "Telegram botu",
+          "how": "@plebbitbot'a bir Avalanche adresi gönderin; referanslar için bonus var"
+        },
+        "twitter": {
+          "name": "Twitter",
+          "how": "@getplebbit'in gönderisini beğenin, retweetleyin ve üç arkadaşınızı etiketleyin"
+        },
+        "reddit": {
+          "name": "Reddit",
+          "how": "r/plebbitairdrop başlığına yorum yapın; bir bot hesap geçmişini kontrol etti"
+        }
+      },
+      "metrics": {
+        "how": "Nasıl katılınır",
+        "window": "Kayıt dönemi",
+        "signups": "Duyurulan kayıtlar",
+        "claimers": "Talepte bulunan adresler",
+        "plebClaimed": "Talep edilen PLEB",
+        "bsoToday": "Bugün BSO",
+        "worthToday": "Bugünkü değer",
+        "medianClaim": "Bugün medyan talep",
+        "largestClaim": "Bugün en büyük talep",
+        "sources": "Kaynaklar"
+      },
+      "dateRange": "{{start}} – {{end}}",
+      "overCount": "{{amount}} üzeri",
+      "distinct": "{{amount}} benzersiz",
+      "note": "Değerler, talep edilen her token'ın hâlâ tutulduğunu varsayar ve {{date}} tarihindeki BSO başına {{price}} fiyatını esas alır. Kayıtların birçoğu bottu. Talepler 21 Şubat 2022'de kapandı ve kimsenin talep etmediği tahsisler hiçbir zaman mint edilmedi."
+    },
+    "history": {
+      "title": "Geçmiş",
+      "lead": "2021'deki bir Telegram grubundan 2026'daki değiştirilemez bir ERC-20'ye.",
+      "redditThread": "Reddit başlığı",
+      "events": {
+        "groupOpens": {
+          "title": "plebbit Telegram grubu açılıyor",
+          "body": "Bugün t.me/bitsocialnet olan grup, 2021 Noel Günü'nde başlıyor."
+        },
+        "telegramRound": {
+          "title": "1. tur: Telegram botu",
+          "body": "Bir hafta boyunca insanlar @plebbitbot ile kaydoluyor. Arz, referanslar için bonuslarla birlikte katılımcılar arasında eşit olarak paylaştırılıyor. Bot 14 Ocak'ta kapanmadan önce 3.312 adres kaydoluyor."
+        },
+        "launch": {
+          "title": "Önce likidite, sonra talepler",
+          "body": "Saat 18:00 UTC'de deployer, Trader Joe ve Pangolin'e ilk token'ları ve 7 AVAX'ı ekliyor. Talep sayfası yaklaşık 30 dakika sonra açılıyor; böylece her tahsis, kimse işlem yapamadan önce sabitlenmiş oluyor."
+        },
+        "twitterRound": {
+          "title": "2. tur: Twitter",
+          "body": "Tamamen Twitter'da yürütülen bir airdrop: beğen, retweetle ve üç arkadaşını etiketle. 6 Şubat'a kadar 1.500'den fazla kişi kaydoluyor."
+        },
+        "redditRound": {
+          "title": "3. tur: Reddit",
+          "body": "r/plebbitairdrop üzerinde deneysel bir airdrop; burada bir bot, yorum yapanların eskiye dayanan Reddit etkinliği olup olmadığını kontrol etti. 12 Şubat'a kadar 2.200'den fazla kişi kaydoluyor, bunların çoğu bot."
+        },
+        "claimsClose": {
+          "title": "Talepler kapanıyor",
+          "body": "Üç airdrop'un hiçbiri artık talep edilemiyor. Kimsenin talep etmediği token'lar hiçbir zaman mint edilmiyor."
+        },
+        "farm": {
+          "title": "Likidite madenciliği başlıyor",
+          "body": "Trader Joe'da likidite stake edenler yeni mint edilen token'lar kazanıyor. Farm, Ethereum'a geçişe kadar ödeme yapıyor."
+        },
+        "ethereum": {
+          "title": "Ethereum'a geçiş",
+          "body": "Bir Snapshot oylamasının ardından Avalanche'taki token donduruluyor ve kilitli token'lar, likidite pozisyonları ve ödenmemiş farm ödülleri dahil her bakiye, ikinci nesil token olarak Ethereum'da yeniden çıkarılıyor. Sahiplerin hiçbir şey yapması gerekmiyor."
+        },
+        "rebrand": {
+          "title": "plebbit, Bitsocial oluyor",
+          "body": "plebbit yeni adını duyuruyor: Bitsocial. Zincir üzerinde token, mayıs ayına kadar PLEB adını koruyor."
+        },
+        "rebase": {
+          "title": "PLEB, 210 milyon BSO oluyor",
+          "body": "İkinci nesil token'ın adı BSO olarak değiştiriliyor ve toplam arz tam olarak 210 milyon olacak şekilde rebase ediliyor: 7.114,6 PLEB 1 BSO oluyor."
+        },
+        "immutable": {
+          "title": "BSO değiştirilemez hâle geliyor",
+          "body": "Nihai BSO sözleşmesi mint, sahip, duraklatma veya proxy olmadan yayına giriyor. 210 milyonun tamamı, rebase edilmiş bakiyelerle orantılı olarak tek bir işlemde dağıtılıyor."
+        },
+        "liquidityBurned": {
+          "title": "Likiditenin %86,6'sı yakılıyor",
+          "body": "Esteban'ın iki cüzdanı, 7.881 Uniswap likidite token'ını, yani BSO/ETH havuzunun %86,6'sını sıfır adrese gönderiyor. Bu adresin anahtarı kimsede yok; bu yüzden havuzdaki BSO ve ETH'nin bu payı sonsuza dek kilitli kalıyor."
+        }
+      }
+    },
+    "method": {
+      "title": "Yöntem ve sınırlar",
+      "lead": "Grupların nasıl bulunduğu ve bu sayfanın neleri göremediği.",
+      "howTitle": "Cüzdanlar nasıl bağlandı",
+      "how": {
+        "transfers": "Avalanche ve Ethereum'daki üç sözleşmenin tamamında, iki sıradan cüzdan arasındaki her transfer izlendi; borsalar, router'lar, havuzlar ve diğer sözleşmeler hariç tutuldu. Safe multisig'ler sahiplerine bağlandı.",
+        "funders": "Arzın en az %0,01'ini tutan bir cüzdana gelen veya bu cüzdandan giden her AVAX ve ETH transferi de izlendi; her cüzdana ilk kez kimin coin gönderdiği de buna dahil. Borsalar ve takas hizmetleri binlerce cüzdanı fonladığı için yalnızca özel cüzdanlar bağlantı sayılır.",
+        "pattern": "Doğrudan bağlantısı olmayan cüzdanlar için alım davranışı, aynı dönemdeki tüm alıcılarla karşılaştırıldı.",
+        "migrations": "Bakiyeler, BSO başına 7.114,6 PLEB oranıyla her iki geçiş boyunca takip edildi; bu sayfa da eski miktarları BSO cinsinden gösterirken aynı oranı kullanıyor."
+      },
+      "limitsTitle": "Sınırlar",
+      "limits": {
+        "exchangeOnly": "Her cüzdanını bir borsa üzerinden fonlayan ve aralarında hiç token taşımayan bir sahip, zincir üzerinde hiçbir bağlantı bırakmaz. Bazı gruplar hâlâ başka cüzdanlar gizliyor olabilir.",
+        "sales": "İki cüzdan arasındaki bir transfer, bir satış ya da hediye olabilir; bu yüzden hiçbir grup tek bir transfere dayanmaz. Bazı cüzdanlar kendi gruplarından yalnızca token ve coin aldı ve hiçbir şey göndermedi; bunlar da hediye olabilir.",
+        "contracts": "Uniswap havuzu ve Safe dışındaki sözleşmelerin tuttuğu token'lar olduğu gibi listelenir.",
+        "snapshot": "Bu sayfa açıkken bakiyeler ve fiyat her beş dakikada bir zincirden yenilenir. Cüzdanlar arasındaki bağlantılar elle araştırılır ve kendiliğinden güncellenmez.",
+        "history": "Geçmiş çizgileri her cüzdanın ne kadar tuttuğunu gösterir; arzın en az %0,01'ine sahip cüzdanlar ve bilinen bir sahibin tüm cüzdanları için çizilir. Bilinen bir sahibin çizgisi, token'larının geldiği boşaltılmış cüzdanları da sayar; bu yüzden ilk alımdan veya talepten başlar. Likidite havuzundaki, farm'daki veya vesting akışındaki token'lar çizgiden düşer ve geçişler bunların bir kısmını sahiplerine yeniden çıkardığı için bazı çizgiler o günlerde sıçrar."
+      },
+      "contracts": {
+        "gen1": "Gen 1: Avalanche'ta PLEB",
+        "gen2": "Gen 2: Ethereum'da PLEB, Mayıs 2026'da adı BSO olarak değiştirildi",
+        "gen3": "Gen 3: Bugünkü BSO"
+      },
+      "snapshot": "Bakiyeler ve fiyat Blockscout'tan: {{date}} itibarıyla {{count}} cüzdan. Yanlış ya da eksik bir bağlantı mı buldunuz? <contributeLink>Bu sayfayı iyileştir</contributeLink>."
+    },
+    "holderName": "Sahip {{letter}}"
+  },
+  "chart": {
+    "meta": {
+      "title": "BSO Fiyat Grafiği - 2022'den Beri Her İşlem",
+      "description": "BSO'nun 2022'deki ilk işleminden bu yana fiyatı ve piyasa değeri, üç sözleşmenin tamamında: Avalanche'ta PLEB, Ethereum'da PLEB ve bugünkü BSO; zincir üstü swap'lardan oluşturulan tek bir grafikte."
+    },
+    "hero": {
+      "title": "BSO'nun ilk işleminden bu yana fiyatı",
+      "lead": "Üç sözleşmenin tamamı tek bir grafikte: Avalanche'ta PLEB, Ethereum'da PLEB (adı 2026'da BSO olarak değiştirildi) ve bugünkü BSO. Eski fiyatlar, her iki geçişin de koruduğu oran olan BSO başına 7.114,6 PLEB üzerinden dönüştürülür. O gün ne olduğunu görmek için grafikteki bir noktayı seçin; token'ın tüm hikâyesi zengin listesindeki <historyLink>geçmiş</historyLink> bölümünde.",
+      "status": {
+        "live": "Uniswap havuzundan canlı: BSO fiyatı {{price}}. Güncelleme: {{ago}}.",
+        "loading": "{{date}} tarihine kadar günlük geçmiş. En güncel fiyatlar yükleniyor…",
+        "unavailable": "Canlı fiyatlar şu anda kullanılamıyor, bu yüzden grafik {{date}} tarihinde sona eriyor."
+      }
+    },
+    "panelTitle": "Günlük fiyat grafiği",
+    "summary": {
+      "price": "{{from}} ile {{to}} arasında günlük BSO fiyatı. En düşük kapanış {{low}}, en yüksek kapanış {{high}}, son {{latest}}.",
+      "mcap": "{{from}} ile {{to}} arasında günlük BSO piyasa değeri. En düşük kapanış {{low}}, en yüksek kapanış {{high}}, son {{latest}}."
+    },
+    "controls": {
+      "metricLabel": "Göster",
+      "metrics": {
+        "price": "Fiyat",
+        "mcap": "Piyasa değeri"
+      },
+      "rangeLabel": "Zaman aralığı",
+      "ranges": {
+        "1M": "1A",
+        "3M": "3A",
+        "1Y": "1Y",
+        "all": "Tümü"
+      },
+      "typeLabel": "Grafik türü",
+      "types": {
+        "line": "Çizgi",
+        "candles": "Mum"
+      },
+      "scaleLabel": "Ölçek",
+      "scales": {
+        "log": "Log",
+        "linear": "Doğrusal"
+      }
+    },
+    "legend": {
+      "since": "{{date}} tarihinden beri",
+      "ohlc": "A {{open}} · Y {{high}} · D {{low}} · K {{close}}",
+      "volume": "Hacim {{value}}"
+    },
+    "eras": {
+      "label": "Sözleşmeler. Dönemine yakınlaştırmak için birini seçin.",
+      "gen1": "Avalanche'ta PLEB",
+      "gen2": "Ethereum'da PLEB",
+      "gen3": "BSO",
+      "years": "{{from}}–{{to}}",
+      "now": "bugün",
+      "rebrand": "Yeni ad: Bitsocial"
+    },
+    "method": {
+      "title": "Grafik nasıl oluşturuluyor",
+      "lead": "Her mum zincirdeki swap'lardan gelir, bu yüzden herhangi bir gün bir blok gezgininde kontrol edilebilir.",
+      "steps": {
+        "swaps": "Bir günün açılış, en yüksek, en düşük ve kapanış değerleri, o günün swap'larında ödenen ilk, en yüksek, en düşük ve son fiyattır. Günler UTC'ye göre hesaplanır ve fiyatlar her havuzun Swap olaylarından okunur.",
+        "usd": "Havuzlar AVAX veya ETH karşılığında işlem görür, bu yüzden her swap, gerçekleştiği saatteki Coinbase kuru üzerinden dolara çevrilir.",
+        "units": "Avalanche'ta ve <rebaseLink>2 Mayıs 2026'daki rebase</rebaseLink> gerçekleşene kadar Ethereum'da işlem gören PLEB, BSO başına gösterilir: fiyatı, her BSO'nun yerini aldığı PLEB sayısı olan 7.114,596 ile çarpılır.",
+        "pools": "Bir günde birden fazla havuzda işlem olduysa o günün mumunu en yüksek hacimli havuz belirler; böylece neredeyse boş bir havuz sahte bir fitil çizemez. Hacim tüm havuzların toplamıdır ve işlem olmayan bir gün son kapanışı tekrarlar.",
+        "mcap": "Piyasa değeri, kapanış fiyatı ile o günün toplam arzının çarpımıdır: sözleşmenin mint ettiği tüm token'lardan yaktığı tüm token'lar çıkarılır ve fiyat gibi BSO'ya dönüştürülür. Rebase'den sonra ve bugünkü BSO için arz sabit 210 milyondur.",
+        "eras": "Her sözleşmenin geçmişi, bir sonrakinin ilk işleminde sona erer. Ethereum sözleşmesi, onu rebase eden yükseltmeye kadar PLEB adını korudu; bu yükseltme, plebbit'in 18 Mart 2026'da Bitsocial olmasından altı hafta sonra geldi."
+      },
+      "poolsTitle": "Okunan havuzlar",
+      "eraDates": "{{from}} ile {{to}} arası",
+      "snapshot": "Geçmiş, {{date}} tarihine kadarki {{count}} swap'tan oluşturuldu. Daha yeni günler GeckoTerminal'den gelir ve bu sayfa açıkken her beş dakikada bir yenilenir. Yanlış bir mum mu fark ettiniz? <contributeLink>Bu sayfayı iyileştir</contributeLink>."
+    },
+    "eventList": "Grafikte işaretlenen olaylar",
+    "eventDetails": {
+      "close": "Kapat",
+      "links": {
+        "reddit": "Reddit gönderisi",
+        "release": "GitHub'daki sürüm",
+        "hackerNews": "Hacker News başlığı",
+        "tweet": "Tweet"
+      }
+    },
+    "events": {
+      "protocolLabsGrant": {
+        "title": "Protocol Labs'ten bir hibe",
+        "body": "IPFS ve Filecoin'in arkasındaki ekip Protocol Labs, merkeziyetsiz Reddit alternatifini geliştirmesi için plebbit'e hibe veriyor."
+      },
+      "firstApp": {
+        "title": "İlk plebbit uygulaması",
+        "body": "İlk masaüstü uygulaması Linux, Windows ve Mac için çıkıyor. Kendi IPFS düğümünü çalıştırıyor, bu yüzden web demosunun aksine tamamen peer-to-peer."
+      },
+      "plebchan": {
+        "title": "plebchan yayına giriyor",
+        "body": "plebbit protokolü üzerinde çalışan 4chan tarzı bir uygulama olan plebchan, web, Mac ve Linux için ilk sürümünü yayımlıyor."
+      },
+      "hackerNews": {
+        "title": "Hacker News ana sayfasında",
+        "body": "Reddit'in yeni API fiyatlandırmasına yönelik tepkilerin ortasında plebbit demosu 300'ü aşkın puanla Hacker News ana sayfasına çıkıyor. Aynı hafta, demo hakkındaki gönderiler r/ethereum'un ana sayfasına çıkıyor ve r/CryptoCurrency'de 30.000 görüntülenme alıyor."
+      },
+      "coingecko": {
+        "title": "CoinGecko'da listeleniyor",
+        "body": "2022'nin başından bu yana birkaç kez reddettikten sonra CoinGecko token'ı listeliyor."
+      },
+      "socialFi": {
+        "title": "CoinGecko'nun SocialFi kategorisinde",
+        "body": "Ekibin talebi üzerine CoinGecko, token'ı SocialFi kategorisine ekliyor; X'te paylaşılan bir SocialFi token'ları listesi de onu içeriyor. Fiyat beş günde neredeyse ikiye katlanıyor."
+      },
+      "seedit": {
+        "title": "Seedit yayına giriyor",
+        "body": "Eski Reddit gibi görünen ve çalışan bir uygulama olan Seedit, ilk sürümünü yayımlıyor."
+      },
+      "marchRally": {
+        "title": "Mart 2024 yükselişi",
+        "body": "1 Mart'ta yatırımcı Jason Calacanis, bir tweet'inde dağıtık ve izinsiz bir Reddit istediğini yazıyor; plebbit de demosuyla yanıt veriyor. Seedit 0.1.6, 3 Mart'ta çıkıyor ve 4 Mart'ta ekip yalnızca token sahiplerine açık toplulukları duyuruyor. O ay ETH'nin 4.000 doları geçmesiyle fiyat 4 Mart'ta neredeyse ikiye katlanıyor ve mart sonuna kadar üçe katlanıyor; 2,2 milyon dolarlık hacimle bu, grafikteki tüm aylar içinde en yüksek hacim."
+      }
+    }
+  }
+}

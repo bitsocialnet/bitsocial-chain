@@ -1,0 +1,758 @@
+{
+  "nav": {
+    "language": "Jazyk",
+    "theme": "Téma",
+    "bitsocial": "Bitsocial",
+    "faq": "Časté dotazy",
+    "richList": "Seznam držitelů",
+    "chart": "Graf"
+  },
+  "languageSelector": {
+    "title": "Vyberte jazyk",
+    "searchPlaceholder": "Hledat jazyky...",
+    "noResults": "Vašemu vyhledávání neodpovídají žádné jazyky."
+  },
+  "meta": {
+    "title": "BSO – chybějící sociální vrstva kryptoměn",
+    "description": "BSO je měna Bitsocial, peer-to-peer sociální sítě, kterou nevlastní žádná společnost. Ethereum L2 appchain, kde komunity vlastní své sítě, své tokeny a své příjmy."
+  },
+  "topbar": {
+    "navLabel": "Navigace webu Bitsocial Chain",
+    "menu": "Menu",
+    "openMenu": "Otevřít menu",
+    "closeMenu": "Zavřít menu"
+  },
+  "theme": {
+    "toggle": "Přepnout téma"
+  },
+  "hero": {
+    "statusCta": "Blockchain zatím není spuštěn, přihlaste se k odběru novinek",
+    "title": "Chybějící <mark>sociální vrstva</mark> kryptoměn",
+    "supporting": "Kryptoměny se staly kasinem, protože Web2, TradFi a centralizovaná infrastruktura vlastní distribuční kanály a deformují pobídky. Bitsocial Chain to napravuje: nezastavitelný, plně decentralizovaný <l2Link>Ethereum L2</l2Link> <appchainLink>appchain</appchainLink>, kde komunity vlastní své sítě, své tokeny a své příjmy."
+  },
+  "layers": {
+    "ariaLabel": "Tři vrstvy kryptoměn nad sebou: sociální aplikace v síti Bitsocial nahoře, vypořádání na Ethereum L1 dole a Bitsocial Chain, Ethereum L2 appchain poháněný BSO, který se rozsvěcuje jako zářící chybějící vrstva zapadající do mezery mezi nimi a je provázán energetickou páteří.",
+    "social": {
+      "title": "SOCIÁLNÍ APLIKACE",
+      "subtitle": "SÍŤ BITSOCIAL"
+    },
+    "bso": {
+      "title": "BITSOCIAL CHAIN",
+      "subtitle": "L2 APPCHAIN · BSO"
+    },
+    "eth": {
+      "title": "ETHEREUM",
+      "subtitle": "VYPOŘÁDÁNÍ L1"
+    }
+  },
+  "contract": {
+    "label": "Kontrakt BSO",
+    "copyAriaLabel": "Zkopírovat adresu kontraktu BSO {{address}}",
+    "copied": "Zkopírováno do schránky"
+  },
+  "sections": {
+    "whyAChain": {
+      "title": "Samotný Bitsocial není na blockchainu.",
+      "supporting": "Příspěvky, profily, komunity a moderace na <bitsocialLink>Bitsocial</bitsocialLink> jsou peer-to-peer. Žádný blockchain, žádné poplatky, žádná peněženka: celou síť můžete používat, aniž byste se kdy dotkli kryptoměn, a většina lidí to tak bude dělat. Několik věcí ale blockchain skutečně potřebuje — jména, která jsou vaše, peníze putující mezi cizími lidmi, tokeny, které komunita skutečně vlastní. Bitsocial Chain je právě pro ně a pro nic jiného.",
+      "peerToPeer": {
+        "badge": "Peer-to-peer",
+        "note": "Sociální síť. Bez blockchainu.",
+        "posts": "Příspěvky a komentáře",
+        "profiles": "Profily a komunity",
+        "moderation": "Moderace a anti-spam"
+      },
+      "onChain": {
+        "badge": "On-chain",
+        "note": "Těch pár částí, které ho potřebují.",
+        "names": "Jména .bso",
+        "tipping": "Spropitné a ocenění",
+        "tokens": "Komunitní tokeny"
+      },
+      "caption": "Blockchain je volitelný. Sociální síť ne.",
+      "quote": "Decentralizovaná sociální síť potřebuje decentralizované peníze."
+    },
+    "tokenomics": {
+      "title": "Zdravé peníze.",
+      "supporting": "BSO je ERC-20 s pevnou nabídkou: 210 milionů, žádná inflace, záměrně deflační. V roce 2022 byl rozdán prostřednictvím tří airdropů a odměn z liquidity miningu, bez předprodeje a bez podílu pro tým. Jeho kontrakt je neměnný a bez správce, takže pravidla jsou navždy pevná.",
+      "supply": {
+        "cap": "Maximální nabídka BSO · pevná navždy"
+      },
+      "traits": {
+        "airdropped": "Žádný podíl pro tým ani předprodej",
+        "fixedCap": "Pevný strop, žádná emise",
+        "deflationary": "Deflační: nabídka jen klesá"
+      },
+      "locks": {
+        "noMint": {
+          "label": "Žádný mint",
+          "note": "nabídka nikdy nemůže vzrůst"
+        },
+        "noOwner": {
+          "label": "Žádný vlastník",
+          "note": "žádné administrátorské klíče, nikdy"
+        },
+        "noPause": {
+          "label": "Žádné pozastavení",
+          "note": "převody nelze zmrazit"
+        },
+        "noProxy": {
+          "label": "Žádné proxy",
+          "note": "kód nelze vyměnit"
+        }
+      },
+      "airdrop": {
+        "label": "Distribuce",
+        "note": "Tři kola airdropu v lednu a únoru 2022, ve kterých si tokeny vyzvedlo 1 510 adres. V 1. kole se používal bot na Telegramu s bonusy za doporučení a Esteban jeho doporučení ručně prověřoval kvůli zneužití; kola 2 a 3 proběhla na Twitteru a Redditu. Zhruba 63 % všech BSO se rozdalo prostřednictvím airdropů a 34 % jako odměny lidem, kteří poskytli likviditu; zbytek tvořil počáteční likviditu startovních poolů. Žádný předprodej, žádný podíl pro tým, nic se neprodalo.",
+        "richListLink": "Zobrazit všechny držitele a všechna tři kola"
+      },
+      "contract": {
+        "label": "Celý kontrakt",
+        "note": "Celá nabídka se mintuje na jednu adresu, protože tak funguje migrace: zůstatky byly na ni zkopírovány jedna ku jedné a poté vyplaceny zpět převodem, každý z nich on-chain. Vše ostatní je <openZeppelinLink>OpenZeppelin</openZeppelinLink> beze změn — nejpoužívanější a nejvíce prověřovaný kód tokenů v síti Ethereum. Nic na míru, nic vychytralého. Přečtěte si ho na <etherscanLink>Etherscan</etherscanLink>."
+      },
+      "foot": "Neměnný a bez správce: nezbyly žádné administrátorské klíče, které by někdo držel, takže ho nikdo nemůže změnit, inflovat ani zmrazit."
+    },
+    "unstoppable": {
+      "title": "Postaveno na Ethereum. Nikým neřízeno.",
+      "supporting": "Nový blockchain by musel znovu budovat bezpečnost a základnu vývojářů, které Ethereum už má, a potřeboval by nový token, přestože BSO je už plně distribuován. Proto je Bitsocial Chain navržen jako Ethereum L2 bez provozovatele: každá akce je obyčejná transakce na Ethereum odeslaná na adresu, kterou nikdo neovládá, a kdokoli může spustit uzel, který odvodí stejný stav z historie Ethereum. Není tu žádná společnost, na kterou by šlo tlačit, a žádný vypínač, který by šlo přepnout.",
+      "locks": {
+        "noSequencer": {
+          "label": "Sequencer není potřeba",
+          "note": "Ethereum řadí každou transakci"
+        },
+        "noAdminKeys": {
+          "label": "Žádné administrátorské klíče",
+          "note": "pravidla za vás nikdo nezmění"
+        },
+        "noUpgradeableContract": {
+          "label": "Žádný upgradovatelný kontrakt",
+          "note": "na Ethereum není co zabavit"
+        },
+        "noPrivilegedNode": {
+          "label": "Žádný privilegovaný uzel",
+          "note": "kdokoli může odvodit stejný stav"
+        }
+      },
+      "proofOfConcept": "Ověření konceptu už takto odvozuje jména .bso, na lokálním vývojovém blockchainu. Ostré spuštění stále potřebuje systém důkazů, audit a finální ekonomiku. <proofLink>Přečtěte si ověření konceptu</proofLink>."
+    },
+    "bsoNames": {
+      "title": "Vaše jméno .bso zůstane vaše.",
+      "supporting": "Aplikace Bitsocial <resolverLink>překládají jména .bso už dnes</resolverLink> tak, že si půjčují ENS, systém jmen, který používají peněženky Ethereum: mycommunity.bso je ve skutečnosti mycommunity.eth se záznamem bitsocial. Nativní registr by každé už používané jméno rozdal airdropem peněžence, která ho drží — není co vyzvedávat a není co znovu registrovat.",
+      "ensBadge": "ENS · dnes",
+      "pointsTo": "ukazuje na",
+      "communityKey": "klíč komunity",
+      "airdropAtLaunch": "airdrop při spuštění",
+      "bsoBadge": ".bso · Bitsocial Chain",
+      "owner": "vlastník",
+      "sameWallet": "stejná peněženka",
+      "fees": "Než řetězec vznikne, přesunou se jména .bso do <bsipLink>dočasného registru na Ethereu</bsipLink>, jehož poplatky financují vývojáře Bitsocialu. Na Bitsocial Chain se počítá s tím, že se poplatky za jména budou místo toho pálit, nebo se za ně bude vykupovat a pálit BSO. Mechanismus zatím není rozhodnut."
+    },
+    "communityMoney": {
+      "title": "Jedno aktivum pod mnoha komunitami.",
+      "supporting": "Každá komunita by mohla provozovat vlastní vrstvu, L3 s vlastním tokenem, a platit poplatky, jména i nájem v BSO. L3 už existují napříč světem kryptoměn; na Bitsocial Chain by se objevila rovnou s komunitou, která k ní už patří. Její příjmy by se mohly vypořádávat samy: reklamní místa vydražená kontraktem, část každého prodeje na místě spálená a zbytek vyplacený komunitě, bez pokladny na zpětné odkupy, které by se mohl někdo zmocnit.",
+      "communityLayer": "Vrstva komunity",
+      "ownToken": "vlastní token",
+      "feesFlow": "poplatky, jména a nájem placené v BSO",
+      "chainMeta": "Vrstva Ethereum · její stav se odvozuje z Ethereum",
+      "ethereumMeta": "Ethereum L1 · bezpečnost a data",
+      "caption": "Část každého poplatku se spálí; zbytek platí za bezpečnost blockchainu."
+    },
+    "privacy": {
+      "title": "Spropitné by vás nemělo odhalit.",
+      "supporting": "Bitsocial Chain je ve výchozím stavu veřejný, stejně jako Ethereum, a jména .bso jsou určena k tomu, aby byla vidět. S penězi je to jiné: spropitné by nikdy nemělo vyžadovat, aby vedle něj on-chain stálo vaše jméno, profil nebo příspěvek, a nová peněženka by měla být normální, ne podezřelá. Blockchain si nebude budovat vlastní systém soukromí. Má umožnit, aby se do něj bez povolení mohly zapojit ty existující: stíněné fondy, stealth adresy, důkazy s nulovou znalostí.",
+      "publicOnPurpose": {
+        "heading": "Veřejné záměrně",
+        "names": "Jména .bso a jejich vlastníci",
+        "rules": "Každé pravidlo a každá změna stavu"
+      },
+      "neverRequired": {
+        "heading": "Nikdy nevyžadováno",
+        "profile": "Vaše jméno nebo profil u spropitného",
+        "wallet": "Jedna peněženka na osobu",
+        "app": "Oficiální peněženka nebo aplikace"
+      }
+    },
+    "possibilities": {
+      "title": "Navrženo veřejně.",
+      "supporting": "Zatím nespuštěno. BSO už dnes běží na Ethereum; Bitsocial Chain je návrh a jeho první ověření konceptu, nativní jména .bso, běží na lokálním vývojovém blockchainu. Nic z uvedeného níže nemá datum. Je to to, co by sociální vrstva s vlastními penězi umožnila: něco z toho vznikne, něco nahradí lepší nápady a něco postaví lidé, kteří se zatím neobjevili.",
+      "ideas": {
+        "chain": {
+          "note": "Samotný Ethereum L2 appchain a domov pro vypořádání BSO."
+        },
+        "registry": {
+          "label": "Nativní registr .bso",
+          "note": "Jména a identita registrované na blockchainu místo vypůjčení z ENS."
+        },
+        "l3s": {
+          "label": "Komunitní L3 a tokeny",
+          "note": "Komunity s vlastní vrstvou a vlastním tokenem, které se vypořádávají v BSO."
+        },
+        "agoraswap": {
+          "note": "Komunitní DEX, kde se komunitní tokeny obchodují proti BSO a likvidita zůstává on-chain."
+        },
+        "collectibles": {
+          "label": "Sběratelské předměty od tvůrců",
+          "note": "Způsoby, jak mohou tvůrci prodávat přímo, bez platformy, která by si brala svůj podíl."
+        },
+        "other": {
+          "label": "Cokoli dalšího, co se hodí",
+          "note": "Klientské tokeny, decentralizovaný sequencing a nápady, které zatím nikdo nenavrhl."
+        }
+      }
+    },
+    "verify": {
+      "title": "Jen jedna adresa je BSO.",
+      "supporting": "Kdokoli může vytvořit token a nazvat ho BSO, takže jediné, co ten pravý odliší, je adresa kontraktu. Než někam cokoli pošlete, porovnejte všech 42 znaků s tímto webem a s oficiálními kanály Bitsocial.",
+      "warning": "Oficiální kontrakt BSO je <contract>{{address}}</contract>. Cokoli jiného není BSO, ať se tomu říká jakkoli a ať je to uvedeno kdekoli.",
+      "tradeOnUniswap": "Obchodovat na Uniswap",
+      "provideLiquidity": "Poskytnout likviditu",
+      "note": "Likviditu na Uniswap poskytují nezávislí lidé a kdokoli k ní může přispět. Není to spořicí účet: hodnota likviditní pozice může klesnout, i pod to, co bylo vloženo."
+    }
+  },
+  "common": {
+    "proposed": "Navrženo",
+    "close": "Zavřít"
+  },
+  "mailingList": {
+    "chainTitle": "Buďte v obraze",
+    "chainDescription": "Dostávejte upozornění na milníky tokenu BSO, Bitsocial Chain a novinky z ekosystému. Nízká frekvence, vysoká hodnota informace.",
+    "placeholder": "you@example.com",
+    "inputLabel": "E-mailová adresa",
+    "subscribe": "Přihlásit se",
+    "subscribing": "Probíhá přihlašování…",
+    "chainSuccess": "Jste na seznamu.",
+    "confirmationSent": "Zkontrolujte svůj e-mail a potvrďte přihlášení k odběru.",
+    "chainError": "Něco se pokazilo. Zkuste to prosím znovu.",
+    "unavailable": "Přihlášení k odběru novinek je dočasně nedostupné.",
+    "privacy": "Žádný spam, nikdy. Odhlásit se můžete kdykoli."
+  },
+  "faq": {
+    "eyebrow": "Časté dotazy",
+    "title": "Často kladené otázky.",
+    "supporting": "Každá sekce této stránky odpovídá na jednu z nich. Klikněte na otázku a přejdete k odpovědi.",
+    "navLabel": "Otázky zodpovězené na této stránce",
+    "answeredIn": "Odpověď v sekci {{label}}",
+    "entries": {
+      "whyAChain": {
+        "eyebrow": "Proč blockchain",
+        "question": "Proč peer-to-peer sociální síť potřebuje blockchain?"
+      },
+      "tokenomics": {
+        "eyebrow": "Tokenomika",
+        "question": "Jaká je tokenomika BSO? Kdo ho dostal?"
+      },
+      "unstoppable": {
+        "eyebrow": "Nezastavitelné",
+        "question": "Proč Ethereum L2? Kdo ho provozuje?"
+      },
+      "bsoNames": {
+        "eyebrow": "Jména BSO",
+        "question": "Co se stane s mým jménem .bso?"
+      },
+      "communityMoney": {
+        "eyebrow": "Komunitní peníze",
+        "question": "K čemu by se BSO používal?"
+      },
+      "privacy": {
+        "eyebrow": "Soukromí",
+        "question": "Uvidí každý, komu dávám spropitné?"
+      },
+      "possibilities": {
+        "eyebrow": "Možnosti",
+        "question": "Je to spuštěné? Co je v plánu?"
+      },
+      "verify": {
+        "eyebrow": "Ověření",
+        "question": "Jak získat BSO bezpečně?"
+      }
+    },
+    "rows": {
+      "about": {
+        "label": "O nás",
+        "question": "Kdo stojí za Bitsocial Chain?"
+      },
+      "mailingList": {
+        "label": "Zpravodaj",
+        "question": "Jak mohu zůstat v obraze?"
+      }
+    },
+    "ask": {
+      "placeholder": "Zeptejte se na cokoli dalšího…",
+      "label": "Zeptejte se na cokoli dalšího",
+      "action": "Zeptat se ChatGPT"
+    }
+  },
+  "footer": {
+    "chainTagline": "Chybějící sociální vrstva kryptoměn",
+    "token": "Token",
+    "resources": "Zdroje",
+    "blog": "Blog",
+    "proofOfConcept": "Ověření konceptu",
+    "about": "O nás",
+    "mainSite": "Hlavní web",
+    "community": "Komunita",
+    "chainBottomTagline": "Opravme sociální vrstvu kryptoměn",
+    "contribute": "Vylepšit tuto stránku"
+  },
+  "backToTop": {
+    "returnToOrigin": "Zpět na předchozí místo",
+    "toTop": "Zpět nahoru",
+    "toBottom": "Přejít dolů"
+  },
+  "richList": {
+    "meta": {
+      "title": "Seznam držitelů BSO - Kdo drží BSO",
+      "description": "Všichni držitelé BSO, se seskupenými propojenými peněženkami, označenými peněženkami týmu a on-chain důkazy za každým propojením. K tomu historie tří airdropů z roku 2022."
+    },
+    "hero": {
+      "title": "Kdo drží BSO",
+      "lead": "Všechny peněženky BSO, přičemž peněženky patřící stejnému držiteli jsou seskupené a peněženky týmu označené. U každého propojení jsou uvedeny transakce, na kterých stojí, takže si ho můžete sami ověřit.",
+      "jumpLabel": "Sekce",
+      "status": {
+        "live": "Živě z blockchainu: {{count}} peněženek, BSO za {{price}}. Aktualizováno {{ago}}.",
+        "loading": "Snímek ze dne {{date}}: {{count}} peněženek, BSO za {{price}}. Načítají se živá data…",
+        "unavailable": "Živá data teď nejsou k dispozici, proto vidíte snímek ze dne {{date}}: {{count}} peněženek, BSO za {{price}}."
+      }
+    },
+    "jump": {
+      "holders": "Držitelé",
+      "linked-wallets": "Propojené peněženky",
+      "team": "Hlavní tým",
+      "airdrops": "Airdropy",
+      "history": "Historie",
+      "method": "Metodika"
+    },
+    "strip": {
+      "label": "Podíl na nabídce 210 milionů BSO, který drží jednotlivé skupiny",
+      "team": "Hlavní tým",
+      "pool": "Pool na Uniswapu",
+      "everyoneElse_one": "Všichni ostatní ({{count}} peněženka)",
+      "everyoneElse_few": "Všichni ostatní ({{count}} peněženky)",
+      "everyoneElse_many": "Všichni ostatní ({{count}} peněženky)",
+      "everyoneElse_other": "Všichni ostatní ({{count}} peněženek)"
+    },
+    "categories": {
+      "team": "Hlavní tým",
+      "pool": "Pool likvidity",
+      "confirmed": "Potvrzené",
+      "likely": "Pravděpodobné",
+      "possible": "Možné",
+      "other": "Nepropojené"
+    },
+    "table": {
+      "title": "Držitelé",
+      "lead": "Propojené peněženky jsou sloučené do jednoho řádku. Přepněte na „Podle peněženky“ a uvidíte každou adresu tak, jak ji uvádí Etherscan.",
+      "viewLabel": "Zobrazit držitele",
+      "view": {
+        "grouped": "Seskupeně",
+        "wallets": "Podle peněženky"
+      },
+      "searchLabel": "Hledat podle adresy nebo jména držitele",
+      "searchPlaceholder": "Hledat adresu",
+      "caption": "Držitelé BSO podle zůstatku",
+      "holder": "Držitel",
+      "balance": "BSO",
+      "share": "Podíl",
+      "value": "Hodnota",
+      "contract": "Kontrakt",
+      "walletCount_one": "{{count}} peněženka",
+      "walletCount_few": "{{count}} peněženky",
+      "walletCount_many": "{{count}} peněženky",
+      "walletCount_other": "{{count}} peněženek",
+      "noMatch": "Tomuto hledání neodpovídá žádný držitel.",
+      "showAll_one": "Zobrazit {{count}} řádek",
+      "showAll_few": "Zobrazit všechny {{count}} řádky",
+      "showAll_many": "Zobrazit všech {{count}} řádku",
+      "showAll_other": "Zobrazit všech {{count}} řádků",
+      "showMore": "Zobrazit další ({{count}})",
+      "history": "Historie",
+      "historySummary": "Zůstatek (začátek: {{start}}): maximum {{high}} BSO ({{highDate}}), nyní {{current}} BSO"
+    },
+    "evidenceLinks": "Transakce jako důkaz",
+    "telegramSources": "Zdroje na Telegramu",
+    "linked": {
+      "title": "Propojené peněženky",
+      "lead": "Peněženky se seskupují jen tehdy, když blockchain ukazuje propojení: tokeny nebo gas, které mezi nimi putují, společného soukromého financovatele, vlastníka multisigu nebo shodný nákupní vzorec. U každé skupiny jsou uvedeny transakce, na kterých stojí.",
+      "confidence": {
+        "confirmed": "Peněženky spolu provádějí transakce, sdílejí soukromého financovatele nebo se navzájem ovládají.",
+        "likely": "Několik převodů z jednoho zdroje nebo shodný nákupní vzorec, které se jinak dají vysvětlit jen stěží.",
+        "possible": "Jediné propojení, které by mohlo být i prodejem nebo darem."
+      },
+      "holds_one": "{{amount}} BSO, {{share}} nabídky, v {{count}} peněžence",
+      "holds_few": "{{amount}} BSO, {{share}} nabídky, rozděleno do {{count}} peněženek",
+      "holds_many": "{{amount}} BSO, {{share}} nabídky, rozděleno do {{count}} peněženek",
+      "holds_other": "{{amount}} BSO, {{share}} nabídky, rozděleno do {{count}} peněženek",
+      "walletList_one": "{{count}} peněženka",
+      "walletList_few": "Všechny {{count}} peněženky",
+      "walletList_many": "Všech {{count}} peněženky",
+      "walletList_other": "Všech {{count}} peněženek"
+    },
+    "walletRoles": {
+      "deployer": "deployer",
+      "estebanEns": "estebanabaroa.eth",
+      "safe": "multisig Safe",
+      "safeOwner": "vlastník Safe"
+    },
+    "entities": {
+      "pool": {
+        "name": "Pool BSO/ETH na Uniswapu"
+      },
+      "holderA": {
+        "summary": "Pět peněženek propojených převody a společným soukromým financovatelem, které mezi únorem 2022 a květnem 2023 nakoupily na Avalanche a nikdy neprodaly.",
+        "evidence": {
+          "transfersToLpWallet": "Dvě z nakupujících peněženek poslaly tokeny a AVAX třetí peněžence, která je použila na likviditu a farming na Trader Joe: 141 tis. BSO a 5 AVAX dne 27. února 2022, pak 1,01 mil. BSO a 34 AVAX mezi 28. únorem a 2. březnem. Třetí peněženka poslala zpět 0,013 AVAX.",
+          "sharedFunder": "Jedna soukromá peněženka financovala tři z nakupujících peněženek a nic jiného. Každá transakce, kterou kdy odeslala, šla jim, a to postupně: nonce 0 až 4 první, 5 až 7 druhé, 8 třetí.",
+          "neverSold": "Žádná z pěti peněženek nic neprodala. Jejich zůstatky prošly oběma migracemi beze změny."
+        }
+      },
+      "holderC": {
+        "summary": "Dvě peněženky naplněné stejnou dvojicí nakupujících peněženek.",
+        "evidence": {
+          "commonSender": "Jedna nakupující peněženka poslala 19. srpna 2024 první z nich 664 tis. BSO. Dne 14. listopadu 2025 poslala druhé test o 7 tis. BSO, 0,1 ETH a pak 2,17 mil. BSO. Je to jediné ETH, které kdy druhá peněženka dostala, a ta nikdy neodeslala žádnou transakci.",
+          "secondSender": "Druhá nakupující peněženka poslala první z nich jejích zbylých 7,3 mil. BSO v osmi převodech mezi květnem a srpnem 2024, spolu s jejím prvním ETH, a dostala od ní zpět 4,35 ETH.",
+          "sendersLinked": "Obě nakupující peněženky jsou propojeny mezi sebou: jedna předala druhé 1,15 mil. BSO a 0,1 ETH dne 22. února 2024 a ta jí dne 17. srpna 2024 poslala zpět svých zbývajících 5,8 ETH."
+        }
+      },
+      "holderD": {
+        "summary": "Pět peněženek: dvě, které si navzájem posílaly AVAX a ETH, třetí, kterou obě naplnily, a dvě další, které třetí peněženka připravila.",
+        "evidence": {
+          "sharedRecipient": "Třetí peněženka dostala 18. listopadu 2022 od první testovací převod a pak 703 tis. BSO a 1. prosince 2022 od druhé 1,16 mil. BSO. Veškerý AVAX, který kdy měla na gas, pocházel od těchto dvou.",
+          "coinsBothWays": "První dvě peněženky si 20 měsíců navzájem posílaly mince na obou blockchainech: 0,5 AVAX jedním směrem a o devět minut později 0,49 zpět dne 24. března 2022, 73 AVAX dne 31. května 2022, 0,09 ETH dne 11. března 2023 a 2 ETH opačným směrem dne 7. listopadu 2023.",
+          "newWallets": "Třetí peněženka pak připravila dvě nové peněženky, pokaždé stejným způsobem: AVAX na gas, testovací převod, pak 281 tis. BSO, a to 24. listopadu 2022 a na konci dubna 2023. Ani jedna z nich nikdy neodeslala žádnou transakci."
+        }
+      },
+      "holderE": {
+        "summary": "Dvě peněženky naplněné ze stejného zdroje.",
+        "evidence": {
+          "commonSender": "Jedna peněženka poslala první z nich 5,53 mil. BSO v sedmi převodech mezi říjnem 2024 a lednem 2025 a druhé 287 tis. dne 22. listopadu 2025.",
+          "onlyEth": "Stejná peněženka poslala každé z nich jediné ETH, které kdy daná peněženka dostala, a to ve stejné minutě jako její první tokeny: 0,1 ETH a 0,12 ETH. Ani jedna z obou peněženek nikdy neodeslala žádnou transakci."
+        }
+      },
+      "holderF": {
+        "summary": "Jedna peněženka, která rozdělila své tokeny a 4 ETH do tří nových peněženek.",
+        "evidence": {
+          "split": "10. března 2024 poslala jedna peněženka během sedmi minut kulaté částky PLEB, jak se tehdy jmenoval BSO (12 mld., 8 mld. a 4 mld.), na tři nové peněženky. Sama BSO stále drží.",
+          "ethBothWays": "Ve stejných minutách poslala těmto třem peněženkám 4,05 ETH, každé mezi 1 a 2 ETH. Ta, která dostala nejvíc, poslala 24. června 2024 zpět 1,5 ETH; zbylé dvě nikdy neodeslaly žádnou transakci."
+        }
+      },
+      "holderG": {
+        "summary": "Dvě peněženky financované stejným odesílatelem s odstupem tří let a třetí, na kterou jedna z nich přesunula svůj zůstatek.",
+        "evidence": {
+          "commonSender": "Jedna peněženka poslala druhé 658 tis. BSO na Avalanche v dubnu 2022 a první 843 tis. na Ethereu v lednu 2025.",
+          "senderFunded": "Tento odesílatel poslal oběma peněženkám také mince: druhé dal její první AVAX a den nato 17,4 AVAX a první poslal svých zbývajících 0,15 ETH tři minuty po tokenech.",
+          "movedOn": "3. listopadu 2026 poslala druhá peněženka třetí ETH na gas, test o 100 BSO a pak celý svůj zůstatek 852 tis. BSO."
+        }
+      },
+      "holderH": {
+        "summary": "Dvě peněženky, z nichž jedna financovala druhou.",
+        "evidence": {
+          "directTransfer": "24. dubna 2022 poslala první peněženka druhé její první AVAX a o dvě minuty později 59 tis. BSO.",
+          "funding": "8. května 2022 poslala první peněženka druhé 23 AVAX v šesti převodech a druhá většinu z nich vždy během několika minut směnila za BSO."
+        }
+      },
+      "holderI": {
+        "summary": "Dvě peněženky, které si navzájem posílaly ETH, než jedna přesunula celý svůj zůstatek na druhou.",
+        "evidence": {
+          "directTransfers": "Druhá peněženka pak poslala první všechno, co držela: 1,85 mil. BSO dne 30. října 2023 a 703 tis. dne 8. listopadu 2023.",
+          "ethBothWays": "Druhá peněženka poslala první 0,77 ETH dne 16. prosince 2022 a první poslala den nato 0,02 ETH zpět."
+        }
+      },
+      "holderJ": {
+        "summary": "Dvě peněženky, které si déle než rok posílaly AVAX tam a zpět.",
+        "evidence": {
+          "coinsBothWays": "První peněženka poslala druhé její první AVAX dne 7. května 2021 a její první ETH v srpnu téhož roku. Do července 2022 jí poslala 331 AVAX ve dvanácti převodech a druhá poslala zpět 15 AVAX ve dvou.",
+          "sameEveningLocks": "Obě nakoupily BSO na Trader Joe a 28. dubna 2022 obě v rozmezí půl hodiny zamkly BSO ve stejném zamykacím kontraktu."
+        }
+      },
+      "holderK": {
+        "summary": "Dvě peněženky financované stejnou soukromou peněženkou.",
+        "evidence": {
+          "sharedFunder": "Jedna soukromá peněženka financovala obě. První peněžence poslala její první AVAX v říjnu 2021, 194 AVAX ve 21 převodech do konce roku 2023 a 3,49 mil. BSO ve dvou převodech. Druhé peněžence poslala její první AVAX dne 14. února 2022 a 23 AVAX v šesti převodech do dubna téhož roku. Obě poslaly malé částky AVAX zpět.",
+          "sharedRecipient": "Obě také financovaly stejnou novou peněženku: druhá jí 17. února 2022 poslala jejích prvních 5,1 AVAX a první jí o tři dny později poslala 38,3 AVAX."
+        }
+      },
+      "holderL": {
+        "summary": "Dvě peněženky financované ze stejné soukromé peněženky, jedna z nich přes zprostředkující peněženku.",
+        "evidence": {
+          "funderChain": "Jedna soukromá peněženka poslala druhé její první AVAX dne 12. února 2022. O šest dní později přesunula svých vlastních 597 tis. BSO a svůj zbývající AVAX do nové peněženky, která těch 597 tis. BSO dne 22. února předala první peněžence, spolu s jejím prvním AVAX.",
+          "directTransfer": "Druhá peněženka poslala první 0,005 AVAX dne 27. února 2022."
+        }
+      },
+      "holderM": {
+        "summary": "Deset peněženek, které mezi únorem 2022 a květnem 2023 jedna po druhé jen nakoupily na Avalanche a nikdy neprodaly.",
+        "evidence": {
+          "buyingPattern": "Každá peněženka byla nová, financovaná jedním nebo dvěma výběry z burzy ve výši zhruba 2 000 až 3 400 dolarů přes Binance nebo ChangeNOW, celou částku směnila za token a už nikdy nebyla použita. Sedm z nich nakupovalo jedna po druhé mezi 28. únorem a 31. březnem 2022; další tři udělaly totéž 12. dubna a 25. června 2022 a 6. května 2023. Mezi dnešními držiteli s alespoň 0,01 % nabídky je 21 peněženek, které byly vždy použity jen k nákupu na Avalanche, a to nejvýše ve čtyřech transakcích: těchto deset, dvě peněženky z jiné skupiny a devět dalších, z nichž každá utratila méně než 410 dolarů.",
+          "neverSold": "Žádná z deseti peněženek od té doby své tokeny neprodala ani nepřesunula, kromě jedné, která je v dubnu 2022 zamkla. Jejich zůstatky prošly oběma migracemi beze změny."
+        }
+      }
+    },
+    "team": {
+      "title": "Žádný podíl pro tým",
+      "lead": "Pro tým, investory ani předprodej nebyly vyhrazeny žádné tokeny. Tady je, odkud pochází každý BSO, co dnes drží peněženky týmu a co tehdy řekl zakladatel.",
+      "origin": {
+        "caption": "Jak byly všechny BSO původně vymintovány, v letech 2022 a 2023",
+        "label": "Podíl BSO podle způsobu původního mintování",
+        "airdropClaims": {
+          "label": "Vyzvednutí z airdropu",
+          "note": "{{amount}} BSO vyzvedlo 1 510 adres ve třech kolech. Přidělené tokeny, které si nikdo nevyzvedl, nebyly nikdy vymintovány."
+        },
+        "liquidityMining": {
+          "label": "Liquidity mining",
+          "note": "{{amount}} BSO vyplacených lidem, kteří od února 2022 do května 2023 stakovali likviditu na Trader Joe."
+        },
+        "liquiditySeed": {
+          "label": "Počáteční likvidita",
+          "note": "{{amount}} BSO vymintovaných na deployer a vložených spolu se 7 AVAX do dvou startovních poolů."
+        }
+      },
+      "facts": {
+        "liquiditySeed": "Jediným mintem na peněženku týmu mimo airdrop byla počáteční likvidita: 7 mil. BSO, vložených 14. ledna 2022 během sedmi minut do poolu na Trader Joe (5,6 mil.) a poolu na Pangolin (1,4 mil.).",
+        "teamClaims": "V 1. kole si vyzvedli tři členové týmu: Esteban 703 tis. BSO, Tom 1,86 mil. BSO (třetí největší ze 767 vyzvednutí) a rinse12 1,1 mil. BSO ze dvou peněženek, jejichž tokeny později putovaly do jeho Safe. Dohromady to je 2,8 % všech tokenů vyzvednutých v airdropech.",
+        "migrationMintedNothing": "Migrace v roce 2026 nikomu nevytvořila žádné nové tokeny: všech 210 mil. BSO odešlo v jedné transakci, v poměru ke starým zůstatkům.",
+        "farmRewards": "Jeden člen týmu dostal odměny z liquidity miningu: jedna z peněženek rinse12 si 5. dubna 2022 vybrala 2,3 mil. BSO, čtvrtý největší podíl z 60,9 mil. BSO vyplacených na Avalanche 208 adresám. Těch 8 mil., které při přechodu na Ethereum ještě nebyly vyplaceny, bylo připsáno stakerům, kteří si je vydělali."
+      },
+      "statementsTitle": "Co tehdy řekl zakladatel",
+      "statementBy": "Esteban Abaroa, zakladatel, {{date}}",
+      "walletsTitle": "Peněženky týmu dnes",
+      "person": "Osoba",
+      "wallet": "Peněženka",
+      "total": "Tým celkem",
+      "walletsNote": "V hodnotě {{value}} při ceně ze snímku. Celá historie každé peněženky je veřejně dostupná na Etherscanu.",
+      "poolNote": "30. října 2026 poslaly Estebanova deployer peněženka a estebanabaroa.eth 86,6 % tokenů likvidity poolu na Uniswapu na nulovou adresu, odkud je nikdo nemůže vybrat. Tým si ponechává méně než 0,01 % a zbytek patří ostatním poskytovatelům likvidity. Spálený podíl má při ceně ze snímku hodnotu {{value}} v BSO a ETH."
+    },
+    "airdrops": {
+      "title": "Tři airdropy, 2022",
+      "lead": "PLEB, první generace BSO, vznikl na Avalanche bez jakéhokoli prodeje. Rozdal se ve třech kolech a každé vyzvednutí přešlo na BSO ve stejném poměru: 7 114,6 PLEB za 1 BSO.",
+      "caption": "Tři kola airdropu a jakou hodnotu mají vyzvednuté tokeny dnes",
+      "round": "Kolo {{number}}",
+      "total": "Celkem",
+      "rounds": {
+        "telegram": {
+          "name": "Bot na Telegramu",
+          "how": "Poslat adresu na Avalanche botovi @plebbitbot, s bonusy za doporučení"
+        },
+        "twitter": {
+          "name": "Twitter",
+          "how": "Dát like, retweetnout a označit tři přátele u příspěvku @getplebbit"
+        },
+        "reddit": {
+          "name": "Reddit",
+          "how": "Napsat komentář do vlákna na r/plebbitairdrop; bot kontroloval historii účtu"
+        }
+      },
+      "metrics": {
+        "how": "Jak se zapojit",
+        "window": "Období registrace",
+        "signups": "Oznámené registrace",
+        "claimers": "Adresy, které vyzvedly",
+        "plebClaimed": "Vyzvednuté PLEB",
+        "bsoToday": "BSO dnes",
+        "worthToday": "Hodnota dnes",
+        "medianClaim": "Medián vyzvednutí dnes",
+        "largestClaim": "Největší vyzvednutí dnes",
+        "sources": "Zdroje"
+      },
+      "dateRange": "{{start}} – {{end}}",
+      "overCount": "přes {{amount}}",
+      "distinct": "{{amount}} unikátních",
+      "note": "Hodnoty předpokládají, že se všechny vyzvednuté tokeny stále drží, při ceně {{price}} za BSO ke dni {{date}}. Mnoho registrací byli boti. Vyzvedávání skončilo 21. února 2022 a přidělené tokeny, které si nikdo nevyzvedl, nebyly nikdy vymintovány."
+    },
+    "history": {
+      "title": "Historie",
+      "lead": "Od skupiny na Telegramu v roce 2021 k neměnnému ERC-20 v roce 2026.",
+      "redditThread": "Vlákno na Redditu",
+      "events": {
+        "groupOpens": {
+          "title": "Vzniká telegramová skupina plebbit",
+          "body": "Skupina, ze které je dnes t.me/bitsocialnet, začíná na Boží hod vánoční 2021."
+        },
+        "telegramRound": {
+          "title": "1. kolo: bot na Telegramu",
+          "body": "Týden se lidé registrují přes @plebbitbot. Nabídka se dělí rovným dílem mezi účastníky, s bonusy za doporučení. Než bot 14. ledna skončí, zaregistruje se 3 312 adres."
+        },
+        "launch": {
+          "title": "Nejdřív likvidita, pak vyzvedávání",
+          "body": "V 18:00 UTC vloží deployer první tokeny a 7 AVAX na Trader Joe a Pangolin. Stránka pro vyzvednutí se otevře asi o 30 minut později, takže všechna přidělení byla pevně daná dřív, než mohl kdokoli obchodovat."
+        },
+        "twitterRound": {
+          "title": "2. kolo: Twitter",
+          "body": "Airdrop, který celý probíhal na Twitteru: dát like, retweetnout a označit tři přátele. Do 6. února se zaregistruje přes 1 500 lidí."
+        },
+        "redditRound": {
+          "title": "3. kolo: Reddit",
+          "body": "Experimentální airdrop na r/plebbitairdrop, kde bot kontroloval, že komentující mají starší aktivitu na Redditu. Do 12. února se zaregistruje přes 2 200 účtů, z nichž mnohé jsou boti."
+        },
+        "claimsClose": {
+          "title": "Vyzvedávání končí",
+          "body": "Ze všech tří airdropů už nelze nic vyzvednout. Tokeny, které si nikdo nevyzvedl, se nikdy nevymintují."
+        },
+        "farm": {
+          "title": "Začíná liquidity mining",
+          "body": "Kdo stakuje likviditu na Trader Joe, získává nově vymintované tokeny. Farma vyplácí až do přechodu na Ethereum."
+        },
+        "ethereum": {
+          "title": "Přechod na Ethereum",
+          "body": "Po hlasování na Snapshotu je token na Avalanche zmrazen a každý zůstatek, včetně uzamčených tokenů, pozic likvidity a nevyplacených odměn z farmy, je znovu vydán na Ethereu jako token druhé generace. Držitelé nemusejí nic dělat."
+        },
+        "rebrand": {
+          "title": "Z plebbit se stává Bitsocial",
+          "body": "plebbit oznamuje své nové jméno, Bitsocial. On-chain si token jméno PLEB ponechává až do května."
+        },
+        "rebase": {
+          "title": "Z PLEB se stává 210 milionů BSO",
+          "body": "Token druhé generace je přejmenován na BSO a projde rebasem, aby celková nabídka byla přesně 210 milionů: ze 7 114,6 PLEB se stane 1 BSO."
+        },
+        "immutable": {
+          "title": "BSO se stává neměnným",
+          "body": "Finální kontrakt BSO se spouští bez mintu, vlastníka, pozastavení i proxy. Všech 210 mil. odchází v jedné transakci, v poměru k zůstatkům po rebasu."
+        },
+        "liquidityBurned": {
+          "title": "86,6 % likvidity je spáleno",
+          "body": "Estebanovy dvě peněženky posílají svých 7 881 tokenů likvidity Uniswapu, tedy 86,6 % poolu BSO/ETH, na nulovou adresu. Klíč k této adrese nemá nikdo, takže tento podíl BSO a ETH v poolu zůstane navždy uzamčen."
+        }
+      }
+    },
+    "method": {
+      "title": "Metodika a omezení",
+      "lead": "Jak se skupiny našly a co tato stránka nevidí.",
+      "howTitle": "Jak se peněženky propojovaly",
+      "how": {
+        "transfers": "Byl dohledán každý převod mezi dvěma běžnými peněženkami v rámci všech tří kontraktů, na Avalanche i na Ethereu, bez burz, routerů, poolů a jiných kontraktů. Multisigy Safe byly propojeny se svými vlastníky.",
+        "funders": "Dohledán byl také každý převod AVAX a ETH do peněženky nebo z peněženky, která drží alespoň 0,01 % nabídky, včetně toho, kdo každé peněžence poslal mince jako první. Burzy a směnárenské služby financují tisíce peněženek, takže jako propojení se počítají jen soukromé peněženky.",
+        "pattern": "U peněženek bez přímého propojení se nákupní chování porovnalo se všemi kupci ze stejného období.",
+        "migrations": "Zůstatky byly sledovány přes obě migrace v poměru 7 114,6 PLEB za BSO, tedy ve stejném poměru, v jakém tato stránka zobrazuje starší částky v BSO."
+      },
+      "limitsTitle": "Omezení",
+      "limits": {
+        "exchangeOnly": "Držitel, který financuje každou peněženku přes burzu a nikdy mezi nimi nepřesouvá tokeny, nezanechá žádné on-chain propojení. Některé skupiny tak mohou skrývat další peněženky.",
+        "sales": "Převod mezi dvěma peněženkami může být prodej nebo dar, takže žádná skupina nestojí na jediném převodu. Některé peněženky od své skupiny vždy jen dostávaly tokeny a mince a nikdy nic neodeslaly; i to by mohly být dary.",
+        "contracts": "Tokeny držené jinými kontrakty než poolem na Uniswapu a Safe jsou uvedeny tak, jak jsou.",
+        "snapshot": "Zůstatky a cena se z blockchainu obnovují každých pět minut, dokud je tato stránka otevřená. Propojení mezi peněženkami se dohledávají ručně a sama se neaktualizují.",
+        "history": "Křivky ve sloupci Historie ukazují, kolik která peněženka držela, a to u peněženek s alespoň 0,01 % nabídky a u každé peněženky známého držitele. Křivka známého držitele zahrnuje i vyprázdněné peněženky, ze kterých jeho tokeny pocházejí, takže začíná prvním nákupem nebo prvním získáním tokenů. Tokeny v poolu likvidity, ve farmě nebo ve vestingovém streamu z křivky vypadnou, a protože migrace část z nich znovu vydaly jejich vlastníkům, některé křivky v těch dnech poskočí."
+      },
+      "contracts": {
+        "gen1": "Gen 1: PLEB na Avalanche",
+        "gen2": "Gen 2: PLEB na Ethereu, v květnu 2026 přejmenovaný na BSO",
+        "gen3": "Gen 3: dnešní BSO"
+      },
+      "snapshot": "Zůstatky a cena z Blockscoutu: {{count}} peněženek ke dni {{date}}. Našli jste chybné nebo chybějící propojení? <contributeLink>Vylepšit tuto stránku</contributeLink>."
+    },
+    "holderName": "Držitel {{letter}}"
+  },
+  "chart": {
+    "meta": {
+      "title": "Graf ceny BSO - Každý obchod od roku 2022",
+      "description": "Cena a tržní kapitalizace BSO od prvního obchodu v roce 2022 napříč všemi třemi kontrakty: PLEB na Avalanche, PLEB na Ethereum a dnešní BSO, v jednom grafu sestaveném ze swapů na blockchainu."
+    },
+    "hero": {
+      "title": "Cena BSO od prvního obchodu",
+      "lead": "Jeden graf napříč všemi třemi kontrakty: PLEB na Avalanche, PLEB na Ethereum, který byl v roce 2026 přejmenován na BSO, a dnešní BSO. Starší ceny jsou přepočteny v poměru 7 114,6 PLEB za BSO, který zachovaly obě migrace. Výběrem tečky v grafu zobrazíte, co se ten den stalo; celý příběh tokenu popisuje <historyLink>historie</historyLink> v seznamu držitelů.",
+      "status": {
+        "live": "Živě z poolu na Uniswapu: BSO za {{price}}. Aktualizováno {{ago}}.",
+        "loading": "Denní historie do {{date}}. Načítají se nejnovější ceny…",
+        "unavailable": "Živé ceny teď nejsou k dispozici, proto graf končí ke dni {{date}}."
+      }
+    },
+    "panelTitle": "Denní graf ceny",
+    "summary": {
+      "price": "Denní cena BSO od {{from}} do {{to}}. Nejnižší závěrečná cena {{low}}, nejvyšší závěrečná cena {{high}}, poslední {{latest}}.",
+      "mcap": "Denní tržní kapitalizace BSO od {{from}} do {{to}}. Nejnižší závěrečná hodnota {{low}}, nejvyšší závěrečná hodnota {{high}}, poslední {{latest}}."
+    },
+    "controls": {
+      "metricLabel": "Zobrazit",
+      "metrics": {
+        "price": "Cena",
+        "mcap": "Tržní kap."
+      },
+      "rangeLabel": "Období",
+      "ranges": {
+        "1M": "1M",
+        "3M": "3M",
+        "1Y": "1R",
+        "all": "Vše"
+      },
+      "typeLabel": "Typ grafu",
+      "types": {
+        "line": "Čára",
+        "candles": "Svíčky"
+      },
+      "scaleLabel": "Měřítko",
+      "scales": {
+        "log": "Log",
+        "linear": "Lineární"
+      }
+    },
+    "legend": {
+      "since": "od {{date}}",
+      "ohlc": "O {{open}} · H {{high}} · L {{low}} · C {{close}}",
+      "volume": "Objem {{value}}"
+    },
+    "eras": {
+      "label": "Kontrakty. Výběrem jednoho přiblížíte jeho období.",
+      "gen1": "PLEB na Avalanche",
+      "gen2": "PLEB na Ethereum",
+      "gen3": "BSO",
+      "years": "{{from}}–{{to}}",
+      "now": "dosud",
+      "rebrand": "Přejmenování na Bitsocial"
+    },
+    "method": {
+      "title": "Jak graf vzniká",
+      "lead": "Každá svíčka pochází ze swapů na blockchainu, takže kterýkoli den lze ověřit v exploreru.",
+      "steps": {
+        "swaps": "Otevírací, nejvyšší, nejnižší a závěrečná cena dne jsou první, nejvyšší, nejnižší a poslední cena zaplacená ve swapech daného dne podle UTC, načtené z událostí Swap každého poolu.",
+        "usd": "Pooly obchodují proti AVAX nebo ETH, takže každý swap se přepočítá na dolary kurzem Coinbase z hodiny, kdy proběhl.",
+        "units": "PLEB na Avalanche a na Ethereum až do <rebaseLink>rebasu 2. května 2026</rebaseLink> se zobrazuje v přepočtu na BSO: jeho cena se násobí číslem 7 114,596, tedy počtem PLEB, které každý BSO nahradil.",
+        "pools": "Pokud se v jeden den obchodovalo ve více poolech, svíčku dne určí pool s největším objemem, aby téměř prázdný pool nemohl vykreslit falešný knot. Objem sčítá všechny pooly a den bez obchodů opakuje poslední závěrečnou cenu.",
+        "mcap": "Tržní kapitalizace je závěrečná cena krát celková nabídka daného dne: všechny tokeny, které kontrakt vymintoval, minus všechny, které spálil, přepočtené na BSO stejně jako cena. Po rebasu a u dnešního BSO je nabídka pevně 210 milionů.",
+        "eras": "Historie každého kontraktu končí prvním obchodem toho následujícího. Kontrakt na Ethereum si jméno PLEB ponechal až do upgradu, který provedl jeho rebase, šest týdnů poté, co se 18. března 2026 z plebbit stal Bitsocial."
+      },
+      "poolsTitle": "Načtené pooly",
+      "eraDates": "{{from}} – {{to}}",
+      "snapshot": "Historie sestavená z {{count}} swapů do {{date}}. Novější dny pocházejí z GeckoTerminalu a obnovují se každých pět minut, dokud je tato stránka otevřená. Všimli jste si chybné svíčky? <contributeLink>Vylepšit tuto stránku</contributeLink>."
+    },
+    "eventList": "Události vyznačené v grafu",
+    "eventDetails": {
+      "close": "Zavřít",
+      "links": {
+        "reddit": "Příspěvek na Redditu",
+        "release": "Vydání na GitHubu",
+        "hackerNews": "Vlákno na Hacker News",
+        "tweet": "Tweet"
+      }
+    },
+    "events": {
+      "protocolLabsGrant": {
+        "title": "Grant od Protocol Labs",
+        "body": "Protocol Labs, tým stojící za IPFS a Filecoinem, uděluje plebbit grant na vývoj jeho decentralizované alternativy k Redditu."
+      },
+      "firstApp": {
+        "title": "První aplikace plebbit",
+        "body": "Vychází první desktopová aplikace pro Linux, Windows a Mac. Provozuje vlastní uzel IPFS, takže je na rozdíl od webového dema plně peer-to-peer."
+      },
+      "plebchan": {
+        "title": "Vychází plebchan",
+        "body": "plebchan, aplikace ve stylu 4chanu postavená na protokolu plebbit, vydává svou první verzi, pro web, Mac a Linux."
+      },
+      "hackerNews": {
+        "title": "Na titulní stránce Hacker News",
+        "body": "Uprostřed vlny nevole kvůli novým cenám API Redditu se demo plebbit dostává s více než 300 body na titulní stránku Hacker News. Týž týden se příspěvky o něm dostávají na titulní stránku r/ethereum a na r/CryptoCurrency mají 30 000 zhlédnutí."
+      },
+      "coingecko": {
+        "title": "Zařazení na CoinGecko",
+        "body": "Po několika odmítnutích od začátku roku 2022 CoinGecko token zařazuje."
+      },
+      "socialFi": {
+        "title": "V kategorii SocialFi na CoinGecko",
+        "body": "CoinGecko na žádost týmu přidává token do své kategorie SocialFi a token se objevuje i v seznamu tokenů SocialFi sdíleném na X. Cena se za pět dní téměř zdvojnásobí."
+      },
+      "seedit": {
+        "title": "Vychází Seedit",
+        "body": "Seedit, aplikace, která vypadá a funguje jako starý Reddit, vydává svou první verzi."
+      },
+      "marchRally": {
+        "title": "Rally v březnu 2024",
+        "body": "Dne 1. března investor Jason Calacanis tweetuje, že chce distribuovaný Reddit bez nutnosti povolení, a plebbit mu odpovídá svým demem. Dne 3. března vychází Seedit 0.1.6 a 4. března tým oznamuje komunity s přístupem podmíněným tokenem. Zatímco ETH ten měsíc překonává 4 000 dolarů, cena se 4. března téměř zdvojnásobí a do konce března ztrojnásobí, při objemu 2,2 milionu dolarů, nejvyšším ze všech měsíců v tomto grafu."
+      }
+    }
+  }
+}

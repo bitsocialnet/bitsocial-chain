@@ -1,0 +1,748 @@
+{
+  "nav": {
+    "language": "Sprache",
+    "theme": "Design",
+    "bitsocial": "Bitsocial",
+    "faq": "FAQ",
+    "richList": "Rich List",
+    "chart": "Chart"
+  },
+  "languageSelector": {
+    "title": "Sprache auswählen",
+    "searchPlaceholder": "Sprachen suchen...",
+    "noResults": "Zu Ihrer Suche passen keine Sprachen."
+  },
+  "meta": {
+    "title": "BSO - Die fehlende soziale Schicht der Kryptowelt",
+    "description": "BSO ist das Geld von Bitsocial, dem sozialen Peer-to-Peer-Netzwerk, das keinem Unternehmen gehört. Eine Ethereum-L2-Appchain, in der Communities ihre Netzwerke, ihre Tokens und ihre Einnahmen besitzen."
+  },
+  "topbar": {
+    "navLabel": "Navigation der Website von Bitsocial Chain",
+    "menu": "Menü",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen"
+  },
+  "theme": {
+    "toggle": "Design wechseln"
+  },
+  "hero": {
+    "statusCta": "Die Chain ist noch nicht live, abonniere Updates",
+    "title": "Die fehlende <mark>soziale Schicht</mark> der Kryptowelt",
+    "supporting": "Krypto wurde zum Casino, weil Web2, TradFi und zentralisierte Infrastruktur die Vertriebskanäle besitzen und die Anreize verbiegen. Bitsocial Chain löst das: eine unaufhaltsame, vollständig dezentralisierte <l2Link>Ethereum-L2</l2Link>-<appchainLink>Appchain</appchainLink>, in der Communities ihre Netzwerke, ihre Tokens und ihre Einnahmen besitzen."
+  },
+  "layers": {
+    "ariaLabel": "Drei gestapelte Schichten der Kryptowelt: soziale Apps im Bitsocial-Netzwerk oben, Ethereum-L1-Settlement an der Basis und dazwischen Bitsocial Chain, die von BSO angetriebene Ethereum-L2-Appchain, die als leuchtende fehlende Schicht aufflammt, in die Lücke zwischen den beiden passt und von einem Energiestrang durchzogen wird.",
+    "social": {
+      "title": "SOZIALE APPS",
+      "subtitle": "BITSOCIAL-NETZWERK"
+    },
+    "bso": {
+      "title": "BITSOCIAL CHAIN",
+      "subtitle": "L2-APPCHAIN · BSO"
+    },
+    "eth": {
+      "title": "ETHEREUM",
+      "subtitle": "L1-SETTLEMENT"
+    }
+  },
+  "contract": {
+    "label": "BSO-Contract",
+    "copyAriaLabel": "BSO-Contract-Adresse {{address}} kopieren",
+    "copied": "In die Zwischenablage kopiert"
+  },
+  "sections": {
+    "whyAChain": {
+      "title": "Bitsocial selbst läuft nicht auf einer Blockchain.",
+      "supporting": "Beiträge, Profile, Communities und Moderation sind bei <bitsocialLink>Bitsocial</bitsocialLink> Peer-to-Peer. Keine Chain, keine Gebühren, keine Wallet: Du kannst das gesamte Netzwerk nutzen, ohne je mit Krypto in Berührung zu kommen, und die meisten werden das auch tun. Aber ein paar Dinge brauchen wirklich eine Chain — Namen, die dir gehören, Geld, das zwischen Fremden fließt, Tokens, die einer Community wirklich gehören. Bitsocial Chain ist genau dafür da, und für nichts anderes.",
+      "peerToPeer": {
+        "badge": "Peer-to-Peer",
+        "note": "Das soziale Netzwerk. Keine Chain beteiligt.",
+        "posts": "Beiträge und Kommentare",
+        "profiles": "Profile und Communities",
+        "moderation": "Moderation und Anti-Spam"
+      },
+      "onChain": {
+        "badge": "On-Chain",
+        "note": "Die wenigen Teile, die eine brauchen.",
+        "names": ".bso-Namen",
+        "tipping": "Trinkgelder und Auszeichnungen",
+        "tokens": "Community-Tokens"
+      },
+      "caption": "Die Chain ist optional. Das soziale Netzwerk ist es nicht.",
+      "quote": "Ein dezentralisiertes soziales Netzwerk braucht dezentralisiertes Geld."
+    },
+    "tokenomics": {
+      "title": "Solides Geld.",
+      "supporting": "BSO ist ein ERC-20 mit fester Gesamtmenge: 210 Millionen, keine Inflation, von Grund auf deflationär. Die Tokens wurden 2022 über drei Airdrops und Liquidity-Mining-Belohnungen verschenkt, ohne Presale und ohne Team-Anteil. Der Contract ist unveränderlich und adminlos, daher stehen die Regeln für immer fest.",
+      "supply": {
+        "cap": "BSO-Maximalmenge · für immer fest"
+      },
+      "traits": {
+        "airdropped": "Kein Team-Anteil und kein Presale",
+        "fixedCap": "Feste Obergrenze, null Emissionen",
+        "deflationary": "Deflationär: Die Menge kann nur sinken"
+      },
+      "locks": {
+        "noMint": {
+          "label": "Kein Mint",
+          "note": "die Menge kann nie wachsen"
+        },
+        "noOwner": {
+          "label": "Kein Owner",
+          "note": "keine Admin-Schlüssel, nie"
+        },
+        "noPause": {
+          "label": "Keine Pause-Funktion",
+          "note": "Transfers lassen sich nicht einfrieren"
+        },
+        "noProxy": {
+          "label": "Kein Proxy",
+          "note": "der Code lässt sich nicht austauschen"
+        }
+      },
+      "airdrop": {
+        "label": "Die Verteilung",
+        "note": "Drei Airdrop-Runden im Januar und Februar 2022, geclaimt von 1.510 Adressen. Runde 1 lief über einen Telegram-Bot mit Empfehlungsboni, und Esteban prüfte dessen Empfehlungen von Hand auf Missbrauch; die Runden 2 und 3 liefen auf Twitter und Reddit. Rund 63% aller BSO wurden über die Airdrops verteilt und 34% als Belohnungen an Leute, die Liquidität bereitgestellt haben; der Rest bildete die Anfangsliquidität der Start-Pools. Kein Presale, kein Team-Anteil, nichts verkauft.",
+        "richListLink": "Alle Halter und alle drei Runden ansehen"
+      },
+      "contract": {
+        "label": "Der ganze Contract",
+        "note": "Die gesamte Menge wird auf eine einzige Adresse gemintet, weil die Migration so funktioniert: Guthaben wurden eins zu eins darauf gespiegelt und per Transfer wieder ausgezahlt, jedes einzelne on-chain. Alles andere ist <openZeppelinLink>OpenZeppelin</openZeppelinLink>, unverändert — der am meisten genutzte und am gründlichsten geprüfte Token-Code in Ethereum. Nichts Eigenes, nichts Raffiniertes. Lies ihn auf <etherscanLink>Etherscan</etherscanLink>."
+      },
+      "foot": "Unveränderlich und adminlos: Es gibt keine Admin-Schlüssel mehr, die jemand halten könnte, also kann niemand den Contract ändern, die Menge aufblähen oder Transfers einfrieren."
+    },
+    "unstoppable": {
+      "title": "Auf Ethereum gebaut. Von niemandem betrieben.",
+      "supporting": "Eine neue Blockchain müsste die Sicherheit und die Entwicklerbasis, die Ethereum schon hat, neu aufbauen und bräuchte einen neuen Token, obwohl BSO bereits vollständig verteilt ist. Deshalb ist Bitsocial Chain als Ethereum-L2 ohne Betreiber konzipiert: Jede Aktion ist eine gewöhnliche Ethereum-Transaktion an eine Adresse, die niemand kontrolliert, und jeder kann einen Knoten betreiben, der denselben Zustand aus der Ethereum-Historie ableitet. Es gibt kein Unternehmen, das man unter Druck setzen kann, und keinen Schalter, den man umlegen kann.",
+      "locks": {
+        "noSequencer": {
+          "label": "Kein Sequencer nötig",
+          "note": "Ethereum legt die Reihenfolge jeder Transaktion fest"
+        },
+        "noAdminKeys": {
+          "label": "Keine Admin-Schlüssel",
+          "note": "niemand ändert die Regeln für dich"
+        },
+        "noUpgradeableContract": {
+          "label": "Kein upgradefähiger Contract",
+          "note": "auf Ethereum gibt es nichts zu beschlagnahmen"
+        },
+        "noPrivilegedNode": {
+          "label": "Kein privilegierter Knoten",
+          "note": "jeder kann denselben Zustand ableiten"
+        }
+      },
+      "proofOfConcept": "Der Proof of Concept leitet .bso-Namen bereits auf diese Weise ab, auf einer lokalen Dev-Chain. Ein Produktivstart braucht noch ein Proof-System, ein Audit und ein endgültiges Wirtschaftsmodell. <proofLink>Den Proof of Concept lesen</proofLink>."
+    },
+    "bsoNames": {
+      "title": "Dein .bso-Name bleibt deiner.",
+      "supporting": "Bitsocial-Apps <resolverLink>lösen .bso-Namen heute auf</resolverLink>, indem sie ENS ausleihen, das Namenssystem, das Ethereum-Wallets nutzen: mycommunity.bso ist in Wahrheit mycommunity.eth mit einem bitsocial-Eintrag. Eine native Registry würde jeden bereits genutzten Namen per Airdrop an die Wallet verteilen, die ihn hält — nichts zu claimen und nichts neu zu registrieren.",
+      "ensBadge": "ENS · heute",
+      "pointsTo": "verweist auf",
+      "communityKey": "der Schlüssel der Community",
+      "airdropAtLaunch": "Airdrop zum Start",
+      "bsoBadge": ".bso · Bitsocial Chain",
+      "owner": "Besitzer",
+      "sameWallet": "dieselbe Wallet",
+      "fees": "Bis es die Chain gibt, ziehen .bso-Namen in ein <bsipLink>Übergangsregister auf Ethereum</bsipLink> um, dessen Gebühren die Entwickler von Bitsocial finanzieren. Auf Bitsocial Chain sollen Namensgebühren stattdessen verbrannt werden oder BSO zurückkaufen und verbrennen. Der Mechanismus ist noch nicht entschieden."
+    },
+    "communityMoney": {
+      "title": "Ein Asset für viele Communities.",
+      "supporting": "Jede Community könnte ihren eigenen Layer betreiben, einen L3 mit eigenem Token, und ihre Gebühren, Namen und Miete in BSO bezahlen. L3s gibt es in der Kryptowelt bereits; auf Bitsocial Chain käme einer mit einer bereits angeschlossenen Community. Ihre Einnahmen könnten sich selbst abwickeln: Werbeplätze würden per Contract versteigert, ein Teil jedes Verkaufs würde sofort vernichtet und der Rest an die Community gezahlt, ohne Rückkauf-Treasury, die sich jemand aneignen könnte.",
+      "communityLayer": "Community-Layer",
+      "ownToken": "eigener Token",
+      "feesFlow": "Gebühren, Namen und Miete in BSO bezahlt",
+      "chainMeta": "Ethereum-Layer · sein Zustand leitet sich von Ethereum ab",
+      "ethereumMeta": "Ethereum L1 · Sicherheit und Daten",
+      "caption": "Ein Anteil jeder Gebühr wird vernichtet; der Rest bezahlt die Sicherheit der Chain."
+    },
+    "privacy": {
+      "title": "Trinkgelder sollten dich nicht doxxen.",
+      "supporting": "Bitsocial Chain ist standardmäßig öffentlich, wie Ethereum, und .bso-Namen sind dafür gedacht, gesehen zu werden. Bei Geld ist das anders: Ein Trinkgeld sollte nie verlangen, dass dein Name, dein Profil oder dein Beitrag on-chain danebenstehen, und eine frische Wallet sollte normal sein, nicht verdächtig. Die Chain baut kein eigenes Privatsphäre-System. Sie soll es bestehenden erlauben, sich ohne Erlaubnis einzuklinken: Shielded Pools, Stealth-Adressen, Zero-Knowledge-Proofs.",
+      "publicOnPurpose": {
+        "heading": "Absichtlich öffentlich",
+        "names": ".bso-Namen und wem sie gehören",
+        "rules": "Jede Regel und jede Zustandsänderung"
+      },
+      "neverRequired": {
+        "heading": "Nie erforderlich",
+        "profile": "Dein Name oder Profil bei einem Trinkgeld",
+        "wallet": "Eine Wallet pro Person",
+        "app": "Eine offizielle Wallet oder App"
+      }
+    },
+    "possibilities": {
+      "title": "Vorgeschlagen, in aller Offenheit.",
+      "supporting": "Noch nicht live. BSO ist heute auf Ethereum live; Bitsocial Chain ist ein Vorschlag, und ihr erster Proof of Concept, native .bso-Namen, läuft auf einer lokalen Dev-Chain. Nichts weiter unten hat ein Datum. Es ist das, was eine soziale Schicht mit eigenem Geld möglich machen würde: Einiges davon wird gebaut werden, einiges durch bessere Ideen ersetzt, und einiges von Leuten gebaut, die noch nicht aufgetaucht sind.",
+      "ideas": {
+        "chain": {
+          "note": "Die Ethereum-L2-Appchain selbst und die Settlement-Heimat von BSO."
+        },
+        "registry": {
+          "label": "Eine native .bso-Registry",
+          "note": "Namen und Identität werden auf der Chain registriert, statt von ENS geliehen."
+        },
+        "l3s": {
+          "label": "Community-L3s und -Tokens",
+          "note": "Communities mit eigenem Layer und eigenem Token, die in BSO abrechnen."
+        },
+        "agoraswap": {
+          "note": "Eine Community-DEX, auf der Community-Tokens gegen BSO gehandelt werden, damit die Liquidität on-chain bleibt."
+        },
+        "collectibles": {
+          "label": "Creator-Collectibles",
+          "note": "Möglichkeiten für Creator, etwas direkt zu verkaufen, ohne dass eine Plattform einen Anteil abzweigt."
+        },
+        "other": {
+          "label": "Alles, was sonst passt",
+          "note": "Client-Tokens, dezentralisiertes Sequencing und Ideen, die noch niemand vorgeschlagen hat."
+        }
+      }
+    },
+    "verify": {
+      "title": "Nur eine Adresse ist BSO.",
+      "supporting": "Jeder kann einen Token erstellen und ihn BSO nennen, deshalb unterscheidet nur die Contract-Adresse den echten von den anderen. Gleiche alle 42 Zeichen mit dieser Website und den offiziellen Kanälen von Bitsocial ab, bevor du irgendetwas irgendwohin sendest.",
+      "warning": "Der offizielle BSO-Contract ist <contract>{{address}}</contract>. Alles andere ist nicht BSO, egal wie es heißt und wo es gelistet ist.",
+      "tradeOnUniswap": "Auf Uniswap handeln",
+      "provideLiquidity": "Liquidität bereitstellen",
+      "note": "Die Liquidität auf Uniswap wird von unabhängigen Personen bereitgestellt, und jeder kann etwas hinzufügen. Es ist kein Sparkonto: Der Wert einer Liquiditätsposition kann fallen, auch unter das, was eingezahlt wurde."
+    }
+  },
+  "common": {
+    "proposed": "Vorgeschlagen",
+    "close": "Schließen"
+  },
+  "mailingList": {
+    "chainTitle": "Bleib auf dem Laufenden",
+    "chainDescription": "Erhalte Benachrichtigungen zu BSO-Token-Meilensteinen, Bitsocial Chain und Ökosystem-Updates. Geringe Häufigkeit, hoher Informationsgehalt.",
+    "placeholder": "you@example.com",
+    "inputLabel": "E-Mail-Adresse",
+    "subscribe": "Abonnieren",
+    "subscribing": "Wird abonniert…",
+    "chainSuccess": "Du bist auf der Liste.",
+    "confirmationSent": "Prüfen Sie Ihre E-Mails, um Ihr Abonnement zu bestätigen.",
+    "chainError": "Etwas ist schiefgelaufen. Bitte versuche es erneut.",
+    "unavailable": "Die Newsletter-Anmeldung ist vorübergehend nicht verfügbar.",
+    "privacy": "Kein Spam, versprochen. Jederzeit abmelden."
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Häufig gestellte Fragen.",
+    "supporting": "Jeder Abschnitt dieser Seite beantwortet eine davon. Klick auf eine Frage, um dorthin zu springen.",
+    "navLabel": "Auf dieser Seite beantwortete Fragen",
+    "answeredIn": "Beantwortet im Abschnitt {{label}}",
+    "entries": {
+      "whyAChain": {
+        "eyebrow": "Warum eine Chain",
+        "question": "Warum braucht ein soziales Peer-to-Peer-Netzwerk eine Chain?"
+      },
+      "tokenomics": {
+        "eyebrow": "Tokenomics",
+        "question": "Wie sind die Tokenomics von BSO? Wer hat BSO bekommen?"
+      },
+      "unstoppable": {
+        "eyebrow": "Unaufhaltsam",
+        "question": "Warum ein Ethereum-L2? Wer betreibt es?"
+      },
+      "bsoNames": {
+        "eyebrow": "BSO-Namen",
+        "question": "Was passiert mit meinem .bso-Namen?"
+      },
+      "communityMoney": {
+        "eyebrow": "Community-Geld",
+        "question": "Wofür würde BSO genutzt werden?"
+      },
+      "privacy": {
+        "eyebrow": "Datenschutz",
+        "question": "Sieht jeder, wem ich Trinkgeld gebe?"
+      },
+      "possibilities": {
+        "eyebrow": "Möglichkeiten",
+        "question": "Ist es schon live? Was ist geplant?"
+      },
+      "verify": {
+        "eyebrow": "Verifizieren",
+        "question": "Wie bekomme ich BSO sicher?"
+      }
+    },
+    "rows": {
+      "about": {
+        "label": "Über uns",
+        "question": "Wer steckt hinter Bitsocial Chain?"
+      },
+      "mailingList": {
+        "label": "Newsletter",
+        "question": "Wie bleibe ich auf dem Laufenden?"
+      }
+    },
+    "ask": {
+      "placeholder": "Frag etwas anderes…",
+      "label": "Frag etwas anderes",
+      "action": "ChatGPT fragen"
+    }
+  },
+  "footer": {
+    "chainTagline": "Die fehlende soziale Schicht der Kryptowelt",
+    "token": "Token",
+    "resources": "Ressourcen",
+    "blog": "Blog",
+    "proofOfConcept": "Proof of Concept",
+    "about": "Über uns",
+    "mainSite": "Hauptseite",
+    "community": "Gemeinschaft",
+    "chainBottomTagline": "Reparieren wir die soziale Schicht der Kryptowelt",
+    "contribute": "Diese Seite verbessern"
+  },
+  "backToTop": {
+    "returnToOrigin": "Zurück zur vorherigen Stelle",
+    "toTop": "Nach oben",
+    "toBottom": "Nach unten"
+  },
+  "richList": {
+    "meta": {
+      "title": "BSO Rich List - Wer BSO hält",
+      "description": "Alle BSO-Halter, mit gruppierten verknüpften Wallets, markierten Team-Wallets und den On-Chain-Belegen hinter jeder Verknüpfung. Dazu die Geschichte der drei Airdrops von 2022."
+    },
+    "hero": {
+      "title": "Wer BSO hält",
+      "lead": "Jede BSO-Wallet, wobei Wallets desselben Halters zusammengefasst und die Wallets des Teams markiert sind. Zu jeder Verknüpfung stehen die Transaktionen dahinter, damit du sie selbst prüfen kannst.",
+      "jumpLabel": "Abschnitte",
+      "status": {
+        "live": "Live aus der Chain: {{count}} Wallets, BSO bei {{price}}. Aktualisiert {{ago}}.",
+        "loading": "Snapshot vom {{date}}: {{count}} Wallets, BSO bei {{price}}. Live-Daten werden geladen…",
+        "unavailable": "Live-Daten sind gerade nicht verfügbar, daher siehst du den Snapshot vom {{date}}: {{count}} Wallets, BSO bei {{price}}."
+      }
+    },
+    "jump": {
+      "holders": "Halter",
+      "linked-wallets": "Verknüpfte Wallets",
+      "team": "Kernteam",
+      "airdrops": "Airdrops",
+      "history": "Geschichte",
+      "method": "Methode"
+    },
+    "strip": {
+      "label": "Anteil jeder Gruppe an der Gesamtmenge von 210 Millionen BSO",
+      "team": "Kernteam",
+      "pool": "Uniswap-Pool",
+      "everyoneElse_one": "Alle anderen ({{count}} Wallet)",
+      "everyoneElse_other": "Alle anderen ({{count}} Wallets)"
+    },
+    "categories": {
+      "team": "Kernteam",
+      "pool": "Liquiditätspool",
+      "confirmed": "Bestätigt",
+      "likely": "Wahrscheinlich",
+      "possible": "Möglich",
+      "other": "Nicht verknüpft"
+    },
+    "table": {
+      "title": "Halter",
+      "lead": "Verknüpfte Wallets sind in einer Zeile zusammengefasst. Wechsle zu „Nach Wallet“, um jede Adresse so zu sehen, wie Etherscan sie auflistet.",
+      "viewLabel": "Halter anzeigen",
+      "view": {
+        "grouped": "Gruppiert",
+        "wallets": "Nach Wallet"
+      },
+      "searchLabel": "Nach Adresse oder Haltername suchen",
+      "searchPlaceholder": "Adresse suchen",
+      "caption": "BSO-Halter nach Guthaben",
+      "holder": "Halter",
+      "balance": "BSO",
+      "share": "Anteil",
+      "value": "Wert",
+      "contract": "Contract",
+      "walletCount_one": "{{count}} Wallet",
+      "walletCount_other": "{{count}} Wallets",
+      "noMatch": "Kein Halter passt zu dieser Suche.",
+      "showAll_one": "{{count}} Zeile anzeigen",
+      "showAll_other": "Alle {{count}} Zeilen anzeigen",
+      "showMore": "{{count}} weitere anzeigen",
+      "history": "Verlauf",
+      "historySummary": "Guthaben seit {{start}}: Höchststand {{high}} BSO im {{highDate}}, jetzt {{current}} BSO"
+    },
+    "evidenceLinks": "Belegtransaktionen",
+    "telegramSources": "Telegram-Quellen",
+    "linked": {
+      "title": "Verknüpfte Wallets",
+      "lead": "Wallets werden nur gruppiert, wenn die Chain eine Verknüpfung zeigt: Tokens oder Gas, die zwischen ihnen fließen, ein gemeinsamer privater Geldgeber, ein Multisig-Owner oder ein identisches Kaufmuster. Jede Gruppe listet die Transaktionen dahinter auf.",
+      "confidence": {
+        "confirmed": "Die Wallets tätigen Transaktionen untereinander, haben einen gemeinsamen privaten Geldgeber oder kontrollieren einander.",
+        "likely": "Mehrere Transfers aus einer Quelle oder ein identisches Kaufmuster, die sich kaum anders erklären lassen.",
+        "possible": "Eine einzelne Verknüpfung, die auch ein Verkauf oder ein Geschenk sein könnte."
+      },
+      "holds_one": "{{amount}} BSO, {{share}} der Gesamtmenge, in {{count}} Wallet",
+      "holds_other": "{{amount}} BSO, {{share}} der Gesamtmenge, verteilt auf {{count}} Wallets",
+      "walletList_one": "{{count}} Wallet",
+      "walletList_other": "Alle {{count}} Wallets"
+    },
+    "walletRoles": {
+      "deployer": "Deployer",
+      "estebanEns": "estebanabaroa.eth",
+      "safe": "Safe-Multisig",
+      "safeOwner": "Safe-Owner"
+    },
+    "entities": {
+      "pool": {
+        "name": "Uniswap-Pool BSO/ETH"
+      },
+      "holderA": {
+        "summary": "Fünf Wallets, die durch Transfers und einen gemeinsamen privaten Geldgeber miteinander verbunden sind, zwischen Februar 2022 und Mai 2023 auf Avalanche eingestiegen sind und nie verkauft haben.",
+        "evidence": {
+          "transfersToLpWallet": "Zwei der kaufenden Wallets schickten Tokens und AVAX an eine dritte Wallet, die damit Liquidität und Farming auf Trader Joe betrieb: 141.000 BSO und 5 AVAX am 27. Februar 2022, dann 1,01 Mio. BSO und 34 AVAX zwischen dem 28. Februar und dem 2. März. Die dritte Wallet schickte 0,013 AVAX zurück.",
+          "sharedFunder": "Eine private Wallet finanzierte drei der kaufenden Wallets und sonst nichts. Jede Transaktion, die sie je gesendet hat, ging an diese drei, der Reihe nach: Nonces 0 bis 4 an die erste, 5 bis 7 an die zweite, 8 an die dritte.",
+          "neverSold": "Keine der fünf Wallets hat verkauft. Ihre Guthaben haben beide Migrationen unverändert überstanden."
+        }
+      },
+      "holderC": {
+        "summary": "Zwei Wallets, die vom selben Paar kaufender Wallets gefüllt wurden.",
+        "evidence": {
+          "commonSender": "Eine kaufende Wallet schickte der ersten 664.000 BSO am 19. August 2024. Am 14. November 2025 schickte sie der zweiten einen Test über 7.000 BSO, 0,1 ETH und dann 2,17 Mio. BSO. Das ist das einzige ETH, das die zweite Wallet je erhalten hat, und sie hat nie eine Transaktion gesendet.",
+          "secondSender": "Eine zweite kaufende Wallet schickte der ersten zwischen Mai und August 2024 in acht Transfers deren übrige 7,3 Mio. BSO, zusammen mit deren erstem ETH, und bekam von ihr 4,35 ETH zurück.",
+          "sendersLinked": "Die beiden kaufenden Wallets sind miteinander verbunden: Die eine übergab der anderen 1,15 Mio. BSO und 0,1 ETH am 22. Februar 2024, und die andere schickte ihre verbleibenden 5,8 ETH am 17. August 2024 zurück."
+        }
+      },
+      "holderD": {
+        "summary": "Fünf Wallets: zwei, die einander AVAX und ETH schickten, eine dritte, die von beiden gefüllt wurde, und zwei weitere, die die dritte eingerichtet hat.",
+        "evidence": {
+          "sharedRecipient": "Die dritte Wallet erhielt am 18. November 2022 von der ersten einen Testtransfer und dann 703.000 BSO, und am 1. Dezember 2022 von der zweiten 1,16 Mio. BSO. Alles AVAX, das sie je für Gas hatte, kam von diesen beiden.",
+          "coinsBothWays": "Die ersten beiden Wallets schickten einander 20 Monate lang auf beiden Chains Coins: 0,5 AVAX in die eine Richtung und neun Minuten später 0,49 zurück am 24. März 2022, 73 AVAX am 31. Mai 2022, 0,09 ETH am 11. März 2023 und 2 ETH in die andere Richtung am 7. November 2023.",
+          "newWallets": "Die dritte Wallet richtete dann zwei neue Wallets ein, jedes Mal auf dieselbe Weise: AVAX für Gas, ein Testtransfer, dann 281.000 BSO, am 24. November 2022 und Ende April 2023. Keine der beiden hat je eine Transaktion gesendet."
+        }
+      },
+      "holderE": {
+        "summary": "Zwei Wallets, die aus derselben Quelle gefüllt wurden.",
+        "evidence": {
+          "commonSender": "Eine Wallet schickte der ersten zwischen Oktober 2024 und Januar 2025 in sieben Transfers 5,53 Mio. BSO und der zweiten 287.000 am 22. November 2025.",
+          "onlyEth": "Dieselbe Wallet schickte jeder von ihnen das einzige ETH, das diese je erhalten hat, in derselben Minute wie ihre ersten Tokens: 0,1 ETH und 0,12 ETH. Keine der beiden Wallets hat je eine Transaktion gesendet."
+        }
+      },
+      "holderF": {
+        "summary": "Eine Wallet, die ihre Tokens und 4 ETH auf drei neue Wallets aufgeteilt hat.",
+        "evidence": {
+          "split": "Am 10. März 2024 schickte eine Wallet innerhalb von sieben Minuten runde Beträge an PLEB, wie BSO damals hieß (12 Mrd., 8 Mrd. und 4 Mrd.), an drei neue Wallets. Sie hält selbst noch BSO.",
+          "ethBothWays": "In denselben Minuten schickte sie den drei Wallets 4,05 ETH, jeweils zwischen 1 und 2 ETH. Die Wallet, die am meisten bekam, schickte 1,5 ETH am 24. Juni 2024 zurück; die anderen beiden haben nie eine Transaktion gesendet."
+        }
+      },
+      "holderG": {
+        "summary": "Zwei Wallets, finanziert vom selben Absender im Abstand von drei Jahren, und eine dritte, auf die eine von ihnen ihr Guthaben verschoben hat.",
+        "evidence": {
+          "commonSender": "Eine Wallet schickte der zweiten im April 2022 auf Avalanche 658.000 BSO und der ersten im Januar 2025 auf Ethereum 843.000.",
+          "senderFunded": "Dieser Absender schickte beiden Wallets auch Coins: Er gab der zweiten deren erstes AVAX und am nächsten Tag 17,4 AVAX und schickte der ersten drei Minuten nach den Tokens seine restlichen 0,15 ETH.",
+          "movedOn": "Am 3. November 2026 schickte die zweite Wallet der dritten ETH für Gas, einen Test über 100 BSO und dann ihr gesamtes Guthaben von 852.000 BSO."
+        }
+      },
+      "holderH": {
+        "summary": "Zwei Wallets, von denen eine die andere finanziert hat.",
+        "evidence": {
+          "directTransfer": "Am 24. April 2022 schickte die erste Wallet der zweiten deren erstes AVAX und zwei Minuten später 59.000 BSO.",
+          "funding": "Am 8. Mai 2022 schickte die erste Wallet der zweiten 23 AVAX in sechs Transfers, und die zweite tauschte jeweils innerhalb von Minuten den Großteil davon in BSO."
+        }
+      },
+      "holderI": {
+        "summary": "Zwei Wallets, die einander ETH schickten, bevor eine ihr gesamtes Guthaben auf die andere verschob.",
+        "evidence": {
+          "directTransfers": "Die zweite Wallet schickte der ersten dann alles, was sie hielt: 1,85 Mio. BSO am 30. Oktober 2023 und 703.000 am 8. November 2023.",
+          "ethBothWays": "Die zweite Wallet schickte der ersten 0,77 ETH am 16. Dezember 2022, und die erste schickte am nächsten Tag 0,02 ETH zurück."
+        }
+      },
+      "holderJ": {
+        "summary": "Zwei Wallets, die über ein Jahr lang AVAX hin- und herschickten.",
+        "evidence": {
+          "coinsBothWays": "Die erste Wallet schickte der zweiten deren erstes AVAX am 7. Mai 2021 und deren erstes ETH im August desselben Jahres. Bis Juli 2022 hatte sie 331 AVAX in zwölf Transfers geschickt, und die zweite hatte 15 AVAX in zwei Transfers zurückgeschickt.",
+          "sameEveningLocks": "Beide kauften BSO auf Trader Joe, und am 28. April 2022 sperrten beide innerhalb einer halben Stunde BSO im selben Locking-Contract."
+        }
+      },
+      "holderK": {
+        "summary": "Zwei Wallets, finanziert von derselben privaten Wallet.",
+        "evidence": {
+          "sharedFunder": "Eine private Wallet finanzierte beide. Sie schickte der ersten deren erstes AVAX im Oktober 2021, 194 AVAX in 21 Transfers bis Ende 2023 und 3,49 Mio. BSO in zwei Transfers. Sie schickte der zweiten deren erstes AVAX am 14. Februar 2022 und 23 AVAX in sechs Transfers bis April desselben Jahres. Beide schickten kleine Beträge AVAX zurück.",
+          "sharedRecipient": "Beide finanzierten außerdem dieselbe neue Wallet: Die zweite schickte ihr am 17. Februar 2022 deren erste 5,1 AVAX, und die erste schickte ihr drei Tage später 38,3 AVAX."
+        }
+      },
+      "holderL": {
+        "summary": "Zwei Wallets, finanziert aus derselben privaten Wallet, eine davon über eine Zwischen-Wallet.",
+        "evidence": {
+          "funderChain": "Eine private Wallet schickte der zweiten deren erstes AVAX am 12. Februar 2022. Sechs Tage später verschob sie ihre eigenen 597.000 BSO und ihr restliches AVAX auf eine neue Wallet, die die 597.000 BSO am 22. Februar an die erste Wallet weitergab, zusammen mit deren erstem AVAX.",
+          "directTransfer": "Die zweite Wallet schickte der ersten 0,005 AVAX am 27. Februar 2022."
+        }
+      },
+      "holderM": {
+        "summary": "Zehn Wallets, die zwischen Februar 2022 und Mai 2023 eine nach der anderen nichts anderes taten, als auf Avalanche zu kaufen, und nie verkauft haben.",
+        "evidence": {
+          "buyingPattern": "Jede Wallet war neu, wurde mit einer oder zwei Börsenauszahlungen von etwa 2.000 bis 3.400 $ über Binance oder ChangeNOW finanziert, tauschte den gesamten Betrag in den Token und wurde danach nie wieder genutzt. Sieben kauften zwischen dem 28. Februar und dem 31. März 2022 eine nach der anderen; drei weitere taten dasselbe am 12. April und am 25. Juni 2022 sowie am 6. Mai 2023. Unter den heutigen Haltern mit mindestens 0,01% der Gesamtmenge wurden 21 Wallets ausschließlich zum Kaufen auf Avalanche genutzt, in vier oder weniger Transaktionen: diese zehn, zwei Wallets einer anderen Gruppe und neun weitere, die jeweils weniger als 410 $ ausgaben.",
+          "neverSold": "Keine der zehn Wallets hat ihre Tokens seitdem verkauft oder bewegt, abgesehen von einer, die ihre Tokens im April 2022 gesperrt hat. Ihre Guthaben haben beide Migrationen unverändert überstanden."
+        }
+      }
+    },
+    "team": {
+      "title": "Keine Zuteilung fürs Team",
+      "lead": "Für das Team, Investoren oder einen Presale wurden keine Tokens reserviert. Hier siehst du, woher jeder BSO stammt, was die Wallets des Teams heute halten und was der Gründer damals gesagt hat.",
+      "origin": {
+        "caption": "Wie jeder BSO ursprünglich gemintet wurde, in den Jahren 2022 und 2023",
+        "label": "Anteil der BSO nach Art des ursprünglichen Mints",
+        "airdropClaims": {
+          "label": "Airdrop-Claims",
+          "note": "{{amount}} BSO, geclaimt von 1.510 Adressen in drei Runden. Zuteilungen, die niemand geclaimt hat, wurden nie gemintet."
+        },
+        "liquidityMining": {
+          "label": "Liquidity Mining",
+          "note": "{{amount}} BSO, ausgezahlt an Leute, die von Februar 2022 bis Mai 2023 Liquidität auf Trader Joe gestakt haben."
+        },
+        "liquiditySeed": {
+          "label": "Start-Liquidität",
+          "note": "{{amount}} BSO, an den Deployer gemintet und zusammen mit 7 AVAX in die beiden Start-Pools eingezahlt."
+        }
+      },
+      "facts": {
+        "liquiditySeed": "Der einzige Mint an eine Team-Wallet außerhalb des Airdrops war die Start-Liquidität: 7 Mio. BSO, am 14. Januar 2022 innerhalb von sieben Minuten in den Trader-Joe-Pool (5,6 Mio.) und den Pangolin-Pool (1,4 Mio.) eingezahlt.",
+        "teamClaims": "Drei Teammitglieder haben in Runde 1 geclaimt: Esteban 703.000 BSO, Tom 1,86 Mio. BSO (der drittgrößte von 767 Claims) und rinse12 1,1 Mio. BSO aus zwei Wallets, deren Tokens später in seinen Safe flossen. Zusammen sind das 2,8% aller in den Airdrops geclaimten Tokens.",
+        "migrationMintedNothing": "Die Migration 2026 hat für niemanden neue Tokens erzeugt: Alle 210 Mio. BSO wurden in einer einzigen Transaktion verteilt, im Verhältnis zu den alten Guthaben.",
+        "farmRewards": "Ein Teammitglied hat Liquidity-Mining-Belohnungen erhalten: Eine Wallet von rinse12 hat am 5. April 2022 2,3 Mio. BSO eingesammelt, den viertgrößten Anteil der 60,9 Mio. BSO, die auf Avalanche an 208 Adressen ausgezahlt wurden. Die 8 Mio., die beim Wechsel zu Ethereum noch nicht ausgezahlt waren, wurden den Stakern gutgeschrieben, die sie verdient hatten."
+      },
+      "statementsTitle": "Was der Gründer damals gesagt hat",
+      "statementBy": "Esteban Abaroa, Gründer, {{date}}",
+      "walletsTitle": "Team-Wallets heute",
+      "person": "Person",
+      "wallet": "Wallet",
+      "total": "Team gesamt",
+      "walletsNote": "Wert: {{value}} zum Snapshot-Preis. Die vollständige Historie jeder Wallet ist öffentlich auf Etherscan einsehbar.",
+      "poolNote": "Am 30. Oktober 2026 haben Estebans Deployer-Wallet und estebanabaroa.eth 86,6% der Liquiditäts-Tokens des Uniswap-Pools an die Nulladresse geschickt, von der niemand sie abheben kann. Das Team behält weniger als 0,01%, der Rest gehört anderen Liquiditätsanbietern. Der verbrannte Anteil ist zum Snapshot-Preis {{value}} in BSO und ETH wert."
+    },
+    "airdrops": {
+      "title": "Drei Airdrops, 2022",
+      "lead": "PLEB, die erste Generation von BSO, startete auf Avalanche ohne Verkauf. Es wurde in drei Runden verschenkt, und jeder Claim ging zum selben Kurs in BSO über: 7.114,6 PLEB für 1 BSO.",
+      "caption": "Die drei Airdrop-Runden und was die geclaimten Tokens heute wert sind",
+      "round": "Runde {{number}}",
+      "total": "Gesamt",
+      "rounds": {
+        "telegram": {
+          "name": "Telegram-Bot",
+          "how": "Eine Avalanche-Adresse an @plebbitbot senden, mit Boni für Empfehlungen"
+        },
+        "twitter": {
+          "name": "Twitter",
+          "how": "Den Post von @getplebbit liken, retweeten und drei Freunde markieren"
+        },
+        "reddit": {
+          "name": "Reddit",
+          "how": "Im Thread auf r/plebbitairdrop kommentieren; ein Bot prüfte die Kontohistorie"
+        }
+      },
+      "metrics": {
+        "how": "Teilnahme",
+        "window": "Anmeldezeitraum",
+        "signups": "Angekündigte Anmeldungen",
+        "claimers": "Adressen mit Claim",
+        "plebClaimed": "Geclaimte PLEB",
+        "bsoToday": "BSO heute",
+        "worthToday": "Wert heute",
+        "medianClaim": "Median-Claim heute",
+        "largestClaim": "Größter Claim heute",
+        "sources": "Quellen"
+      },
+      "dateRange": "{{start}} – {{end}}",
+      "overCount": "über {{amount}}",
+      "distinct": "{{amount}} verschiedene",
+      "note": "Die Werte setzen voraus, dass jeder geclaimte Token noch gehalten wird, zu {{price}} pro BSO am {{date}}. Viele Anmeldungen waren Bots. Die Claims endeten am 21. Februar 2022, und Zuteilungen, die niemand geclaimt hat, wurden nie gemintet."
+    },
+    "history": {
+      "title": "Geschichte",
+      "lead": "Von einer Telegram-Gruppe 2021 zu einem unveränderlichen ERC-20 2026.",
+      "redditThread": "Der Reddit-Thread",
+      "events": {
+        "groupOpens": {
+          "title": "Die plebbit-Telegram-Gruppe öffnet",
+          "body": "Die Gruppe, die heute t.me/bitsocialnet ist, startet am ersten Weihnachtstag 2021."
+        },
+        "telegramRound": {
+          "title": "Runde 1: der Telegram-Bot",
+          "body": "Eine Woche lang melden sich Leute bei @plebbitbot an. Die Menge wird gleichmäßig unter den Teilnehmern aufgeteilt, mit Boni für Empfehlungen. 3.312 Adressen registrieren sich, bevor der Bot am 14. Januar schließt."
+        },
+        "launch": {
+          "title": "Erst Liquidität, dann Claims",
+          "body": "Um 18:00 UTC zahlt der Deployer die ersten Tokens und 7 AVAX bei Trader Joe und Pangolin ein. Die Claim-Seite öffnet etwa 30 Minuten später, sodass jede Zuteilung feststand, bevor irgendjemand handeln konnte."
+        },
+        "twitterRound": {
+          "title": "Runde 2: Twitter",
+          "body": "Ein Airdrop komplett auf Twitter: liken, retweeten und drei Freunde markieren. Bis zum 6. Februar registrieren sich über 1.500 Personen."
+        },
+        "redditRound": {
+          "title": "Runde 3: Reddit",
+          "body": "Ein experimenteller Airdrop auf r/plebbitairdrop, bei dem ein Bot prüfte, ob die Kommentierenden ältere Reddit-Aktivität hatten. Bis zum 12. Februar registrieren sich über 2.200, viele davon Bots."
+        },
+        "claimsClose": {
+          "title": "Claims enden",
+          "body": "Keiner der drei Airdrops kann mehr geclaimt werden. Tokens, die niemand geclaimt hat, werden nie gemintet."
+        },
+        "farm": {
+          "title": "Liquidity Mining beginnt",
+          "body": "Wer Liquidität auf Trader Joe stakt, verdient neu gemintete Tokens. Die Farm zahlt bis zum Wechsel zu Ethereum aus."
+        },
+        "ethereum": {
+          "title": "Der Wechsel zu Ethereum",
+          "body": "Nach einer Snapshot-Abstimmung wird der Token auf Avalanche eingefroren, und jedes Guthaben, einschließlich gesperrter Tokens, Liquiditätspositionen und nicht ausgezahlter Farm-Belohnungen, wird auf Ethereum als Token der zweiten Generation neu ausgegeben. Halter müssen nichts tun."
+        },
+        "rebrand": {
+          "title": "Aus plebbit wird Bitsocial",
+          "body": "plebbit gibt seinen neuen Namen bekannt: Bitsocial. On-Chain behält der Token den Namen PLEB noch bis Mai."
+        },
+        "rebase": {
+          "title": "Aus PLEB werden 210 Millionen BSO",
+          "body": "Der Token der zweiten Generation wird in BSO umbenannt und per Rebase so angepasst, dass die Gesamtmenge genau 210 Millionen beträgt: Aus 7.114,6 PLEB wird 1 BSO."
+        },
+        "immutable": {
+          "title": "BSO wird unveränderlich",
+          "body": "Der endgültige BSO-Contract geht live, ohne Mint, Owner, Pause oder Proxy. Alle 210 Mio. werden in einer einzigen Transaktion verteilt, im Verhältnis zu den per Rebase angepassten Guthaben."
+        },
+        "liquidityBurned": {
+          "title": "86,6% der Liquidität werden verbrannt",
+          "body": "Estebans zwei Wallets schicken ihre 7.881 Uniswap-Liquiditäts-Tokens, 86,6% des BSO/ETH-Pools, an die Nulladresse. Niemand besitzt einen Schlüssel zu dieser Adresse, daher ist dieser Anteil an BSO und ETH im Pool für immer gesperrt."
+        }
+      }
+    },
+    "method": {
+      "title": "Methode und Grenzen",
+      "lead": "Wie die Gruppen gefunden wurden und was diese Seite nicht sehen kann.",
+      "howTitle": "Wie Wallets verknüpft wurden",
+      "how": {
+        "transfers": "Jeder Transfer zwischen zwei gewöhnlichen Wallets über alle drei Contracts hinweg, auf Avalanche und Ethereum, wurde nachverfolgt, ohne Börsen, Router, Pools und andere Contracts. Safe-Multisigs wurden mit ihren Ownern verknüpft.",
+        "funders": "Auch jeder AVAX- und ETH-Transfer an eine oder von einer Wallet mit mindestens 0,01% der Gesamtmenge wurde nachverfolgt, einschließlich der Frage, wer jeder Wallet zuerst Coins geschickt hat. Börsen und Tauschdienste finanzieren Tausende Wallets, daher zählen nur private Wallets als Verknüpfung.",
+        "pattern": "Bei Wallets ohne direkte Verknüpfung wurde das Kaufverhalten mit allen Käufern desselben Zeitraums verglichen.",
+        "migrations": "Die Guthaben wurden durch beide Migrationen hindurch verfolgt, zu 7.114,6 PLEB pro BSO, demselben Kurs, mit dem diese Seite ältere Beträge in BSO anzeigt."
+      },
+      "limitsTitle": "Grenzen",
+      "limits": {
+        "exchangeOnly": "Ein Halter, der jede Wallet über eine Börse finanziert und nie Tokens zwischen ihnen bewegt, hinterlässt keine On-Chain-Verknüpfung. Manche Gruppen könnten noch weitere Wallets verbergen.",
+        "sales": "Ein Transfer zwischen zwei Wallets kann ein Verkauf oder ein Geschenk sein, daher beruht keine Gruppe auf einem einzelnen Transfer. Manche Wallets haben Tokens und Coins immer nur von ihrer Gruppe erhalten und nie etwas gesendet; auch das könnten Geschenke sein.",
+        "contracts": "Tokens in anderen Contracts als dem Uniswap-Pool und dem Safe werden so aufgeführt, wie sie sind.",
+        "snapshot": "Guthaben und Preis werden alle fünf Minuten aus der Chain aktualisiert, solange diese Seite geöffnet ist. Die Verknüpfungen zwischen Wallets werden von Hand recherchiert und aktualisieren sich nicht von selbst.",
+        "history": "Die Verlaufslinien zeigen, was jede Wallet gehalten hat, und zwar für Wallets mit mindestens 0,01% der Gesamtmenge sowie für jede Wallet eines bekannten Halters. Die Linie eines bekannten Halters zählt auch die geleerten Wallets mit, aus denen seine Tokens stammen, und beginnt deshalb beim ersten Kauf oder Claim. Tokens in einem Liquiditätspool, einer Farm oder einem Vesting-Stream fallen aus der Linie heraus, und bei den Migrationen wurden einige davon an ihre Besitzer neu ausgegeben, sodass manche Linien an diesen Tagen springen."
+      },
+      "contracts": {
+        "gen1": "Gen 1: PLEB auf Avalanche",
+        "gen2": "Gen 2: PLEB auf Ethereum, im Mai 2026 in BSO umbenannt",
+        "gen3": "Gen 3: BSO heute"
+      },
+      "snapshot": "Guthaben und Preis von Blockscout: {{count}} Wallets, Stand {{date}}. Eine falsche oder fehlende Verknüpfung gefunden? <contributeLink>Diese Seite verbessern</contributeLink>."
+    },
+    "holderName": "Halter {{letter}}"
+  },
+  "chart": {
+    "meta": {
+      "title": "BSO-Preischart - Jeder Trade seit 2022",
+      "description": "Preis und Marktkapitalisierung von BSO seit dem ersten Trade 2022, über alle drei Contracts hinweg: PLEB auf Avalanche, PLEB auf Ethereum und BSO heute, in einem Chart aus On-Chain-Swaps."
+    },
+    "hero": {
+      "title": "Der BSO-Preis seit dem ersten Trade",
+      "lead": "Ein Chart über alle drei Contracts: PLEB auf Avalanche, PLEB auf Ethereum, der 2026 in BSO umbenannt wurde, und BSO heute. Ältere Preise werden zu 7.114,6 PLEB pro BSO umgerechnet, dem Verhältnis, das beide Migrationen beibehalten haben. Wähle einen Punkt im Chart, um zu sehen, was an diesem Tag passiert ist; den ganzen Werdegang des Tokens erzählt die <historyLink>Geschichte</historyLink> in der Rich List.",
+      "status": {
+        "live": "Live aus dem Uniswap-Pool: BSO bei {{price}}. Aktualisiert {{ago}}.",
+        "loading": "Tagesdaten bis {{date}}. Die neuesten Preise werden geladen…",
+        "unavailable": "Live-Preise sind gerade nicht verfügbar, daher endet der Chart am {{date}}."
+      }
+    },
+    "panelTitle": "Täglicher Preischart",
+    "summary": {
+      "price": "Täglicher BSO-Preis vom {{from}} bis {{to}}. Niedrigster Schlusskurs {{low}}, höchster Schlusskurs {{high}}, zuletzt {{latest}}.",
+      "mcap": "Tägliche BSO-Marktkapitalisierung vom {{from}} bis {{to}}. Niedrigster Schlusswert {{low}}, höchster Schlusswert {{high}}, zuletzt {{latest}}."
+    },
+    "controls": {
+      "metricLabel": "Anzeigen",
+      "metrics": {
+        "price": "Preis",
+        "mcap": "Marktkap."
+      },
+      "rangeLabel": "Zeitraum",
+      "ranges": {
+        "1M": "1M",
+        "3M": "3M",
+        "1Y": "1J",
+        "all": "Max"
+      },
+      "typeLabel": "Charttyp",
+      "types": {
+        "line": "Linie",
+        "candles": "Kerzen"
+      },
+      "scaleLabel": "Skala",
+      "scales": {
+        "log": "Log",
+        "linear": "Linear"
+      }
+    },
+    "legend": {
+      "since": "seit {{date}}",
+      "ohlc": "O {{open}} · H {{high}} · L {{low}} · C {{close}}",
+      "volume": "Volumen {{value}}"
+    },
+    "eras": {
+      "label": "Contracts. Wähle einen aus, um auf seinen Zeitraum zu zoomen.",
+      "gen1": "PLEB auf Avalanche",
+      "gen2": "PLEB auf Ethereum",
+      "gen3": "BSO",
+      "years": "{{from}}–{{to}}",
+      "now": "heute",
+      "rebrand": "Umbenennung in Bitsocial"
+    },
+    "method": {
+      "title": "Wie der Chart entsteht",
+      "lead": "Jede Kerze stammt aus Swaps auf der Chain, daher lässt sich jeder Tag in einem Explorer überprüfen.",
+      "steps": {
+        "swaps": "Eröffnungs-, Höchst-, Tiefst- und Schlusskurs eines Tages sind der erste, höchste, niedrigste und letzte Preis, der in den Swaps dieses Tages gezahlt wurde, in UTC, ausgelesen aus den Swap-Events jedes Pools.",
+        "usd": "Die Pools handeln gegen AVAX oder ETH, daher wird jeder Swap zum Coinbase-Kurs der Stunde, in der er stattfand, in Dollar umgerechnet.",
+        "units": "PLEB, auf Avalanche und auf Ethereum bis zum <rebaseLink>Rebase am 2. Mai 2026</rebaseLink>, wird pro BSO dargestellt: Sein Preis wird mit 7.114,596 multipliziert, der Zahl an PLEB, die jeder BSO ersetzt hat.",
+        "pools": "Wenn an einem Tag mehr als ein Pool gehandelt wurde, bestimmt der Pool mit dem höchsten Volumen die Kerze dieses Tages, damit ein fast leerer Pool keinen falschen Docht zeichnen kann. Das Volumen summiert alle Pools, und ein Tag ohne Trades wiederholt den letzten Schlusskurs.",
+        "mcap": "Die Marktkapitalisierung ist der Schlusskurs mal die Gesamtmenge dieses Tages: alle Tokens, die der Contract gemintet hat, minus alle, die er verbrannt hat, umgerechnet in BSO wie der Preis. Nach dem Rebase und für BSO heute ist die Gesamtmenge fest bei 210 Millionen.",
+        "eras": "Der Verlauf jedes Contracts endet mit dem ersten Trade des nächsten. Der Ethereum-Contract trug den Namen PLEB bis zu dem Upgrade, das den Rebase durchführte, sechs Wochen nachdem plebbit am 18. März 2026 zu Bitsocial wurde."
+      },
+      "poolsTitle": "Ausgewertete Pools",
+      "eraDates": "{{from}} bis {{to}}",
+      "snapshot": "Verlauf aus {{count}} Swaps bis {{date}}. Neuere Tage kommen von GeckoTerminal und werden alle fünf Minuten aktualisiert, solange diese Seite geöffnet ist. Eine falsche Kerze entdeckt? <contributeLink>Diese Seite verbessern</contributeLink>."
+    },
+    "eventList": "Im Chart markierte Ereignisse",
+    "eventDetails": {
+      "close": "Schließen",
+      "links": {
+        "reddit": "Reddit-Post",
+        "release": "Release auf GitHub",
+        "hackerNews": "Thread auf Hacker News",
+        "tweet": "Tweet"
+      }
+    },
+    "events": {
+      "protocolLabsGrant": {
+        "title": "Eine Förderung von Protocol Labs",
+        "body": "Protocol Labs, das Team hinter IPFS und Filecoin, vergibt an plebbit eine Förderung für den Bau seiner dezentralen Reddit-Alternative."
+      },
+      "firstApp": {
+        "title": "Die erste plebbit-App",
+        "body": "Die erste Desktop-App erscheint für Linux, Windows und Mac. Sie betreibt einen eigenen IPFS-Knoten und ist damit, anders als die Web-Demo, vollständig Peer-to-Peer."
+      },
+      "plebchan": {
+        "title": "plebchan startet",
+        "body": "plebchan, eine App im Stil von 4chan auf dem plebbit-Protokoll, veröffentlicht sein erstes Release, für Web, Mac und Linux."
+      },
+      "hackerNews": {
+        "title": "Auf der Startseite von Hacker News",
+        "body": "Inmitten der Empörung über Reddits neue API-Preise erreicht die plebbit-Demo mit über 300 Punkten die Startseite von Hacker News. In derselben Woche schaffen es Beiträge darüber auf die Startseite von r/ethereum und erzielen 30.000 Aufrufe auf r/CryptoCurrency."
+      },
+      "coingecko": {
+        "title": "Gelistet auf CoinGecko",
+        "body": "Nach mehreren Absagen seit Anfang 2022 listet CoinGecko den Token."
+      },
+      "socialFi": {
+        "title": "In der SocialFi-Kategorie von CoinGecko",
+        "body": "CoinGecko nimmt den Token auf Anfrage des Teams in seine SocialFi-Kategorie auf, und auch eine auf X geteilte Liste von SocialFi-Tokens führt ihn auf. Der Preis verdoppelt sich in fünf Tagen fast."
+      },
+      "seedit": {
+        "title": "Seedit startet",
+        "body": "Seedit, eine App, die aussieht und funktioniert wie das alte Reddit, veröffentlicht sein erstes Release."
+      },
+      "marchRally": {
+        "title": "Die Rally im März 2024",
+        "body": "Am 1. März twittert der Investor Jason Calacanis, dass er sich ein verteiltes, erlaubnisfreies Reddit wünscht, und plebbit antwortet mit seiner Demo. Seedit 0.1.6 erscheint am 3. März, und am 4. März kündigt das Team Communities mit Token-Zugang an. Während ETH in diesem Monat die Marke von 4.000 $ überschreitet, verdoppelt sich der Preis am 4. März fast und verdreifacht sich bis Ende März, bei einem Volumen von 2,2 Mio. $, dem höchsten aller Monate in diesem Chart."
+      }
+    }
+  }
+}

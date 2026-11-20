@@ -1,0 +1,753 @@
+{
+  "nav": {
+    "language": "Idioma",
+    "theme": "Tema",
+    "bitsocial": "Bitsocial",
+    "faq": "FAQ",
+    "richList": "Llista de posseïdors",
+    "chart": "Gràfic"
+  },
+  "languageSelector": {
+    "title": "Selecciona l'idioma",
+    "searchPlaceholder": "Cerca idiomes...",
+    "noResults": "No hi ha cap idioma que coincideixi amb la vostra cerca."
+  },
+  "meta": {
+    "title": "BSO - La capa social que falta al món cripto",
+    "description": "BSO és la moneda de Bitsocial, la xarxa social peer-to-peer que no és propietat de cap empresa. Una appchain L2 d'Ethereum on les comunitats posseeixen les seves xarxes, els seus tokens i els seus ingressos."
+  },
+  "topbar": {
+    "navLabel": "Navegació del lloc web de Bitsocial Chain",
+    "menu": "Menú",
+    "openMenu": "Obre el menú",
+    "closeMenu": "Tanca el menú"
+  },
+  "theme": {
+    "toggle": "Canvia el tema"
+  },
+  "hero": {
+    "statusCta": "La cadena encara no està en marxa, subscriu-te per rebre novetats",
+    "title": "La <mark>capa social</mark> que falta al món cripto",
+    "supporting": "El món cripto s'ha convertit en un casino perquè Web2, TradFi i la infraestructura centralitzada posseeixen les vies de distribució i distorsionen els incentius. Bitsocial Chain ho soluciona: una <appchainLink>appchain</appchainLink> <l2Link>L2 d'Ethereum</l2Link> imparable i totalment descentralitzada on les comunitats posseeixen les seves xarxes, els seus tokens i els seus ingressos."
+  },
+  "layers": {
+    "ariaLabel": "Tres capes apilades del món cripto: a dalt, les aplicacions socials de la xarxa Bitsocial; a la base, la liquidació d'Ethereum L1; i Bitsocial Chain, l'appchain L2 d'Ethereum impulsada per BSO, que s'encén com la capa lluminosa que faltava i encaixa al buit entre les altres dues, travessada per un eix d'energia.",
+    "social": {
+      "title": "APPS SOCIALS",
+      "subtitle": "XARXA BITSOCIAL"
+    },
+    "bso": {
+      "title": "BITSOCIAL CHAIN",
+      "subtitle": "APPCHAIN L2 · BSO"
+    },
+    "eth": {
+      "title": "ETHEREUM",
+      "subtitle": "LIQUIDACIÓ L1"
+    }
+  },
+  "contract": {
+    "label": "Contracte de BSO",
+    "copyAriaLabel": "Copia l'adreça del contracte de BSO {{address}}",
+    "copied": "Copiat al porta-retalls"
+  },
+  "sections": {
+    "whyAChain": {
+      "title": "El mateix Bitsocial no és en una blockchain.",
+      "supporting": "Les publicacions, els perfils, les comunitats i la moderació a <bitsocialLink>Bitsocial</bitsocialLink> són peer-to-peer. Sense cadena, sense comissions, sense cartera: pots fer servir tota la xarxa sense tocar mai cap criptomoneda, i la majoria de la gent ho farà. Però unes quantes coses necessiten de debò una cadena — noms que són teus, diners que es mouen entre desconeguts, tokens que una comunitat posseeix de veritat. Bitsocial Chain és exactament per a això, i per a res més.",
+      "peerToPeer": {
+        "badge": "Peer-to-peer",
+        "note": "La xarxa social. Sense cap cadena implicada.",
+        "posts": "Publicacions i comentaris",
+        "profiles": "Perfils i comunitats",
+        "moderation": "Moderació i anti-spam"
+      },
+      "onChain": {
+        "badge": "On-chain",
+        "note": "Les poques parts que en necessiten una.",
+        "names": "Noms .bso",
+        "tipping": "Propines i premis",
+        "tokens": "Tokens comunitaris"
+      },
+      "caption": "La cadena és opcional. La xarxa social, no.",
+      "quote": "Una xarxa social descentralitzada necessita diners descentralitzats."
+    },
+    "tokenomics": {
+      "title": "Diner sòlid.",
+      "supporting": "BSO és un ERC-20 d'oferta fixa: 210 milions, sense inflació, deflacionari per disseny. Es va regalar el 2022 mitjançant tres airdrops i recompenses de mineria de liquiditat, sense preventa i sense assignació per a l'equip. El seu contracte és immutable i sense administrador, de manera que les regles queden fixades per sempre.",
+      "supply": {
+        "cap": "Oferta màxima de BSO · fixa per sempre"
+      },
+      "traits": {
+        "airdropped": "Sense assignació per a l'equip ni preventa",
+        "fixedCap": "Límit fix, zero emissions",
+        "deflationary": "Deflacionari: l'oferta només baixa"
+      },
+      "locks": {
+        "noMint": {
+          "label": "Sense mint",
+          "note": "l'oferta no pot créixer mai"
+        },
+        "noOwner": {
+          "label": "Sense propietari",
+          "note": "sense claus d'administrador, mai"
+        },
+        "noPause": {
+          "label": "Sense pausa",
+          "note": "les transferències no es poden congelar"
+        },
+        "noProxy": {
+          "label": "Sense proxy",
+          "note": "el codi no es pot substituir"
+        }
+      },
+      "airdrop": {
+        "label": "La distribució",
+        "note": "Tres rondes d'airdrop el gener i el febrer de 2022, reclamades per 1.510 adreces. La ronda 1 va fer servir un bot de Telegram amb bonificacions per recomanacions, i Esteban en va revisar les recomanacions a mà per detectar abusos; les rondes 2 i 3 es van fer a Twitter i Reddit. Aproximadament el 63% de tots els BSO va sortir a través dels airdrops i el 34% com a recompenses per a qui va aportar liquiditat; la resta va servir de liquiditat inicial per als pools de llançament. Sense preventa, sense assignació per a l'equip, res venut.",
+        "richListLink": "Mira tots els posseïdors i les tres rondes"
+      },
+      "contract": {
+        "label": "Tot el contracte",
+        "note": "El mint de tota l'oferta es fa a una sola adreça perquè així funciona la migració: els saldos s'hi van replicar amb el mateix import i es van tornar a pagar mitjançant transferències, totes elles on-chain. Tota la resta és <openZeppelinLink>OpenZeppelin</openZeppelinLink>, sense modificar — el codi de tokens més utilitzat i més revisat d'Ethereum. Res de personalitzat, res d'enginyós. Llegeix-lo a <etherscanLink>Etherscan</etherscanLink>."
+      },
+      "foot": "Immutable i sense administrador: ja no queda cap clau d'administrador que algú pugui tenir, així que ningú no el pot canviar, inflar ni congelar."
+    },
+    "unstoppable": {
+      "title": "Construïda sobre Ethereum. No la gestiona ningú.",
+      "supporting": "Una nova blockchain hauria de reconstruir la seguretat i la base de desenvolupadors que Ethereum ja té, i necessitaria un token nou quan BSO ja està completament distribuït. Per això Bitsocial Chain està dissenyada com una L2 d'Ethereum sense operador: cada acció és una transacció d'Ethereum corrent enviada a una adreça que ningú controla, i qualsevol pot executar un node que derivi el mateix estat a partir de l'historial d'Ethereum. No hi ha cap empresa a la qual pressionar ni cap interruptor per accionar.",
+      "locks": {
+        "noSequencer": {
+          "label": "No cal seqüenciador",
+          "note": "Ethereum ordena cada transacció"
+        },
+        "noAdminKeys": {
+          "label": "Sense claus d'administrador",
+          "note": "ningú no canvia les regles per tu"
+        },
+        "noUpgradeableContract": {
+          "label": "Sense contracte actualitzable",
+          "note": "res a Ethereum que es pugui confiscar"
+        },
+        "noPrivilegedNode": {
+          "label": "Sense node privilegiat",
+          "note": "qualsevol pot derivar el mateix estat"
+        }
+      },
+      "proofOfConcept": "La prova de concepte ja deriva els noms .bso d'aquesta manera, en una cadena de desenvolupament local. Un llançament en producció encara necessita un sistema de proves, una auditoria i una economia definitiva. <proofLink>Llegeix la prova de concepte</proofLink>."
+    },
+    "bsoNames": {
+      "title": "El teu nom .bso continua sent teu.",
+      "supporting": "Les aplicacions de Bitsocial <resolverLink>resolen els noms .bso avui</resolverLink> prenent ENS en préstec, el sistema de noms que fan servir les carteres d'Ethereum: mycommunity.bso és en realitat mycommunity.eth amb un registre bitsocial. Un registre natiu faria un airdrop de cada nom que ja s'utilitza a la cartera que el té — sense res a reclamar i sense res a tornar a registrar.",
+      "ensBadge": "ENS · avui",
+      "pointsTo": "apunta a",
+      "communityKey": "la clau de la comunitat",
+      "airdropAtLaunch": "airdrop en el llançament",
+      "bsoBadge": ".bso · Bitsocial Chain",
+      "owner": "propietari",
+      "sameWallet": "la mateixa cartera",
+      "fees": "Abans que la cadena existeixi, els noms .bso passen a un <bsipLink>registre provisional a Ethereum</bsipLink> les comissions del qual financen els desenvolupadors de Bitsocial. A Bitsocial Chain, el pla és que les comissions dels noms es cremin, o que serveixin per recomprar BSO i cremar-lo. El mecanisme encara no està decidit."
+    },
+    "communityMoney": {
+      "title": "Un sol actiu sota moltes comunitats.",
+      "supporting": "Cada comunitat podria executar la seva pròpia capa, una L3 amb el seu propi token, i pagar en BSO les seves comissions, els seus noms i el seu lloguer. Les L3 ja existeixen a tot el món cripto; a Bitsocial Chain, n'arribaria una amb una comunitat ja vinculada. Els seus ingressos es podrien liquidar sols: espais publicitaris subhastats per contracte, una part de cada venda destruïda a l'acte i la resta pagada a la comunitat, sense cap tresoreria de recompra que ningú pugui capturar.",
+      "communityLayer": "Capa comunitària",
+      "ownToken": "el seu propi token",
+      "feesFlow": "comissions, noms i lloguer pagats en BSO",
+      "chainMeta": "Capa d'Ethereum · el seu estat deriva d'Ethereum",
+      "ethereumMeta": "Ethereum L1 · seguretat i dades",
+      "caption": "Una part de cada comissió es destrueix; la resta paga la seguretat de la cadena."
+    },
+    "privacy": {
+      "title": "Donar propines no hauria de desvelar qui ets.",
+      "supporting": "Bitsocial Chain és pública per defecte, com Ethereum, i els noms .bso estan pensats per ser vistos. Amb els diners és diferent: una propina no hauria d'exigir mai posar el teu nom, el teu perfil o la teva publicació on-chain al seu costat, i una cartera nova hauria de ser normal, no sospitosa. La cadena no crearà el seu propi sistema de privadesa. Està pensada perquè els que ja existeixen s'hi puguin connectar sense demanar permís: pools blindats, adreces stealth, proves de coneixement zero.",
+      "publicOnPurpose": {
+        "heading": "Públic a propòsit",
+        "names": "Els noms .bso i qui els posseeix",
+        "rules": "Cada regla i cada canvi d'estat"
+      },
+      "neverRequired": {
+        "heading": "Mai obligatori",
+        "profile": "El teu nom o perfil en una propina",
+        "wallet": "Una cartera per persona",
+        "app": "Una cartera o app oficial"
+      }
+    },
+    "possibilities": {
+      "title": "Proposada, a la vista de tothom.",
+      "supporting": "Encara no està en marxa. BSO ja està en marxa a Ethereum avui; Bitsocial Chain és una proposta, i la seva primera prova de concepte, els noms .bso natius, s'executa en una cadena de desenvolupament local. Res del que ve a continuació no té data. És el que faria possible una capa social amb els seus propis diners: una part es construirà, una part serà substituïda per idees millors, i una part la construiran persones que encara no han aparegut.",
+      "ideas": {
+        "chain": {
+          "note": "L'appchain L2 d'Ethereum en si, i la llar de liquidació de BSO."
+        },
+        "registry": {
+          "label": "Un registre .bso natiu",
+          "note": "Noms i identitat registrats a la cadena, en lloc de manllevats d'ENS."
+        },
+        "l3s": {
+          "label": "L3 i tokens comunitaris",
+          "note": "Comunitats amb la seva pròpia capa i el seu propi token, que liquiden en BSO."
+        },
+        "agoraswap": {
+          "note": "Un DEX comunitari on els tokens de les comunitats s'intercanvien amb BSO, mantenint la liquiditat on-chain."
+        },
+        "collectibles": {
+          "label": "Col·leccionables de creadors",
+          "note": "Maneres perquè els creadors venguin alguna cosa directament, sense que una plataforma se'n quedi una part."
+        },
+        "other": {
+          "label": "Qualsevol altra cosa que hi encaixi",
+          "note": "Tokens de client, seqüenciació descentralitzada i idees que ningú no ha proposat encara."
+        }
+      }
+    },
+    "verify": {
+      "title": "Només una adreça és BSO.",
+      "supporting": "Qualsevol pot crear un token i dir-li BSO, de manera que l'adreça del contracte és l'única cosa que distingeix el veritable. Comprova que els 42 caràcters coincideixin amb els d'aquest lloc web i dels canals oficials de Bitsocial abans d'enviar res enlloc.",
+      "warning": "El contracte oficial de BSO és <contract>{{address}}</contract>. Qualsevol altra cosa no és BSO, tant se val com s'anomeni i on estigui llistada.",
+      "tradeOnUniswap": "Intercanvia a Uniswap",
+      "provideLiquidity": "Aporta liquiditat",
+      "note": "La liquiditat a Uniswap l'aporten persones independents, i qualsevol hi pot afegir. No és un compte d'estalvis: el valor d'una posició de liquiditat pot baixar, fins i tot per sota del que s'hi va posar."
+    }
+  },
+  "common": {
+    "proposed": "Proposta",
+    "close": "Tanca"
+  },
+  "mailingList": {
+    "chainTitle": "No et perdis res",
+    "chainDescription": "Rep notificacions sobre les fites del token BSO, Bitsocial Chain i les novetats de l'ecosistema. Baixa freqüència, alt senyal.",
+    "placeholder": "you@example.com",
+    "inputLabel": "Adreça electrònica",
+    "subscribe": "Subscriu-te",
+    "subscribing": "S'està subscrivint…",
+    "chainSuccess": "Ja ets a la llista.",
+    "confirmationSent": "Consulta el teu correu per confirmar la subscripció.",
+    "chainError": "Alguna cosa ha anat malament. Torna-ho a provar.",
+    "unavailable": "La inscripció al butlletí no està disponible temporalment.",
+    "privacy": "Mai spam. Pots donar-te de baixa quan vulguis."
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Preguntes freqüents.",
+    "supporting": "Cada secció d'aquesta pàgina en respon una. Clica una pregunta per anar-hi.",
+    "navLabel": "Preguntes contestades en aquesta pàgina",
+    "answeredIn": "Resposta a la secció {{label}}",
+    "entries": {
+      "whyAChain": {
+        "eyebrow": "Per què una cadena",
+        "question": "Per què una xarxa social peer-to-peer necessita una cadena?"
+      },
+      "tokenomics": {
+        "eyebrow": "Tokenomics",
+        "question": "Quines són les tokenomics de BSO? Qui en va rebre?"
+      },
+      "unstoppable": {
+        "eyebrow": "Imparable",
+        "question": "Per què una L2 d'Ethereum? Qui la gestiona?"
+      },
+      "bsoNames": {
+        "eyebrow": "Noms BSO",
+        "question": "Què passa amb el meu nom .bso?"
+      },
+      "communityMoney": {
+        "eyebrow": "Diner comunitari",
+        "question": "Per a què s'utilitzaria BSO?"
+      },
+      "privacy": {
+        "eyebrow": "Privacitat",
+        "question": "Tothom veurà a qui dono propina?"
+      },
+      "possibilities": {
+        "eyebrow": "Possibilitats",
+        "question": "Ja està en marxa? Què hi ha previst?"
+      },
+      "verify": {
+        "eyebrow": "Verifica",
+        "question": "Com puc aconseguir BSO de manera segura?"
+      }
+    },
+    "rows": {
+      "about": {
+        "label": "Sobre Nosaltres",
+        "question": "Qui hi ha darrere de Bitsocial Chain?"
+      },
+      "mailingList": {
+        "label": "Butlletí",
+        "question": "Com puc estar al dia?"
+      }
+    },
+    "ask": {
+      "placeholder": "Pregunta qualsevol altra cosa…",
+      "label": "Pregunta qualsevol altra cosa",
+      "action": "Pregunta a ChatGPT"
+    }
+  },
+  "footer": {
+    "chainTagline": "La capa social que falta al món cripto",
+    "token": "Token",
+    "resources": "Recursos",
+    "blog": "Blog",
+    "proofOfConcept": "Prova de concepte",
+    "about": "Sobre Nosaltres",
+    "mainSite": "Web principal",
+    "community": "Comunitat",
+    "chainBottomTagline": "Arreglem la capa social del món cripto",
+    "contribute": "Millora aquesta pàgina"
+  },
+  "backToTop": {
+    "returnToOrigin": "Torna al punt anterior",
+    "toTop": "Tornar a dalt",
+    "toBottom": "Anar a baix"
+  },
+  "richList": {
+    "meta": {
+      "title": "Llista de posseïdors de BSO - Qui té BSO",
+      "description": "Tots els posseïdors de BSO, amb les carteres vinculades agrupades, les carteres de l'equip marcades i les proves on-chain darrere de cada vincle. A més, la història dels tres airdrops del 2022."
+    },
+    "hero": {
+      "title": "Qui té BSO",
+      "lead": "Totes les carteres de BSO, amb les que pertanyen al mateix posseïdor agrupades i les de l'equip marcades. Cada vincle mostra les transaccions que el sustenten, perquè ho puguis comprovar tu mateix.",
+      "jumpLabel": "Seccions",
+      "status": {
+        "live": "En directe des de la cadena: {{count}} carteres, BSO a {{price}}. Actualitzat {{ago}}.",
+        "loading": "Instantània del {{date}}: {{count}} carteres, BSO a {{price}}. S'estan carregant les dades en directe…",
+        "unavailable": "Ara mateix les dades en directe no estan disponibles, així que aquesta és la instantània del {{date}}: {{count}} carteres, BSO a {{price}}."
+      }
+    },
+    "jump": {
+      "holders": "Posseïdors",
+      "linked-wallets": "Carteres vinculades",
+      "team": "Equip principal",
+      "airdrops": "Airdrops",
+      "history": "Història",
+      "method": "Mètode"
+    },
+    "strip": {
+      "label": "Part de l'oferta de 210 milions de BSO que té cada grup",
+      "team": "Equip principal",
+      "pool": "Pool d'Uniswap",
+      "everyoneElse_one": "Tots els altres ({{count}} cartera)",
+      "everyoneElse_many": "Tots els altres ({{count}} carteres)",
+      "everyoneElse_other": "Tots els altres ({{count}} carteres)"
+    },
+    "categories": {
+      "team": "Equip principal",
+      "pool": "Pool de liquiditat",
+      "confirmed": "Confirmat",
+      "likely": "Probable",
+      "possible": "Possible",
+      "other": "No vinculat"
+    },
+    "table": {
+      "title": "Posseïdors",
+      "lead": "Les carteres vinculades es combinen en una sola fila. Canvia a «Per cartera» per veure cada adreça tal com la mostra Etherscan.",
+      "viewLabel": "Mostra els posseïdors",
+      "view": {
+        "grouped": "Agrupat",
+        "wallets": "Per cartera"
+      },
+      "searchLabel": "Cerca per adreça o nom del posseïdor",
+      "searchPlaceholder": "Cerca una adreça",
+      "caption": "Posseïdors de BSO per saldo",
+      "holder": "Posseïdor",
+      "balance": "BSO",
+      "share": "Oferta",
+      "value": "Valor",
+      "contract": "Contracte",
+      "walletCount_one": "{{count}} cartera",
+      "walletCount_many": "{{count}} carteres",
+      "walletCount_other": "{{count}} carteres",
+      "noMatch": "Cap posseïdor no coincideix amb aquesta cerca.",
+      "showAll_one": "Mostra {{count}} fila",
+      "showAll_many": "Mostra les {{count}} files",
+      "showAll_other": "Mostra les {{count}} files",
+      "showMore": "Mostra'n {{count}} més",
+      "history": "Historial",
+      "historySummary": "Saldo (inici: {{start}}): màxim de {{high}} BSO ({{highDate}}), ara {{current}} BSO"
+    },
+    "evidenceLinks": "Transaccions que ho proven",
+    "telegramSources": "Fonts de Telegram",
+    "linked": {
+      "title": "Carteres vinculades",
+      "lead": "Les carteres només s'agrupen quan la cadena mostra un vincle: tokens o gas que es mouen entre elles, un finançador privat compartit, un propietari d'una multisig o un patró de compra idèntic. Cada grup mostra les transaccions que el sustenten.",
+      "confidence": {
+        "confirmed": "Les carteres fan transaccions entre elles, comparteixen un finançador privat o es controlen l'una a l'altra.",
+        "likely": "Diverses transferències des d'una mateixa font, o un patró de compra idèntic, que costa explicar d'una altra manera.",
+        "possible": "Un sol vincle que també podria ser una venda o un regal."
+      },
+      "holds_one": "{{amount}} BSO, {{share}} de l'oferta, en {{count}} cartera",
+      "holds_many": "{{amount}} BSO, {{share}} de l'oferta, repartits en {{count}} carteres",
+      "holds_other": "{{amount}} BSO, {{share}} de l'oferta, repartits en {{count}} carteres",
+      "walletList_one": "{{count}} cartera",
+      "walletList_many": "Les {{count}} carteres",
+      "walletList_other": "Les {{count}} carteres"
+    },
+    "walletRoles": {
+      "deployer": "desplegador",
+      "estebanEns": "estebanabaroa.eth",
+      "safe": "multisig Safe",
+      "safeOwner": "propietari del Safe"
+    },
+    "entities": {
+      "pool": {
+        "name": "Pool BSO/ETH d'Uniswap"
+      },
+      "holderA": {
+        "summary": "Cinc carteres connectades entre elles per transferències i un finançador privat compartit, que van comprar a Avalanche entre el febrer de 2022 i el maig de 2023 i no han venut mai.",
+        "evidence": {
+          "transfersToLpWallet": "Dues de les carteres compradores van enviar tokens i AVAX a una tercera cartera, que els va fer servir per aportar liquiditat i fer farming a Trader Joe: 141.000 BSO i 5 AVAX el 27 de febrer de 2022, i després 1,01 milions de BSO i 34 AVAX entre el 28 de febrer i el 2 de març. La tercera cartera en va retornar 0,013 AVAX.",
+          "sharedFunder": "Una cartera privada va finançar tres de les carteres compradores i res més. Totes les transaccions que ha enviat mai van anar a elles, per ordre: els nonces del 0 al 4 a la primera, del 5 al 7 a la segona i el 8 a la tercera.",
+          "neverSold": "Cap de les cinc carteres no ha venut. Els seus saldos van passar per les dues migracions sense canvis."
+        }
+      },
+      "holderC": {
+        "summary": "Dues carteres alimentades pel mateix parell de carteres compradores.",
+        "evidence": {
+          "commonSender": "Una cartera compradora va enviar a la primera 664.000 BSO el 19 d'agost de 2024. El 14 de novembre de 2025 va enviar a la segona una prova de 7.000 BSO, 0,1 ETH i després 2,17 milions de BSO. Aquest és l'únic ETH que ha rebut la segona cartera, que no ha enviat mai cap transacció.",
+          "secondSender": "Una segona cartera compradora va enviar a la primera els seus altres 7,3 milions de BSO en vuit transferències entre el maig i l'agost de 2024, juntament amb el seu primer ETH, i en va rebre 4,35 ETH de tornada.",
+          "sendersLinked": "Les dues carteres compradores estan connectades entre elles: una va lliurar a l'altra 1,15 milions de BSO i 0,1 ETH el 22 de febrer de 2024, i l'altra li va retornar els 5,8 ETH que li quedaven el 17 d'agost de 2024."
+        }
+      },
+      "holderD": {
+        "summary": "Cinc carteres: dues que es van enviar AVAX i ETH l'una a l'altra, una tercera que totes dues van alimentar i dues més que la tercera va preparar.",
+        "evidence": {
+          "sharedRecipient": "La tercera cartera va rebre una transferència de prova i després 703.000 BSO de la primera el 18 de novembre de 2022, i 1,16 milions de BSO de la segona l'1 de desembre de 2022. Tot l'AVAX que ha tingut mai per al gas va venir d'aquestes dues.",
+          "coinsBothWays": "Les dues primeres carteres es van enviar monedes l'una a l'altra a les dues cadenes durant 20 mesos: 0,5 AVAX en un sentit i 0,49 de tornada nou minuts després el 24 de març de 2022, 73 AVAX el 31 de maig de 2022, 0,09 ETH l'11 de març de 2023 i 2 ETH en l'altre sentit el 7 de novembre de 2023.",
+          "newWallets": "Després, la tercera cartera va preparar dues carteres noves de la mateixa manera cada vegada: AVAX per al gas, una transferència de prova i després 281.000 BSO, el 24 de novembre de 2022 i a finals d'abril de 2023. Cap de les dues no ha enviat mai cap transacció."
+        }
+      },
+      "holderE": {
+        "summary": "Dues carteres alimentades des de la mateixa font.",
+        "evidence": {
+          "commonSender": "Una cartera va enviar a la primera 5,53 milions de BSO en set transferències entre l'octubre de 2024 i el gener de 2025, i a la segona 287.000 el 22 de novembre de 2025.",
+          "onlyEth": "La mateixa cartera va enviar a cadascuna l'únic ETH que aquesta ha rebut mai, en el mateix minut que els seus primers tokens: 0,1 ETH i 0,12 ETH. Cap de les dues carteres no ha enviat mai cap transacció."
+        }
+      },
+      "holderF": {
+        "summary": "Una cartera que va repartir els seus tokens i 4 ETH entre tres carteres noves.",
+        "evidence": {
+          "split": "El 10 de març de 2024, en set minuts, una cartera va enviar quantitats rodones de PLEB, com es deia aleshores BSO (12.000, 8.000 i 4.000 milions), a tres carteres noves. Encara té BSO.",
+          "ethBothWays": "En aquells mateixos minuts va enviar a les tres carteres 4,05 ETH, entre 1 i 2 ETH a cadascuna. La que en va rebre més va retornar 1,5 ETH el 24 de juny de 2024; les altres dues no han enviat mai cap transacció."
+        }
+      },
+      "holderG": {
+        "summary": "Dues carteres finançades pel mateix remitent amb tres anys de diferència, i una tercera a la qual una d'elles va moure el seu saldo.",
+        "evidence": {
+          "commonSender": "Una cartera va enviar a la segona 658.000 BSO a Avalanche l'abril de 2022 i a la primera 843.000 a Ethereum el gener de 2025.",
+          "senderFunded": "Aquest remitent també va enviar monedes a totes dues carteres: va donar a la segona el seu primer AVAX i 17,4 AVAX l'endemà, i va enviar a la primera els 0,15 ETH que li sobraven tres minuts després dels tokens.",
+          "movedOn": "El 3 de novembre de 2026, la segona cartera va enviar a la tercera ETH per al gas, una prova de 100 BSO i després tot el seu saldo de 852.000 BSO."
+        }
+      },
+      "holderH": {
+        "summary": "Dues carteres, una de les quals va finançar l'altra.",
+        "evidence": {
+          "directTransfer": "El 24 d'abril de 2022, la primera cartera va enviar a la segona el seu primer AVAX i, dos minuts després, 59.000 BSO.",
+          "funding": "El 8 de maig de 2022, la primera cartera va enviar a la segona 23 AVAX en sis transferències, i la segona en va canviar la major part a BSO pocs minuts després de cadascuna."
+        }
+      },
+      "holderI": {
+        "summary": "Dues carteres que es van enviar ETH l'una a l'altra abans que una mogués tot el seu saldo a l'altra.",
+        "evidence": {
+          "directTransfers": "Després, la segona cartera va enviar a la primera tot el que tenia: 1,85 milions de BSO el 30 d'octubre de 2023 i 703.000 el 8 de novembre de 2023.",
+          "ethBothWays": "La segona cartera va enviar a la primera 0,77 ETH el 16 de desembre de 2022, i la primera va retornar 0,02 ETH l'endemà."
+        }
+      },
+      "holderJ": {
+        "summary": "Dues carteres que es van enviar AVAX d'anada i tornada durant més d'un any.",
+        "evidence": {
+          "coinsBothWays": "La primera cartera va enviar a la segona el seu primer AVAX el 7 de maig de 2021 i el seu primer ETH aquell agost. El juliol de 2022 ja li havia enviat 331 AVAX en dotze transferències, i la segona havia retornat 15 AVAX en dues.",
+          "sameEveningLocks": "Totes dues van comprar BSO a Trader Joe, i el 28 d'abril de 2022 totes dues van bloquejar BSO al mateix contracte de bloqueig amb menys de mitja hora de diferència."
+        }
+      },
+      "holderK": {
+        "summary": "Dues carteres finançades per la mateixa cartera privada.",
+        "evidence": {
+          "sharedFunder": "Una cartera privada les va finançar totes dues. Va enviar a la primera el seu primer AVAX l'octubre de 2021, 194 AVAX en 21 transferències fins a finals de 2023 i 3,49 milions de BSO en dues transferències. Va enviar a la segona el seu primer AVAX el 14 de febrer de 2022 i 23 AVAX en sis transferències fins a aquell abril. Totes dues van retornar petites quantitats d'AVAX.",
+          "sharedRecipient": "Totes dues també van finançar la mateixa cartera nova: la segona li va enviar els seus primers 5,1 AVAX el 17 de febrer de 2022, i la primera li va enviar 38,3 AVAX tres dies després."
+        }
+      },
+      "holderL": {
+        "summary": "Dues carteres finançades des de la mateixa cartera privada, una d'elles a través d'una cartera intermediària.",
+        "evidence": {
+          "funderChain": "Una cartera privada va enviar a la segona el seu primer AVAX el 12 de febrer de 2022. Sis dies després va moure els seus propis 597.000 BSO i l'AVAX que li quedava a una cartera nova, que va passar els 597.000 BSO a la primera cartera el 22 de febrer, juntament amb el primer AVAX d'aquesta cartera.",
+          "directTransfer": "La segona cartera va enviar a la primera 0,005 AVAX el 27 de febrer de 2022."
+        }
+      },
+      "holderM": {
+        "summary": "Deu carteres que no van fer res més que comprar a Avalanche, una rere l'altra, entre el febrer de 2022 i el maig de 2023, i no han venut mai.",
+        "evidence": {
+          "buyingPattern": "Cada cartera era nova, es va finançar amb una o dues retirades d'exchange d'uns 2.000 a 3.400 dòlars a través de Binance o ChangeNOW, va canviar tot l'import al token i no es va tornar a fer servir mai. Set van comprar una rere l'altra entre el 28 de febrer i el 31 de març de 2022; tres més van fer el mateix el 12 d'abril i el 25 de juny de 2022 i el 6 de maig de 2023. Entre els posseïdors actuals amb almenys un 0,01% de l'oferta, 21 carteres només s'han fet servir per comprar a Avalanche, en quatre transaccions o menys: aquestes deu, dues carteres d'un altre grup i nou més que van gastar menys de 410 dòlars cadascuna.",
+          "neverSold": "Cap de les deu carteres no ha venut ni mogut els seus tokens des d'aleshores, tret d'una que els va bloquejar l'abril de 2022. Els seus saldos van passar per les dues migracions sense canvis."
+        }
+      }
+    },
+    "team": {
+      "title": "Sense assignació per a l'equip",
+      "lead": "No es van reservar tokens per a l'equip, inversors ni cap preventa. Aquí tens d'on va sortir cada BSO, què tenen avui les carteres de l'equip i què va dir el fundador en aquell moment.",
+      "origin": {
+        "caption": "Com es va encunyar originalment cada BSO, el 2022 i el 2023",
+        "label": "Proporció de BSO segons com es va encunyar originalment",
+        "airdropClaims": {
+          "label": "Reclamacions de l'airdrop",
+          "note": "{{amount}} BSO reclamats per 1.510 adreces en tres rondes. Les assignacions que ningú no va reclamar no es van encunyar mai."
+        },
+        "liquidityMining": {
+          "label": "Mineria de liquiditat",
+          "note": "{{amount}} BSO pagats a qui va fer staking de liquiditat a Trader Joe, de febrer de 2022 a maig de 2023."
+        },
+        "liquiditySeed": {
+          "label": "Liquiditat de llançament",
+          "note": "{{amount}} BSO encunyats al desplegador i afegits als dos pools de llançament juntament amb 7 AVAX."
+        }
+      },
+      "facts": {
+        "liquiditySeed": "L'única encunyació a una cartera de l'equip fora de l'airdrop va ser la liquiditat de llançament: 7 milions de BSO, afegits al pool de Trader Joe (5,6 milions) i al de Pangolin (1,4 milions) en set minuts el 14 de gener de 2022.",
+        "teamClaims": "Tres membres de l'equip van reclamar a la ronda 1: Esteban, 703.000 BSO; Tom, 1,86 milions de BSO (la tercera reclamació més gran de 767), i rinse12, 1,1 milions de BSO, des de dues carteres els tokens de les quals van anar més tard al seu Safe. En conjunt, això és el 2,8% de tots els tokens reclamats als airdrops.",
+        "migrationMintedNothing": "La migració del 2026 no va crear tokens nous per a ningú: tots els 210 milions de BSO van sortir en una sola transacció, en proporció als saldos anteriors.",
+        "farmRewards": "Un membre de l'equip va rebre recompenses de mineria de liquiditat: una cartera de rinse12 va cobrar 2,3 milions de BSO el 5 d'abril de 2022, la quarta quantitat més gran dels 60,9 milions de BSO pagats a Avalanche a 208 adreces. Els 8 milions encara pendents de pagament en el pas a Ethereum es van abonar als qui havien fet staking i se'ls havien guanyat."
+      },
+      "statementsTitle": "Què va dir el fundador en aquell moment",
+      "statementBy": "Esteban Abaroa, fundador, {{date}}",
+      "walletsTitle": "Carteres de l'equip avui",
+      "person": "Persona",
+      "wallet": "Cartera",
+      "total": "Total de l'equip",
+      "walletsNote": "Valen {{value}} al preu de la instantània. L'historial complet de cada cartera és públic a Etherscan.",
+      "poolNote": "El 30 d'octubre de 2026, la cartera desplegadora d'Esteban i estebanabaroa.eth van enviar el 86,6% dels tokens de liquiditat del pool d'Uniswap a l'adreça zero, d'on ningú no els pot retirar. L'equip en conserva menys del 0,01%, i la resta pertany a altres proveïdors de liquiditat. La part cremada val {{value}} en BSO i ETH al preu de la instantània."
+    },
+    "airdrops": {
+      "title": "Tres airdrops, 2022",
+      "lead": "PLEB, la primera generació de BSO, es va llançar a Avalanche sense cap venda. Es va regalar en tres rondes, i cada reclamació va passar a BSO a la mateixa taxa: 7.114,6 PLEB per 1 BSO.",
+      "caption": "Les tres rondes de l'airdrop i el que valen avui els tokens reclamats",
+      "round": "Ronda {{number}}",
+      "total": "Total",
+      "rounds": {
+        "telegram": {
+          "name": "Bot de Telegram",
+          "how": "Enviar una adreça d'Avalanche a @plebbitbot, amb bonificacions per recomanacions"
+        },
+        "twitter": {
+          "name": "Twitter",
+          "how": "Fer m'agrada, fer retuit i etiquetar tres amics a la publicació de @getplebbit"
+        },
+        "reddit": {
+          "name": "Reddit",
+          "how": "Comentar al fil de r/plebbitairdrop; un bot comprovava l'historial del compte"
+        }
+      },
+      "metrics": {
+        "how": "Com participar",
+        "window": "Període d'inscripció",
+        "signups": "Inscripcions anunciades",
+        "claimers": "Adreces que van reclamar",
+        "plebClaimed": "PLEB reclamats",
+        "bsoToday": "BSO avui",
+        "worthToday": "Valor avui",
+        "medianClaim": "Reclamació mediana avui",
+        "largestClaim": "Reclamació més gran avui",
+        "sources": "Fonts"
+      },
+      "dateRange": "{{start}} – {{end}}",
+      "overCount": "més de {{amount}}",
+      "distinct": "{{amount}} diferents",
+      "note": "Els valors suposen que tots els tokens reclamats encara es conserven, a {{price}} per BSO el {{date}}. Moltes inscripcions eren bots. Les reclamacions es van tancar el 21 de febrer de 2022, i les assignacions que ningú no va reclamar no es van encunyar mai."
+    },
+    "history": {
+      "title": "Història",
+      "lead": "D'un grup de Telegram el 2021 a un ERC-20 immutable el 2026.",
+      "redditThread": "El fil de Reddit",
+      "events": {
+        "groupOpens": {
+          "title": "S'obre el grup de Telegram de plebbit",
+          "body": "El grup que avui és t.me/bitsocialnet comença el dia de Nadal del 2021."
+        },
+        "telegramRound": {
+          "title": "Ronda 1: el bot de Telegram",
+          "body": "Durant una setmana, la gent s'inscriu amb @plebbitbot. L'oferta es reparteix a parts iguals entre els participants, amb bonificacions per recomanacions. 3.312 adreces s'hi registren abans que el bot tanqui el 14 de gener."
+        },
+        "launch": {
+          "title": "Primer la liquiditat, després les reclamacions",
+          "body": "A les 18:00 UTC, el desplegador afegeix els primers tokens i 7 AVAX a Trader Joe i Pangolin. La pàgina de reclamació s'obre uns 30 minuts després, de manera que totes les assignacions van quedar fixades abans que ningú pogués operar."
+        },
+        "twitterRound": {
+          "title": "Ronda 2: Twitter",
+          "body": "Un airdrop fet íntegrament a Twitter: fer m'agrada, fer retuit i etiquetar tres amics. Més de 1.500 persones s'hi registren abans del 6 de febrer."
+        },
+        "redditRound": {
+          "title": "Ronda 3: Reddit",
+          "body": "Un airdrop experimental a r/plebbitairdrop, on un bot comprovava que els qui comentaven tinguessin activitat anterior a Reddit. Més de 2.200 s'hi registren abans del 12 de febrer, molts d'ells bots."
+        },
+        "claimsClose": {
+          "title": "Es tanquen les reclamacions",
+          "body": "Els tres airdrops deixen de poder-se reclamar. Els tokens que ningú no va reclamar no s'encunyen mai."
+        },
+        "farm": {
+          "title": "Comença la mineria de liquiditat",
+          "body": "Qui fa staking de liquiditat a Trader Joe guanya tokens acabats d'encunyar. La granja paga fins al pas a Ethereum."
+        },
+        "ethereum": {
+          "title": "El pas a Ethereum",
+          "body": "Després d'una votació a Snapshot, el token d'Avalanche es congela i cada saldo, inclosos els tokens bloquejats, les posicions de liquiditat i les recompenses de farming pendents, es torna a emetre a Ethereum com el token de segona generació. Els posseïdors no han de fer res."
+        },
+        "rebrand": {
+          "title": "plebbit es converteix en Bitsocial",
+          "body": "plebbit anuncia el seu nou nom, Bitsocial. On-chain, el token manté el nom PLEB fins al maig."
+        },
+        "rebase": {
+          "title": "PLEB es converteix en 210 milions de BSO",
+          "body": "El token de segona generació es reanomena BSO i se li aplica un rebase perquè l'oferta total sigui exactament de 210 milions: 7.114,6 PLEB passen a ser 1 BSO."
+        },
+        "immutable": {
+          "title": "BSO esdevé immutable",
+          "body": "El contracte final de BSO entra en funcionament sense mint, propietari, pausa ni proxy. Els 210 milions surten en una sola transacció, en proporció als saldos després del rebase."
+        },
+        "liquidityBurned": {
+          "title": "Es crema el 86,6% de la liquiditat",
+          "body": "Les dues carteres d'Esteban envien els seus 7.881 tokens de liquiditat d'Uniswap, el 86,6% del pool BSO/ETH, a l'adreça zero. Ningú no té la clau d'aquesta adreça, així que aquesta part dels BSO i ETH del pool queda bloquejada per sempre."
+        }
+      }
+    },
+    "method": {
+      "title": "Mètode i límits",
+      "lead": "Com es van trobar els grups i què no pot veure aquesta pàgina.",
+      "howTitle": "Com es van vincular les carteres",
+      "how": {
+        "transfers": "Es va rastrejar cada transferència entre dues carteres normals als tres contractes, a Avalanche i Ethereum, deixant fora exchanges, routers, pools i altres contractes. Les multisig Safe es van vincular amb els seus propietaris.",
+        "funders": "També es va rastrejar cada transferència d'AVAX i ETH cap a una cartera amb almenys un 0,01% de l'oferta o des d'aquesta, inclòs qui va enviar monedes per primera vegada a cada cartera. Els exchanges i els serveis d'intercanvi financen milers de carteres, així que només les carteres privades compten com a vincle.",
+        "pattern": "Per a les carteres sense vincle directe, es va comparar el comportament de compra amb el de tots els compradors del mateix període.",
+        "migrations": "Els saldos es van seguir a través de les dues migracions a 7.114,6 PLEB per BSO, la mateixa taxa que fa servir aquesta pàgina per mostrar en BSO les quantitats anteriors."
+      },
+      "limitsTitle": "Límits",
+      "limits": {
+        "exchangeOnly": "Un posseïdor que finança cada cartera a través d'un exchange i no mou mai tokens entre elles no deixa cap vincle on-chain. Alguns grups encara podrien amagar més carteres.",
+        "sales": "Una transferència entre dues carteres pot ser una venda o un regal, així que cap grup no es basa en una sola transferència. Algunes carteres només han rebut tokens i monedes del seu grup i no han enviat mai res; això també podrien ser regals.",
+        "contracts": "Els tokens en mans de contractes que no siguin el pool d'Uniswap i el Safe es mostren tal com són.",
+        "snapshot": "Els saldos i el preu s'actualitzen des de la cadena cada cinc minuts mentre aquesta pàgina està oberta. Els vincles entre carteres s'investiguen a mà i no s'actualitzen sols.",
+        "history": "Les línies de l'historial segueixen el que tenia cada cartera, per a les carteres amb almenys un 0,01% de l'oferta i per a cada cartera d'un posseïdor conegut. La línia d'un posseïdor conegut també compta les carteres buidades d'on van venir els seus tokens, de manera que comença amb la primera compra o reclamació. Els tokens en un pool de liquiditat, en una granja o en un stream de vesting surten de la línia, i les migracions en van tornar a emetre una part als seus propietaris, de manera que algunes línies fan un salt aquells dies."
+      },
+      "contracts": {
+        "gen1": "Gen 1: PLEB a Avalanche",
+        "gen2": "Gen 2: PLEB a Ethereum, reanomenat BSO el maig de 2026",
+        "gen3": "Gen 3: BSO actual"
+      },
+      "snapshot": "Saldos i preu de Blockscout: {{count}} carteres a data de {{date}}. Has trobat un vincle erroni o un que hi falta? <contributeLink>Millora aquesta pàgina</contributeLink>."
+    },
+    "holderName": "Posseïdor {{letter}}"
+  },
+  "chart": {
+    "meta": {
+      "title": "Gràfic del preu de BSO - Cada operació des del 2022",
+      "description": "El preu i la capitalització de mercat de BSO des de la primera operació, el 2022, als tres contractes: PLEB a Avalanche, PLEB a Ethereum i BSO actual, en un sol gràfic construït a partir de swaps on-chain."
+    },
+    "hero": {
+      "title": "El preu de BSO des de la primera operació",
+      "lead": "Un sol gràfic per als tres contractes: PLEB a Avalanche, PLEB a Ethereum, que el 2026 es va reanomenar BSO, i BSO actual. Els preus anteriors es converteixen a 7.114,6 PLEB per BSO, la proporció que van mantenir les dues migracions. Tria un punt del gràfic per veure què va passar aquell dia; la trajectòria completa del token s'explica a la <historyLink>història</historyLink> de la llista de posseïdors.",
+      "status": {
+        "live": "En directe des del pool d'Uniswap: BSO a {{price}}. Actualitzat {{ago}}.",
+        "loading": "Historial diari fins al {{date}}. S'estan carregant els preus més recents…",
+        "unavailable": "Ara mateix els preus en directe no estan disponibles, així que el gràfic acaba el {{date}}."
+      }
+    },
+    "panelTitle": "Gràfic de preu diari",
+    "summary": {
+      "price": "Preu diari de BSO del {{from}} al {{to}}. Tancament més baix {{low}}, tancament més alt {{high}}, últim {{latest}}.",
+      "mcap": "Capitalització de mercat diària de BSO del {{from}} al {{to}}. Tancament més baix {{low}}, tancament més alt {{high}}, últim {{latest}}."
+    },
+    "controls": {
+      "metricLabel": "Mostra",
+      "metrics": {
+        "price": "Preu",
+        "mcap": "Cap. de mercat"
+      },
+      "rangeLabel": "Període",
+      "ranges": {
+        "1M": "1M",
+        "3M": "3M",
+        "1Y": "1A",
+        "all": "Tot"
+      },
+      "typeLabel": "Tipus de gràfic",
+      "types": {
+        "line": "Línia",
+        "candles": "Espelmes"
+      },
+      "scaleLabel": "Escala",
+      "scales": {
+        "log": "Log",
+        "linear": "Lineal"
+      }
+    },
+    "legend": {
+      "since": "des del {{date}}",
+      "ohlc": "O {{open}} · H {{high}} · L {{low}} · C {{close}}",
+      "volume": "Volum {{value}}"
+    },
+    "eras": {
+      "label": "Contractes. Tria'n un per ampliar-ne l'etapa.",
+      "gen1": "PLEB a Avalanche",
+      "gen2": "PLEB a Ethereum",
+      "gen3": "BSO",
+      "years": "{{from}}–{{to}}",
+      "now": "avui",
+      "rebrand": "Canvi a Bitsocial"
+    },
+    "method": {
+      "title": "Com es construeix el gràfic",
+      "lead": "Cada espelma surt de swaps a la cadena, així que qualsevol dia es pot comprovar en un explorador.",
+      "steps": {
+        "swaps": "L'obertura, el màxim, el mínim i el tancament d'un dia són el primer preu, el més alt, el més baix i l'últim pagats en els swaps d'aquell dia, en UTC, llegits dels esdeveniments Swap de cada pool.",
+        "usd": "Els pools operen contra AVAX o ETH, així que cada swap es converteix a dòlars al canvi de Coinbase de l'hora en què es va fer.",
+        "units": "PLEB, a Avalanche i a Ethereum fins al <rebaseLink>rebase del 2 de maig de 2026</rebaseLink>, es mostra per BSO: el seu preu es multiplica per 7.114,596, el nombre de PLEB que va substituir cada BSO.",
+        "pools": "Quan més d'un pool va tenir operacions en un dia, el de més volum defineix l'espelma d'aquell dia, perquè un pool gairebé buit no pugui dibuixar una metxa falsa. El volum suma tots els pools, i un dia sense operacions repeteix l'últim tancament.",
+        "mcap": "La capitalització de mercat és el tancament multiplicat per l'oferta total d'aquell dia: tots els tokens que el contracte va encunyar menys tots els que va cremar, convertits a BSO com el preu. Després del rebase, i per al BSO actual, l'oferta és fixa: 210 milions.",
+        "eras": "L'historial de cada contracte acaba amb la primera operació del següent. El contracte d'Ethereum va mantenir el nom PLEB fins a l'actualització que en va fer el rebase, sis setmanes després que plebbit es convertís en Bitsocial el 18 de març de 2026."
+      },
+      "poolsTitle": "Pools consultats",
+      "eraDates": "{{from}} fins a {{to}}",
+      "snapshot": "Historial construït amb {{count}} swaps fins al {{date}}. Els dies més recents venen de GeckoTerminal i s'actualitzen cada cinc minuts mentre aquesta pàgina està oberta. Has vist una espelma errònia? <contributeLink>Millora aquesta pàgina</contributeLink>."
+    },
+    "eventList": "Esdeveniments marcats al gràfic",
+    "eventDetails": {
+      "close": "Tanca",
+      "links": {
+        "reddit": "Publicació a Reddit",
+        "release": "Versió a GitHub",
+        "hackerNews": "Fil de Hacker News",
+        "tweet": "Tuit"
+      }
+    },
+    "events": {
+      "protocolLabsGrant": {
+        "title": "Una subvenció de Protocol Labs",
+        "body": "Protocol Labs, l'equip darrere d'IPFS i Filecoin, concedeix a plebbit una subvenció per construir la seva alternativa descentralitzada a Reddit."
+      },
+      "firstApp": {
+        "title": "La primera aplicació de plebbit",
+        "body": "Surt la primera aplicació d'escriptori per a Linux, Windows i Mac. Executa el seu propi node d'IPFS, així que, a diferència de la demo web, és totalment peer-to-peer."
+      },
+      "plebchan": {
+        "title": "Arriba plebchan",
+        "body": "plebchan, una aplicació a l'estil de 4chan sobre el protocol plebbit, publica la seva primera versió, per al web, Mac i Linux."
+      },
+      "hackerNews": {
+        "title": "A la portada de Hacker News",
+        "body": "Enmig de la polèmica pels nous preus de l'API de Reddit, la demo de plebbit arriba a la portada de Hacker News amb més de 300 punts. La mateixa setmana, publicacions sobre la demo arriben a la portada de r/ethereum i sumen 30.000 visualitzacions a r/CryptoCurrency."
+      },
+      "coingecko": {
+        "title": "Llistat a CoinGecko",
+        "body": "Després de rebutjar-lo diverses vegades des de principis del 2022, CoinGecko llista el token."
+      },
+      "socialFi": {
+        "title": "A la categoria SocialFi de CoinGecko",
+        "body": "CoinGecko afegeix el token a la seva categoria SocialFi a petició de l'equip, i una llista de tokens SocialFi compartida a X l'inclou. El preu gairebé es duplica en cinc dies."
+      },
+      "seedit": {
+        "title": "Arriba Seedit",
+        "body": "Seedit, una aplicació que té l'aspecte i el funcionament del Reddit clàssic, publica la seva primera versió."
+      },
+      "marchRally": {
+        "title": "La pujada de març del 2024",
+        "body": "L'1 de març, l'inversor Jason Calacanis tuiteja que vol un Reddit distribuït i sense permisos, i plebbit li respon amb la seva demo. Seedit 0.1.6 surt el 3 de març, i el 4 de març l'equip anuncia comunitats amb accés per token. Amb ETH superant els 4.000 dòlars aquell mes, el preu gairebé es duplica el 4 de març i a finals de març ja s'ha triplicat, amb un volum de 2,2 milions de dòlars, el més alt de tots els mesos d'aquest gràfic."
+      }
+    }
+  }
+}

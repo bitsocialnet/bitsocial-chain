@@ -1,0 +1,748 @@
+{
+  "nav": {
+    "language": "Språk",
+    "theme": "Tema",
+    "bitsocial": "Bitsocial",
+    "faq": "FAQ",
+    "richList": "Rikeliste",
+    "chart": "Graf"
+  },
+  "languageSelector": {
+    "title": "Velg språk",
+    "searchPlaceholder": "Søk etter språk...",
+    "noResults": "Ingen språk samsvarer med søket ditt."
+  },
+  "meta": {
+    "title": "BSO – Det manglende sosiale laget i krypto",
+    "description": "BSO er pengene i Bitsocial, det peer-to-peer sosiale nettverket som ingen bedrift eier. En Ethereum L2-appchain der fellesskap eier sine egne nettverk, tokens og inntekter."
+  },
+  "topbar": {
+    "navLabel": "Navigasjon for Bitsocial Chain-nettstedet",
+    "menu": "Meny",
+    "openMenu": "Åpne meny",
+    "closeMenu": "Lukk meny"
+  },
+  "theme": {
+    "toggle": "Bytt tema"
+  },
+  "hero": {
+    "statusCta": "Kjeden er ikke live ennå, abonner for oppdateringer",
+    "title": "Det manglende <mark>sosiale laget</mark> i krypto",
+    "supporting": "Krypto ble et kasino fordi Web2, TradFi og sentralisert infrastruktur eier distribusjonskanalene og vrir insentivene. Bitsocial Chain løser dette: en ustoppelig, fullt desentralisert <l2Link>Ethereum L2</l2Link>-<appchainLink>appchain</appchainLink> der fellesskap eier sine egne nettverk, tokens og inntekter."
+  },
+  "layers": {
+    "ariaLabel": "Tre stablede lag i krypto: sosiale apper på Bitsocial-nettverket øverst, Ethereum L1-oppgjør nederst, og Bitsocial Chain, Ethereum L2-appchainen drevet av BSO, som tennes som det glødende manglende laget som glir inn i gapet mellom dem, sammenbundet av en energiryggrad.",
+    "social": {
+      "title": "SOSIALE APPER",
+      "subtitle": "BITSOCIAL-NETTVERK"
+    },
+    "bso": {
+      "title": "BITSOCIAL CHAIN",
+      "subtitle": "L2 APPCHAIN · BSO"
+    },
+    "eth": {
+      "title": "ETHEREUM",
+      "subtitle": "L1-OPPGJØR"
+    }
+  },
+  "contract": {
+    "label": "BSO-kontrakt",
+    "copyAriaLabel": "Kopier BSO-kontraktadressen {{address}}",
+    "copied": "Kopiert til utklippstavlen"
+  },
+  "sections": {
+    "whyAChain": {
+      "title": "Bitsocial i seg selv er ikke på en blokkjede.",
+      "supporting": "Innlegg, profiler, fellesskap og moderering på <bitsocialLink>Bitsocial</bitsocialLink> er peer-to-peer. Ingen kjede, ingen avgifter, ingen lommebok: du kan bruke hele nettverket uten å noensinne røre krypto, og det vil de fleste gjøre. Men noen få ting trenger virkelig en kjede – navn som er dine, penger som beveger seg mellom fremmede, tokens et fellesskap faktisk eier. Bitsocial Chain er for akkurat dette, og ingenting annet.",
+      "peerToPeer": {
+        "badge": "Peer-to-peer",
+        "note": "Det sosiale nettverket. Ingen kjede involvert.",
+        "posts": "Innlegg og kommentarer",
+        "profiles": "Profiler og fellesskap",
+        "moderation": "Moderering og antispam"
+      },
+      "onChain": {
+        "badge": "On-chain",
+        "note": "De få delene som trenger en.",
+        "names": ".bso-navn",
+        "tipping": "Tips og utmerkelser",
+        "tokens": "Fellesskapstokens"
+      },
+      "caption": "Kjeden er valgfri. Det sosiale nettverket er det ikke.",
+      "quote": "Et desentralisert sosialt nettverk trenger desentraliserte penger."
+    },
+    "tokenomics": {
+      "title": "Sunne penger.",
+      "supporting": "BSO er en ERC-20 med fast tilbud: 210 millioner, ingen inflasjon, deflasjonær ved design. Den ble gitt bort i 2022 gjennom tre airdrops og belønninger fra likviditetsmining, uten forhåndssalg og uten teamandel. Kontrakten er uforanderlig og uten admin, så reglene er faste for alltid.",
+      "supply": {
+        "cap": "BSOs maksimale tilbud · fast for alltid"
+      },
+      "traits": {
+        "airdropped": "Ingen teamandel eller forhåndssalg",
+        "fixedCap": "Fast tak, null utstedelse",
+        "deflationary": "Deflasjonær: tilbudet kan bare synke"
+      },
+      "locks": {
+        "noMint": {
+          "label": "Ingen mint",
+          "note": "tilbudet kan aldri vokse"
+        },
+        "noOwner": {
+          "label": "Ingen eier",
+          "note": "ingen adminnøkler, aldri"
+        },
+        "noPause": {
+          "label": "Ingen pause",
+          "note": "overføringer kan ikke fryses"
+        },
+        "noProxy": {
+          "label": "Ingen proxy",
+          "note": "koden kan ikke byttes ut"
+        }
+      },
+      "airdrop": {
+        "label": "Fordelingen",
+        "note": "Tre airdrop-runder i januar og februar 2022, claimet av 1510 adresser. Runde 1 brukte en Telegram-bot med vervebonuser, og Esteban gikk gjennom vervingene for hånd for å avdekke misbruk; runde 2 og 3 foregikk på Twitter og Reddit. Rundt 63% av all BSO ble delt ut gjennom airdroppene og 34% som belønninger til folk som stilte likviditet; resten ble startlikviditet i lanseringspoolene. Ingen forhåndssalg, ingen teamandel, ingenting solgt.",
+        "richListLink": "Se alle innehavere og alle tre rundene"
+      },
+      "contract": {
+        "label": "Hele kontrakten",
+        "note": "Hele tilbudet mintes til én adresse fordi det er slik migreringen fungerer: saldoene ble speilet én til én over på den og betalt ut igjen ved overføring, alle sammen on-chain. Alt annet er <openZeppelinLink>OpenZeppelin</openZeppelinLink>, uendret – den mest brukte og mest gjennomgåtte tokenkoden på Ethereum. Ingenting skreddersydd, ingenting fiffig. Les den på <etherscanLink>Etherscan</etherscanLink>."
+      },
+      "foot": "Uforanderlig og uten admin: det finnes ingen adminnøkler igjen å holde, så ingen kan endre den, inflatere den eller fryse den."
+    },
+    "unstoppable": {
+      "title": "Bygget på Ethereum. Drevet av ingen.",
+      "supporting": "En ny blokkjede ville gjenoppbygd sikkerheten og utviklerbasen Ethereum allerede har, og ville trengt en ny token når BSO allerede er fullt distribuert. Derfor er Bitsocial Chain designet som en Ethereum L2 uten operatør: hver handling er en vanlig Ethereum-transaksjon sendt til en adresse ingen kontrollerer, og hvem som helst kan kjøre en node som utleder den samme tilstanden fra Ethereums historikk. Det finnes ikke noe selskap å presse og ingen bryter å slå av.",
+      "locks": {
+        "noSequencer": {
+          "label": "Ingen sequencer nødvendig",
+          "note": "Ethereum bestemmer rekkefølgen på hver transaksjon"
+        },
+        "noAdminKeys": {
+          "label": "Ingen adminnøkler",
+          "note": "ingen endrer reglene over hodet på deg"
+        },
+        "noUpgradeableContract": {
+          "label": "Ingen oppgraderbar kontrakt",
+          "note": "ingenting på Ethereum å beslaglegge"
+        },
+        "noPrivilegedNode": {
+          "label": "Ingen privilegert node",
+          "note": "hvem som helst kan utlede den samme tilstanden"
+        }
+      },
+      "proofOfConcept": "Konseptbeviset utleder allerede .bso-navn på denne måten, på en lokal utviklingskjede. En lansering i produksjon trenger fortsatt et bevissystem, en revisjon og endelig økonomi. <proofLink>Les konseptbeviset</proofLink>."
+    },
+    "bsoNames": {
+      "title": "Ditt .bso-navn forblir ditt.",
+      "supporting": "Bitsocial-apper <resolverLink>løser .bso-navn i dag</resolverLink> ved å låne ENS, navnesystemet Ethereum-lommebøker bruker: mycommunity.bso er egentlig mycommunity.eth med en bitsocial-oppføring. Et native register ville airdroppet hvert navn som allerede er i bruk til lommeboken som eier det – ingenting å claime og ingenting å registrere på nytt.",
+      "ensBadge": "ENS · i dag",
+      "pointsTo": "peker til",
+      "communityKey": "fellesskapets nøkkel",
+      "airdropAtLaunch": "airdrop ved lansering",
+      "bsoBadge": ".bso · Bitsocial Chain",
+      "owner": "eier",
+      "sameWallet": "den samme lommeboken",
+      "fees": "Inntil kjeden finnes, flyttes .bso-navn til et <bsipLink>midlertidig register på Ethereum</bsipLink>, der gebyrene finansierer Bitsocials utviklere. På Bitsocial Chain er planen at navnegebyrer i stedet brennes, eller brukes til å kjøpe tilbake og brenne BSO. Mekanismen er ikke bestemt."
+    },
+    "communityMoney": {
+      "title": "Ett aktivum under mange fellesskap.",
+      "supporting": "Hvert fellesskap kunne drive sitt eget lag, en L3 med sin egen token, og betale avgifter, navn og leie i BSO. L3-er finnes allerede i hele krypto; på Bitsocial Chain ville én komme med et fellesskap allerede knyttet til seg. Inntektene kunne gjøres opp av seg selv: annonseplasser auksjonert av kontrakt, en del av hvert salg ødelagt på stedet og resten betalt til fellesskapet, uten noen tilbakekjøpskasse som noen kan ta kontroll over.",
+      "communityLayer": "Fellesskapslag",
+      "ownToken": "sin egen token",
+      "feesFlow": "avgifter, navn og leie betalt i BSO",
+      "chainMeta": "Ethereum-lag · tilstanden utledes fra Ethereum",
+      "ethereumMeta": "Ethereum L1 · sikkerhet og data",
+      "caption": "En andel av hver avgift ødelegges; resten betaler for kjedens sikkerhet."
+    },
+    "privacy": {
+      "title": "Å sende tips bør ikke avsløre identiteten din.",
+      "supporting": "Bitsocial Chain er offentlig som standard, som Ethereum, og .bso-navn er ment å bli sett. Penger er annerledes: et tips bør aldri kreve at du legger navnet, profilen eller innlegget ditt on-chain ved siden av det, og en ny lommebok bør oppfattes som normal, ikke mistenkelig. Kjeden vil ikke bygge sitt eget personvernsystem. Den er ment å la eksisterende systemer koble seg til uten å be om tillatelse: shielded pools, stealth-adresser, zero-knowledge-bevis.",
+      "publicOnPurpose": {
+        "heading": "Offentlig med vilje",
+        "names": ".bso-navn og hvem som eier dem",
+        "rules": "Hver regel og hver tilstandsendring"
+      },
+      "neverRequired": {
+        "heading": "Aldri påkrevd",
+        "profile": "Navnet eller profilen din på et tips",
+        "wallet": "Én lommebok per person",
+        "app": "En offisiell lommebok eller app"
+      }
+    },
+    "possibilities": {
+      "title": "Foreslått i åpenhet.",
+      "supporting": "Ikke live ennå. BSO er live på Ethereum i dag; Bitsocial Chain er et forslag, og det første konseptbeviset, native .bso-navn, kjører på en lokal utviklingskjede. Ingenting nedenfor har en dato. Det er hva et sosialt lag med egne penger ville gjøre mulig: noe av det blir bygget, noe blir erstattet av bedre ideer, og noe blir bygget av folk som ikke har dukket opp ennå.",
+      "ideas": {
+        "chain": {
+          "note": "Selve Ethereum L2-appchainen, og hjemmet for BSOs oppgjør."
+        },
+        "registry": {
+          "label": "Et native .bso-register",
+          "note": "Navn og identitet registrert på kjeden, i stedet for lånt fra ENS."
+        },
+        "l3s": {
+          "label": "L3-er og tokens for fellesskap",
+          "note": "Fellesskap med eget lag og egen token, som gjør opp i BSO."
+        },
+        "agoraswap": {
+          "note": "En DEX for fellesskap der fellesskapstokens handles mot BSO, og likviditeten holdes on-chain."
+        },
+        "collectibles": {
+          "label": "Samleobjekter for skapere",
+          "note": "Måter for skapere å selge noe direkte på, uten at en plattform tar en andel."
+        },
+        "other": {
+          "label": "Alt annet som passer",
+          "note": "Klienttokens, desentralisert sequencing og ideer ingen har foreslått ennå."
+        }
+      }
+    },
+    "verify": {
+      "title": "Bare én adresse er BSO.",
+      "supporting": "Hvem som helst kan lage en token og kalle den BSO, så kontraktadressen er det eneste som skiller den ekte fra de andre. Sammenlign alle 42 tegn med dette nettstedet og Bitsocials offisielle kanaler før du sender noe hvor som helst.",
+      "warning": "Den offisielle BSO-kontrakten er <contract>{{address}}</contract>. Alt annet er ikke BSO, uansett hva det kalles og hvor det er listet.",
+      "tradeOnUniswap": "Handle på Uniswap",
+      "provideLiquidity": "Tilby likviditet",
+      "note": "Likviditet på Uniswap tilbys av uavhengige personer, og hvem som helst kan bidra til den. Det er ikke en sparekonto: verdien av en likviditetsposisjon kan falle, også til under det som ble satt inn."
+    }
+  },
+  "common": {
+    "proposed": "Foreslått",
+    "close": "Lukk"
+  },
+  "mailingList": {
+    "chainTitle": "Hold deg oppdatert",
+    "chainDescription": "Få varsler om milepæler for BSO-tokenen, Bitsocial Chain og økosystemnyheter. Lav frekvens, høy signalverdi.",
+    "placeholder": "you@example.com",
+    "inputLabel": "E-postadresse",
+    "subscribe": "Abonner",
+    "subscribing": "Abonnerer…",
+    "chainSuccess": "Du er på listen.",
+    "confirmationSent": "Sjekk e-posten din for å bekrefte abonnementet.",
+    "chainError": "Noe gikk galt. Prøv igjen.",
+    "unavailable": "Påmelding til nyhetsbrevet er midlertidig utilgjengelig.",
+    "privacy": "Ingen spam, aldri. Du kan melde deg av når som helst."
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Ofte stilte spørsmål.",
+    "supporting": "Hver del av denne siden svarer på ett av dem. Klikk på et spørsmål for å hoppe dit.",
+    "navLabel": "Spørsmål som besvares på denne siden",
+    "answeredIn": "Besvart i delen {{label}}",
+    "entries": {
+      "whyAChain": {
+        "eyebrow": "Hvorfor en kjede",
+        "question": "Hvorfor trenger et peer-to-peer sosialt nettverk en kjede?"
+      },
+      "tokenomics": {
+        "eyebrow": "Tokenomics",
+        "question": "Hva er BSOs tokenomics? Hvem fikk den?"
+      },
+      "unstoppable": {
+        "eyebrow": "Ustoppelig",
+        "question": "Hvorfor en Ethereum L2? Hvem driver den?"
+      },
+      "bsoNames": {
+        "eyebrow": "BSO-navn",
+        "question": "Hva skjer med .bso-navnet mitt?"
+      },
+      "communityMoney": {
+        "eyebrow": "Fellesskapspenger",
+        "question": "Hva ville BSO bli brukt til?"
+      },
+      "privacy": {
+        "eyebrow": "Personvern",
+        "question": "Vil alle se hvem jeg sender tips til?"
+      },
+      "possibilities": {
+        "eyebrow": "Muligheter",
+        "question": "Er det live? Hva er planlagt?"
+      },
+      "verify": {
+        "eyebrow": "Verifisering",
+        "question": "Hvordan får jeg tak i BSO på en trygg måte?"
+      }
+    },
+    "rows": {
+      "about": {
+        "label": "Om oss",
+        "question": "Hvem står bak Bitsocial Chain?"
+      },
+      "mailingList": {
+        "label": "Nyhetsbrev",
+        "question": "Hvordan holder jeg meg oppdatert?"
+      }
+    },
+    "ask": {
+      "placeholder": "Spør om hva som helst annet…",
+      "label": "Spør om hva som helst annet",
+      "action": "Spør ChatGPT"
+    }
+  },
+  "footer": {
+    "chainTagline": "Det manglende sosiale laget i krypto",
+    "token": "Token",
+    "resources": "Ressurser",
+    "blog": "Blog",
+    "proofOfConcept": "Konseptbevis",
+    "about": "Om oss",
+    "mainSite": "Hovedside",
+    "community": "Fellesskap",
+    "chainBottomTagline": "Fiks kryptos sosiale lag",
+    "contribute": "Forbedre denne siden"
+  },
+  "backToTop": {
+    "returnToOrigin": "Tilbake til forrige sted",
+    "toTop": "Tilbake til toppen",
+    "toBottom": "Gå til bunnen"
+  },
+  "richList": {
+    "meta": {
+      "title": "BSO-rikeliste - Hvem eier BSO",
+      "description": "Alle som eier BSO, med koblede lommebøker gruppert, teamets lommebøker merket og on-chain-bevisene bak hver kobling. I tillegg historien om de tre airdroppene i 2022."
+    },
+    "hero": {
+      "title": "Hvem eier BSO",
+      "lead": "Alle BSO-lommebøker, med lommebøker som tilhører samme innehaver gruppert sammen og teamets lommebøker merket. Hver kobling viser transaksjonene den bygger på, så du kan sjekke den selv.",
+      "jumpLabel": "Seksjoner",
+      "status": {
+        "live": "Direkte fra kjeden: {{count}} lommebøker, BSO til {{price}}. Oppdatert {{ago}}.",
+        "loading": "Øyeblikksbilde fra {{date}}: {{count}} lommebøker, BSO til {{price}}. Laster inn direktedata…",
+        "unavailable": "Direktedata er ikke tilgjengelig akkurat nå, så dette er øyeblikksbildet fra {{date}}: {{count}} lommebøker, BSO til {{price}}."
+      }
+    },
+    "jump": {
+      "holders": "Innehavere",
+      "linked-wallets": "Koblede lommebøker",
+      "team": "Kjerneteam",
+      "airdrops": "Airdrops",
+      "history": "Historikk",
+      "method": "Metode"
+    },
+    "strip": {
+      "label": "Andel av BSO-tilbudet på 210 millioner som hver gruppe eier",
+      "team": "Kjerneteam",
+      "pool": "Uniswap-pool",
+      "everyoneElse_one": "Alle andre ({{count}} lommebok)",
+      "everyoneElse_other": "Alle andre ({{count}} lommebøker)"
+    },
+    "categories": {
+      "team": "Kjerneteam",
+      "pool": "Likviditetspool",
+      "confirmed": "Bekreftet",
+      "likely": "Sannsynlig",
+      "possible": "Mulig",
+      "other": "Ikke koblet"
+    },
+    "table": {
+      "title": "Innehavere",
+      "lead": "Koblede lommebøker slås sammen til én rad. Bytt til Per lommebok for å se hver adresse slik Etherscan viser den.",
+      "viewLabel": "Vis innehavere",
+      "view": {
+        "grouped": "Gruppert",
+        "wallets": "Per lommebok"
+      },
+      "searchLabel": "Søk etter adresse eller navn på innehaver",
+      "searchPlaceholder": "Søk etter en adresse",
+      "caption": "BSO-innehavere etter saldo",
+      "holder": "Innehaver",
+      "balance": "BSO",
+      "share": "Andel",
+      "value": "Verdi",
+      "contract": "Kontrakt",
+      "walletCount_one": "{{count}} lommebok",
+      "walletCount_other": "{{count}} lommebøker",
+      "noMatch": "Ingen innehaver samsvarer med dette søket.",
+      "showAll_one": "Vis {{count}} rad",
+      "showAll_other": "Vis alle {{count}} radene",
+      "showMore": "Vis {{count}} til",
+      "history": "Historikk",
+      "historySummary": "Saldo siden {{start}}: høyest {{high}} BSO i {{highDate}}, nå {{current}} BSO"
+    },
+    "evidenceLinks": "Bevistransaksjoner",
+    "telegramSources": "Telegram-kilder",
+    "linked": {
+      "title": "Koblede lommebøker",
+      "lead": "Lommebøker grupperes bare når kjeden viser en kobling: tokens eller gass som flyttes mellom dem, en felles privat finansierer, en eier av en multisig eller et identisk kjøpsmønster. Hver gruppe viser transaksjonene den bygger på.",
+      "confidence": {
+        "confirmed": "Lommebøkene gjør transaksjoner med hverandre, deler en privat finansierer eller kontrollerer hverandre.",
+        "likely": "Flere overføringer fra én kilde, eller et identisk kjøpsmønster, som er vanskelige å forklare på noen annen måte.",
+        "possible": "Én enkelt kobling som også kan være et salg eller en gave."
+      },
+      "holds_one": "{{amount}} BSO, {{share}} av tilbudet, i {{count}} lommebok",
+      "holds_other": "{{amount}} BSO, {{share}} av tilbudet, fordelt på {{count}} lommebøker",
+      "walletList_one": "{{count}} lommebok",
+      "walletList_other": "Alle {{count}} lommebøkene"
+    },
+    "walletRoles": {
+      "deployer": "deployer",
+      "estebanEns": "estebanabaroa.eth",
+      "safe": "Safe-multisig",
+      "safeOwner": "Safe-eier"
+    },
+    "entities": {
+      "pool": {
+        "name": "Uniswap BSO/ETH-pool"
+      },
+      "holderA": {
+        "summary": "Fem lommebøker knyttet sammen av overføringer og en felles privat finansierer, som kjøpte på Avalanche mellom februar 2022 og mai 2023 og aldri har solgt.",
+        "evidence": {
+          "transfersToLpWallet": "To av kjøpslommebøkene sendte tokens og AVAX til en tredje lommebok, som brukte dem til likviditet og farming på Trader Joe: 141 000 BSO og 5 AVAX 27. februar 2022, deretter 1,01 mill. BSO og 34 AVAX mellom 28. februar og 2. mars. Den tredje lommeboken sendte 0,013 AVAX tilbake.",
+          "sharedFunder": "Én privat lommebok finansierte tre av kjøpslommebøkene og ingenting annet. Hver transaksjon den noen gang sendte, gikk til dem, i rekkefølge: nonce 0 til 4 til den første, 5 til 7 til den andre, 8 til den tredje.",
+          "neverSold": "Ingen av de fem lommebøkene har solgt. Saldoene kom uendret gjennom begge migreringene."
+        }
+      },
+      "holderC": {
+        "summary": "To lommebøker fylt av det samme paret kjøpslommebøker.",
+        "evidence": {
+          "commonSender": "Én kjøpslommebok sendte 664 000 BSO til den første 19. august 2024. 14. november 2025 sendte den en test på 7000 BSO, 0,1 ETH og deretter 2,17 mill. BSO til den andre. Det er den eneste ETH-en den andre lommeboken har mottatt, og den har aldri sendt en transaksjon.",
+          "secondSender": "En annen kjøpslommebok sendte den første dens øvrige 7,3 mill. BSO i åtte overføringer mellom mai og august 2024, sammen med dens første ETH, og fikk 4,35 ETH tilbake fra den.",
+          "sendersLinked": "De to kjøpslommebøkene er knyttet til hverandre: den ene ga den andre 1,15 mill. BSO og 0,1 ETH 22. februar 2024, og den andre sendte sine resterende 5,8 ETH tilbake 17. august 2024."
+        }
+      },
+      "holderD": {
+        "summary": "Fem lommebøker: to som sendte hverandre AVAX og ETH, en tredje som begge fylte, og to til som den tredje satte opp.",
+        "evidence": {
+          "sharedRecipient": "Den tredje lommeboken mottok en testoverføring og deretter 703 000 BSO fra den første 18. november 2022, og 1,16 mill. BSO fra den andre 1. desember 2022. All AVAX den noen gang har hatt til gass, kom fra de to.",
+          "coinsBothWays": "De to første lommebøkene sendte hverandre mynter på begge kjedene i 20 måneder: 0,5 AVAX den ene veien og 0,49 tilbake ni minutter senere 24. mars 2022, 73 AVAX 31. mai 2022, 0,09 ETH 11. mars 2023 og 2 ETH den andre veien 7. november 2023.",
+          "newWallets": "Den tredje lommeboken satte deretter opp to nye lommebøker på samme måte hver gang: AVAX til gass, en testoverføring og deretter 281 000 BSO, 24. november 2022 og i slutten av april 2023. Ingen av dem har noen gang sendt en transaksjon."
+        }
+      },
+      "holderE": {
+        "summary": "To lommebøker fylt fra samme kilde.",
+        "evidence": {
+          "commonSender": "Én lommebok sendte den første 5,53 mill. BSO i sju overføringer mellom oktober 2024 og januar 2025, og den andre 287 000 den 22. november 2025.",
+          "onlyEth": "Den samme lommeboken sendte hver av dem den eneste ETH-en de noen gang har mottatt, i samme minutt som de første tokenene deres: 0,1 ETH og 0,12 ETH. Ingen av lommebøkene har noen gang sendt en transaksjon."
+        }
+      },
+      "holderF": {
+        "summary": "Én lommebok som delte tokenene sine og 4 ETH på tre nye lommebøker.",
+        "evidence": {
+          "split": "10. mars 2024 sendte én lommebok i løpet av sju minutter runde beløp PLEB, som BSO het den gangen (12 mrd., 8 mrd. og 4 mrd.), til tre nye lommebøker. Den har fortsatt BSO selv.",
+          "ethBothWays": "I de samme minuttene sendte den de tre lommebøkene 4,05 ETH, mellom 1 og 2 ETH hver. Den som fikk mest, sendte 1,5 ETH tilbake 24. juni 2024; de to andre har aldri sendt en transaksjon."
+        }
+      },
+      "holderG": {
+        "summary": "To lommebøker finansiert av samme avsender med tre års mellomrom, og en tredje som en av dem flyttet saldoen sin til.",
+        "evidence": {
+          "commonSender": "Én lommebok sendte den andre 658 000 BSO på Avalanche i april 2022 og den første 843 000 på Ethereum i januar 2025.",
+          "senderFunded": "Den avsenderen sendte også begge lommebøkene mynter: den ga den andre dens første AVAX og 17,4 AVAX dagen etter, og sendte den første de 0,15 ETH den selv hadde igjen, tre minutter etter tokenene.",
+          "movedOn": "3. november 2026 sendte den andre lommeboken den tredje ETH til gass, en test på 100 BSO og deretter hele saldoen sin på 852 000 BSO."
+        }
+      },
+      "holderH": {
+        "summary": "To lommebøker, der den ene finansierte den andre.",
+        "evidence": {
+          "directTransfer": "24. april 2022 sendte den første lommeboken den andre dens første AVAX og, to minutter senere, 59 000 BSO.",
+          "funding": "8. mai 2022 sendte den første lommeboken den andre 23 AVAX i seks overføringer, og den andre vekslet mesteparten om til BSO innen få minutter etter hver av dem."
+        }
+      },
+      "holderI": {
+        "summary": "To lommebøker som sendte hverandre ETH før den ene flyttet hele saldoen sin til den andre.",
+        "evidence": {
+          "directTransfers": "Den andre lommeboken sendte deretter den første alt den hadde: 1,85 mill. BSO 30. oktober 2023 og 703 000 den 8. november 2023.",
+          "ethBothWays": "Den andre lommeboken sendte den første 0,77 ETH 16. desember 2022, og den første sendte 0,02 ETH tilbake dagen etter."
+        }
+      },
+      "holderJ": {
+        "summary": "To lommebøker som sendte AVAX fram og tilbake i over et år.",
+        "evidence": {
+          "coinsBothWays": "Den første lommeboken sendte den andre dens første AVAX 7. mai 2021 og dens første ETH i august samme år. Innen juli 2022 hadde den første sendt 331 AVAX i tolv overføringer, og den andre hadde sendt 15 AVAX tilbake i to.",
+          "sameEveningLocks": "Begge kjøpte BSO på Trader Joe, og 28. april 2022 låste begge BSO i den samme låsekontrakten med under en halvtimes mellomrom."
+        }
+      },
+      "holderK": {
+        "summary": "To lommebøker finansiert av den samme private lommeboken.",
+        "evidence": {
+          "sharedFunder": "Én privat lommebok finansierte begge. Den sendte den første dens første AVAX i oktober 2021, 194 AVAX i 21 overføringer innen utgangen av 2023 og 3,49 mill. BSO i to overføringer. Den sendte den andre dens første AVAX 14. februar 2022 og 23 AVAX i seks overføringer innen april samme år. Begge sendte små beløp AVAX tilbake.",
+          "sharedRecipient": "Begge finansierte også den samme nye lommeboken: den andre sendte den dens første 5,1 AVAX 17. februar 2022, og den første sendte den 38,3 AVAX tre dager senere."
+        }
+      },
+      "holderL": {
+        "summary": "To lommebøker finansiert fra den samme private lommeboken, den ene via en mellomliggende lommebok.",
+        "evidence": {
+          "funderChain": "Én privat lommebok sendte den andre dens første AVAX 12. februar 2022. Seks dager senere flyttet den sine egne 597 000 BSO og resten av AVAX-en sin til en ny lommebok, som sendte de 597 000 BSO videre til den første lommeboken 22. februar, sammen med den lommebokens første AVAX.",
+          "directTransfer": "Den andre lommeboken sendte den første 0,005 AVAX 27. februar 2022."
+        }
+      },
+      "holderM": {
+        "summary": "Ti lommebøker som ikke gjorde annet enn å kjøpe på Avalanche, etter tur, mellom februar 2022 og mai 2023, og som aldri har solgt.",
+        "evidence": {
+          "buyingPattern": "Hver lommebok var ny, finansiert med ett eller to børsuttak på rundt $2000 til $3400 via Binance eller ChangeNOW, vekslet hele beløpet om til tokenet og ble aldri brukt igjen. Sju kjøpte etter tur mellom 28. februar og 31. mars 2022; tre til gjorde det samme 12. april og 25. juni 2022 og 6. mai 2023. Blant dagens innehavere med minst 0,01% av tilbudet er 21 lommebøker bare blitt brukt til å kjøpe på Avalanche, i fire transaksjoner eller færre: disse ti, to lommebøker fra en annen gruppe og ni andre som hver brukte under $410.",
+          "neverSold": "Ingen av de ti lommebøkene har solgt eller flyttet tokenene sine siden, bortsett fra én som låste tokenene sine i april 2022. Saldoene kom uendret gjennom begge migreringene."
+        }
+      }
+    },
+    "team": {
+      "title": "Ingen teamandel",
+      "lead": "Ingen tokens ble satt av til teamet, investorer eller et forhåndssalg. Her ser du hvor hver BSO kom fra, hva teamets lommebøker har i dag, og hva grunnleggeren sa den gangen.",
+      "origin": {
+        "caption": "Hvordan hver BSO opprinnelig ble mintet, i 2022 og 2023",
+        "label": "Andel av BSO etter opprinnelig mintemåte",
+        "airdropClaims": {
+          "label": "Airdrop-claims",
+          "note": "{{amount}} BSO claimet av 1510 adresser i tre runder. Tildelinger som ingen claimet, ble aldri mintet."
+        },
+        "liquidityMining": {
+          "label": "Likviditetsmining",
+          "note": "{{amount}} BSO utbetalt til folk som staket likviditet på Trader Joe, fra februar 2022 til mai 2023."
+        },
+        "liquiditySeed": {
+          "label": "Lanseringslikviditet",
+          "note": "{{amount}} BSO mintet til deployeren og lagt i de to lanseringspoolene sammen med 7 AVAX."
+        }
+      },
+      "facts": {
+        "liquiditySeed": "Den eneste mintingen til en teamlommebok utenom airdroppen var lanseringslikviditeten: 7 mill. BSO, lagt i Trader Joe-poolen (5,6 mill.) og Pangolin-poolen (1,4 mill.) i løpet av sju minutter 14. januar 2022.",
+        "teamClaims": "Tre teammedlemmer claimet i runde 1: Esteban 703 000 BSO, Tom 1,86 mill. BSO (den tredje største av 767 claims) og rinse12 1,1 mill. BSO, fra to lommebøker hvis tokens senere havnet i Safen hans. Til sammen er det 2,8% av alle tokens som ble claimet i airdroppene.",
+        "migrationMintedNothing": "Migreringen i 2026 skapte ingen nye tokens til noen: alle 210 mill. BSO ble sendt ut i én transaksjon, i forhold til de gamle saldoene.",
+        "farmRewards": "Ett teammedlem mottok belønninger fra likviditetsmining: en lommebok som tilhører rinse12, hentet ut 2,3 mill. BSO den 5. april 2022, den fjerde største andelen av de 60,9 mill. BSO som ble utbetalt på Avalanche til 208 adresser. De 8 mill. som fortsatt ikke var utbetalt ved overgangen til Ethereum, ble kreditert stakerne som hadde tjent dem opp."
+      },
+      "statementsTitle": "Hva grunnleggeren sa den gangen",
+      "statementBy": "Esteban Abaroa, grunnlegger, {{date}}",
+      "walletsTitle": "Teamets lommebøker i dag",
+      "person": "Person",
+      "wallet": "Lommebok",
+      "total": "Teamet totalt",
+      "walletsNote": "Verdt {{value}} til prisen i øyeblikksbildet. Hele historikken til hver lommebok er offentlig på Etherscan.",
+      "poolNote": "Den 30. oktober 2026 sendte Estebans deployer-lommebok og estebanabaroa.eth 86,6% av likviditetstokenene i Uniswap-poolen til nulladressen, der ingen kan ta dem ut. Teamet beholder under 0,01%, og resten tilhører andre likviditetsleverandører. Den brente andelen er verdt {{value}} i BSO og ETH til prisen i øyeblikksbildet."
+    },
+    "airdrops": {
+      "title": "Tre airdrops, 2022",
+      "lead": "PLEB, den første generasjonen av BSO, ble lansert på Avalanche uten noe salg. Den ble gitt bort i tre runder, og hver claim ble overført til BSO med samme kurs: 7114,6 PLEB for 1 BSO.",
+      "caption": "De tre airdrop-rundene og hva de claimede tokenene er verdt i dag",
+      "round": "Runde {{number}}",
+      "total": "Totalt",
+      "rounds": {
+        "telegram": {
+          "name": "Telegram-bot",
+          "how": "Send en Avalanche-adresse til @plebbitbot, med bonuser for vervinger"
+        },
+        "twitter": {
+          "name": "Twitter",
+          "how": "Lik, retweet og tagg tre venner på innlegget til @getplebbit"
+        },
+        "reddit": {
+          "name": "Reddit",
+          "how": "Kommenter i tråden på r/plebbitairdrop; en bot sjekket kontohistorikken"
+        }
+      },
+      "metrics": {
+        "how": "Slik deltok man",
+        "window": "Påmelding",
+        "signups": "Annonserte påmeldinger",
+        "claimers": "Adresser som claimet",
+        "plebClaimed": "PLEB claimet",
+        "bsoToday": "BSO i dag",
+        "worthToday": "Verdi i dag",
+        "medianClaim": "Median claim i dag",
+        "largestClaim": "Største claim i dag",
+        "sources": "Kilder"
+      },
+      "dateRange": "{{start}} – {{end}}",
+      "overCount": "over {{amount}}",
+      "distinct": "{{amount}} unike",
+      "note": "Verdiene forutsetter at alle claimede tokens fortsatt holdes, til {{price}} per BSO den {{date}}. Mange påmeldinger var boter. Claim-perioden stengte 21. februar 2022, og tildelinger som ingen claimet, ble aldri mintet."
+    },
+    "history": {
+      "title": "Historikk",
+      "lead": "Fra en Telegram-gruppe i 2021 til en uforanderlig ERC-20 i 2026.",
+      "redditThread": "Reddit-tråden",
+      "events": {
+        "groupOpens": {
+          "title": "Telegram-gruppen til plebbit åpner",
+          "body": "Gruppen som i dag er t.me/bitsocialnet, starter første juledag 2021."
+        },
+        "telegramRound": {
+          "title": "Runde 1: Telegram-boten",
+          "body": "I en uke melder folk seg på via @plebbitbot. Tilbudet deles likt mellom deltakerne, med bonuser for vervinger. 3312 adresser registrerer seg før boten stenger 14. januar."
+        },
+        "launch": {
+          "title": "Likviditet først, så claims",
+          "body": "Klokken 18:00 UTC legger deployeren de første tokenene og 7 AVAX inn i Trader Joe og Pangolin. Claim-siden åpner rundt 30 minutter senere, så hver tildeling lå fast før noen kunne handle."
+        },
+        "twitterRound": {
+          "title": "Runde 2: Twitter",
+          "body": "En airdrop som foregikk helt på Twitter: lik, retweet og tagg tre venner. Over 1500 personer registrerer seg innen 6. februar."
+        },
+        "redditRound": {
+          "title": "Runde 3: Reddit",
+          "body": "En eksperimentell airdrop på r/plebbitairdrop, der en bot sjekket at de som kommenterte, hadde eldre aktivitet på Reddit. Over 2200 registrerer seg innen 12. februar, mange av dem boter."
+        },
+        "claimsClose": {
+          "title": "Claim-perioden stenger",
+          "body": "Ingen av de tre airdroppene kan lenger claimes. Tokens som ingen claimet, blir aldri mintet."
+        },
+        "farm": {
+          "title": "Likviditetsmining starter",
+          "body": "De som staker likviditet på Trader Joe, tjener nymintede tokens. Farmen betaler ut frem til overgangen til Ethereum."
+        },
+        "ethereum": {
+          "title": "Overgangen til Ethereum",
+          "body": "Etter en avstemning på Snapshot fryses tokenet på Avalanche, og hver saldo, inkludert låste tokens, likviditetsposisjoner og ubetalte farm-belønninger, utstedes på nytt på Ethereum som andregenerasjonstokenet. Innehaverne trenger ikke gjøre noe."
+        },
+        "rebrand": {
+          "title": "plebbit blir Bitsocial",
+          "body": "plebbit kunngjør det nye navnet sitt, Bitsocial. On-chain beholder tokenet navnet PLEB frem til mai."
+        },
+        "rebase": {
+          "title": "PLEB blir 210 millioner BSO",
+          "body": "Andregenerasjonstokenet omdøpes til BSO og rebases slik at det totale tilbudet blir nøyaktig 210 millioner: 7114,6 PLEB blir 1 BSO."
+        },
+        "immutable": {
+          "title": "BSO blir uforanderlig",
+          "body": "Den endelige BSO-kontrakten går live uten mint, eier, pause eller proxy. Alle 210 mill. sendes ut i én transaksjon, i forhold til saldoene etter rebase."
+        },
+        "liquidityBurned": {
+          "title": "86,6% av likviditeten brennes",
+          "body": "Estebans to lommebøker sender sine 7 881 Uniswap-likviditetstokens, 86,6% av BSO/ETH-poolen, til nulladressen. Ingen har nøkkelen til den adressen, så den delen av poolens BSO og ETH er låst for alltid."
+        }
+      }
+    },
+    "method": {
+      "title": "Metode og begrensninger",
+      "lead": "Hvordan gruppene ble funnet, og hva denne siden ikke kan se.",
+      "howTitle": "Hvordan lommebøker ble koblet",
+      "how": {
+        "transfers": "Hver overføring mellom to vanlige lommebøker på alle tre kontraktene, på Avalanche og Ethereum, ble sporet, med unntak av børser, rutere, pooler og andre kontrakter. Safe-multisigs ble koblet til eierne sine.",
+        "funders": "Hver AVAX- og ETH-overføring til eller fra en lommebok med minst 0,01% av tilbudet ble også sporet, inkludert hvem som først sendte hver lommebok mynter. Børser og swap-tjenester finansierer tusenvis av lommebøker, så bare private lommebøker teller som en kobling.",
+        "pattern": "For lommebøker uten direkte kobling ble kjøpsatferden sammenlignet med alle kjøpere i samme periode.",
+        "migrations": "Saldoene ble fulgt gjennom begge migreringene med 7114,6 PLEB per BSO, den samme kursen denne siden bruker for å vise eldre beløp i BSO."
+      },
+      "limitsTitle": "Begrensninger",
+      "limits": {
+        "exchangeOnly": "En innehaver som finansierer alle lommebøkene sine via en børs og aldri flytter tokens mellom dem, etterlater ingen kobling on-chain. Noen grupper kan fortsatt skjule flere lommebøker.",
+        "sales": "En overføring mellom to lommebøker kan være et salg eller en gave, så ingen gruppe hviler på én enkelt overføring. Noen lommebøker har bare mottatt tokens og mynter fra gruppen sin og aldri sendt noe; også det kan være gaver.",
+        "contracts": "Tokens som holdes av andre kontrakter enn Uniswap-poolen og Safen, vises som de er.",
+        "snapshot": "Saldoer og pris oppdateres fra kjeden hvert femte minutt mens denne siden er åpen. Koblingene mellom lommebøker er undersøkt for hånd og oppdateres ikke av seg selv.",
+        "history": "Historikklinjene følger hva hver lommebok har hatt, for lommebøker med minst 0,01% av tilbudet og for hver lommebok som tilhører en kjent innehaver. Linjen til en kjent innehaver teller også med de tømte lommebøkene tokenene kom fra, så den starter ved første kjøp eller claim. Tokens i en likviditetspool, farm eller vesting-strøm faller ut av linjen, og migreringene utstedte noen av dem på nytt til eierne, så noen linjer hopper på de dagene."
+      },
+      "contracts": {
+        "gen1": "Gen 1: PLEB på Avalanche",
+        "gen2": "Gen 2: PLEB på Ethereum, omdøpt til BSO i mai 2026",
+        "gen3": "Gen 3: BSO i dag"
+      },
+      "snapshot": "Saldoer og pris fra Blockscout: {{count}} lommebøker per {{date}}. Fant du en feil kobling eller en som mangler? <contributeLink>Forbedre denne siden</contributeLink>."
+    },
+    "holderName": "Innehaver {{letter}}"
+  },
+  "chart": {
+    "meta": {
+      "title": "BSO-kursgraf - Hver handel siden 2022",
+      "description": "BSOs kurs og markedsverdi siden den første handelen i 2022, på tvers av alle tre kontraktene: PLEB på Avalanche, PLEB på Ethereum og BSO i dag, i én graf bygget fra on-chain-swapper."
+    },
+    "hero": {
+      "title": "BSOs kurs siden den første handelen",
+      "lead": "Én graf på tvers av alle tre kontraktene: PLEB på Avalanche, PLEB på Ethereum, som fikk navnet BSO i 2026, og BSO i dag. Eldre kurser er regnet om med 7114,6 PLEB per BSO, forholdet begge migreringene beholdt. Velg en prikk i grafen for å se hva som skjedde den dagen; hele historien om tokenet står i rikelistens <historyLink>historikk</historyLink>.",
+      "status": {
+        "live": "Direkte fra Uniswap-poolen: BSO til {{price}}. Oppdatert {{ago}}.",
+        "loading": "Daglig historikk til {{date}}. Laster inn de siste kursene…",
+        "unavailable": "Direktekurser er ikke tilgjengelige akkurat nå, så grafen slutter {{date}}."
+      }
+    },
+    "panelTitle": "Daglig kursgraf",
+    "summary": {
+      "price": "Daglig BSO-kurs fra {{from}} til {{to}}. Laveste sluttkurs {{low}}, høyeste sluttkurs {{high}}, siste {{latest}}.",
+      "mcap": "Daglig markedsverdi for BSO fra {{from}} til {{to}}. Laveste sluttverdi {{low}}, høyeste sluttverdi {{high}}, siste {{latest}}."
+    },
+    "controls": {
+      "metricLabel": "Vis",
+      "metrics": {
+        "price": "Kurs",
+        "mcap": "Markedsverdi"
+      },
+      "rangeLabel": "Periode",
+      "ranges": {
+        "1M": "1M",
+        "3M": "3M",
+        "1Y": "1Å",
+        "all": "Alt"
+      },
+      "typeLabel": "Graftype",
+      "types": {
+        "line": "Linje",
+        "candles": "Lysestaker"
+      },
+      "scaleLabel": "Skala",
+      "scales": {
+        "log": "Log",
+        "linear": "Lineær"
+      }
+    },
+    "legend": {
+      "since": "siden {{date}}",
+      "ohlc": "O {{open}} · H {{high}} · L {{low}} · C {{close}}",
+      "volume": "Volum {{value}}"
+    },
+    "eras": {
+      "label": "Kontrakter. Velg én for å zoome inn på perioden dens.",
+      "gen1": "PLEB på Avalanche",
+      "gen2": "PLEB på Ethereum",
+      "gen3": "BSO",
+      "years": "{{from}}–{{to}}",
+      "now": "nå",
+      "rebrand": "Navnebytte til Bitsocial"
+    },
+    "method": {
+      "title": "Slik er grafen bygget",
+      "lead": "Hver lysestake kommer fra swapper på kjeden, så hvilken som helst dag kan sjekkes i en blokkutforsker.",
+      "steps": {
+        "swaps": "En dags åpningskurs, høyeste kurs, laveste kurs og sluttkurs er den første, høyeste, laveste og siste prisen som ble betalt i swappene den dagen, i UTC, lest fra Swap-hendelsene i hver pool.",
+        "usd": "Poolene handler mot AVAX eller ETH, så hver swap regnes om til dollar med Coinbase-kursen for timen den skjedde.",
+        "units": "PLEB, på Avalanche og på Ethereum fram til <rebaseLink>rebasen 2. mai 2026</rebaseLink>, vises per BSO: kursen er ganget med 7114,596, antallet PLEB hver BSO erstattet.",
+        "pools": "Når det ble handlet i mer enn én pool samme dag, bestemmer poolen med mest volum lysestaken for den dagen, så en nesten tom pool ikke kan tegne en falsk veke. Volumet summerer alle poolene, og en dag uten handel gjentar siste sluttkurs.",
+        "mcap": "Markedsverdien er sluttkursen ganget med det totale tilbudet den dagen: alle tokens kontrakten har mintet minus alle tokens den har brent, regnet om til BSO på samme måte som kursen. Etter rebasen, og for BSO i dag, er tilbudet fast på 210 millioner.",
+        "eras": "Historikken til hver kontrakt slutter ved den første handelen i den neste. Ethereum-kontrakten beholdt navnet PLEB fram til oppgraderingen som gjennomførte rebasen, seks uker etter at plebbit ble Bitsocial 18. mars 2026."
+      },
+      "poolsTitle": "Pooler som er lest",
+      "eraDates": "{{from}} til {{to}}",
+      "snapshot": "Historikk bygget fra {{count}} swapper frem til {{date}}. Nyere dager kommer fra GeckoTerminal og oppdateres hvert femte minutt mens denne siden er åpen. Fant du en feil lysestake? <contributeLink>Forbedre denne siden</contributeLink>."
+    },
+    "eventList": "Hendelser markert i grafen",
+    "eventDetails": {
+      "close": "Lukk",
+      "links": {
+        "reddit": "Reddit-innlegg",
+        "release": "Utgivelse på GitHub",
+        "hackerNews": "Hacker News-tråd",
+        "tweet": "Tweet"
+      }
+    },
+    "events": {
+      "protocolLabsGrant": {
+        "title": "Et tilskudd fra Protocol Labs",
+        "body": "Protocol Labs, teamet bak IPFS og Filecoin, gir plebbit et tilskudd for å bygge sitt desentraliserte alternativ til Reddit."
+      },
+      "firstApp": {
+        "title": "Den første plebbit-appen",
+        "body": "Den første skrivebordsappen kommer for Linux, Windows og Mac. Den kjører sin egen IPFS-node, så i motsetning til nettdemoen er den helt peer-to-peer."
+      },
+      "plebchan": {
+        "title": "plebchan lanseres",
+        "body": "plebchan, en app i 4chan-stil på plebbit-protokollen, publiserer sin første utgivelse, for nettet, Mac og Linux."
+      },
+      "hackerNews": {
+        "title": "På forsiden av Hacker News",
+        "body": "Midt i motreaksjonen mot Reddits nye API-priser når plebbit-demoen forsiden av Hacker News med over 300 poeng. Samme uke når innlegg om den forsiden av r/ethereum og får 30 000 visninger på r/CryptoCurrency."
+      },
+      "coingecko": {
+        "title": "Oppført på CoinGecko",
+        "body": "Etter å ha sagt nei flere ganger siden tidlig i 2022 tar CoinGecko inn tokenet."
+      },
+      "socialFi": {
+        "title": "I CoinGeckos SocialFi-kategori",
+        "body": "CoinGecko legger tokenet til i SocialFi-kategorien sin etter at teamet ber om det, og en liste over SocialFi-tokens som deles på X, tar det med. Kursen blir nesten doblet på fem dager."
+      },
+      "seedit": {
+        "title": "Seedit lanseres",
+        "body": "Seedit, en app som ser ut og fungerer som det klassiske old Reddit, publiserer sin første utgivelse."
+      },
+      "marchRally": {
+        "title": "Rallyet i mars 2024",
+        "body": "1. mars tvitrer investoren Jason Calacanis at han vil ha et distribuert, tillatelsesløst Reddit, og plebbit svarer med demoen sin. Seedit 0.1.6 kommer 3. mars, og 4. mars kunngjør teamet fellesskap med tokenstyrt tilgang. Mens ETH passerer $4000 den måneden, blir kursen nesten doblet 4. mars og tredoblet innen utgangen av mars, med $2,2 millioner i volum, mest av alle månedene i denne grafen."
+      }
+    }
+  }
+}

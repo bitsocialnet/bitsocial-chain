@@ -1,0 +1,138 @@
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { useEntityName, useRichList } from "./data-context";
+import { useFormatters } from "./format";
+import { LiveSkeleton } from "./primitives";
+
+type Segment = { key: string; label: string; share: number; fill: string; href?: string };
+
+/**
+ * Each linked holder keeps one hue wherever it sorts, so two segments never share a colour
+ * unless they are the same holder. A categorical palette stays distinguishable up to about
+ * eight hues, so the smallest groups share one labelled segment instead of borrowing a hue.
+ * Holder hues are defined in rich-list.css and validated against both theme surfaces.
+ */
+const HOLDER_FILLS: Record<string, string> = {
+  holderM: "rl-fill-holder-a",
+  holderA: "rl-fill-holder-b",
+  holderC: "rl-fill-holder-c",
+  holderD: "rl-fill-holder-d",
+  holderE: "rl-fill-holder-e",
+  holderF: "rl-fill-holder-f",
+};
+const SMALLER_HOLDER_FILL = "rl-fill-holder-rest";
+
+/** The whole 210M supply as one bar: linked holders, the team, the pool, then everyone else. */
+export default function SupplyStrip() {
+  const { t } = useTranslation();
+  const format = useFormatters();
+  const entityName = useEntityName();
+  const { entityRows, snapshot, shareOfSupply, awaitingLive } = useRichList();
+  // The hovered or focused group, so its segment and legend entry stand out together.
+  const [active, setActive] = useState<string | null>(null);
+
+  const linkedRows = entityRows
+    .filter((row) => row.entity.kind === "linked" && row.balance > 0)
+    .sort((a, b) => b.balance - a.balance);
+  const ownHue = linkedRows.filter((row) => row.entity.id in HOLDER_FILLS);
+  const sharedHue = linkedRows.filter((row) => !(row.entity.id in HOLDER_FILLS));
+  const balanceOf = (kind: string) =>
+    entityRows.filter((row) => row.entity.kind === kind).reduce((sum, row) => sum + row.balance, 0);
+
+  const labelled: Segment[] = [
+    ...ownHue.map((row) => ({
+      key: row.entity.id,
+      label: entityName(row.entity.id),
+      share: shareOfSupply(row.balance),
+      fill: HOLDER_FILLS[row.entity.id],
+      href: `#entity-${row.entity.id}`,
+    })),
+    ...(sharedHue.length
+      ? [
+          {
+            key: "smaller-holders",
+            label: sharedHue.map((row) => entityName(row.entity.id)).join(", "),
+            share: shareOfSupply(sharedHue.reduce((sum, row) => sum + row.balance, 0)),
+            fill: SMALLER_HOLDER_FILL,
+            href: "#linked-wallets",
+          },
+        ]
+      : []),
+    {
+      key: "team",
+      label: t("richList.strip.team"),
+      share: shareOfSupply(balanceOf("team")),
+      fill: "rl-fill-team",
+      href: "#team",
+    },
+    {
+      key: "pool",
+      label: t("richList.strip.pool"),
+      share: shareOfSupply(balanceOf("pool")),
+      fill: "rl-fill-pool",
+    },
+  ];
+  const labelledShare = labelled.reduce((sum, segment) => sum + segment.share, 0);
+  const segments: Segment[] = [
+    ...labelled,
+    {
+      key: "other",
+      label: t("richList.strip.everyoneElse", {
+        count:
+          snapshot.holderCount -
+          entityRows.reduce((sum, row) => sum + row.wallets.filter((w) => w.balance > 0).length, 0),
+      }),
+      share: 1 - labelledShare,
+      fill: "rl-fill-other",
+    },
+  ];
+
+  const dimmedClass = (key: string) => (active !== null && active !== key ? "is-dimmed" : "");
+  const hoverHandlers = (key: string) => ({
+    onPointerEnter: () => setActive(key),
+    onPointerLeave: () => setActive(null),
+  });
+
+  return (
+    <div className="rl-strip glass-card">
+      <LiveSkeleton name="rich-list-strip" loading={awaitingLive}>
+        <figure className="rl-strip-figure">
+          <div className="rl-strip-bar" role="img" aria-label={t("richList.strip.label")}>
+            {segments.map((segment) => (
+              <span
+                key={segment.key}
+                {...hoverHandlers(segment.key)}
+                className={`rl-strip-segment ${segment.fill} ${dimmedClass(segment.key)}`}
+                style={{ flexGrow: segment.share }}
+                title={`${segment.label}: ${format.percent(segment.share)}`}
+              />
+            ))}
+          </div>
+          <figcaption>
+            <ul className="rl-strip-legend">
+              {segments.map((segment) => (
+                <li
+                  key={segment.key}
+                  {...hoverHandlers(segment.key)}
+                  className={dimmedClass(segment.key) || undefined}
+                  onFocus={() => setActive(segment.key)}
+                  onBlur={() => setActive(null)}
+                >
+                  <span className={`rl-swatch ${segment.fill}`} aria-hidden />
+                  {segment.href ? (
+                    <a className="rl-strip-name" href={segment.href}>
+                      {segment.label}
+                    </a>
+                  ) : (
+                    <span className="rl-strip-name">{segment.label}</span>
+                  )}
+                  <span className="rl-strip-share">{format.percent(segment.share)}</span>
+                </li>
+              ))}
+            </ul>
+          </figcaption>
+        </figure>
+      </LiveSkeleton>
+    </div>
+  );
+}

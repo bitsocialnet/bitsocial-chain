@@ -1,0 +1,743 @@
+{
+  "nav": {
+    "language": "언어",
+    "theme": "테마",
+    "bitsocial": "Bitsocial",
+    "faq": "자주 묻는 질문",
+    "richList": "리치 리스트",
+    "chart": "차트"
+  },
+  "languageSelector": {
+    "title": "언어 선택",
+    "searchPlaceholder": "언어 검색...",
+    "noResults": "검색어와 일치하는 언어가 없습니다."
+  },
+  "meta": {
+    "title": "BSO - 크립토에 없던 소셜 레이어",
+    "description": "BSO는 어떤 회사도 소유하지 않는 peer-to-peer 소셜 네트워크 Bitsocial의 화폐입니다. 커뮤니티가 자신의 네트워크와 토큰, 수익을 소유하는 Ethereum L2 앱체인."
+  },
+  "topbar": {
+    "navLabel": "Bitsocial Chain 사이트 내비게이션",
+    "menu": "메뉴",
+    "openMenu": "메뉴 열기",
+    "closeMenu": "메뉴 닫기"
+  },
+  "theme": {
+    "toggle": "테마 전환"
+  },
+  "hero": {
+    "statusCta": "체인은 아직 출시 전입니다. 구독하고 소식을 받아보세요",
+    "title": "크립토에 없던 <mark>소셜 레이어</mark>",
+    "supporting": "크립토가 카지노가 된 것은 Web2와 TradFi, 중앙화된 인프라가 유통 경로를 장악하고 인센티브를 왜곡하기 때문입니다. Bitsocial Chain은 이 문제를 바로잡습니다. 커뮤니티가 자신의 네트워크와 토큰, 수익을 소유하는, 멈출 수 없고 완전히 분산된 <l2Link>Ethereum L2</l2Link> <appchainLink>앱체인</appchainLink>입니다."
+  },
+  "layers": {
+    "ariaLabel": "쌓여 있는 크립토의 세 레이어: 맨 위에는 Bitsocial 네트워크의 소셜 앱, 맨 아래에는 Ethereum L1 정산 레이어가 있고, 둘 사이의 빈틈에는 BSO로 구동되는 Ethereum L2 앱체인 Bitsocial Chain이 빠져 있던 레이어로서 환하게 빛나며 들어맞습니다. 세 레이어는 에너지 축으로 이어져 있습니다.",
+    "social": {
+      "title": "소셜 앱",
+      "subtitle": "BITSOCIAL 네트워크"
+    },
+    "bso": {
+      "title": "BITSOCIAL CHAIN",
+      "subtitle": "L2 앱체인 · BSO"
+    },
+    "eth": {
+      "title": "ETHEREUM",
+      "subtitle": "L1 정산"
+    }
+  },
+  "contract": {
+    "label": "BSO 컨트랙트",
+    "copyAriaLabel": "BSO 컨트랙트 주소 {{address}} 복사",
+    "copied": "클립보드에 복사되었습니다"
+  },
+  "sections": {
+    "whyAChain": {
+      "title": "Bitsocial 자체는 블록체인 위에 있지 않습니다.",
+      "supporting": "<bitsocialLink>Bitsocial</bitsocialLink>의 게시물, 프로필, 커뮤니티, 모더레이션은 peer-to-peer로 이루어집니다. 체인도, 수수료도, 지갑도 없습니다. 크립토를 전혀 건드리지 않고도 네트워크 전체를 사용할 수 있으며, 대부분의 사람들이 그렇게 할 것입니다. 하지만 몇 가지는 정말로 체인이 필요합니다. 나만의 이름, 낯선 사람들 사이를 오가는 돈, 커뮤니티가 실제로 소유하는 토큰이 그렇습니다. Bitsocial Chain은 바로 그것들만을 위한 것이며, 그 외의 용도는 없습니다.",
+      "peerToPeer": {
+        "badge": "P2P",
+        "note": "소셜 네트워크입니다. 체인은 관여하지 않습니다.",
+        "posts": "게시물과 댓글",
+        "profiles": "프로필과 커뮤니티",
+        "moderation": "모더레이션과 스팸 방지"
+      },
+      "onChain": {
+        "badge": "온체인",
+        "note": "체인이 필요한 몇 안 되는 부분입니다.",
+        "names": ".bso 이름",
+        "tipping": "팁과 어워드",
+        "tokens": "커뮤니티 토큰"
+      },
+      "caption": "체인은 선택 사항입니다. 소셜 네트워크는 그렇지 않습니다.",
+      "quote": "분산형 소셜 네트워크에는 분산형 화폐가 필요합니다."
+    },
+    "tokenomics": {
+      "title": "건전한 화폐.",
+      "supporting": "BSO는 공급량이 고정된 ERC-20 토큰입니다. 2억 1천만 개, 인플레이션 없음, 설계상 디플레이션입니다. 2022년에 세 차례의 에어드롭과 유동성 채굴 보상으로 무상 배포되었으며, 프리세일도 팀 몫도 없었습니다. 컨트랙트는 변경할 수 없고 관리자가 없으므로 규칙은 영원히 고정됩니다.",
+      "supply": {
+        "cap": "BSO 최대 공급량 · 영원히 고정"
+      },
+      "traits": {
+        "airdropped": "팀 몫이나 프리세일 없음",
+        "fixedCap": "고정된 상한, 추가 발행 없음",
+        "deflationary": "디플레이션: 공급량은 줄어들기만 합니다"
+      },
+      "locks": {
+        "noMint": {
+          "label": "민팅 없음",
+          "note": "공급량은 절대 늘어날 수 없습니다"
+        },
+        "noOwner": {
+          "label": "소유자 없음",
+          "note": "관리자 키는 영원히 없습니다"
+        },
+        "noPause": {
+          "label": "일시 중지 없음",
+          "note": "전송을 동결할 수 없습니다"
+        },
+        "noProxy": {
+          "label": "프록시 없음",
+          "note": "코드를 교체할 수 없습니다"
+        }
+      },
+      "airdrop": {
+        "label": "배포 방식",
+        "note": "2022년 1월과 2월에 세 차례의 에어드롭 라운드가 진행되었고, 1,510개 주소가 클레임했습니다. 1라운드는 추천 보너스가 있는 Telegram 봇을 사용했고, Esteban이 부정 행위가 없는지 추천 내역을 직접 검토했습니다. 2라운드와 3라운드는 Twitter와 Reddit에서 진행되었습니다. 전체 BSO의 약 63%가 에어드롭으로 배포되었고 34%는 유동성을 공급한 사람들에게 보상으로 지급되었으며, 나머지는 출시 풀의 초기 유동성이 되었습니다. 프리세일도, 팀 몫도, 판매된 것도 없습니다.",
+        "richListLink": "모든 보유자와 세 라운드 전체 보기"
+      },
+      "contract": {
+        "label": "컨트랙트 전체",
+        "note": "전체 공급량이 하나의 주소로 민팅되는 것은 마이그레이션이 그렇게 작동하기 때문입니다. 잔액을 그 주소에 일대일로 그대로 반영해 두었다가 전송으로 다시 내보냈으며, 그 모든 과정이 온체인에서 이루어졌습니다. 나머지는 모두 수정하지 않은 <openZeppelinLink>OpenZeppelin</openZeppelinLink> 코드이며, Ethereum에서 가장 많이 쓰이고 가장 많이 검토된 토큰 코드입니다. 직접 만든 것도, 기발한 꼼수도 없습니다. <etherscanLink>Etherscan</etherscanLink>에서 직접 읽어 보세요."
+      },
+      "foot": "불변이며 관리자가 없습니다. 쥐고 있을 관리자 키가 남아 있지 않으므로, 누구도 이를 변경하거나 추가 발행하거나 동결할 수 없습니다."
+    },
+    "unstoppable": {
+      "title": "Ethereum 위에 세워졌고, 누구도 운영하지 않습니다.",
+      "supporting": "새 블록체인을 만들면 Ethereum이 이미 갖춘 보안과 개발자 기반을 처음부터 다시 쌓아야 하고, BSO가 이미 완전히 배포된 상황에서 새 토큰까지 필요해집니다. 그래서 Bitsocial Chain은 운영자가 없는 Ethereum L2로 설계되었습니다. 모든 동작은 아무도 통제하지 않는 주소로 보내는 평범한 Ethereum 트랜잭션이며, 누구나 Ethereum의 기록으로부터 동일한 상태를 도출하는 노드를 운영할 수 있습니다. 압박할 회사도, 내릴 스위치도 없습니다.",
+      "locks": {
+        "noSequencer": {
+          "label": "시퀀서 불필요",
+          "note": "모든 트랜잭션의 순서는 Ethereum이 정합니다"
+        },
+        "noAdminKeys": {
+          "label": "관리자 키 없음",
+          "note": "누구도 규칙을 바꿀 수 없습니다"
+        },
+        "noUpgradeableContract": {
+          "label": "업그레이드 가능한 컨트랙트 없음",
+          "note": "Ethereum에 장악할 것이 없습니다"
+        },
+        "noPrivilegedNode": {
+          "label": "특권 노드 없음",
+          "note": "누구나 같은 상태를 도출할 수 있습니다"
+        }
+      },
+      "proofOfConcept": "개념 증명은 이미 로컬 개발 체인에서 이런 방식으로 .bso 이름을 도출하고 있습니다. 실제 출시에는 여전히 증명 시스템, 감사, 최종 경제 설계가 필요합니다. <proofLink>개념 증명 읽어보기</proofLink>."
+    },
+    "bsoNames": {
+      "title": ".bso 이름은 계속 당신의 것입니다.",
+      "supporting": "Bitsocial 앱은 Ethereum 지갑이 쓰는 이름 체계인 ENS를 빌려 <resolverLink>지금도 .bso 이름을 해석</resolverLink>합니다. mycommunity.bso는 사실 bitsocial 레코드를 담은 mycommunity.eth입니다. 네이티브 레지스트리는 이미 사용 중인 모든 이름을 그 이름을 가진 지갑으로 에어드롭할 것입니다. 클레임할 필요도, 다시 등록할 필요도 없습니다.",
+      "ensBadge": "ENS · 현재",
+      "pointsTo": "가리킴",
+      "communityKey": "커뮤니티의 키",
+      "airdropAtLaunch": "출시 시 에어드롭",
+      "bsoBadge": ".bso · Bitsocial Chain",
+      "owner": "소유자",
+      "sameWallet": "동일한 지갑",
+      "fees": "체인이 생기기 전까지 .bso 이름은 <bsipLink>Ethereum의 임시 레지스트리</bsipLink>로 옮겨지며, 그 수수료는 Bitsocial 개발자들의 자금이 됩니다. Bitsocial Chain에서는 이름 수수료를 그 대신 소각하거나, BSO를 되사서 소각하는 데 쓸 계획입니다. 방식은 아직 정해지지 않았습니다."
+    },
+    "communityMoney": {
+      "title": "여러 커뮤니티를 아우르는 하나의 자산.",
+      "supporting": "각 커뮤니티는 자신만의 토큰을 가진 L3, 즉 고유한 레이어를 운영하고, 수수료와 이름, 임대료를 BSO로 낼 수 있을 것입니다. L3는 크립토 곳곳에 이미 있지만, Bitsocial Chain에서는 커뮤니티가 이미 딸린 L3가 등장할 것입니다. 그 수익은 스스로 정산될 수 있을 것입니다. 광고 자리는 컨트랙트가 경매하고, 모든 판매액의 일부는 그 자리에서 소각되며 나머지는 커뮤니티에 지급됩니다. 누군가 가로챌 수 있는 바이백 자금도 없습니다.",
+      "communityLayer": "커뮤니티 레이어",
+      "ownToken": "자체 토큰",
+      "feesFlow": "수수료, 이름, 임대료를 BSO로 지불",
+      "chainMeta": "Ethereum 레이어 · 상태는 Ethereum에서 도출됨",
+      "ethereumMeta": "Ethereum L1 · 보안과 데이터",
+      "caption": "모든 수수료의 일부는 소각되고, 나머지는 체인의 보안 비용으로 쓰입니다."
+    },
+    "privacy": {
+      "title": "팁을 준다고 신원이 노출되어서는 안 됩니다.",
+      "supporting": "Bitsocial Chain은 Ethereum처럼 기본적으로 공개되며, .bso 이름은 보이도록 만들어진 것입니다. 하지만 돈은 다릅니다. 팁을 주려고 내 이름이나 프로필, 게시물을 온체인의 팁 옆에 함께 올려야 해서는 안 되고, 새 지갑은 의심스러운 것이 아니라 평범한 것이어야 합니다. 이 체인은 자체 프라이버시 시스템을 만들지 않습니다. 기존 시스템이 허락을 구하지 않고 연결될 수 있게 하려는 것입니다. 쉴디드 풀, 스텔스 주소, 영지식 증명이 그 예입니다.",
+      "publicOnPurpose": {
+        "heading": "의도적으로 공개",
+        "names": ".bso 이름과 그 소유자",
+        "rules": "모든 규칙과 모든 상태 변경"
+      },
+      "neverRequired": {
+        "heading": "절대 요구되지 않음",
+        "profile": "팁에 붙는 내 이름이나 프로필",
+        "wallet": "사람당 지갑 하나",
+        "app": "공식 지갑이나 앱"
+      }
+    },
+    "possibilities": {
+      "title": "공개적으로 제안합니다.",
+      "supporting": "아직 출시 전입니다. BSO는 지금 Ethereum에서 사용할 수 있지만 Bitsocial Chain은 제안 단계이며, 첫 개념 증명인 네이티브 .bso 이름은 로컬 개발 체인에서 실행됩니다. 아래 어느 것에도 날짜는 없습니다. 자체 화폐를 가진 소셜 레이어가 가능하게 할 수 있는 것들이며, 일부는 만들어지고, 일부는 더 나은 아이디어로 대체되고, 일부는 아직 나타나지 않은 사람들이 만들 것입니다.",
+      "ideas": {
+        "chain": {
+          "note": "Ethereum L2 앱체인 그 자체이자 BSO의 정산 거점입니다."
+        },
+        "registry": {
+          "label": "네이티브 .bso 레지스트리",
+          "note": "ENS에서 빌려 쓰는 대신 체인에 등록되는 이름과 신원입니다."
+        },
+        "l3s": {
+          "label": "커뮤니티 L3와 토큰",
+          "note": "자체 레이어와 자체 토큰을 갖고 BSO로 정산하는 커뮤니티입니다."
+        },
+        "agoraswap": {
+          "note": "커뮤니티 토큰을 BSO와 거래하는 커뮤니티 DEX로, 유동성을 온체인에 유지합니다."
+        },
+        "collectibles": {
+          "label": "크리에이터 컬렉터블",
+          "note": "플랫폼에 수수료를 떼이지 않고 크리에이터가 직접 무언가를 판매할 수 있는 방법입니다."
+        },
+        "other": {
+          "label": "그 밖에 어울리는 모든 것",
+          "note": "클라이언트 토큰, 분산형 시퀀싱, 그리고 아직 아무도 제안하지 않은 아이디어입니다."
+        }
+      }
+    },
+    "verify": {
+      "title": "BSO는 오직 하나의 주소뿐입니다.",
+      "supporting": "누구나 토큰을 만들어 BSO라고 부를 수 있으므로, 진짜를 구별해 주는 것은 컨트랙트 주소뿐입니다. 어디로든 무언가를 보내기 전에 42자 전체를 이 사이트와 Bitsocial의 공식 채널에서 확인한 주소와 대조하세요.",
+      "warning": "공식 BSO 컨트랙트는 <contract>{{address}}</contract>입니다. 그 외의 것은 무엇이라 불리든, 어디에 상장되어 있든 BSO가 아닙니다.",
+      "tradeOnUniswap": "Uniswap에서 거래하기",
+      "provideLiquidity": "유동성 공급하기",
+      "note": "Uniswap의 유동성은 독립적인 사람들이 제공하며, 누구나 추가할 수 있습니다. 저축 계좌가 아닙니다. 유동성 포지션의 가치는 떨어질 수 있으며, 넣은 금액보다 낮아질 수도 있습니다."
+    }
+  },
+  "common": {
+    "proposed": "제안됨",
+    "close": "닫기"
+  },
+  "mailingList": {
+    "chainTitle": "소식을 놓치지 마세요",
+    "chainDescription": "BSO 토큰 마일스톤, Bitsocial Chain, 생태계 소식을 받아보세요. 적은 빈도, 높은 정보 가치.",
+    "placeholder": "you@example.com",
+    "inputLabel": "이메일 주소",
+    "subscribe": "구독하기",
+    "subscribing": "구독 중…",
+    "chainSuccess": "목록에 추가되셨습니다.",
+    "confirmationSent": "구독을 확인하려면 이메일을 확인하세요.",
+    "chainError": "문제가 발생했습니다. 다시 시도해 주세요.",
+    "unavailable": "뉴스레터 가입은 일시적으로 이용할 수 없습니다.",
+    "privacy": "스팸은 절대 없습니다. 언제든지 구독을 취소할 수 있어요."
+  },
+  "faq": {
+    "eyebrow": "자주 묻는 질문",
+    "title": "자주 묻는 질문.",
+    "supporting": "이 페이지의 모든 섹션이 질문 하나에 답합니다. 질문을 클릭하면 해당 섹션으로 이동합니다.",
+    "navLabel": "이 페이지에서 답변하는 질문",
+    "answeredIn": "답변 위치: {{label}}",
+    "entries": {
+      "whyAChain": {
+        "eyebrow": "왜 체인인가",
+        "question": "peer-to-peer 소셜 네트워크에 왜 체인이 필요한가요?"
+      },
+      "tokenomics": {
+        "eyebrow": "토크노믹스",
+        "question": "BSO의 토크노믹스는 어떻게 되나요? 누가 받았나요?"
+      },
+      "unstoppable": {
+        "eyebrow": "멈출 수 없음",
+        "question": "왜 Ethereum L2인가요? 누가 운영하나요?"
+      },
+      "bsoNames": {
+        "eyebrow": "BSO 이름",
+        "question": "내 .bso 이름은 어떻게 되나요?"
+      },
+      "communityMoney": {
+        "eyebrow": "커뮤니티 화폐",
+        "question": "BSO는 어디에 쓰이게 되나요?"
+      },
+      "privacy": {
+        "eyebrow": "개인정보",
+        "question": "내가 누구에게 팁을 줬는지 모두가 볼 수 있나요?"
+      },
+      "possibilities": {
+        "eyebrow": "가능성",
+        "question": "이미 출시되었나요? 무엇이 계획되어 있나요?"
+      },
+      "verify": {
+        "eyebrow": "확인",
+        "question": "BSO를 안전하게 얻으려면 어떻게 하나요?"
+      }
+    },
+    "rows": {
+      "about": {
+        "label": "회사 소개",
+        "question": "Bitsocial Chain 뒤에는 누가 있나요?"
+      },
+      "mailingList": {
+        "label": "뉴스레터",
+        "question": "최신 소식을 어떻게 받을 수 있나요?"
+      }
+    },
+    "ask": {
+      "placeholder": "무엇이든 더 물어보세요…",
+      "label": "무엇이든 더 물어보세요",
+      "action": "ChatGPT에 질문하기"
+    }
+  },
+  "footer": {
+    "chainTagline": "크립토에 없던 소셜 레이어",
+    "token": "토큰",
+    "resources": "리소스",
+    "blog": "블로그",
+    "proofOfConcept": "개념 증명",
+    "about": "회사 소개",
+    "mainSite": "메인 사이트",
+    "community": "커뮤니티",
+    "chainBottomTagline": "크립토의 소셜 레이어를 바로잡읍시다",
+    "contribute": "이 페이지 개선하기"
+  },
+  "backToTop": {
+    "returnToOrigin": "이전 위치로 돌아가기",
+    "toTop": "맨 위로",
+    "toBottom": "맨 아래로"
+  },
+  "richList": {
+    "meta": {
+      "title": "BSO 리치 리스트 - 누가 BSO를 보유하고 있나",
+      "description": "모든 BSO 보유자를 보여 줍니다. 연결된 지갑은 하나로 묶고 팀 지갑은 표시했으며, 각 연결의 근거가 되는 온체인 증거도 함께 담았습니다. 2022년 세 차례 에어드롭의 역사도 확인할 수 있습니다."
+    },
+    "hero": {
+      "title": "누가 BSO를 보유하고 있나",
+      "lead": "모든 BSO 지갑을 보여 주며, 같은 보유자의 지갑은 하나로 묶고 팀 지갑은 따로 표시했습니다. 각 연결마다 근거가 된 트랜잭션을 나열하므로 직접 확인할 수 있습니다.",
+      "jumpLabel": "섹션",
+      "status": {
+        "live": "체인 실시간 데이터: 지갑 {{count}}개, BSO 가격 {{price}}. {{ago}} 업데이트됨.",
+        "loading": "{{date}} 스냅샷: 지갑 {{count}}개, BSO 가격 {{price}}. 실시간 데이터를 불러오는 중…",
+        "unavailable": "지금은 실시간 데이터를 사용할 수 없어 {{date}} 스냅샷을 표시합니다: 지갑 {{count}}개, BSO 가격 {{price}}."
+      }
+    },
+    "jump": {
+      "holders": "보유자",
+      "linked-wallets": "연결된 지갑",
+      "team": "핵심 팀",
+      "airdrops": "에어드롭",
+      "history": "연혁",
+      "method": "방법론"
+    },
+    "strip": {
+      "label": "BSO 총공급량 2억 1천만 개 중 각 그룹이 보유한 비율",
+      "team": "핵심 팀",
+      "pool": "Uniswap 풀",
+      "everyoneElse_other": "그 외 모두 (지갑 {{count}}개)"
+    },
+    "categories": {
+      "team": "핵심 팀",
+      "pool": "유동성 풀",
+      "confirmed": "확인됨",
+      "likely": "가능성 높음",
+      "possible": "가능성 있음",
+      "other": "연결 없음"
+    },
+    "table": {
+      "title": "보유자",
+      "lead": "연결된 지갑은 한 행으로 합쳐집니다. '지갑별'로 전환하면 Etherscan과 같은 방식으로 모든 주소를 볼 수 있습니다.",
+      "viewLabel": "보유자 표시 방식",
+      "view": {
+        "grouped": "그룹별",
+        "wallets": "지갑별"
+      },
+      "searchLabel": "주소 또는 보유자 이름으로 검색",
+      "searchPlaceholder": "주소 검색",
+      "caption": "잔액순 BSO 보유자",
+      "holder": "보유자",
+      "balance": "BSO",
+      "share": "공급 비중",
+      "value": "가치",
+      "contract": "컨트랙트",
+      "walletCount_other": "지갑 {{count}}개",
+      "noMatch": "검색과 일치하는 보유자가 없습니다.",
+      "showAll_other": "{{count}}개 행 모두 보기",
+      "showMore": "{{count}}개 더 보기",
+      "history": "추이",
+      "historySummary": "{{start}}부터의 잔액: {{highDate}}에 최고 {{high}} BSO, 현재 {{current}} BSO"
+    },
+    "evidenceLinks": "증거 트랜잭션",
+    "telegramSources": "Telegram 출처",
+    "linked": {
+      "title": "연결된 지갑",
+      "lead": "지갑은 체인에서 연결이 확인될 때만 묶습니다. 지갑 사이에 토큰이나 가스가 오간 경우, 같은 개인 자금 제공자를 둔 경우, 멀티시그 소유자인 경우, 또는 매수 패턴이 동일한 경우입니다. 각 그룹마다 근거가 된 트랜잭션을 나열합니다.",
+      "confidence": {
+        "confirmed": "지갑끼리 서로 거래하거나, 같은 개인 자금 제공자를 두고 있거나, 서로를 통제합니다.",
+        "likely": "한 출처에서 온 여러 건의 전송이나 동일한 매수 패턴으로, 다른 방식으로는 설명하기 어렵습니다.",
+        "possible": "판매나 선물일 수도 있는 단 하나의 연결입니다."
+      },
+      "holds_other": "{{amount}} BSO, 공급량의 {{share}}, 지갑 {{count}}개",
+      "walletList_other": "지갑 {{count}}개 전체"
+    },
+    "walletRoles": {
+      "deployer": "배포자",
+      "estebanEns": "estebanabaroa.eth",
+      "safe": "Safe 멀티시그",
+      "safeOwner": "Safe 소유자"
+    },
+    "entities": {
+      "pool": {
+        "name": "Uniswap BSO/ETH 풀"
+      },
+      "holderA": {
+        "summary": "서로 간의 전송과 공통의 개인 자금 제공자로 연결된 지갑 5개로, 2022년 2월부터 2023년 5월 사이 Avalanche에서 매수한 뒤 한 번도 팔지 않았습니다.",
+        "evidence": {
+          "transfersToLpWallet": "매수 지갑 중 2개가 세 번째 지갑으로 토큰과 AVAX를 보냈고, 그 지갑은 이를 Trader Joe 유동성 공급과 파밍에 사용했습니다. 2022년 2월 27일에 14만 1천 BSO와 5 AVAX, 이어서 2월 28일부터 3월 2일 사이에 101만 BSO와 34 AVAX를 보냈습니다. 세 번째 지갑은 0.013 AVAX를 돌려보냈습니다.",
+          "sharedFunder": "한 개인 지갑이 매수 지갑 중 3개에 자금을 댔고, 그 밖에는 아무 일도 하지 않았습니다. 이 지갑이 보낸 모든 트랜잭션은 순서대로 이 지갑들로 향했습니다. 논스 0~4는 첫 번째, 5~7은 두 번째, 8은 세 번째 지갑으로 갔습니다.",
+          "neverSold": "5개 지갑 중 어느 것도 토큰을 판 적이 없습니다. 잔액은 두 번의 마이그레이션을 거치면서도 그대로 유지되었습니다."
+        }
+      },
+      "holderC": {
+        "summary": "같은 매수 지갑 한 쌍이 채워 준 지갑 2개입니다.",
+        "evidence": {
+          "commonSender": "한 매수 지갑이 2024년 8월 19일 첫 번째 지갑에 BSO 66만 4천 개를 보냈습니다. 2025년 11월 14일에는 두 번째 지갑에 BSO 7천 개짜리 테스트, 0.1 ETH, 이어서 BSO 217만 개를 보냈습니다. 이것이 두 번째 지갑이 받은 유일한 ETH이며, 이 지갑은 트랜잭션을 한 번도 보낸 적이 없습니다.",
+          "secondSender": "또 다른 매수 지갑이 2024년 5월부터 8월 사이 여덟 번의 전송으로 첫 번째 지갑에 그 지갑의 나머지 730만 BSO를 보냈고, 그 지갑의 첫 ETH도 함께 보냈으며, 그 지갑으로부터 4.35 ETH를 돌려받았습니다.",
+          "sendersLinked": "두 매수 지갑은 서로 연결되어 있습니다. 2024년 2월 22일 한 지갑이 다른 지갑에 115만 BSO와 0.1 ETH를 넘겼고, 2024년 8월 17일 그 다른 지갑이 자신에게 남아 있던 5.8 ETH를 돌려보냈습니다."
+        }
+      },
+      "holderD": {
+        "summary": "지갑 5개입니다. 서로 AVAX와 ETH를 보낸 2개, 그 둘이 모두 채워 준 세 번째 지갑, 그리고 세 번째 지갑이 마련해 준 2개입니다.",
+        "evidence": {
+          "sharedRecipient": "세 번째 지갑은 2022년 11월 18일 첫 번째 지갑으로부터 테스트 전송에 이어 70만 3천 BSO를 받았고, 2022년 12월 1일 두 번째 지갑으로부터 116만 BSO를 받았습니다. 이 지갑이 지금까지 가스비로 가졌던 AVAX는 모두 그 두 지갑에서 왔습니다.",
+          "coinsBothWays": "처음 두 지갑은 20개월 동안 두 체인 모두에서 서로 코인을 보냈습니다. 2022년 3월 24일 한쪽으로 0.5 AVAX, 9분 뒤 반대쪽으로 0.49 AVAX, 2022년 5월 31일 73 AVAX, 2023년 3월 11일 0.09 ETH, 그리고 2023년 11월 7일 반대 방향으로 2 ETH입니다.",
+          "newWallets": "그 뒤 세 번째 지갑은 새 지갑 2개를 매번 같은 방식으로 마련해 주었습니다. 가스비용 AVAX, 테스트 전송, 이어서 28만 1천 BSO를 보냈고, 시기는 2022년 11월 24일과 2023년 4월 말입니다. 두 지갑 모두 트랜잭션을 한 번도 보낸 적이 없습니다."
+        }
+      },
+      "holderE": {
+        "summary": "같은 출처에서 채워진 지갑 2개입니다.",
+        "evidence": {
+          "commonSender": "한 지갑이 2024년 10월부터 2025년 1월 사이 일곱 번의 전송으로 첫 번째 지갑에 BSO 553만 개를 보냈고, 2025년 11월 22일 두 번째 지갑에 28만 7천 개를 보냈습니다.",
+          "onlyEth": "같은 지갑이 두 지갑 각각에, 그 지갑이 지금까지 받은 유일한 ETH를 첫 토큰과 같은 분에 보냈습니다. 0.1 ETH와 0.12 ETH입니다. 두 지갑 모두 트랜잭션을 한 번도 보낸 적이 없습니다."
+        }
+      },
+      "holderF": {
+        "summary": "토큰과 4 ETH를 새 지갑 3개로 나눈 지갑 1개입니다.",
+        "evidence": {
+          "split": "2024년 3월 10일, 한 지갑이 7분 안에 새 지갑 3개로 당시 PLEB라고 불리던 BSO를 딱 떨어지는 금액(120억, 80억, 40억 PLEB)으로 보냈습니다. 이 지갑은 지금도 직접 BSO를 보유하고 있습니다.",
+          "ethBothWays": "같은 몇 분 사이에 이 지갑은 세 지갑에 4.05 ETH를, 각각 1~2 ETH씩 보냈습니다. 가장 많이 받은 지갑은 2024년 6월 24일 1.5 ETH를 돌려보냈고, 나머지 두 지갑은 트랜잭션을 한 번도 보낸 적이 없습니다."
+        }
+      },
+      "holderG": {
+        "summary": "3년 간격을 두고 같은 발신자에게서 자금을 받은 지갑 2개와, 그중 하나가 잔액을 옮긴 세 번째 지갑입니다.",
+        "evidence": {
+          "commonSender": "한 지갑이 2022년 4월 Avalanche에서 두 번째 지갑에 BSO 65만 8천 개를, 2025년 1월 Ethereum에서 첫 번째 지갑에 84만 3천 개를 보냈습니다.",
+          "senderFunded": "그 발신자는 두 지갑 모두에 코인도 보냈습니다. 두 번째 지갑에는 그 지갑의 첫 AVAX를 주고 다음 날 17.4 AVAX를 보냈으며, 첫 번째 지갑에는 토큰을 보낸 지 3분 뒤 자신에게 남아 있던 0.15 ETH를 보냈습니다.",
+          "movedOn": "2026년 11월 3일, 두 번째 지갑이 세 번째 지갑에 가스비용 ETH, 100 BSO 테스트, 이어서 잔액 전부인 85만 2천 BSO를 보냈습니다."
+        }
+      },
+      "holderH": {
+        "summary": "한 지갑이 다른 지갑에 자금을 댄 지갑 2개입니다.",
+        "evidence": {
+          "directTransfer": "2022년 4월 24일 첫 번째 지갑이 두 번째 지갑에 그 지갑의 첫 AVAX를 보냈고, 2분 뒤 5만 9천 BSO를 보냈습니다.",
+          "funding": "2022년 5월 8일 첫 번째 지갑이 여섯 번의 전송으로 두 번째 지갑에 23 AVAX를 보냈고, 두 번째 지갑은 전송을 받을 때마다 몇 분 안에 그 대부분을 BSO로 스왑했습니다."
+        }
+      },
+      "holderI": {
+        "summary": "서로 ETH를 보낸 뒤 한쪽이 잔액 전부를 다른 쪽으로 옮긴 지갑 2개입니다.",
+        "evidence": {
+          "directTransfers": "그 뒤 두 번째 지갑이 첫 번째 지갑에 보유하던 전부를 보냈습니다. 2023년 10월 30일 BSO 185만 개, 2023년 11월 8일 70만 3천 개입니다.",
+          "ethBothWays": "두 번째 지갑이 2022년 12월 16일 첫 번째 지갑에 0.77 ETH를 보냈고, 다음 날 첫 번째 지갑이 0.02 ETH를 돌려보냈습니다."
+        }
+      },
+      "holderJ": {
+        "summary": "1년 넘게 AVAX를 주고받은 지갑 2개입니다.",
+        "evidence": {
+          "coinsBothWays": "첫 번째 지갑은 2021년 5월 7일 두 번째 지갑에 그 지갑의 첫 AVAX를, 같은 해 8월에 그 지갑의 첫 ETH를 보냈습니다. 2022년 7월까지 첫 번째 지갑은 열두 번의 전송으로 331 AVAX를 보냈고, 두 번째 지갑은 두 번의 전송으로 15 AVAX를 돌려보냈습니다.",
+          "sameEveningLocks": "두 지갑 모두 Trader Joe에서 BSO를 매수했고, 2022년 4월 28일에는 둘 다 서로 30분 이내에 같은 잠금 컨트랙트에 BSO를 잠갔습니다."
+        }
+      },
+      "holderK": {
+        "summary": "같은 개인 지갑이 자금을 댄 지갑 2개입니다.",
+        "evidence": {
+          "sharedFunder": "한 개인 지갑이 두 지갑 모두에 자금을 댔습니다. 첫 번째 지갑에는 2021년 10월에 그 지갑의 첫 AVAX를 보냈고, 2023년 말까지 21번의 전송으로 194 AVAX를, 두 번의 전송으로 349만 BSO를 보냈습니다. 두 번째 지갑에는 2022년 2월 14일에 그 지갑의 첫 AVAX를 보냈고, 같은 해 4월까지 여섯 번의 전송으로 23 AVAX를 보냈습니다. 두 지갑 모두 소량의 AVAX를 돌려보냈습니다.",
+          "sharedRecipient": "두 지갑은 같은 새 지갑에 자금을 대기도 했습니다. 2022년 2월 17일 두 번째 지갑이 그 새 지갑에 첫 AVAX인 5.1 AVAX를 보냈고, 사흘 뒤 첫 번째 지갑이 38.3 AVAX를 보냈습니다."
+        }
+      },
+      "holderL": {
+        "summary": "같은 개인 지갑에서 자금을 받은 지갑 2개이며, 그중 하나는 중간 지갑을 거쳐 받았습니다.",
+        "evidence": {
+          "funderChain": "한 개인 지갑이 2022년 2월 12일 두 번째 지갑에 그 지갑의 첫 AVAX를 보냈습니다. 엿새 뒤 이 개인 지갑은 자신의 59만 7천 BSO와 남은 AVAX를 새 지갑으로 옮겼고, 그 새 지갑은 2월 22일 59만 7천 BSO를 첫 번째 지갑에 넘기면서 그 지갑의 첫 AVAX도 함께 보냈습니다.",
+          "directTransfer": "2022년 2월 27일 두 번째 지갑이 첫 번째 지갑에 0.005 AVAX를 보냈습니다."
+        }
+      },
+      "holderM": {
+        "summary": "2022년 2월부터 2023년 5월 사이 Avalanche에서 차례로 매수한 것 외에는 아무것도 하지 않았고, 한 번도 팔지 않은 지갑 10개입니다.",
+        "evidence": {
+          "buyingPattern": "각 지갑은 새로 만든 지갑으로, Binance나 ChangeNOW를 통한 약 $2,000~$3,400 규모의 거래소 출금 한두 건으로 자금을 받은 뒤, 전액을 토큰으로 스왑하고 다시는 사용되지 않았습니다. 그중 7개는 2022년 2월 28일부터 3월 31일 사이에 차례로 매수했고, 또 다른 3개는 2022년 4월 12일과 6월 25일, 그리고 2023년 5월 6일에 같은 방식으로 매수했습니다. 현재 공급량의 0.01% 이상을 가진 보유자 가운데 Avalanche에서 매수하는 데에만 쓰였고 트랜잭션도 네 건 이하인 지갑은 21개입니다. 이 10개, 다른 그룹의 지갑 2개, 그리고 각각 $410 미만을 쓴 다른 9개입니다.",
+          "neverSold": "2022년 4월에 토큰을 잠근 1개를 제외하면, 10개 지갑 중 어느 것도 그 이후 토큰을 팔거나 옮긴 적이 없습니다. 잔액은 두 번의 마이그레이션을 거치면서도 그대로 유지되었습니다."
+        }
+      }
+    },
+    "team": {
+      "title": "팀 몫 없음",
+      "lead": "팀, 투자자, 프리세일을 위해 따로 떼어 둔 토큰은 없었습니다. 모든 BSO가 어디서 나왔는지, 팀 지갑이 현재 무엇을 보유하고 있는지, 그리고 창립자가 당시 무엇을 말했는지 여기에서 보여 드립니다.",
+      "origin": {
+        "caption": "2022년과 2023년에 모든 BSO가 처음 민팅된 방식",
+        "label": "처음 민팅된 방식별 BSO 비중",
+        "airdropClaims": {
+          "label": "에어드롭 클레임",
+          "note": "1,510개 주소가 세 차례 라운드에서 클레임한 {{amount}} BSO. 아무도 클레임하지 않은 할당량은 민팅되지 않았습니다."
+        },
+        "liquidityMining": {
+          "label": "유동성 채굴",
+          "note": "2022년 2월부터 2023년 5월까지 Trader Joe 유동성을 스테이킹한 사람들에게 지급된 {{amount}} BSO."
+        },
+        "liquiditySeed": {
+          "label": "출시 유동성",
+          "note": "배포자에게 민팅되어 7 AVAX와 함께 두 출시 풀에 추가된 {{amount}} BSO."
+        }
+      },
+      "facts": {
+        "liquiditySeed": "에어드롭 외에 팀 지갑으로 민팅된 것은 출시 유동성뿐이었습니다. 700만 BSO가 2022년 1월 14일 7분 안에 Trader Joe 풀(560만)과 Pangolin 풀(140만)에 추가되었습니다.",
+        "teamClaims": "팀원 세 명이 1라운드에서 클레임했습니다. Esteban이 70만 3천 BSO, Tom이 186만 BSO(767건 중 세 번째로 큰 클레임), rinse12가 110만 BSO를 클레임했습니다. rinse12의 클레임은 두 지갑에서 이루어졌으며, 이 지갑들의 토큰은 나중에 그의 Safe로 옮겨졌습니다. 셋을 합치면 에어드롭에서 클레임된 전체 토큰의 2.8%입니다.",
+        "migrationMintedNothing": "2026년 마이그레이션은 누구에게도 새 토큰을 만들어 주지 않았습니다. 2억 1천만 BSO 전체가 기존 잔액에 비례해 단일 트랜잭션으로 배분되었습니다.",
+        "farmRewards": "팀원 한 명이 유동성 채굴 보상을 받았습니다. rinse12의 지갑 하나가 2022년 4월 5일에 230만 BSO를 수령했으며, 이는 Avalanche에서 208개 주소에 지급된 6,090만 BSO 중 네 번째로 큰 몫입니다. Ethereum으로 이전할 때까지 지급되지 않은 800만 개는 이를 적립한 스테이커들에게 입금되었습니다."
+      },
+      "statementsTitle": "창립자가 당시 한 말",
+      "statementBy": "창립자 Esteban Abaroa, {{date}}",
+      "walletsTitle": "현재 팀 지갑",
+      "person": "사람",
+      "wallet": "지갑",
+      "total": "팀 합계",
+      "walletsNote": "스냅샷 가격 기준 {{value}} 상당입니다. 각 지갑의 전체 내역은 Etherscan에 공개되어 있습니다.",
+      "poolNote": "2026년 10월 30일, Esteban의 배포자 지갑과 estebanabaroa.eth가 Uniswap 풀 유동성 토큰의 86.6%를 제로 주소로 보냈으며, 이 토큰은 누구도 인출할 수 없습니다. 팀의 보유분은 0.01% 미만이고, 나머지는 다른 유동성 공급자의 것입니다. 소각된 몫은 스냅샷 가격 기준 BSO와 ETH를 합쳐 {{value}} 상당입니다."
+    },
+    "airdrops": {
+      "title": "세 번의 에어드롭, 2022년",
+      "lead": "BSO의 1세대인 PLEB는 판매 없이 Avalanche에서 출시되었습니다. 세 라운드에 걸쳐 무상으로 배포되었고, 모든 클레임은 같은 비율로 BSO로 이어졌습니다: 7,114.6 PLEB당 1 BSO.",
+      "caption": "에어드롭 세 라운드와 클레임된 토큰의 현재 가치",
+      "round": "{{number}}라운드",
+      "total": "합계",
+      "rounds": {
+        "telegram": {
+          "name": "Telegram 봇",
+          "how": "@plebbitbot에 Avalanche 주소 보내기, 추천 시 보너스"
+        },
+        "twitter": {
+          "name": "Twitter",
+          "how": "@getplebbit 게시물에 좋아요, 리트윗, 친구 3명 태그"
+        },
+        "reddit": {
+          "name": "Reddit",
+          "how": "r/plebbitairdrop 스레드에 댓글 달기. 봇이 계정 활동 기록을 확인"
+        }
+      },
+      "metrics": {
+        "how": "참여 방법",
+        "window": "가입 기간",
+        "signups": "발표된 가입자 수",
+        "claimers": "클레임한 주소",
+        "plebClaimed": "클레임된 PLEB",
+        "bsoToday": "현재 BSO 환산",
+        "worthToday": "현재 가치",
+        "medianClaim": "클레임 중앙값(현재 가치)",
+        "largestClaim": "최대 클레임(현재 가치)",
+        "sources": "출처"
+      },
+      "dateRange": "{{start}} – {{end}}",
+      "overCount": "{{amount}}명 이상",
+      "distinct": "고유 {{amount}}개",
+      "note": "클레임된 토큰이 모두 아직 보유되어 있다고 가정하고, {{date}} 기준 BSO당 {{price}}로 계산한 값입니다. 가입자 중 상당수는 봇이었습니다. 클레임은 2022년 2월 21일에 마감되었고, 아무도 클레임하지 않은 할당량은 민팅되지 않았습니다."
+    },
+    "history": {
+      "title": "연혁",
+      "lead": "2021년의 Telegram 그룹에서 2026년의 불변 ERC-20까지.",
+      "redditThread": "Reddit 스레드",
+      "events": {
+        "groupOpens": {
+          "title": "plebbit Telegram 그룹 개설",
+          "body": "지금의 t.me/bitsocialnet이 된 그룹이 2021년 크리스마스에 시작됩니다."
+        },
+        "telegramRound": {
+          "title": "1라운드: Telegram 봇",
+          "body": "일주일 동안 사람들이 @plebbitbot으로 가입합니다. 공급량은 참가자들에게 똑같이 나뉘고, 추천하면 보너스가 붙습니다. 1월 14일 봇이 마감되기 전까지 3,312개 주소가 등록합니다."
+        },
+        "launch": {
+          "title": "유동성 먼저, 그다음 클레임",
+          "body": "UTC 18:00에 배포자가 Trader Joe와 Pangolin에 첫 토큰과 7 AVAX를 추가합니다. 클레임 페이지는 약 30분 뒤에 열리므로, 누구도 거래하기 전에 모든 할당량이 이미 확정되어 있었습니다."
+        },
+        "twitterRound": {
+          "title": "2라운드: Twitter",
+          "body": "전적으로 Twitter에서 진행된 에어드롭입니다. 좋아요, 리트윗, 친구 3명 태그로 참여합니다. 2월 6일까지 1,500명 이상이 등록합니다."
+        },
+        "redditRound": {
+          "title": "3라운드: Reddit",
+          "body": "r/plebbitairdrop에서 진행된 실험적 에어드롭으로, 봇이 댓글 작성자에게 오래된 Reddit 활동 기록이 있는지 확인했습니다. 2월 12일까지 2,200명 이상이 등록하며, 그중 상당수는 봇입니다."
+        },
+        "claimsClose": {
+          "title": "클레임 마감",
+          "body": "세 에어드롭 모두 더 이상 클레임할 수 없게 됩니다. 아무도 클레임하지 않은 토큰은 끝내 민팅되지 않습니다."
+        },
+        "farm": {
+          "title": "유동성 채굴 시작",
+          "body": "Trader Joe 유동성을 스테이킹한 사람들은 새로 민팅된 토큰을 받습니다. 이 팜은 Ethereum으로 이전할 때까지 보상을 지급합니다."
+        },
+        "ethereum": {
+          "title": "Ethereum으로의 이전",
+          "body": "Snapshot 투표 후 Avalanche의 토큰이 동결되고, 잠긴 토큰, 유동성 포지션, 미지급 팜 보상을 포함한 모든 잔액이 Ethereum에서 2세대 토큰으로 재발행됩니다. 보유자는 아무것도 하지 않아도 됩니다."
+        },
+        "rebrand": {
+          "title": "plebbit이 Bitsocial이 되다",
+          "body": "plebbit이 새 이름 Bitsocial을 발표합니다. 온체인에서 토큰은 5월까지 PLEB라는 이름을 유지합니다."
+        },
+        "rebase": {
+          "title": "PLEB가 BSO 2억 1천만 개가 되다",
+          "body": "2세대 토큰의 이름이 BSO로 바뀌고 리베이스되어 총공급량이 정확히 2억 1천만 개가 됩니다. 7,114.6 PLEB가 1 BSO가 됩니다."
+        },
+        "immutable": {
+          "title": "BSO, 불변이 되다",
+          "body": "최종 BSO 컨트랙트가 민트, 소유자, 일시 중지, 프록시 없이 가동됩니다. 2억 1천만 개 전체가 리베이스된 잔액에 비례해 단일 트랜잭션으로 배분됩니다."
+        },
+        "liquidityBurned": {
+          "title": "유동성의 86.6% 소각",
+          "body": "Esteban의 두 지갑이 Uniswap 유동성 토큰 7,881개, 즉 BSO/ETH 풀의 86.6%를 제로 주소로 보냅니다. 이 주소의 키는 누구에게도 없으므로, 풀에 있는 BSO와 ETH 중 이 몫은 영원히 잠깁니다."
+        }
+      }
+    },
+    "method": {
+      "title": "방법론과 한계",
+      "lead": "그룹을 어떻게 찾았는지, 그리고 이 페이지가 볼 수 없는 것은 무엇인지 설명합니다.",
+      "howTitle": "지갑을 연결한 방법",
+      "how": {
+        "transfers": "거래소, 라우터, 풀 및 기타 컨트랙트를 제외하고, Avalanche와 Ethereum의 세 컨트랙트 모두에서 일반 지갑 두 개 사이에 일어난 모든 전송을 추적했습니다. Safe 멀티시그는 그 소유자와 연결했습니다.",
+        "funders": "공급량의 0.01% 이상을 보유한 지갑이 주고받은 모든 AVAX와 ETH 전송도 추적했으며, 각 지갑에 처음으로 코인을 보낸 쪽이 누구인지도 포함했습니다. 거래소와 스왑 서비스는 수천 개의 지갑에 자금을 보내므로, 개인 지갑만 연결로 인정합니다.",
+        "pattern": "직접적인 연결이 없는 지갑은 같은 기간의 모든 매수자와 매수 행태를 비교했습니다.",
+        "migrations": "잔액은 BSO당 7,114.6 PLEB 비율로 두 번의 마이그레이션을 거쳐 추적했습니다. 이 페이지에서 이전 수량을 BSO로 표시할 때도 같은 비율을 사용합니다."
+      },
+      "limitsTitle": "한계",
+      "limits": {
+        "exchangeOnly": "모든 지갑에 거래소를 통해서만 자금을 보내고 지갑 간에 토큰을 전혀 옮기지 않는 보유자는 온체인 연결을 남기지 않습니다. 일부 그룹에는 아직 더 많은 지갑이 숨어 있을 수 있습니다.",
+        "sales": "두 지갑 사이의 전송은 판매일 수도, 선물일 수도 있으므로, 전송 하나에만 근거한 그룹은 없습니다. 일부 지갑은 자기 그룹으로부터 토큰과 코인을 받기만 했고 아무것도 보낸 적이 없습니다. 이런 경우도 선물일 수 있습니다.",
+        "contracts": "Uniswap 풀과 Safe 이외의 컨트랙트가 보유한 토큰은 있는 그대로 표시합니다.",
+        "snapshot": "이 페이지가 열려 있는 동안 잔액과 가격은 5분마다 체인에서 새로 고쳐집니다. 지갑 간 연결은 사람이 직접 조사한 것이며 자동으로 업데이트되지 않습니다.",
+        "history": "추이 선은 공급량의 0.01% 이상을 보유한 지갑과 알려진 보유자의 모든 지갑에 대해 각 지갑의 보유량을 따라갑니다. 알려진 보유자의 선에는 토큰의 출처인, 지금은 비어 있는 지갑도 포함되므로 첫 구매나 클레임 시점부터 시작됩니다. 유동성 풀, 팜 또는 베스팅 스트림에 들어간 토큰은 선에서 빠지며, 두 번의 마이그레이션 때 그중 일부가 소유자에게 재발행되었기 때문에 일부 선은 해당 날짜에 갑자기 뛰어오릅니다."
+      },
+      "contracts": {
+        "gen1": "Gen 1: Avalanche의 PLEB",
+        "gen2": "Gen 2: Ethereum의 PLEB, 2026년 5월 BSO로 이름 변경",
+        "gen3": "Gen 3: 현재의 BSO"
+      },
+      "snapshot": "잔액과 가격 출처는 Blockscout입니다: {{date}} 기준 지갑 {{count}}개. 잘못된 연결이나 빠진 연결을 발견하셨나요? <contributeLink>이 페이지 개선하기</contributeLink>."
+    },
+    "holderName": "보유자 {{letter}}"
+  },
+  "chart": {
+    "meta": {
+      "title": "BSO 가격 차트 - 2022년 이후 모든 거래",
+      "description": "2022년 첫 거래 이후 BSO의 가격과 시가총액을 세 컨트랙트 전체에 걸쳐 보여 줍니다. Avalanche의 PLEB, Ethereum의 PLEB, 현재의 BSO를 온체인 스왑으로 만든 하나의 차트에 담았습니다."
+    },
+    "hero": {
+      "title": "첫 거래 이후의 BSO 가격",
+      "lead": "세 컨트랙트를 하나로 이은 차트입니다: Avalanche의 PLEB, 2026년에 BSO로 이름이 바뀐 Ethereum의 PLEB, 그리고 현재의 BSO. 이전 가격은 두 번의 마이그레이션이 모두 유지한 비율인 BSO당 7,114.6 PLEB로 환산했습니다. 차트의 점을 선택하면 그날 무슨 일이 있었는지 볼 수 있고, 토큰의 전체 이야기는 리치 리스트의 <historyLink>연혁</historyLink>에서 볼 수 있습니다.",
+      "status": {
+        "live": "Uniswap 풀 실시간 데이터: BSO 가격 {{price}}. {{ago}} 업데이트됨.",
+        "loading": "{{date}}까지의 일별 기록. 최신 가격을 불러오는 중…",
+        "unavailable": "지금은 실시간 가격을 사용할 수 없어 차트가 {{date}}에서 끝납니다."
+      }
+    },
+    "panelTitle": "일별 가격 차트",
+    "summary": {
+      "price": "{{from}}부터 {{to}}까지의 일별 BSO 가격. 최저 종가 {{low}}, 최고 종가 {{high}}, 최근 {{latest}}.",
+      "mcap": "{{from}}부터 {{to}}까지의 일별 BSO 시가총액. 최저 종가 {{low}}, 최고 종가 {{high}}, 최근 {{latest}}."
+    },
+    "controls": {
+      "metricLabel": "표시",
+      "metrics": {
+        "price": "가격",
+        "mcap": "시가총액"
+      },
+      "rangeLabel": "기간",
+      "ranges": {
+        "1M": "1개월",
+        "3M": "3개월",
+        "1Y": "1년",
+        "all": "전체"
+      },
+      "typeLabel": "차트 유형",
+      "types": {
+        "line": "라인",
+        "candles": "캔들"
+      },
+      "scaleLabel": "스케일",
+      "scales": {
+        "log": "로그",
+        "linear": "선형"
+      }
+    },
+    "legend": {
+      "since": "{{date}} 대비",
+      "ohlc": "시 {{open}} · 고 {{high}} · 저 {{low}} · 종 {{close}}",
+      "volume": "거래량 {{value}}"
+    },
+    "eras": {
+      "label": "컨트랙트. 하나를 선택하면 해당 시기로 확대됩니다.",
+      "gen1": "Avalanche의 PLEB",
+      "gen2": "Ethereum의 PLEB",
+      "gen3": "BSO",
+      "years": "{{from}}–{{to}}",
+      "now": "현재",
+      "rebrand": "Bitsocial 리브랜딩"
+    },
+    "method": {
+      "title": "차트를 만드는 방법",
+      "lead": "모든 캔들은 체인 위의 스왑에서 나오므로, 어느 날이든 익스플로러에서 확인할 수 있습니다.",
+      "steps": {
+        "swaps": "하루의 시가, 고가, 저가, 종가는 그날(UTC 기준) 스왑에서 지불된 첫 가격, 최고 가격, 최저 가격, 마지막 가격이며, 각 풀의 Swap 이벤트에서 읽었습니다.",
+        "usd": "풀은 AVAX 또는 ETH와 거래되므로, 각 스왑은 그 스왑이 일어난 시간대의 Coinbase 환율로 달러로 환산했습니다.",
+        "units": "Avalanche의 PLEB와 <rebaseLink>2026년 5월 2일 리베이스</rebaseLink> 전까지 Ethereum에서 거래된 PLEB는 BSO 단위로 표시합니다. 가격에 BSO 하나가 대체한 PLEB 수인 7,114.596을 곱했습니다.",
+        "pools": "하루에 둘 이상의 풀에서 거래가 있었으면 거래량이 가장 많은 풀이 그날의 캔들을 정하므로, 거의 빈 풀이 가짜 꼬리를 그릴 수 없습니다. 거래량은 모든 풀을 합산하며, 거래가 없는 날은 직전 종가를 반복합니다.",
+        "mcap": "시가총액은 종가에 그날의 총공급량을 곱한 값입니다. 총공급량은 컨트랙트가 민팅한 모든 토큰에서 소각한 모든 토큰을 뺀 값이며, 가격과 마찬가지로 BSO 단위로 환산합니다. 리베이스 이후와 현재의 BSO는 공급량이 2억 1천만 개로 고정되어 있습니다.",
+        "eras": "각 컨트랙트의 기록은 다음 컨트랙트의 첫 거래에서 끝납니다. Ethereum 컨트랙트는 리베이스를 적용한 업그레이드 전까지 PLEB라는 이름을 유지했으며, 이 업그레이드는 2026년 3월 18일 plebbit이 Bitsocial이 된 지 6주 뒤에 이뤄졌습니다."
+      },
+      "poolsTitle": "데이터를 읽은 풀",
+      "eraDates": "{{from}} ~ {{to}}",
+      "snapshot": "{{date}}까지의 스왑 {{count}}건으로 만든 기록입니다. 그 이후의 날짜는 GeckoTerminal에서 가져오며, 이 페이지가 열려 있는 동안 5분마다 새로 고칩니다. 잘못된 캔들을 발견하셨나요? <contributeLink>이 페이지 개선하기</contributeLink>."
+    },
+    "eventList": "차트에 표시된 이벤트",
+    "eventDetails": {
+      "close": "닫기",
+      "links": {
+        "reddit": "Reddit 게시물",
+        "release": "GitHub 릴리스",
+        "hackerNews": "Hacker News 스레드",
+        "tweet": "트윗"
+      }
+    },
+    "events": {
+      "protocolLabsGrant": {
+        "title": "Protocol Labs의 지원금",
+        "body": "IPFS와 Filecoin을 만든 팀인 Protocol Labs가 plebbit에 탈중앙화된 Reddit 대안을 만들 수 있도록 지원금을 제공합니다."
+      },
+      "firstApp": {
+        "title": "첫 plebbit 앱",
+        "body": "첫 데스크톱 앱이 Linux, Windows, Mac용으로 출시됩니다. 자체 IPFS 노드를 실행하므로 웹 데모와 달리 완전한 peer-to-peer 방식입니다."
+      },
+      "plebchan": {
+        "title": "plebchan 출시",
+        "body": "plebbit 프로토콜 위에서 동작하는 4chan 스타일 앱 plebchan이 웹, Mac, Linux용 첫 릴리스를 공개합니다."
+      },
+      "hackerNews": {
+        "title": "Hacker News 첫 페이지에 오르다",
+        "body": "Reddit의 새 API 요금 정책에 대한 반발이 거센 가운데, plebbit 데모가 300포인트 넘게 받으며 Hacker News 첫 페이지에 오릅니다. 같은 주에 plebbit을 다룬 게시물들이 r/ethereum 첫 페이지에 오르고 r/CryptoCurrency에서 조회수 30,000회를 기록합니다."
+      },
+      "coingecko": {
+        "title": "CoinGecko에 등재",
+        "body": "2022년 초부터 여러 차례 거절했던 CoinGecko가 이 토큰을 등재합니다."
+      },
+      "socialFi": {
+        "title": "CoinGecko의 SocialFi 카테고리에 포함",
+        "body": "팀의 요청에 따라 CoinGecko가 이 토큰을 SocialFi 카테고리에 추가하고, X에 공유된 SocialFi 토큰 목록에도 이 토큰이 포함됩니다. 가격은 5일 만에 거의 두 배가 됩니다."
+      },
+      "seedit": {
+        "title": "Seedit 출시",
+        "body": "예전 Reddit 인터페이스(old Reddit)처럼 보이고 작동하는 앱 Seedit이 첫 릴리스를 공개합니다."
+      },
+      "marchRally": {
+        "title": "2024년 3월 랠리",
+        "body": "3월 1일, 투자자 Jason Calacanis가 분산형이면서 누구의 허가도 필요 없는 Reddit을 원한다고 트윗하자, plebbit이 데모로 답합니다. 3월 3일 Seedit 0.1.6이 출시되고, 3월 4일 팀은 토큰 게이팅 커뮤니티를 발표합니다. 그달 ETH가 4,000달러를 넘어서는 가운데, 가격은 3월 4일 거의 두 배가 되고 3월 말에는 세 배가 되며, 거래량은 이 차트의 어느 달보다 많은 220만 달러에 이릅니다."
+      }
+    }
+  }
+}

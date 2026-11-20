@@ -1,0 +1,748 @@
+{
+  "nav": {
+    "language": "Kieli",
+    "theme": "Teema",
+    "bitsocial": "Bitsocial",
+    "faq": "UKK",
+    "richList": "Haltijalista",
+    "chart": "Kaavio"
+  },
+  "languageSelector": {
+    "title": "Valitse kieli",
+    "searchPlaceholder": "Etsi kieliä...",
+    "noResults": "Mikään kieli ei vastaa hakuasi."
+  },
+  "meta": {
+    "title": "BSO – kryptomaailman puuttuva sosiaalinen kerros",
+    "description": "BSO on Bitsocialin raha. Bitsocial on peer-to-peer-sosiaalinen verkosto, jota mikään yritys ei omista. Ethereum L2 -appchain, jossa yhteisöt omistavat verkkonsa, tokeninsa ja tulonsa."
+  },
+  "topbar": {
+    "navLabel": "Bitsocial Chain -sivuston navigointi",
+    "menu": "Valikko",
+    "openMenu": "Avaa valikko",
+    "closeMenu": "Sulje valikko"
+  },
+  "theme": {
+    "toggle": "Vaihda teemaa"
+  },
+  "hero": {
+    "statusCta": "Ketju ei ole vielä käytössä, tilaa päivitykset",
+    "title": "Kryptomaailman puuttuva <mark>sosiaalinen kerros</mark>",
+    "supporting": "Krypto muuttui kasinoksi, koska Web2, TradFi ja keskitetty infrastruktuuri omistavat jakeluväylät ja vääristävät kannustimet. Bitsocial Chain korjaa tämän: pysäyttämätön, täysin hajautettu <l2Link>Ethereum L2</l2Link> -<appchainLink>appchain</appchainLink>, jossa yhteisöt omistavat verkkonsa, tokeninsa ja tulonsa."
+  },
+  "layers": {
+    "ariaLabel": "Kryptomaailman kolme päällekkäistä kerrosta: ylhäällä sosiaaliset sovellukset Bitsocial-verkossa, alhaalla Ethereum L1 -selvityskerros, ja niiden välisen aukon täyttävänä hehkuvana puuttuvana kerroksena syttyy Bitsocial Chain, BSO:n voimalla toimiva Ethereum L2 -appchain, jota energiaselkäranka yhdistää läpi kerrosten.",
+    "social": {
+      "title": "SOSIAALISET APPIT",
+      "subtitle": "BITSOCIAL-VERKKO"
+    },
+    "bso": {
+      "title": "BITSOCIAL CHAIN",
+      "subtitle": "L2-APPCHAIN · BSO"
+    },
+    "eth": {
+      "title": "ETHEREUM",
+      "subtitle": "L1-SELVITYS"
+    }
+  },
+  "contract": {
+    "label": "BSO-älysopimus",
+    "copyAriaLabel": "Kopioi BSO-älysopimuksen osoite {{address}}",
+    "copied": "Kopioitu leikepöydälle"
+  },
+  "sections": {
+    "whyAChain": {
+      "title": "Bitsocial itse ei ole lohkoketjussa.",
+      "supporting": "Julkaisut, profiilit, yhteisöt ja moderointi <bitsocialLink>Bitsocialissa</bitsocialLink> ovat peer-to-peer-pohjaisia. Ei ketjua, ei maksuja, ei lompakkoa: voit käyttää koko verkkoa koskaan koskematta kryptoon, ja useimmat tekevätkin niin. Mutta muutama asia tarvitsee aidosti ketjun – nimet, jotka ovat sinun, raha, joka liikkuu tuntemattomien välillä, tokenit, jotka yhteisö todella omistaa. Bitsocial Chain on tarkoitettu juuri niitä varten, eikä mihinkään muuhun.",
+      "peerToPeer": {
+        "badge": "Peer-to-peer",
+        "note": "Sosiaalinen verkosto. Ei ketjua mukana.",
+        "posts": "Julkaisut ja kommentit",
+        "profiles": "Profiilit ja yhteisöt",
+        "moderation": "Moderointi ja roskapostin torjunta"
+      },
+      "onChain": {
+        "badge": "On-chain",
+        "note": "Ne harvat osat, jotka tarvitsevat ketjun.",
+        "names": ".bso-nimet",
+        "tipping": "Tippaaminen ja palkinnot",
+        "tokens": "Yhteisötokenit"
+      },
+      "caption": "Ketju on valinnainen. Sosiaalinen verkosto ei ole.",
+      "quote": "Hajautettu sosiaalinen verkosto tarvitsee hajautettua rahaa."
+    },
+    "tokenomics": {
+      "title": "Vankkaa rahaa.",
+      "supporting": "BSO on kiinteän tarjonnan ERC-20-token: 210 miljoonaa, ei inflaatiota, suunnitellusti deflatorinen. Se jaettiin vuonna 2022 kolmella airdropilla ja likviditeettilouhinnan palkkioina, ilman ennakkomyyntiä ja ilman tiimin osuutta. Sen älysopimus on muuttumaton ja ylläpitäjätön, joten säännöt ovat lukitut ikuisesti.",
+      "supply": {
+        "cap": "BSO:n enimmäistarjonta · lukittu ikuisesti"
+      },
+      "traits": {
+        "airdropped": "Ei tiimin osuutta eikä ennakkomyyntiä",
+        "fixedCap": "Kiinteä yläraja, nolla emissiota",
+        "deflationary": "Deflatorinen: tarjonta vain pienenee"
+      },
+      "locks": {
+        "noMint": {
+          "label": "Ei mintausta",
+          "note": "tarjonta ei voi koskaan kasvaa"
+        },
+        "noOwner": {
+          "label": "Ei omistajaa",
+          "note": "ei ylläpitäjän avaimia, koskaan"
+        },
+        "noPause": {
+          "label": "Ei keskeytystä",
+          "note": "siirtoja ei voi jäädyttää"
+        },
+        "noProxy": {
+          "label": "Ei proxya",
+          "note": "koodia ei voi vaihtaa"
+        }
+      },
+      "airdrop": {
+        "label": "Jakelu",
+        "note": "Kolme airdrop-kierrosta tammi- ja helmikuussa 2022, ja lunastajia oli 1 510 osoitetta. Kierroksella 1 käytettiin Telegram-bottia suosittelubonuksineen, ja Esteban tarkisti sen suosittelut käsin väärinkäytösten varalta; kierrokset 2 ja 3 järjestettiin Twitterissä ja Redditissä. Noin 63 % kaikesta BSO:sta jaettiin airdropeissa ja 34 % palkkioina likviditeettiä tarjonneille; loput käytettiin lanseerauspoolien alkulikviditeetiksi. Ei ennakkomyyntiä, ei tiimin osuutta, mitään ei myyty.",
+        "richListLink": "Katso jokainen haltija ja kaikki kolme kierrosta"
+      },
+      "contract": {
+        "label": "Koko älysopimus",
+        "note": "Koko tarjonta mintataan yhteen osoitteeseen, koska migraatio toimii niin: saldot peilattiin siihen yksi yhteen ja maksettiin takaisin siirroilla, kaikki on-chain. Kaikki muu on <openZeppelinLink>OpenZeppelinin</openZeppelinLink> koodia muokkaamattomana – Ethereumin eniten käytettyä ja eniten tarkastettua tokenkoodia. Ei mitään räätälöityä, ei mitään nokkelaa. Lue se <etherscanLink>Etherscanissa</etherscanLink>."
+      },
+      "foot": "Muuttumaton ja ylläpitäjätön: ylläpitäjän avaimia, joita kukaan voisi pitää hallussaan, ei ole olemassa, joten kukaan ei voi muuttaa sitä, inflatoida sitä tai jäädyttää sitä."
+    },
+    "unstoppable": {
+      "title": "Rakennettu Ethereumin päälle. Ei kenenkään ylläpitämä.",
+      "supporting": "Uusi lohkoketju rakentaisi uudelleen sen tietoturvan ja kehittäjäkannan, joka Ethereumilla jo on, ja tarvitsisi uuden tokenin, vaikka BSO on jo kokonaan jaettu. Siksi Bitsocial Chain on suunniteltu Ethereum L2:ksi ilman operaattoria: jokainen toiminto on tavallinen Ethereum-transaktio, joka lähetetään osoitteeseen, jota kukaan ei hallitse, ja kuka tahansa voi ajaa solmua, joka johtaa saman tilan Ethereumin historiasta. Ei ole yritystä, johon voisi kohdistaa painetta, eikä kytkintä, jota voisi kääntää.",
+      "locks": {
+        "noSequencer": {
+          "label": "Sequenceria ei tarvita",
+          "note": "Ethereum järjestää jokaisen transaktion"
+        },
+        "noAdminKeys": {
+          "label": "Ei ylläpitäjän avaimia",
+          "note": "kukaan ei muuta sääntöjä puolestasi"
+        },
+        "noUpgradeableContract": {
+          "label": "Ei päivitettävää älysopimusta",
+          "note": "ei mitään takavarikoitavaa Ethereumissa"
+        },
+        "noPrivilegedNode": {
+          "label": "Ei etuoikeutettua solmua",
+          "note": "kuka tahansa voi johtaa saman tilan"
+        }
+      },
+      "proofOfConcept": "Konseptitodiste johtaa .bso-nimet jo näin, paikallisella kehitysketjulla. Tuotantokäyttöönotto vaatii vielä todistusjärjestelmän, auditoinnin ja lopullisen talousmallin. <proofLink>Lue konseptitodiste</proofLink>."
+    },
+    "bsoNames": {
+      "title": ".bso-nimesi pysyy sinun.",
+      "supporting": "Bitsocial-sovellukset <resolverLink>selvittävät .bso-nimet jo nyt</resolverLink> lainaamalla ENS:ää, nimijärjestelmää, jota Ethereum-lompakot käyttävät: mycommunity.bso on oikeasti mycommunity.eth, jossa on bitsocial-tietue. Natiivi rekisteri jakaisi jokaisen jo käytössä olevan nimen airdropilla sille lompakolle, joka sen omistaa – ei mitään lunastettavaa eikä mitään uudelleenrekisteröitävää.",
+      "ensBadge": "ENS · nyt",
+      "pointsTo": "osoittaa kohteeseen",
+      "communityKey": "yhteisön avain",
+      "airdropAtLaunch": "airdrop käynnistyessä",
+      "bsoBadge": ".bso · Bitsocial Chain",
+      "owner": "omistaja",
+      "sameWallet": "sama lompakko",
+      "fees": "Ennen kuin ketju on olemassa, .bso-nimet siirtyvät <bsipLink>väliaikaiseen rekisteriin Ethereumissa</bsipLink>, jonka maksut rahoittavat Bitsocialin kehittäjiä. Bitsocial Chainissa nimimaksut on tarkoitus sen sijaan polttaa tai käyttää BSO:n takaisinostoon ja polttamiseen. Mekanismista ei ole vielä päätetty."
+    },
+    "communityMoney": {
+      "title": "Yksi omaisuuserä monen yhteisön alla.",
+      "supporting": "Jokainen yhteisö voisi ylläpitää omaa kerrostaan, L3:a omalla tokenillaan, ja maksaa maksunsa, nimensä ja vuokransa BSO:lla. L3:ja on jo eri puolilla kryptomaailmaa; Bitsocial Chainissa sellainen tulisi valmiiksi yhteisön kanssa. Sen tulot voisivat hoitua itsestään: mainospaikat huutokaupattaisiin älysopimuksella, osa jokaisesta myynnistä poltettaisiin heti ja loput maksettaisiin yhteisölle, ilman takaisinostokassaa, jonka kukaan voisi kaapata.",
+      "communityLayer": "Yhteisökerros",
+      "ownToken": "oma token",
+      "feesFlow": "maksut, nimet ja vuokrat maksetaan BSO:lla",
+      "chainMeta": "Ethereum-kerros · sen tila johdetaan Ethereumista",
+      "ethereumMeta": "Ethereum L1 · turvallisuus ja data",
+      "caption": "Osa jokaisesta maksusta poltetaan; loput maksavat ketjun turvallisuudesta."
+    },
+    "privacy": {
+      "title": "Tippaamisen ei pitäisi paljastaa henkilöllisyyttäsi.",
+      "supporting": "Bitsocial Chain on oletuksena julkinen, kuten Ethereum, ja .bso-nimet on tarkoitettu näkyviksi. Raha on eri asia: tipin ei pitäisi koskaan vaatia nimesi, profiilisi tai julkaisusi laittamista on-chain sen viereen, ja uuden lompakon pitäisi olla normaali, ei epäilyttävä. Ketju ei rakenna omaa yksityisyysjärjestelmää. Sen on tarkoitus antaa olemassa olevien liittyä mukaan kysymättä lupaa: suojatut poolit, stealth-osoitteet, nollatietotodistukset.",
+      "publicOnPurpose": {
+        "heading": "Tarkoituksella julkista",
+        "names": ".bso-nimet ja niiden omistajat",
+        "rules": "Jokainen sääntö ja jokainen tilanmuutos"
+      },
+      "neverRequired": {
+        "heading": "Ei koskaan pakollista",
+        "profile": "Nimesi tai profiilisi tipissä",
+        "wallet": "Yksi lompakko henkilöä kohden",
+        "app": "Virallinen lompakko tai sovellus"
+      }
+    },
+    "possibilities": {
+      "title": "Ehdotettu avoimesti.",
+      "supporting": "Ei vielä käytössä. BSO on käytössä Ethereumissa jo nyt; Bitsocial Chain on ehdotus, ja sen ensimmäinen konseptitodiste, natiivit .bso-nimet, toimii paikallisella kehitysketjulla. Millään alla olevalla ei ole päivämäärää. Se on sitä, mitä sosiaalinen kerros omalla rahallaan mahdollistaisi: osa rakennetaan, osa korvataan paremmilla ideoilla, ja osan rakentavat ihmiset, jotka eivät ole vielä ilmestyneet paikalle.",
+      "ideas": {
+        "chain": {
+          "note": "Itse Ethereum L2 -appchain ja paikka, jossa BSO selvitetään."
+        },
+        "registry": {
+          "label": "Natiivi .bso-rekisteri",
+          "note": "Nimet ja identiteetti rekisteröidään ketjuun sen sijaan, että ne lainattaisiin ENS:stä."
+        },
+        "l3s": {
+          "label": "Yhteisöjen L3:t ja tokenit",
+          "note": "Yhteisöt, joilla on oma kerros ja oma token ja joiden selvitys tapahtuu BSO:lla."
+        },
+        "agoraswap": {
+          "note": "Yhteisön DEX, jossa yhteisötokeneilla käydään kauppaa BSO:ta vastaan ja likviditeetti pysyy on-chain."
+        },
+        "collectibles": {
+          "label": "Sisällöntuottajien keräilykohteet",
+          "note": "Tapoja sisällöntuottajille myydä jotain suoraan ilman, että alusta ottaa siivunsa."
+        },
+        "other": {
+          "label": "Kaikki muu, mikä sopii",
+          "note": "Asiakasohjelmien tokenit, hajautettu sequencing ja ideat, joita kukaan ei ole vielä ehdottanut."
+        }
+      }
+    },
+    "verify": {
+      "title": "Vain yksi osoite on BSO.",
+      "supporting": "Kuka tahansa voi luoda tokenin ja nimetä sen BSO:ksi, joten älysopimuksen osoite on ainoa asia, joka erottaa oikean muista. Vertaa kaikkia 42 merkkiä tähän sivustoon ja Bitsocialin virallisiin kanaviin ennen kuin lähetät mitään minnekään.",
+      "warning": "Virallinen BSO-älysopimus on <contract>{{address}}</contract>. Mikään muu ei ole BSO, oli sen nimi mikä tahansa ja oli se listattu missä tahansa.",
+      "tradeOnUniswap": "Käy kauppaa Uniswapissa",
+      "provideLiquidity": "Tarjoa likviditeettiä",
+      "note": "Uniswapin likviditeetin tarjoavat riippumattomat ihmiset, ja kuka tahansa voi lisätä siihen. Se ei ole säästötili: likviditeettiposition arvo voi laskea, myös alle sen, mitä siihen pantiin."
+    }
+  },
+  "common": {
+    "proposed": "Ehdotettu",
+    "close": "Sulje"
+  },
+  "mailingList": {
+    "chainTitle": "Pysy kärryillä",
+    "chainDescription": "Saat ilmoituksia BSO-tokenin virstanpylväistä, Bitsocial Chainista ja ekosysteemin uutisista. Vähän viestejä, paljon asiaa.",
+    "placeholder": "you@example.com",
+    "inputLabel": "Sähköpostiosoite",
+    "subscribe": "Tilaa",
+    "subscribing": "Tilataan…",
+    "chainSuccess": "Olet listalla.",
+    "confirmationSent": "Tarkista sähköpostisi vahvistaaksesi tilauksesi.",
+    "chainError": "Jokin meni pieleen. Yritä uudelleen.",
+    "unavailable": "Uutiskirjeen tilaus ei ole tilapäisesti käytettävissä.",
+    "privacy": "Ei koskaan roskapostia. Voit perua tilauksen milloin tahansa."
+  },
+  "faq": {
+    "eyebrow": "UKK",
+    "title": "Usein kysytyt kysymykset.",
+    "supporting": "Jokainen tämän sivun osio vastaa yhteen niistä. Klikkaa kysymystä, niin siirryt sen kohdalle.",
+    "navLabel": "Kysymykset, joihin tällä sivulla vastataan",
+    "answeredIn": "Vastattu osiossa {{label}}",
+    "entries": {
+      "whyAChain": {
+        "eyebrow": "Miksi ketju",
+        "question": "Miksi peer-to-peer-sosiaalinen verkosto tarvitsee ketjun?"
+      },
+      "tokenomics": {
+        "eyebrow": "Tokenomiikka",
+        "question": "Mikä on BSO:n tokenomiikka? Kuka sen sai?"
+      },
+      "unstoppable": {
+        "eyebrow": "Pysäyttämätön",
+        "question": "Miksi Ethereum L2? Kuka sitä ylläpitää?"
+      },
+      "bsoNames": {
+        "eyebrow": "BSO-nimet",
+        "question": "Mitä .bso-nimelleni tapahtuu?"
+      },
+      "communityMoney": {
+        "eyebrow": "Yhteisön raha",
+        "question": "Mihin BSO:ta käytettäisiin?"
+      },
+      "privacy": {
+        "eyebrow": "Tietosuoja",
+        "question": "Näkevätkö kaikki, kenelle tippaan?"
+      },
+      "possibilities": {
+        "eyebrow": "Mahdollisuudet",
+        "question": "Onko se käytössä? Mitä on suunnitteilla?"
+      },
+      "verify": {
+        "eyebrow": "Tarkista",
+        "question": "Miten saan BSO:ta turvallisesti?"
+      }
+    },
+    "rows": {
+      "about": {
+        "label": "Tietoja meistä",
+        "question": "Ketkä ovat Bitsocial Chainin takana?"
+      },
+      "mailingList": {
+        "label": "Uutiskirje",
+        "question": "Miten pysyn ajan tasalla?"
+      }
+    },
+    "ask": {
+      "placeholder": "Kysy mitä tahansa muuta…",
+      "label": "Kysy mitä tahansa muuta",
+      "action": "Kysy ChatGPT:ltä"
+    }
+  },
+  "footer": {
+    "chainTagline": "Kryptomaailman puuttuva sosiaalinen kerros",
+    "token": "Token",
+    "resources": "Resurssit",
+    "blog": "Blogi",
+    "proofOfConcept": "Konseptitodiste",
+    "about": "Tietoja meistä",
+    "mainSite": "Pääsivusto",
+    "community": "Yhteisö",
+    "chainBottomTagline": "Korjataan kryptomaailman sosiaalinen kerros",
+    "contribute": "Paranna tätä sivua"
+  },
+  "backToTop": {
+    "returnToOrigin": "Takaisin edelliseen kohtaan",
+    "toTop": "Takaisin ylös",
+    "toBottom": "Siirry alas"
+  },
+  "richList": {
+    "meta": {
+      "title": "BSO:n haltijalista – kenellä BSO:ta on",
+      "description": "Jokainen BSO:n haltija: toisiinsa linkitetyt lompakot ryhmiteltyinä, tiimin lompakot merkittyinä ja jokaisen linkin taustalla oleva on-chain-näyttö. Lisäksi vuoden 2022 kolmen airdropin historia."
+    },
+    "hero": {
+      "title": "Kenellä BSO:ta on",
+      "lead": "Jokainen BSO-lompakko niin, että saman haltijan lompakot on ryhmitelty yhteen ja tiimin lompakot merkitty. Jokaisen linkin kohdalla luetellaan sen taustalla olevat transaktiot, joten voit tarkistaa sen itse.",
+      "jumpLabel": "Osiot",
+      "status": {
+        "live": "Suoraan ketjusta: {{count}} lompakkoa, BSO {{price}}. Päivitetty {{ago}}.",
+        "loading": "Tilannekuva päivältä {{date}}: {{count}} lompakkoa, BSO {{price}}. Ladataan reaaliaikaisia tietoja…",
+        "unavailable": "Reaaliaikaiset tiedot eivät ole juuri nyt saatavilla, joten tämä on tilannekuva päivältä {{date}}: {{count}} lompakkoa, BSO {{price}}."
+      }
+    },
+    "jump": {
+      "holders": "Haltijat",
+      "linked-wallets": "Linkitetyt lompakot",
+      "team": "Ydintiimi",
+      "airdrops": "Airdropit",
+      "history": "Historia",
+      "method": "Menetelmä"
+    },
+    "strip": {
+      "label": "Kunkin ryhmän osuus 210 miljoonan BSO:n tarjonnasta",
+      "team": "Ydintiimi",
+      "pool": "Uniswap-pooli",
+      "everyoneElse_one": "Kaikki muut ({{count}} lompakko)",
+      "everyoneElse_other": "Kaikki muut ({{count}} lompakkoa)"
+    },
+    "categories": {
+      "team": "Ydintiimi",
+      "pool": "Likviditeettipooli",
+      "confirmed": "Vahvistettu",
+      "likely": "Todennäköinen",
+      "possible": "Mahdollinen",
+      "other": "Ei linkitetty"
+    },
+    "table": {
+      "title": "Haltijat",
+      "lead": "Linkitetyt lompakot on yhdistetty yhdeksi riviksi. Valitse Lompakoittain nähdäksesi jokaisen osoitteen niin kuin Etherscan sen listaa.",
+      "viewLabel": "Näytä haltijat",
+      "view": {
+        "grouped": "Ryhmiteltynä",
+        "wallets": "Lompakoittain"
+      },
+      "searchLabel": "Hae osoitteella tai haltijan nimellä",
+      "searchPlaceholder": "Hae osoitetta",
+      "caption": "BSO:n haltijat saldon mukaan",
+      "holder": "Haltija",
+      "balance": "BSO",
+      "share": "Osuus tarjonnasta",
+      "value": "Arvo",
+      "contract": "Älysopimus",
+      "walletCount_one": "{{count}} lompakko",
+      "walletCount_other": "{{count}} lompakkoa",
+      "noMatch": "Yksikään haltija ei vastaa tätä hakua.",
+      "showAll_one": "Näytä {{count}} rivi",
+      "showAll_other": "Näytä kaikki {{count}} riviä",
+      "showMore": "Näytä {{count}} lisää",
+      "history": "Historia",
+      "historySummary": "Saldo (alku: {{start}}): huippu {{high}} BSO ({{highDate}}), nyt {{current}} BSO"
+    },
+    "evidenceLinks": "Todisteena olevat transaktiot",
+    "telegramSources": "Telegram-lähteet",
+    "linked": {
+      "title": "Linkitetyt lompakot",
+      "lead": "Lompakot ryhmitellään vain, kun ketju osoittaa yhteyden: niiden välillä liikkuu tokeneita tai gas-varoja, niillä on yhteinen yksityinen rahoittaja tai multisig-omistaja, tai niiden ostokäyttäytyminen on identtinen. Jokaisen ryhmän kohdalla luetellaan sen taustalla olevat transaktiot.",
+      "confidence": {
+        "confirmed": "Lompakot tekevät transaktioita keskenään, niillä on yhteinen yksityinen rahoittaja tai ne hallitsevat toisiaan.",
+        "likely": "Useita siirtoja samasta lähteestä tai identtistä ostokäyttäytymistä, joita on vaikea selittää muulla tavoin.",
+        "possible": "Yksittäinen yhteys, joka voi olla myös myynti tai lahja."
+      },
+      "holds_one": "{{amount}} BSO, {{share}} tarjonnasta, {{count}} lompakossa",
+      "holds_other": "{{amount}} BSO, {{share}} tarjonnasta, yhteensä {{count}} lompakossa",
+      "walletList_one": "{{count}} lompakko",
+      "walletList_other": "Kaikki {{count}} lompakkoa"
+    },
+    "walletRoles": {
+      "deployer": "deployer",
+      "estebanEns": "estebanabaroa.eth",
+      "safe": "Safe-multisig",
+      "safeOwner": "Safen omistaja"
+    },
+    "entities": {
+      "pool": {
+        "name": "Uniswapin BSO/ETH-pooli"
+      },
+      "holderA": {
+        "summary": "Viisi lompakkoa, jotka on sidottu toisiinsa siirroilla ja yhteisellä yksityisellä rahoittajalla ja jotka ostivat Avalanchella helmikuun 2022 ja toukokuun 2023 välillä eivätkä ole koskaan myyneet.",
+        "evidence": {
+          "transfersToLpWallet": "Kaksi ostavista lompakoista lähetti tokeneita ja AVAXia kolmannelle lompakolle, joka käytti ne Trader Joen likviditeettiin ja farmaukseen: 141 000 BSO:ta ja 5 AVAXia 27. helmikuuta 2022, sitten 1,01 miljoonaa BSO:ta ja 34 AVAXia 28. helmikuuta ja 2. maaliskuuta välillä. Kolmas lompakko lähetti takaisin 0,013 AVAXia.",
+          "sharedFunder": "Yksi yksityinen lompakko rahoitti kolmea ostavista lompakoista eikä mitään muuta. Jokainen sen koskaan lähettämä transaktio meni niille, järjestyksessä: noncet 0–4 ensimmäiselle, 5–7 toiselle ja 8 kolmannelle.",
+          "neverSold": "Yksikään viidestä lompakosta ei ole myynyt. Niiden saldot säilyivät muuttumattomina molempien migraatioiden läpi."
+        }
+      },
+      "holderC": {
+        "summary": "Kaksi lompakkoa, jotka sama kahden ostavan lompakon pari täytti.",
+        "evidence": {
+          "commonSender": "Yksi ostava lompakko lähetti ensimmäiselle 664 000 BSO:ta 19. elokuuta 2024. 14. marraskuuta 2025 se lähetti toiselle 7 000 BSO:n testin, 0,1 ETH:ta ja sitten 2,17 miljoonaa BSO:ta. Se on ainoa ETH, jonka toinen lompakko on saanut, eikä tämä lompakko ole koskaan lähettänyt transaktiota.",
+          "secondSender": "Toinen ostava lompakko lähetti ensimmäiselle sen loput 7,3 miljoonaa BSO:ta kahdeksassa siirrossa toukokuun ja elokuun 2024 välillä sekä sen ensimmäisen ETH:n, ja sai siltä 4,35 ETH:ta takaisin.",
+          "sendersLinked": "Kaksi ostavaa lompakkoa on sidottu toisiinsa: toinen antoi toiselle 1,15 miljoonaa BSO:ta ja 0,1 ETH:ta 22. helmikuuta 2024, ja jälkimmäinen lähetti jäljellä olevat 5,8 ETH:ta takaisin 17. elokuuta 2024."
+        }
+      },
+      "holderD": {
+        "summary": "Viisi lompakkoa: kaksi, jotka lähettivät toisilleen AVAXia ja ETH:ta, kolmas, jonka ne molemmat täyttivät, ja kaksi muuta, jotka kolmas perusti.",
+        "evidence": {
+          "sharedRecipient": "Kolmas lompakko sai ensimmäiseltä testisiirron ja sitten 703 000 BSO:ta 18. marraskuuta 2022 sekä toiselta 1,16 miljoonaa BSO:ta 1. joulukuuta 2022. Kaikki AVAX, joka sillä on koskaan ollut gas-kuluihin, tuli näiltä kahdelta.",
+          "coinsBothWays": "Kaksi ensimmäistä lompakkoa lähettivät toisilleen kolikoita molemmissa ketjuissa 20 kuukauden ajan: 0,5 AVAXia yhteen suuntaan ja 0,49 takaisin yhdeksän minuuttia myöhemmin 24. maaliskuuta 2022, 73 AVAXia 31. toukokuuta 2022, 0,09 ETH:ta 11. maaliskuuta 2023 ja 2 ETH:ta toiseen suuntaan 7. marraskuuta 2023.",
+          "newWallets": "Kolmas lompakko perusti sitten kaksi uutta lompakkoa joka kerta samalla tavalla: AVAXia gas-kuluihin, testisiirto ja sitten 281 000 BSO:ta, 24. marraskuuta 2022 ja huhtikuun 2023 lopussa. Kumpikaan ei ole koskaan lähettänyt transaktiota."
+        }
+      },
+      "holderE": {
+        "summary": "Kaksi lompakkoa, jotka täytettiin samasta lähteestä.",
+        "evidence": {
+          "commonSender": "Yksi lompakko lähetti ensimmäiselle 5,53 miljoonaa BSO:ta seitsemässä siirrossa lokakuun 2024 ja tammikuun 2025 välillä sekä toiselle 287 000 BSO:ta 22. marraskuuta 2025.",
+          "onlyEth": "Sama lompakko lähetti kummallekin ainoan ETH:n, jonka ne ovat koskaan saaneet, saman minuutin aikana kuin niiden ensimmäiset tokenit: 0,1 ETH:ta ja 0,12 ETH:ta. Kumpikaan lompakko ei ole koskaan lähettänyt transaktiota."
+        }
+      },
+      "holderF": {
+        "summary": "Yksi lompakko, joka jakoi tokeninsa ja 4 ETH:ta kolmeen uuteen lompakkoon.",
+        "evidence": {
+          "split": "10. maaliskuuta 2024 yksi lompakko lähetti seitsemän minuutin sisällä tasasummia PLEBiä, kuten BSO:ta silloin kutsuttiin (12, 8 ja 4 miljardia), kolmeen uuteen lompakkoon. Sillä itsellään on yhä BSO:ta.",
+          "ethBothWays": "Samojen minuuttien aikana se lähetti kolmelle lompakolle 4,05 ETH:ta, kullekin 1–2 ETH:ta. Eniten saanut lähetti 1,5 ETH:ta takaisin 24. kesäkuuta 2024; kaksi muuta ei ole koskaan lähettänyt transaktiota."
+        }
+      },
+      "holderG": {
+        "summary": "Kaksi lompakkoa, jotka sama lähettäjä rahoitti kolmen vuoden erolla, ja kolmas, johon toinen niistä siirsi saldonsa.",
+        "evidence": {
+          "commonSender": "Yksi lompakko lähetti toiselle 658 000 BSO:ta Avalanchella huhtikuussa 2022 ja ensimmäiselle 843 000 Ethereumissa tammikuussa 2025.",
+          "senderFunded": "Tämä lähettäjä lähetti kummallekin lompakolle myös kolikoita: se antoi toiselle sen ensimmäisen AVAXin ja seuraavana päivänä 17,4 AVAXia, ja lähetti ensimmäiselle jäljelle jääneet 0,15 ETH:ta kolme minuuttia tokenien jälkeen.",
+          "movedOn": "3. marraskuuta 2026 toinen lompakko lähetti kolmannelle ETH:ta gas-kuluihin, 100 BSO:n testin ja sitten koko saldonsa, 852 000 BSO:ta."
+        }
+      },
+      "holderH": {
+        "summary": "Kaksi lompakkoa, joista toinen rahoitti toista.",
+        "evidence": {
+          "directTransfer": "24. huhtikuuta 2022 ensimmäinen lompakko lähetti toiselle sen ensimmäisen AVAXin ja kaksi minuuttia myöhemmin 59 000 BSO:ta.",
+          "funding": "8. toukokuuta 2022 ensimmäinen lompakko lähetti toiselle 23 AVAXia kuudessa siirrossa, ja toinen vaihtoi suurimman osan siitä BSO:ksi muutaman minuutin kuluessa kustakin siirrosta."
+        }
+      },
+      "holderI": {
+        "summary": "Kaksi lompakkoa, jotka lähettivät toisilleen ETH:ta, ennen kuin toinen siirsi koko saldonsa toiselle.",
+        "evidence": {
+          "directTransfers": "Toinen lompakko lähetti sitten ensimmäiselle kaiken, mitä sillä oli: 1,85 miljoonaa BSO:ta 30. lokakuuta 2023 ja 703 000 BSO:ta 8. marraskuuta 2023.",
+          "ethBothWays": "Toinen lompakko lähetti ensimmäiselle 0,77 ETH:ta 16. joulukuuta 2022, ja ensimmäinen lähetti 0,02 ETH:ta takaisin seuraavana päivänä."
+        }
+      },
+      "holderJ": {
+        "summary": "Kaksi lompakkoa, jotka lähettivät AVAXia edestakaisin yli vuoden ajan.",
+        "evidence": {
+          "coinsBothWays": "Ensimmäinen lompakko lähetti toiselle sen ensimmäisen AVAXin 7. toukokuuta 2021 ja sen ensimmäisen ETH:n saman vuoden elokuussa. Heinäkuuhun 2022 mennessä se oli lähettänyt 331 AVAXia kahdessatoista siirrossa, ja toinen oli lähettänyt takaisin 15 AVAXia kahdessa siirrossa.",
+          "sameEveningLocks": "Molemmat ostivat BSO:ta Trader Joessa, ja 28. huhtikuuta 2022 molemmat lukitsivat BSO:ta samaan lukitussopimukseen puolen tunnin sisällä toisistaan."
+        }
+      },
+      "holderK": {
+        "summary": "Kaksi lompakkoa, jotka sama yksityinen lompakko rahoitti.",
+        "evidence": {
+          "sharedFunder": "Yksi yksityinen lompakko rahoitti molempia. Se lähetti ensimmäiselle sen ensimmäisen AVAXin lokakuussa 2021, 194 AVAXia 21 siirrossa vuoden 2023 loppuun mennessä ja 3,49 miljoonaa BSO:ta kahdessa siirrossa. Toiselle se lähetti sen ensimmäisen AVAXin 14. helmikuuta 2022 ja 23 AVAXia kuudessa siirrossa saman vuoden huhtikuuhun mennessä. Molemmat lähettivät pieniä määriä AVAXia takaisin.",
+          "sharedRecipient": "Molemmat rahoittivat myös samaa uutta lompakkoa: toinen lähetti sille sen ensimmäiset 5,1 AVAXia 17. helmikuuta 2022, ja ensimmäinen lähetti sille 38,3 AVAXia kolme päivää myöhemmin."
+        }
+      },
+      "holderL": {
+        "summary": "Kaksi lompakkoa, jotka rahoitettiin samasta yksityisestä lompakosta, toinen niistä välilompakon kautta.",
+        "evidence": {
+          "funderChain": "Yksi yksityinen lompakko lähetti toiselle sen ensimmäisen AVAXin 12. helmikuuta 2022. Kuusi päivää myöhemmin se siirsi omat 597 000 BSO:taan ja jäljellä olevan AVAXinsa uuteen lompakkoon, joka välitti nämä 597 000 BSO:ta edelleen ensimmäiselle lompakolle 22. helmikuuta yhdessä tämän lompakon ensimmäisen AVAXin kanssa.",
+          "directTransfer": "Toinen lompakko lähetti ensimmäiselle 0,005 AVAXia 27. helmikuuta 2022."
+        }
+      },
+      "holderM": {
+        "summary": "Kymmenen lompakkoa, jotka eivät tehneet muuta kuin ostivat Avalanchella vuorotellen helmikuun 2022 ja toukokuun 2023 välillä eivätkä ole koskaan myyneet.",
+        "evidence": {
+          "buyingPattern": "Jokainen lompakko oli uusi: se rahoitettiin yhdellä tai kahdella noin 2 000–3 400 dollarin nostolla pörssistä Binancen tai ChangeNOW:n kautta, koko summa vaihdettiin tokeniksi eikä lompakkoa käytetty enää koskaan. Seitsemän niistä osti vuorotellen 28. helmikuuta ja 31. maaliskuuta 2022 välillä; kolme muuta teki samoin 12. huhtikuuta ja 25. kesäkuuta 2022 sekä 6. toukokuuta 2023. Nykyisistä haltijoista, joilla on vähintään 0,01 % tarjonnasta, 21 lompakkoa on käytetty ainoastaan ostamiseen Avalanchella, enintään neljällä transaktiolla: nämä kymmenen, kaksi toisen ryhmän lompakkoa ja yhdeksän muuta, jotka kukin käyttivät alle 410 dollaria.",
+          "neverSold": "Yksikään kymmenestä lompakosta ei ole sen jälkeen myynyt tai siirtänyt tokeneitaan, paitsi yksi, joka lukitsi tokeninsa huhtikuussa 2022. Niiden saldot säilyivät muuttumattomina molempien migraatioiden läpi."
+        }
+      }
+    },
+    "team": {
+      "title": "Ei tiimin osuutta",
+      "lead": "Tokeneita ei varattu tiimille, sijoittajille eikä ennakkomyyntiin. Tässä näet, mistä jokainen BSO tuli, mitä tiimin lompakoissa on tänään ja mitä perustaja sanoi silloin.",
+      "origin": {
+        "caption": "Miten jokainen BSO alun perin mintattiin vuosina 2022 ja 2023",
+        "label": "BSO:n osuudet alkuperäisen mintaustavan mukaan",
+        "airdropClaims": {
+          "label": "Airdrop-lunastukset",
+          "note": "1 510 osoitetta lunasti {{amount}} BSO:ta kolmella kierroksella. Osuuksia, joita kukaan ei lunastanut, ei koskaan mintattu."
+        },
+        "liquidityMining": {
+          "label": "Likviditeettilouhinta",
+          "note": "{{amount}} BSO:ta maksettiin Trader Joen likviditeettiä stakanneille helmikuusta 2022 toukokuuhun 2023."
+        },
+        "liquiditySeed": {
+          "label": "Lanseerauslikviditeetti",
+          "note": "{{amount}} BSO:ta mintattiin deployerille ja lisättiin kahteen lanseerauspooliin 7 AVAXin kanssa."
+        }
+      },
+      "facts": {
+        "liquiditySeed": "Ainoa mintaus tiimin lompakkoon airdropin ulkopuolella oli lanseerauslikviditeetti: 7 miljoonaa BSO:ta, jotka lisättiin Trader Joe -pooliin (5,6 miljoonaa) ja Pangolin-pooliin (1,4 miljoonaa) seitsemän minuutin sisällä 14. tammikuuta 2022.",
+        "teamClaims": "Kolme tiimin jäsentä lunasti kierroksella 1: Esteban 703 000 BSO:ta, Tom 1,86 miljoonaa BSO:ta (767 lunastuksesta kolmanneksi suurin) ja rinse12 1,1 miljoonaa BSO:ta kahdesta lompakosta, joiden tokenit siirtyivät myöhemmin hänen Safeensa. Yhteensä se on 2,8 % kaikista airdropeissa lunastetuista tokeneista.",
+        "migrationMintedNothing": "Vuoden 2026 migraatio ei luonut uusia tokeneita kenellekään: kaikki 210 miljoonaa BSO:ta jaettiin yhdessä transaktiossa suhteessa vanhoihin saldoihin.",
+        "farmRewards": "Yksi tiimin jäsen sai likviditeettilouhinnan palkkioita: yksi rinse12:n lompakoista keräsi 2,3 miljoonaa BSO:ta 5. huhtikuuta 2022, mikä oli neljänneksi suurin osuus Avalanchella 208 osoitteelle maksetuista 60,9 miljoonasta BSO:sta. Ethereumiin siirryttäessä vielä maksamatta olleet 8 miljoonaa hyvitettiin ne ansainneille stakaajille."
+      },
+      "statementsTitle": "Mitä perustaja sanoi silloin",
+      "statementBy": "Esteban Abaroa, perustaja, {{date}}",
+      "walletsTitle": "Tiimin lompakot tänään",
+      "person": "Henkilö",
+      "wallet": "Lompakko",
+      "total": "Tiimi yhteensä",
+      "walletsNote": "Arvo {{value}} tilannekuvan hinnalla. Jokaisen lompakon koko historia on julkisesti nähtävissä Etherscanissa.",
+      "poolNote": "30. lokakuuta 2026 Estebanin deployer-lompakko ja estebanabaroa.eth lähettivät 86,6 % Uniswap-poolin likviditeettitokeneista nollaosoitteeseen, josta kukaan ei voi nostaa niitä. Tiimillä on niistä alle 0,01 %, ja loput kuuluvat muille likviditeetin tarjoajille. Poltetun osuuden arvo BSO:na ja ETH:na on tilannekuvan hinnalla {{value}}."
+    },
+    "airdrops": {
+      "title": "Kolme airdropia, 2022",
+      "lead": "PLEB, BSO:n ensimmäinen sukupolvi, lanseerattiin Avalanchella ilman myyntiä. Se jaettiin ilmaiseksi kolmella kierroksella, ja jokainen lunastus siirtyi BSO:ksi samalla kurssilla: 7 114,6 PLEBiä 1 BSO:ta kohden.",
+      "caption": "Airdropin kolme kierrosta ja lunastettujen tokenien arvo tänään",
+      "round": "Kierros {{number}}",
+      "total": "Yhteensä",
+      "rounds": {
+        "telegram": {
+          "name": "Telegram-botti",
+          "how": "Lähetä Avalanche-osoite botille @plebbitbot; suosituksista sai bonuksia"
+        },
+        "twitter": {
+          "name": "Twitter",
+          "how": "Tykkää tilin @getplebbit julkaisusta, retweettaa se ja merkitse kolme kaveria"
+        },
+        "reddit": {
+          "name": "Reddit",
+          "how": "Kommentoi r/plebbitairdrop-ketjuun; botti tarkisti tilin historian"
+        }
+      },
+      "metrics": {
+        "how": "Osallistuminen",
+        "window": "Ilmoittautuminen",
+        "signups": "Ilmoitetut ilmoittautumiset",
+        "claimers": "Lunastaneet osoitteet",
+        "plebClaimed": "Lunastetut PLEBit",
+        "bsoToday": "BSO tänään",
+        "worthToday": "Arvo tänään",
+        "medianClaim": "Lunastusten mediaani tänään",
+        "largestClaim": "Suurin lunastus tänään",
+        "sources": "Lähteet"
+      },
+      "dateRange": "{{start}} – {{end}}",
+      "overCount": "yli {{amount}}",
+      "distinct": "{{amount}} eri osoitetta",
+      "note": "Arvoissa oletetaan, että jokainen lunastettu token on yhä hallussa, hinnalla {{price}} per BSO ({{date}}). Monet ilmoittautumiset olivat botteja. Lunastukset päättyivät 21. helmikuuta 2022, eikä osuuksia, joita kukaan ei lunastanut, koskaan mintattu."
+    },
+    "history": {
+      "title": "Historia",
+      "lead": "Telegram-ryhmästä vuonna 2021 muuttumattomaksi ERC-20-tokeniksi vuonna 2026.",
+      "redditThread": "Reddit-ketju",
+      "events": {
+        "groupOpens": {
+          "title": "plebbitin Telegram-ryhmä avautuu",
+          "body": "Ryhmä, joka on nykyään t.me/bitsocialnet, aloittaa joulupäivänä 2021."
+        },
+        "telegramRound": {
+          "title": "Kierros 1: Telegram-botti",
+          "body": "Viikon ajan ihmiset ilmoittautuvat botilla @plebbitbot. Tarjonta jaetaan tasan osallistujien kesken, ja suosituksista saa bonuksia. 3 312 osoitetta rekisteröityy ennen kuin botti sulkeutuu 14. tammikuuta."
+        },
+        "launch": {
+          "title": "Ensin likviditeetti, sitten lunastukset",
+          "body": "Klo 18:00 UTC deployer lisää ensimmäiset tokenit sekä 7 AVAXia Trader Joehin ja Pangoliniin. Lunastussivu avautuu noin 30 minuuttia myöhemmin, joten jokainen osuus oli lukittu ennen kuin kukaan pystyi käymään kauppaa."
+        },
+        "twitterRound": {
+          "title": "Kierros 2: Twitter",
+          "body": "Kokonaan Twitterissä järjestetty airdrop: tykkää, retweettaa ja merkitse kolme kaveria. Yli 1 500 ihmistä rekisteröityy 6. helmikuuta mennessä."
+        },
+        "redditRound": {
+          "title": "Kierros 3: Reddit",
+          "body": "Kokeellinen airdrop r/plebbitairdrop-yhteisössä, jossa botti tarkisti, että kommentoijilla oli vanhempaa Reddit-aktiivisuutta. Yli 2 200 rekisteröityy 12. helmikuuta mennessä, monet heistä botteja."
+        },
+        "claimsClose": {
+          "title": "Lunastukset päättyvät",
+          "body": "Yhtäkään kolmesta airdropista ei voi enää lunastaa. Tokeneita, joita kukaan ei lunastanut, ei koskaan mintata."
+        },
+        "farm": {
+          "title": "Likviditeettilouhinta alkaa",
+          "body": "Trader Joen likviditeettiä stakaavat ansaitsevat vasta mintattuja tokeneita. Farmi maksaa palkkioita siirtymään Ethereumiin asti."
+        },
+        "ethereum": {
+          "title": "Siirtymä Ethereumiin",
+          "body": "Snapshot-äänestyksen jälkeen Avalanchen token jäädytetään, ja jokainen saldo, mukaan lukien lukitut tokenit, likviditeettipositiot ja maksamattomat farmipalkkiot, lasketaan uudelleen liikkeeseen Ethereumissa toisen sukupolven tokenina. Haltijoiden ei tarvitse tehdä mitään."
+        },
+        "rebrand": {
+          "title": "plebbitistä tulee Bitsocial",
+          "body": "plebbit julkistaa uuden nimensä, Bitsocial. Ketjussa token säilyttää PLEB-nimen toukokuuhun asti."
+        },
+        "rebase": {
+          "title": "PLEBistä tulee 210 miljoonaa BSO:ta",
+          "body": "Toisen sukupolven token nimetään uudelleen BSO:ksi ja sille tehdään rebase, jotta kokonaistarjonta on tasan 210 miljoonaa: 7 114,6 PLEBistä tulee 1 BSO."
+        },
+        "immutable": {
+          "title": "BSO:sta tulee muuttumaton",
+          "body": "Lopullinen BSO-älysopimus otetaan käyttöön ilman mintausta, omistajaa, keskeytystä tai proxya. Kaikki 210 miljoonaa jaetaan yhdessä transaktiossa suhteessa rebasen jälkeisiin saldoihin."
+        },
+        "liquidityBurned": {
+          "title": "86,6 % likviditeetistä poltetaan",
+          "body": "Estebanin kaksi lompakkoa lähettää 7 881 Uniswap-likviditeettitokeniaan, 86,6 % BSO/ETH-poolista, nollaosoitteeseen. Kenelläkään ei ole avainta siihen osoitteeseen, joten tämä osuus poolin BSO:sta ja ETH:sta on lukittu ikuisesti."
+        }
+      }
+    },
+    "method": {
+      "title": "Menetelmä ja rajoitukset",
+      "lead": "Miten ryhmät löydettiin ja mitä tämä sivu ei näe.",
+      "howTitle": "Miten lompakot linkitettiin",
+      "how": {
+        "transfers": "Jokainen kahden tavallisen lompakon välinen siirto kaikissa kolmessa älysopimuksessa Avalanchella ja Ethereumissa jäljitettiin, pois lukien pörssit, reitittimet, poolit ja muut älysopimukset. Safe-multisigit linkitettiin omistajiinsa.",
+        "funders": "Myös jokainen AVAX- ja ETH-siirto lompakkoon tai lompakosta, jolla on vähintään 0,01 % tarjonnasta, jäljitettiin, mukaan lukien se, kuka lähetti kullekin lompakolle ensimmäisenä kolikoita. Pörssit ja vaihtopalvelut rahoittavat tuhansia lompakoita, joten vain yksityiset lompakot lasketaan yhteydeksi.",
+        "pattern": "Lompakoiden, joilla ei ole suoraa yhteyttä, ostokäyttäytymistä verrattiin saman ajanjakson jokaiseen ostajaan.",
+        "migrations": "Saldoja seurattiin molempien migraatioiden läpi kurssilla 7 114,6 PLEBiä BSO:ta kohden, samalla kurssilla, jolla tämä sivu näyttää vanhemmat määrät BSO:na."
+      },
+      "limitsTitle": "Rajoitukset",
+      "limits": {
+        "exchangeOnly": "Haltija, joka rahoittaa jokaisen lompakkonsa pörssin kautta eikä koskaan siirrä tokeneita niiden välillä, ei jätä on-chain-yhteyttä. Jotkin ryhmät voivat yhä kätkeä muitakin lompakoita.",
+        "sales": "Siirto kahden lompakon välillä voi olla myynti tai lahja, joten yksikään ryhmä ei perustu yhteen siirtoon. Jotkin lompakot ovat ainoastaan vastaanottaneet tokeneita ja kolikoita ryhmältään eivätkä ole koskaan lähettäneet mitään; nekin voivat olla lahjoja.",
+        "contracts": "Muiden älysopimusten kuin Uniswap-poolin ja Safen hallussa olevat tokenit on listattu sellaisinaan.",
+        "snapshot": "Saldot ja hinta päivittyvät ketjusta viiden minuutin välein, kun tämä sivu on auki. Lompakoiden väliset yhteydet on selvitetty käsin, eivätkä ne päivity itsestään.",
+        "history": "Historia-sarakkeen viivat näyttävät, mitä kukin lompakko on pitänyt hallussaan, lompakoille, joilla on vähintään 0,01 % tarjonnasta, sekä jokaiselle tunnetun haltijan lompakolle. Tunnetun haltijan viiva laskee mukaan myös tyhjennetyt lompakot, joista sen tokenit ovat peräisin, joten se alkaa ensimmäisestä ostosta tai lunastuksesta. Likviditeettipoolissa, farmissa tai vesting-virrassa olevat tokenit putoavat pois viivasta, ja migraatiot laskivat osan niistä uudelleen liikkeeseen niiden omistajille, joten jotkin viivat hyppäävät noina päivinä."
+      },
+      "contracts": {
+        "gen1": "Gen 1: PLEB Avalanchella",
+        "gen2": "Gen 2: PLEB Ethereumissa, nimetty uudelleen BSO:ksi toukokuussa 2026",
+        "gen3": "Gen 3: BSO nykyään"
+      },
+      "snapshot": "Saldot ja hinta Blockscoutista: {{count}} lompakkoa, tilanne {{date}}. Löysitkö väärän tai puuttuvan yhteyden? <contributeLink>Paranna tätä sivua</contributeLink>."
+    },
+    "holderName": "Haltija {{letter}}"
+  },
+  "chart": {
+    "meta": {
+      "title": "BSO:n hintakaavio – jokainen kauppa vuodesta 2022",
+      "description": "BSO:n hinta ja markkina-arvo sen ensimmäisestä kaupasta vuonna 2022 alkaen kaikilla kolmella älysopimuksella: PLEB Avalanchella, PLEB Ethereumissa ja BSO nykyään, yhdessä on-chain-vaihdoista kootussa kaaviossa."
+    },
+    "hero": {
+      "title": "BSO:n hinta ensimmäisestä kaupasta lähtien",
+      "lead": "Yksi kaavio kaikista kolmesta älysopimuksesta: PLEB Avalanchella, PLEB Ethereumissa, joka nimettiin vuonna 2026 uudelleen BSO:ksi, ja BSO nykyään. Vanhemmat hinnat on muunnettu kurssilla 7 114,6 PLEB-tokenia BSO:ta kohden, samalla suhteella, joka säilyi molemmissa migraatioissa. Valitse kaaviosta piste nähdäksesi, mitä sinä päivänä tapahtui; tokenin koko tarina löytyy haltijalistan <historyLink>historiasta</historyLink>.",
+      "status": {
+        "live": "Suoraan Uniswap-poolista: BSO {{price}}. Päivitetty {{ago}}.",
+        "loading": "Päivittäinen historia {{date}} asti. Ladataan uusimpia hintoja…",
+        "unavailable": "Reaaliaikaiset hinnat eivät ole juuri nyt saatavilla, joten kaavio päättyy päivään {{date}}."
+      }
+    },
+    "panelTitle": "Päivittäinen hintakaavio",
+    "summary": {
+      "price": "BSO:n päivittäinen hinta {{from}}–{{to}}. Alin päätöskurssi {{low}}, ylin päätöskurssi {{high}}, viimeisin {{latest}}.",
+      "mcap": "BSO:n päivittäinen markkina-arvo {{from}}–{{to}}. Alin päätösarvo {{low}}, ylin päätösarvo {{high}}, viimeisin {{latest}}."
+    },
+    "controls": {
+      "metricLabel": "Näytä",
+      "metrics": {
+        "price": "Hinta",
+        "mcap": "Markkina-arvo"
+      },
+      "rangeLabel": "Aikaväli",
+      "ranges": {
+        "1M": "1 kk",
+        "3M": "3 kk",
+        "1Y": "1 v",
+        "all": "Kaikki"
+      },
+      "typeLabel": "Kaaviotyyppi",
+      "types": {
+        "line": "Viiva",
+        "candles": "Kynttilät"
+      },
+      "scaleLabel": "Asteikko",
+      "scales": {
+        "log": "Log",
+        "linear": "Lineaarinen"
+      }
+    },
+    "legend": {
+      "since": "{{date}} lähtien",
+      "ohlc": "O {{open}} · H {{high}} · L {{low}} · C {{close}}",
+      "volume": "Volyymi {{value}}"
+    },
+    "eras": {
+      "label": "Älysopimukset. Valitse yksi tarkentaaksesi sen aikakauteen.",
+      "gen1": "PLEB Avalanchella",
+      "gen2": "PLEB Ethereumissa",
+      "gen3": "BSO",
+      "years": "{{from}}–{{to}}",
+      "now": "nyt",
+      "rebrand": "Nimeksi Bitsocial"
+    },
+    "method": {
+      "title": "Miten kaavio on koottu",
+      "lead": "Jokainen kynttilä perustuu ketjussa tehtyihin vaihtoihin, joten minkä tahansa päivän voi tarkistaa lohkoketjuselaimesta.",
+      "steps": {
+        "swaps": "Päivän avaus, ylin, alin ja päätös ovat päivän vaihdoissa maksettu ensimmäinen, korkein, matalin ja viimeinen hinta UTC-ajassa, luettuna kunkin poolin Swap-tapahtumista.",
+        "usd": "Poolien vastavaluuttana on AVAX tai ETH, joten jokainen vaihto muunnetaan dollareiksi Coinbasen kurssilla sen tunnin ajalta, jolloin vaihto tapahtui.",
+        "units": "PLEB, Avalanchella ja Ethereumissa <rebaseLink>2. toukokuuta 2026 tehtyyn rebaseen</rebaseLink> asti, näytetään BSO:ta kohden: sen hinta kerrotaan luvulla 7 114,596, eli niiden PLEB-tokenien määrällä, jonka kukin BSO korvasi.",
+        "pools": "Kun samana päivänä kauppaa käytiin useammassa kuin yhdessä poolissa, eniten volyymia kerännyt pooli määrää päivän kynttilän, jotta lähes tyhjä pooli ei voi piirtää väärää hintapiikkiä. Volyymi lasketaan yhteen kaikista pooleista, ja päivä ilman kauppoja toistaa edellisen päätöskurssin.",
+        "mcap": "Markkina-arvo on päätöskurssi kerrottuna päivän kokonaistarjonnalla: kaikki älysopimuksen mintaamat tokenit miinus kaikki sen polttamat tokenit, muunnettuna BSO:ksi samoin kuin hinta. Rebasen jälkeen ja nykyisellä BSO:lla tarjonta on kiinteä 210 miljoonaa.",
+        "eras": "Kunkin älysopimuksen historia päättyy seuraavan älysopimuksen ensimmäiseen kauppaan. Ethereumin älysopimus säilytti PLEB-nimen siihen päivitykseen asti, joka teki sille rebasen, kuusi viikkoa sen jälkeen, kun plebbitistä tuli Bitsocial 18. maaliskuuta 2026."
+      },
+      "poolsTitle": "Luetut poolit",
+      "eraDates": "{{from}}–{{to}}",
+      "snapshot": "Historia on koottu {{count}} vaihdosta {{date}} asti. Uudemmat päivät tulevat GeckoTerminalista ja päivittyvät viiden minuutin välein, kun tämä sivu on auki. Huomasitko väärän kynttilän? <contributeLink>Paranna tätä sivua</contributeLink>."
+    },
+    "eventList": "Kaavioon merkityt tapahtumat",
+    "eventDetails": {
+      "close": "Sulje",
+      "links": {
+        "reddit": "Reddit-julkaisu",
+        "release": "Julkaisu GitHubissa",
+        "hackerNews": "Hacker News -ketju",
+        "tweet": "Twiitti"
+      }
+    },
+    "events": {
+      "protocolLabsGrant": {
+        "title": "Apuraha Protocol Labsilta",
+        "body": "Protocol Labs, IPFS:n ja Filecoinin takana oleva tiimi, myöntää plebbitille apurahan hajautetun Reddit-vaihtoehdon rakentamiseen."
+      },
+      "firstApp": {
+        "title": "Ensimmäinen plebbit-sovellus",
+        "body": "Ensimmäinen työpöytäsovellus julkaistaan Linuxille, Windowsille ja Macille. Se ajaa omaa IPFS-solmuaan, joten toisin kuin verkkodemo, se on täysin peer-to-peer."
+      },
+      "plebchan": {
+        "title": "plebchan julkaistaan",
+        "body": "plebchan, 4chan-tyylinen sovellus plebbit-protokollalla, julkaisee ensimmäisen versionsa verkkoon, Macille ja Linuxille."
+      },
+      "hackerNews": {
+        "title": "Hacker Newsin etusivulla",
+        "body": "Redditin uuden API-hinnoittelun herättämän vastareaktion keskellä plebbitin demo nousee Hacker Newsin etusivulle yli 300 pisteellä. Samalla viikolla siitä kertovat julkaisut nousevat r/ethereumin etusivulle ja keräävät 30 000 katselukertaa r/CryptoCurrencyssa."
+      },
+      "coingecko": {
+        "title": "Listattu CoinGeckoon",
+        "body": "Hylättyään sen useaan otteeseen vuoden 2022 alusta lähtien CoinGecko listaa tokenin."
+      },
+      "socialFi": {
+        "title": "CoinGeckon SocialFi-kategoriassa",
+        "body": "CoinGecko lisää tokenin SocialFi-kategoriaansa tiimin pyynnöstä, ja X:ssä jaettu SocialFi-tokenien lista sisältää sen. Hinta lähes kaksinkertaistuu viidessä päivässä."
+      },
+      "seedit": {
+        "title": "Seedit julkaistaan",
+        "body": "Seedit, sovellus, joka näyttää ja toimii kuin vanha Reddit, julkaisee ensimmäisen versionsa."
+      },
+      "marchRally": {
+        "title": "Maaliskuun 2024 nousu",
+        "body": "Sijoittaja Jason Calacanis twiittaa 1. maaliskuuta haluavansa hajautetun Redditin, joka ei vaadi lupia, ja plebbit vastaa hänelle demollaan. Seedit 0.1.6 julkaistaan 3. maaliskuuta, ja 4. maaliskuuta tiimi julkistaa tokenilla rajatut yhteisöt. Kun ETH ylittää samassa kuussa 4 000 dollaria, hinta lähes kaksinkertaistuu 4. maaliskuuta ja kolminkertaistuu maaliskuun loppuun mennessä 2,2 miljoonan dollarin volyymilla, joka on tämän kaavion kuukausista suurin."
+      }
+    }
+  }
+}

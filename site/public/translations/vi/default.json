@@ -1,0 +1,743 @@
+{
+  "nav": {
+    "language": "Ngôn ngữ",
+    "theme": "Giao diện",
+    "bitsocial": "Bitsocial",
+    "faq": "Câu hỏi thường gặp",
+    "richList": "Bảng xếp hạng ví",
+    "chart": "Biểu đồ"
+  },
+  "languageSelector": {
+    "title": "Chọn ngôn ngữ",
+    "searchPlaceholder": "Tìm kiếm ngôn ngữ...",
+    "noResults": "Không có ngôn ngữ phù hợp với tìm kiếm của bạn."
+  },
+  "meta": {
+    "title": "BSO - Lớp xã hội còn thiếu của crypto",
+    "description": "BSO là tiền của Bitsocial, mạng xã hội peer-to-peer không công ty nào sở hữu. Một appchain Ethereum L2 nơi các cộng đồng sở hữu mạng, token và doanh thu của chính mình."
+  },
+  "topbar": {
+    "navLabel": "Điều hướng trang Bitsocial Chain",
+    "menu": "Menu",
+    "openMenu": "Mở menu",
+    "closeMenu": "Đóng menu"
+  },
+  "theme": {
+    "toggle": "Đổi giao diện"
+  },
+  "hero": {
+    "statusCta": "Chain chưa hoạt động, đăng ký để nhận cập nhật",
+    "title": "<mark>Lớp xã hội</mark> còn thiếu của crypto",
+    "supporting": "Crypto trở thành sòng bạc vì Web2, TradFi và hạ tầng tập trung nắm giữ các kênh phân phối và bóp méo cơ chế khuyến khích. Bitsocial Chain khắc phục điều đó: một <appchainLink>appchain</appchainLink> <l2Link>Ethereum L2</l2Link> không thể ngăn chặn, hoàn toàn phi tập trung, nơi các cộng đồng sở hữu mạng, token và doanh thu của mình."
+  },
+  "layers": {
+    "ariaLabel": "Ba lớp xếp chồng của crypto: các ứng dụng xã hội trên mạng Bitsocial ở trên cùng, lớp quyết toán Ethereum L1 ở nền móng, và Bitsocial Chain, appchain Ethereum L2 chạy bằng BSO, bừng sáng như lớp còn thiếu phát sáng, khớp vào khoảng trống giữa hai lớp kia, được một trục năng lượng xuyên qua.",
+    "social": {
+      "title": "ỨNG DỤNG XÃ HỘI",
+      "subtitle": "MẠNG BITSOCIAL"
+    },
+    "bso": {
+      "title": "BITSOCIAL CHAIN",
+      "subtitle": "APPCHAIN L2 · BSO"
+    },
+    "eth": {
+      "title": "ETHEREUM",
+      "subtitle": "QUYẾT TOÁN L1"
+    }
+  },
+  "contract": {
+    "label": "Hợp đồng BSO",
+    "copyAriaLabel": "Sao chép địa chỉ hợp đồng BSO {{address}}",
+    "copied": "Đã sao chép vào bộ nhớ tạm"
+  },
+  "sections": {
+    "whyAChain": {
+      "title": "Bản thân Bitsocial không nằm trên blockchain.",
+      "supporting": "Bài đăng, hồ sơ, cộng đồng và kiểm duyệt trên <bitsocialLink>Bitsocial</bitsocialLink> đều là peer-to-peer. Không blockchain, không phí, không ví: bạn có thể dùng toàn bộ mạng mà không cần chạm vào crypto, và hầu hết mọi người sẽ như vậy. Nhưng có một vài thứ thực sự cần đến blockchain — những cái tên thuộc về bạn, tiền chuyển giữa những người xa lạ, token mà một cộng đồng thực sự sở hữu. Bitsocial Chain chỉ dành cho đúng những thứ đó, không gì khác.",
+      "peerToPeer": {
+        "badge": "Peer-to-peer",
+        "note": "Mạng xã hội. Không có blockchain nào tham gia.",
+        "posts": "Bài đăng và bình luận",
+        "profiles": "Hồ sơ và cộng đồng",
+        "moderation": "Kiểm duyệt và chống spam"
+      },
+      "onChain": {
+        "badge": "On-chain",
+        "note": "Vài phần cần đến blockchain.",
+        "names": "Tên .bso",
+        "tipping": "Tip và giải thưởng",
+        "tokens": "Token cộng đồng"
+      },
+      "caption": "Chain là tùy chọn. Mạng xã hội thì không.",
+      "quote": "Một mạng xã hội phi tập trung cần một loại tiền phi tập trung."
+    },
+    "tokenomics": {
+      "title": "Tiền vững chắc.",
+      "supporting": "BSO là một ERC-20 có nguồn cung cố định: 210 triệu, không lạm phát, giảm phát theo thiết kế. Nó được phát miễn phí vào năm 2022 qua ba đợt airdrop và phần thưởng khai thác thanh khoản, không bán trước và không phân bổ cho đội ngũ. Hợp đồng của nó là bất biến và không có admin, nên các quy tắc được cố định mãi mãi.",
+      "supply": {
+        "cap": "Nguồn cung tối đa BSO · cố định mãi mãi"
+      },
+      "traits": {
+        "airdropped": "Không phân bổ cho đội ngũ, không bán trước",
+        "fixedCap": "Giới hạn cố định, không phát hành thêm",
+        "deflationary": "Giảm phát: nguồn cung chỉ giảm"
+      },
+      "locks": {
+        "noMint": {
+          "label": "Không mint",
+          "note": "nguồn cung không bao giờ tăng"
+        },
+        "noOwner": {
+          "label": "Không chủ sở hữu",
+          "note": "không bao giờ có khóa admin"
+        },
+        "noPause": {
+          "label": "Không tạm dừng",
+          "note": "việc chuyển token không thể bị đóng băng"
+        },
+        "noProxy": {
+          "label": "Không proxy",
+          "note": "mã không thể bị thay thế"
+        }
+      },
+      "airdrop": {
+        "label": "Đợt phân phối",
+        "note": "Ba đợt airdrop vào tháng 1 và tháng 2 năm 2022, được 1.510 địa chỉ nhận. Đợt 1 dùng một bot Telegram có thưởng giới thiệu, và Esteban đã rà soát thủ công các lượt giới thiệu của đợt này để chống lạm dụng; đợt 2 và 3 diễn ra trên Twitter và Reddit. Khoảng 63% tổng số BSO được phân phối qua các đợt airdrop và 34% là phần thưởng cho những người cung cấp thanh khoản; phần còn lại làm thanh khoản khởi đầu cho các pool ra mắt. Không bán trước, không phân bổ cho đội ngũ, không bán gì cả.",
+        "richListLink": "Xem mọi người nắm giữ và cả ba đợt"
+      },
+      "contract": {
+        "label": "Toàn bộ hợp đồng",
+        "note": "Toàn bộ nguồn cung được mint về một địa chỉ vì đó là cách quá trình migration hoạt động: số dư được sao chép một-một vào địa chỉ đó rồi trả lại bằng cách chuyển token, tất cả đều on-chain. Mọi thứ còn lại là <openZeppelinLink>OpenZeppelin</openZeppelinLink>, không chỉnh sửa — mã token được dùng nhiều nhất và được rà soát kỹ nhất trên Ethereum. Không có gì tùy biến, không có gì mánh khóe. Đọc nó trên <etherscanLink>Etherscan</etherscanLink>."
+      },
+      "foot": "Bất biến và không có admin: không còn khóa admin nào để nắm giữ, nên không ai có thể thay đổi nó, phát hành thêm hay đóng băng nó."
+    },
+    "unstoppable": {
+      "title": "Xây trên Ethereum. Không ai vận hành.",
+      "supporting": "Một blockchain mới sẽ phải xây lại nền tảng bảo mật và cộng đồng nhà phát triển mà Ethereum đã có, và sẽ cần một token mới trong khi BSO đã được phân phối hoàn toàn. Vì vậy Bitsocial Chain được thiết kế như một Ethereum L2 không có nhà vận hành: mọi hành động là một giao dịch Ethereum thông thường gửi đến một địa chỉ không ai kiểm soát, và bất kỳ ai cũng có thể chạy một node để tự tính ra cùng một trạng thái từ lịch sử của Ethereum. Không có công ty nào để gây áp lực và không có công tắc nào để gạt.",
+      "locks": {
+        "noSequencer": {
+          "label": "Không cần sequencer",
+          "note": "Ethereum sắp xếp thứ tự mọi giao dịch"
+        },
+        "noAdminKeys": {
+          "label": "Không có khóa admin",
+          "note": "không ai đổi luật chơi thay bạn"
+        },
+        "noUpgradeableContract": {
+          "label": "Không có hợp đồng nâng cấp được",
+          "note": "không có gì trên Ethereum để tịch thu"
+        },
+        "noPrivilegedNode": {
+          "label": "Không có node đặc quyền",
+          "note": "ai cũng có thể tự tính ra cùng trạng thái"
+        }
+      },
+      "proofOfConcept": "Bản chứng minh khái niệm đã tính ra tên .bso theo cách này, trên một dev chain cục bộ. Để ra mắt chính thức vẫn cần một hệ thống chứng minh, một cuộc kiểm toán và mô hình kinh tế cuối cùng. <proofLink>Đọc bản chứng minh khái niệm</proofLink>."
+    },
+    "bsoNames": {
+      "title": "Tên .bso của bạn vẫn là của bạn.",
+      "supporting": "Các ứng dụng Bitsocial <resolverLink>hiện đã phân giải tên .bso</resolverLink> bằng cách mượn ENS, hệ thống đặt tên mà các ví Ethereum sử dụng: mycommunity.bso thực chất là mycommunity.eth mang một bản ghi bitsocial. Một sổ đăng ký gốc sẽ airdrop mọi tên đang được dùng cho ví đang nắm giữ nó — không có gì để nhận và không phải đăng ký lại.",
+      "ensBadge": "ENS · hiện nay",
+      "pointsTo": "trỏ đến",
+      "communityKey": "khóa của cộng đồng",
+      "airdropAtLaunch": "airdrop khi ra mắt",
+      "bsoBadge": ".bso · Bitsocial Chain",
+      "owner": "chủ sở hữu",
+      "sameWallet": "cùng một ví",
+      "fees": "Trước khi chuỗi ra đời, tên .bso chuyển sang một <bsipLink>sổ đăng ký tạm thời trên Ethereum</bsipLink>, phí của sổ này tài trợ cho các nhà phát triển Bitsocial. Trên Bitsocial Chain, kế hoạch là phí tên sẽ được đốt, hoặc dùng để mua lại và đốt BSO. Cơ chế chưa được quyết định."
+    },
+    "communityMoney": {
+      "title": "Một tài sản cho nhiều cộng đồng.",
+      "supporting": "Mỗi cộng đồng có thể chạy lớp riêng của mình, một L3 với token riêng, và trả phí, tên và tiền thuê bằng BSO. L3 đã có mặt khắp crypto; trên Bitsocial Chain, mỗi L3 sẽ đến cùng một cộng đồng có sẵn. Doanh thu của nó có thể tự quyết toán: các vị trí quảng cáo được đấu giá bằng hợp đồng, một phần của mỗi lần bán bị hủy ngay tại chỗ và phần còn lại trả cho cộng đồng, không có kho quỹ mua lại nào để ai đó chiếm giữ.",
+      "communityLayer": "Lớp cộng đồng",
+      "ownToken": "token riêng của nó",
+      "feesFlow": "phí, tên và tiền thuê trả bằng BSO",
+      "chainMeta": "Lớp Ethereum · trạng thái được tính ra từ Ethereum",
+      "ethereumMeta": "Ethereum L1 · bảo mật và dữ liệu",
+      "caption": "Một phần của mỗi khoản phí bị hủy; phần còn lại chi trả cho bảo mật của Chain."
+    },
+    "privacy": {
+      "title": "Việc tip không nên làm lộ danh tính bạn.",
+      "supporting": "Bitsocial Chain công khai theo mặc định, giống như Ethereum, và tên .bso sinh ra để được nhìn thấy. Tiền thì khác: một lần tip không bao giờ nên đòi hỏi phải đặt tên, hồ sơ hay bài đăng của bạn lên on-chain bên cạnh nó, và một ví mới nên là chuyện bình thường, không đáng ngờ. Chain sẽ không xây hệ thống riêng tư của riêng mình. Nó được dự định để các hệ thống sẵn có có thể tích hợp mà không cần xin phép: shielded pool, địa chỉ stealth, bằng chứng zero-knowledge.",
+      "publicOnPurpose": {
+        "heading": "Công khai có chủ đích",
+        "names": "Tên .bso và ai sở hữu chúng",
+        "rules": "Mọi quy tắc và mọi thay đổi trạng thái"
+      },
+      "neverRequired": {
+        "heading": "Không bao giờ bắt buộc",
+        "profile": "Tên hoặc hồ sơ của bạn kèm theo khoản tip",
+        "wallet": "Mỗi người một ví",
+        "app": "Một ví hoặc ứng dụng chính thức"
+      }
+    },
+    "possibilities": {
+      "title": "Đề xuất công khai.",
+      "supporting": "Chưa hoạt động. BSO hiện đã hoạt động trên Ethereum; Bitsocial Chain là một đề xuất, và bản chứng minh khái niệm đầu tiên của nó, tên .bso gốc, chạy trên một dev chain cục bộ. Không mục nào bên dưới có ngày cụ thể. Đó là những gì một lớp xã hội có tiền riêng có thể làm nên: một số sẽ được xây dựng, một số bị thay bằng ý tưởng tốt hơn, và một số do những người chưa xuất hiện xây dựng.",
+      "ideas": {
+        "chain": {
+          "note": "Chính appchain Ethereum L2 này, và là nơi quyết toán của BSO."
+        },
+        "registry": {
+          "label": "Sổ đăng ký .bso gốc",
+          "note": "Tên và danh tính được đăng ký trên Chain, thay vì mượn từ ENS."
+        },
+        "l3s": {
+          "label": "L3 và token của cộng đồng",
+          "note": "Các cộng đồng có lớp riêng và token riêng, quyết toán bằng BSO."
+        },
+        "agoraswap": {
+          "note": "Một DEX cộng đồng nơi token cộng đồng được giao dịch với BSO, giữ thanh khoản on-chain."
+        },
+        "collectibles": {
+          "label": "Đồ sưu tầm của nhà sáng tạo",
+          "note": "Cách để nhà sáng tạo bán trực tiếp một thứ gì đó, không có nền tảng nào trích phần trăm."
+        },
+        "other": {
+          "label": "Bất kỳ điều gì khác phù hợp",
+          "note": "Token của client, sequencing phi tập trung, và những ý tưởng chưa ai đề xuất."
+        }
+      }
+    },
+    "verify": {
+      "title": "Chỉ có một địa chỉ là BSO.",
+      "supporting": "Ai cũng có thể tạo một token và gọi nó là BSO, nên địa chỉ hợp đồng là thứ duy nhất giúp phân biệt bản thật. Hãy đối chiếu cả 42 ký tự với trang này và các kênh chính thức của Bitsocial trước khi gửi bất cứ thứ gì đến bất cứ đâu.",
+      "warning": "Hợp đồng BSO chính thức là <contract>{{address}}</contract>. Bất kỳ thứ gì khác đều không phải BSO, dù nó được gọi là gì và được niêm yết ở đâu.",
+      "tradeOnUniswap": "Giao dịch trên Uniswap",
+      "provideLiquidity": "Cung cấp thanh khoản",
+      "note": "Thanh khoản trên Uniswap do những người độc lập cung cấp, và ai cũng có thể góp thêm. Đây không phải là tài khoản tiết kiệm: giá trị của một vị thế thanh khoản có thể giảm, kể cả xuống dưới số tiền đã bỏ vào."
+    }
+  },
+  "common": {
+    "proposed": "Đề xuất",
+    "close": "Đóng"
+  },
+  "mailingList": {
+    "chainTitle": "Luôn cập nhật",
+    "chainDescription": "Nhận thông báo về các mốc của token BSO, Bitsocial Chain và tin tức hệ sinh thái. Ít gửi, nhiều giá trị.",
+    "placeholder": "you@example.com",
+    "inputLabel": "Địa chỉ email",
+    "subscribe": "Đăng ký",
+    "subscribing": "Đang đăng ký…",
+    "chainSuccess": "Bạn đã có trong danh sách.",
+    "confirmationSent": "Kiểm tra email để xác nhận đăng ký của bạn.",
+    "chainError": "Đã xảy ra lỗi. Vui lòng thử lại.",
+    "unavailable": "Đăng ký nhận bản tin tạm thời không khả dụng.",
+    "privacy": "Không bao giờ có spam. Bạn có thể hủy đăng ký bất cứ lúc nào."
+  },
+  "faq": {
+    "eyebrow": "Câu hỏi thường gặp",
+    "title": "Câu hỏi thường gặp.",
+    "supporting": "Mỗi phần của trang này trả lời một câu hỏi. Nhấp vào câu hỏi để chuyển đến phần đó.",
+    "navLabel": "Các câu hỏi được trả lời trên trang này",
+    "answeredIn": "Được trả lời trong {{label}}",
+    "entries": {
+      "whyAChain": {
+        "eyebrow": "Vì sao cần Chain",
+        "question": "Vì sao một mạng xã hội peer-to-peer lại cần một blockchain?"
+      },
+      "tokenomics": {
+        "eyebrow": "Tokenomics",
+        "question": "Tokenomics của BSO là gì? Ai đã nhận được BSO?"
+      },
+      "unstoppable": {
+        "eyebrow": "Không thể ngăn chặn",
+        "question": "Vì sao là Ethereum L2? Ai vận hành nó?"
+      },
+      "bsoNames": {
+        "eyebrow": "Tên BSO",
+        "question": "Tên .bso của tôi sẽ ra sao?"
+      },
+      "communityMoney": {
+        "eyebrow": "Tiền cộng đồng",
+        "question": "BSO sẽ được dùng để làm gì?"
+      },
+      "privacy": {
+        "eyebrow": "Quyền riêng tư",
+        "question": "Mọi người có nhìn thấy tôi tip ai không?"
+      },
+      "possibilities": {
+        "eyebrow": "Khả năng",
+        "question": "Đã hoạt động chưa? Có kế hoạch gì?"
+      },
+      "verify": {
+        "eyebrow": "Xác minh",
+        "question": "Làm thế nào để có BSO một cách an toàn?"
+      }
+    },
+    "rows": {
+      "about": {
+        "label": "Về chúng tôi",
+        "question": "Ai đứng sau Bitsocial Chain?"
+      },
+      "mailingList": {
+        "label": "Bản tin",
+        "question": "Làm sao để tôi luôn cập nhật?"
+      }
+    },
+    "ask": {
+      "placeholder": "Hỏi bất cứ điều gì khác…",
+      "label": "Hỏi bất cứ điều gì khác",
+      "action": "Hỏi ChatGPT"
+    }
+  },
+  "footer": {
+    "chainTagline": "Lớp xã hội còn thiếu của crypto",
+    "token": "Token",
+    "resources": "Tài nguyên",
+    "blog": "Blog",
+    "proofOfConcept": "Chứng minh khái niệm",
+    "about": "Về chúng tôi",
+    "mainSite": "Trang chính",
+    "community": "Cộng đồng",
+    "chainBottomTagline": "Sửa chữa lớp xã hội của crypto",
+    "contribute": "Cải thiện trang này"
+  },
+  "backToTop": {
+    "returnToOrigin": "Quay lại vị trí trước đó",
+    "toTop": "Lên đầu trang",
+    "toBottom": "Xuống cuối trang"
+  },
+  "richList": {
+    "meta": {
+      "title": "Bảng xếp hạng ví BSO - Ai đang nắm giữ BSO",
+      "description": "Mọi người nắm giữ BSO, với các ví liên kết được gộp nhóm, các ví của đội ngũ được đánh dấu, cùng bằng chứng on-chain đằng sau mỗi liên kết. Kèm theo lịch sử của ba đợt airdrop năm 2022."
+    },
+    "hero": {
+      "title": "Ai đang nắm giữ BSO",
+      "lead": "Mọi ví BSO, trong đó các ví thuộc cùng một người nắm giữ được gộp lại với nhau và các ví của đội ngũ được đánh dấu. Mỗi liên kết đều liệt kê các giao dịch đằng sau nó, để bạn có thể tự kiểm tra.",
+      "jumpLabel": "Mục",
+      "status": {
+        "live": "Trực tiếp từ chuỗi: {{count}} ví, giá BSO {{price}}. Đã cập nhật {{ago}}.",
+        "loading": "Ảnh chụp dữ liệu ngày {{date}}: {{count}} ví, giá BSO {{price}}. Đang tải dữ liệu trực tiếp…",
+        "unavailable": "Hiện không có dữ liệu trực tiếp, nên đây là ảnh chụp dữ liệu ngày {{date}}: {{count}} ví, giá BSO {{price}}."
+      }
+    },
+    "jump": {
+      "holders": "Người nắm giữ",
+      "linked-wallets": "Ví liên kết",
+      "team": "Đội ngũ nòng cốt",
+      "airdrops": "Airdrop",
+      "history": "Lịch sử",
+      "method": "Phương pháp"
+    },
+    "strip": {
+      "label": "Tỷ lệ trong tổng nguồn cung 210 triệu BSO do mỗi nhóm nắm giữ",
+      "team": "Đội ngũ nòng cốt",
+      "pool": "Pool Uniswap",
+      "everyoneElse_other": "Tất cả những người khác ({{count}} ví)"
+    },
+    "categories": {
+      "team": "Đội ngũ nòng cốt",
+      "pool": "Pool thanh khoản",
+      "confirmed": "Đã xác nhận",
+      "likely": "Nhiều khả năng",
+      "possible": "Có thể",
+      "other": "Không liên kết"
+    },
+    "table": {
+      "title": "Người nắm giữ",
+      "lead": "Các ví liên kết được gộp thành một hàng. Chuyển sang “Theo ví” để xem từng địa chỉ giống như cách Etherscan liệt kê.",
+      "viewLabel": "Hiển thị người nắm giữ",
+      "view": {
+        "grouped": "Theo nhóm",
+        "wallets": "Theo ví"
+      },
+      "searchLabel": "Tìm theo địa chỉ hoặc tên người nắm giữ",
+      "searchPlaceholder": "Tìm một địa chỉ",
+      "caption": "Người nắm giữ BSO theo số dư",
+      "holder": "Người nắm giữ",
+      "balance": "BSO",
+      "share": "Tỷ lệ nguồn cung",
+      "value": "Giá trị",
+      "contract": "Hợp đồng",
+      "walletCount_other": "{{count}} ví",
+      "noMatch": "Không có người nắm giữ nào khớp với tìm kiếm này.",
+      "showAll_other": "Hiển thị tất cả {{count}} hàng",
+      "showMore": "Hiển thị thêm {{count}} hàng",
+      "history": "Lịch sử",
+      "historySummary": "Số dư từ {{start}}: cao nhất {{high}} BSO vào {{highDate}}, hiện tại {{current}} BSO"
+    },
+    "evidenceLinks": "Giao dịch làm bằng chứng",
+    "telegramSources": "Nguồn Telegram",
+    "linked": {
+      "title": "Ví liên kết",
+      "lead": "Các ví chỉ được gộp nhóm khi chuỗi cho thấy có liên kết: token hoặc gas di chuyển giữa chúng, một nguồn cấp vốn riêng chung, một chủ sở hữu multisig, hoặc một mô thức mua giống hệt nhau. Mỗi nhóm đều liệt kê các giao dịch đằng sau nó.",
+      "confidence": {
+        "confirmed": "Các ví giao dịch với nhau, có chung một nguồn cấp vốn riêng, hoặc kiểm soát lẫn nhau.",
+        "likely": "Nhiều lần chuyển từ một nguồn, hoặc một mô thức mua giống hệt nhau, mà khó giải thích theo cách nào khác.",
+        "possible": "Chỉ một liên kết duy nhất, cũng có thể là một giao dịch bán hoặc một món quà."
+      },
+      "holds_other": "{{amount}} BSO, {{share}} nguồn cung, trong {{count}} ví",
+      "walletList_other": "Tất cả {{count}} ví"
+    },
+    "walletRoles": {
+      "deployer": "deployer",
+      "estebanEns": "estebanabaroa.eth",
+      "safe": "multisig Safe",
+      "safeOwner": "chủ sở hữu Safe"
+    },
+    "entities": {
+      "pool": {
+        "name": "Pool BSO/ETH trên Uniswap"
+      },
+      "holderA": {
+        "summary": "Năm ví liên kết với nhau qua các lần chuyển và một nguồn cấp vốn riêng chung, đã mua vào trên Avalanche từ tháng 2 năm 2022 đến tháng 5 năm 2023 và chưa bao giờ bán.",
+        "evidence": {
+          "transfersToLpWallet": "Hai trong số các ví mua đã gửi token và AVAX sang một ví thứ ba, ví này dùng chúng để cung cấp thanh khoản và farm trên Trader Joe: 141 nghìn BSO và 5 AVAX vào ngày 27 tháng 2 năm 2022, sau đó 1,01 triệu BSO và 34 AVAX từ ngày 28 tháng 2 đến ngày 2 tháng 3. Ví thứ ba đã gửi lại 0,013 AVAX.",
+          "sharedFunder": "Một ví riêng đã cấp vốn cho ba trong số các ví mua và không làm gì khác. Mọi giao dịch nó từng gửi đều đi đến các ví này, theo thứ tự: nonce 0 đến 4 cho ví thứ nhất, 5 đến 7 cho ví thứ hai, 8 cho ví thứ ba.",
+          "neverSold": "Không ví nào trong số năm ví đã bán token của mình. Số dư của chúng đi qua cả hai đợt migration mà không thay đổi."
+        }
+      },
+      "holderC": {
+        "summary": "Hai ví được nạp bởi cùng một cặp ví mua.",
+        "evidence": {
+          "commonSender": "Một ví mua đã gửi cho ví thứ nhất 664 nghìn BSO vào ngày 19 tháng 8 năm 2024. Ngày 14 tháng 11 năm 2025, nó gửi cho ví thứ hai một giao dịch thử 7 nghìn BSO, 0,1 ETH rồi 2,17 triệu BSO. Đó là số ETH duy nhất mà ví thứ hai từng nhận, và ví này chưa bao giờ gửi giao dịch nào.",
+          "secondSender": "Một ví mua khác đã gửi cho ví thứ nhất 7,3 triệu BSO còn lại của ví này qua tám lần chuyển từ tháng 5 đến tháng 8 năm 2024, cùng với số ETH đầu tiên của ví này, và nhận lại 4,35 ETH từ ví đó.",
+          "sendersLinked": "Hai ví mua này liên kết với nhau: một ví đã chuyển cho ví kia 1,15 triệu BSO và 0,1 ETH vào ngày 22 tháng 2 năm 2024, và ví kia gửi lại 5,8 ETH còn lại của mình vào ngày 17 tháng 8 năm 2024."
+        }
+      },
+      "holderD": {
+        "summary": "Năm ví: hai ví gửi AVAX và ETH cho nhau, ví thứ ba được cả hai ví đó nạp, và hai ví nữa do ví thứ ba thiết lập.",
+        "evidence": {
+          "sharedRecipient": "Ví thứ ba đã nhận một giao dịch thử rồi 703 nghìn BSO từ ví thứ nhất vào ngày 18 tháng 11 năm 2022, và 1,16 triệu BSO từ ví thứ hai vào ngày 1 tháng 12 năm 2022. Toàn bộ số AVAX nó từng có để trả phí gas đều đến từ hai ví đó.",
+          "coinsBothWays": "Hai ví đầu tiên đã gửi coin cho nhau trên cả hai chuỗi trong 20 tháng: 0,5 AVAX theo một chiều và 0,49 gửi lại chín phút sau vào ngày 24 tháng 3 năm 2022, 73 AVAX vào ngày 31 tháng 5 năm 2022, 0,09 ETH vào ngày 11 tháng 3 năm 2023 và 2 ETH theo chiều ngược lại vào ngày 7 tháng 11 năm 2023.",
+          "newWallets": "Sau đó ví thứ ba thiết lập hai ví mới theo cùng một cách mỗi lần: AVAX để trả phí gas, một giao dịch thử, rồi 281 nghìn BSO, vào ngày 24 tháng 11 năm 2022 và vào cuối tháng 4 năm 2023. Cả hai ví đều chưa bao giờ gửi giao dịch nào."
+        }
+      },
+      "holderE": {
+        "summary": "Hai ví được nạp từ cùng một nguồn.",
+        "evidence": {
+          "commonSender": "Một ví đã gửi cho ví thứ nhất 5,53 triệu BSO qua bảy lần chuyển từ tháng 10 năm 2024 đến tháng 1 năm 2025, và gửi cho ví thứ hai 287 nghìn vào ngày 22 tháng 11 năm 2025.",
+          "onlyEth": "Chính ví đó đã gửi cho mỗi ví số ETH duy nhất mà ví ấy từng nhận, trong cùng phút với những token đầu tiên của nó: 0,1 ETH và 0,12 ETH. Cả hai ví đều chưa bao giờ gửi giao dịch nào."
+        }
+      },
+      "holderF": {
+        "summary": "Một ví đã chia token của mình và 4 ETH sang ba ví mới.",
+        "evidence": {
+          "split": "Ngày 10 tháng 3 năm 2024, trong vòng bảy phút, một ví đã gửi PLEB, tên gọi của BSO khi đó, với các khoản tròn số (12 tỷ, 8 tỷ và 4 tỷ) đến ba ví mới. Bản thân ví này vẫn còn nắm giữ BSO.",
+          "ethBothWays": "Trong cùng những phút đó, nó đã gửi cho ba ví 4,05 ETH, mỗi ví từ 1 đến 2 ETH. Ví nhận nhiều nhất đã gửi lại 1,5 ETH vào ngày 24 tháng 6 năm 2024; hai ví còn lại chưa bao giờ gửi giao dịch nào."
+        }
+      },
+      "holderG": {
+        "summary": "Hai ví được cùng một người gửi cấp vốn cách nhau ba năm, và một ví thứ ba mà một trong hai ví đó đã chuyển số dư của mình sang.",
+        "evidence": {
+          "commonSender": "Một ví đã gửi cho ví thứ hai 658 nghìn BSO trên Avalanche vào tháng 4 năm 2022 và gửi cho ví thứ nhất 843 nghìn trên Ethereum vào tháng 1 năm 2025.",
+          "senderFunded": "Người gửi đó cũng đã gửi coin cho cả hai ví: nó cấp cho ví thứ hai số AVAX đầu tiên của ví này và 17,4 AVAX vào ngày hôm sau, và gửi cho ví thứ nhất 0,15 ETH còn dư của mình ba phút sau khi gửi token.",
+          "movedOn": "Ngày 3 tháng 11 năm 2026, ví thứ hai đã gửi cho ví thứ ba ETH để trả phí gas, một giao dịch thử 100 BSO rồi toàn bộ số dư 852 nghìn BSO của mình."
+        }
+      },
+      "holderH": {
+        "summary": "Hai ví, trong đó một ví cấp vốn cho ví kia.",
+        "evidence": {
+          "directTransfer": "Ngày 24 tháng 4 năm 2022, ví thứ nhất đã gửi cho ví thứ hai số AVAX đầu tiên của ví này và hai phút sau là 59 nghìn BSO.",
+          "funding": "Ngày 8 tháng 5 năm 2022, ví thứ nhất đã gửi cho ví thứ hai 23 AVAX qua sáu lần chuyển, và ví thứ hai đổi phần lớn số đó sang BSO trong vòng vài phút sau mỗi lần."
+        }
+      },
+      "holderI": {
+        "summary": "Hai ví đã gửi ETH cho nhau trước khi một ví chuyển toàn bộ số dư của mình sang ví kia.",
+        "evidence": {
+          "directTransfers": "Sau đó ví thứ hai đã gửi cho ví thứ nhất toàn bộ những gì nó nắm giữ: 1,85 triệu BSO vào ngày 30 tháng 10 năm 2023 và 703 nghìn vào ngày 8 tháng 11 năm 2023.",
+          "ethBothWays": "Ví thứ hai đã gửi cho ví thứ nhất 0,77 ETH vào ngày 16 tháng 12 năm 2022, và ví thứ nhất gửi lại 0,02 ETH vào ngày hôm sau."
+        }
+      },
+      "holderJ": {
+        "summary": "Hai ví đã gửi AVAX qua lại trong hơn một năm.",
+        "evidence": {
+          "coinsBothWays": "Ví thứ nhất đã gửi cho ví thứ hai số AVAX đầu tiên của ví này vào ngày 7 tháng 5 năm 2021 và số ETH đầu tiên của ví này vào tháng 8 năm đó. Đến tháng 7 năm 2022, ví thứ nhất đã gửi 331 AVAX qua mười hai lần chuyển, và ví thứ hai đã gửi lại 15 AVAX qua hai lần.",
+          "sameEveningLocks": "Cả hai đều mua BSO trên Trader Joe, và vào ngày 28 tháng 4 năm 2022 cả hai đều khóa BSO trong cùng một hợp đồng khóa, cách nhau không quá nửa giờ."
+        }
+      },
+      "holderK": {
+        "summary": "Hai ví được cùng một ví riêng cấp vốn.",
+        "evidence": {
+          "sharedFunder": "Một ví riêng đã cấp vốn cho cả hai. Nó gửi cho ví thứ nhất số AVAX đầu tiên của ví này vào tháng 10 năm 2021, 194 AVAX qua 21 lần chuyển tính đến cuối năm 2023, và 3,49 triệu BSO qua hai lần chuyển. Nó gửi cho ví thứ hai số AVAX đầu tiên của ví này vào ngày 14 tháng 2 năm 2022 và 23 AVAX qua sáu lần chuyển tính đến tháng 4 năm đó. Cả hai đều gửi lại những khoản AVAX nhỏ.",
+          "sharedRecipient": "Cả hai cũng cấp vốn cho cùng một ví mới: ví thứ hai gửi cho nó 5,1 AVAX đầu tiên vào ngày 17 tháng 2 năm 2022, và ví thứ nhất gửi cho nó 38,3 AVAX ba ngày sau."
+        }
+      },
+      "holderL": {
+        "summary": "Hai ví được cấp vốn từ cùng một ví riêng, trong đó một ví qua một ví trung gian.",
+        "evidence": {
+          "funderChain": "Một ví riêng đã gửi cho ví thứ hai số AVAX đầu tiên của ví này vào ngày 12 tháng 2 năm 2022. Sáu ngày sau, nó chuyển 597 nghìn BSO của chính mình và số AVAX còn lại sang một ví mới, ví này chuyển tiếp 597 nghìn BSO cho ví thứ nhất vào ngày 22 tháng 2, cùng với số AVAX đầu tiên của ví thứ nhất.",
+          "directTransfer": "Ví thứ hai đã gửi cho ví thứ nhất 0,005 AVAX vào ngày 27 tháng 2 năm 2022."
+        }
+      },
+      "holderM": {
+        "summary": "Mười ví không làm gì khác ngoài việc lần lượt mua trên Avalanche từ tháng 2 năm 2022 đến tháng 5 năm 2023, và chưa bao giờ bán.",
+        "evidence": {
+          "buyingPattern": "Mỗi ví đều là ví mới, được cấp vốn bằng một hoặc hai lần rút tiền từ sàn khoảng 2.000 đến 3.400 USD qua Binance hoặc ChangeNOW, đổi toàn bộ số tiền sang token và không bao giờ được dùng lại. Bảy ví lần lượt mua từng ví một từ ngày 28 tháng 2 đến ngày 31 tháng 3 năm 2022; ba ví nữa cũng làm như vậy vào ngày 12 tháng 4 và ngày 25 tháng 6 năm 2022 và vào ngày 6 tháng 5 năm 2023. Trong số những người nắm giữ hiện nay có ít nhất 0,01% nguồn cung, có 21 ví chỉ được dùng để mua trên Avalanche, với không quá bốn giao dịch: mười ví này, hai ví thuộc một nhóm khác, và chín ví khác mà mỗi ví chi dưới 410 USD.",
+          "neverSold": "Không ví nào trong số mười ví đã bán hay chuyển token của mình kể từ đó, ngoại trừ một ví đã khóa token của mình vào tháng 4 năm 2022. Số dư của chúng đi qua cả hai đợt migration mà không thay đổi."
+        }
+      }
+    },
+    "team": {
+      "title": "Không phân bổ cho đội ngũ",
+      "lead": "Không có token nào được dành riêng cho đội ngũ, nhà đầu tư hay đợt bán trước. Dưới đây là nguồn gốc của từng BSO, những gì các ví của đội ngũ đang nắm giữ hôm nay, và những gì nhà sáng lập đã nói vào thời điểm đó.",
+      "origin": {
+        "caption": "Mỗi BSO ban đầu được mint như thế nào, trong năm 2022 và 2023",
+        "label": "Tỷ lệ BSO theo cách được mint ban đầu",
+        "airdropClaims": {
+          "label": "Nhận airdrop",
+          "note": "{{amount}} BSO được 1.510 địa chỉ nhận trong ba đợt. Những phần phân bổ không ai nhận chưa bao giờ được mint."
+        },
+        "liquidityMining": {
+          "label": "Khai thác thanh khoản",
+          "note": "{{amount}} BSO được trả cho những người stake thanh khoản trên Trader Joe, từ tháng 2 năm 2022 đến tháng 5 năm 2023."
+        },
+        "liquiditySeed": {
+          "label": "Thanh khoản khởi đầu",
+          "note": "{{amount}} BSO được mint cho deployer và thêm vào hai pool ra mắt cùng với 7 AVAX."
+        }
+      },
+      "facts": {
+        "liquiditySeed": "Lần mint duy nhất cho một ví của đội ngũ ngoài airdrop là thanh khoản khởi đầu: 7 triệu BSO, được thêm vào pool Trader Joe (5,6 triệu) và pool Pangolin (1,4 triệu) trong vòng bảy phút vào ngày 14 tháng 1 năm 2022.",
+        "teamClaims": "Ba thành viên đội ngũ đã nhận trong đợt 1: Esteban 703 nghìn BSO, Tom 1,86 triệu BSO (lượt nhận lớn thứ ba trong 767 lượt) và rinse12 1,1 triệu BSO, từ hai ví mà số token sau đó đã được chuyển vào Safe của anh ấy. Cộng lại là 2,8% tổng số token đã được nhận trong các đợt airdrop.",
+        "migrationMintedNothing": "Đợt migration năm 2026 không tạo ra token mới cho bất kỳ ai: toàn bộ 210 triệu BSO được phát ra trong một giao dịch, theo tỷ lệ số dư cũ.",
+        "farmRewards": "Một thành viên đội ngũ đã nhận phần thưởng khai thác thanh khoản: một ví của rinse12 đã thu về 2,3 triệu BSO vào ngày 5 tháng 4 năm 2022, khoản lớn thứ tư trong số 60,9 triệu BSO đã được trả ra trên Avalanche cho 208 địa chỉ. Còn 8 triệu chưa được trả vào thời điểm chuyển sang Ethereum đã được ghi có cho những người stake đã kiếm được số đó."
+      },
+      "statementsTitle": "Những gì nhà sáng lập đã nói vào thời điểm đó",
+      "statementBy": "Esteban Abaroa, nhà sáng lập, {{date}}",
+      "walletsTitle": "Ví của đội ngũ hôm nay",
+      "person": "Người",
+      "wallet": "Ví",
+      "total": "Tổng của đội ngũ",
+      "walletsNote": "Trị giá {{value}} theo giá tại thời điểm chụp dữ liệu. Toàn bộ lịch sử của từng ví đều công khai trên Etherscan.",
+      "poolNote": "Ngày 30 tháng 10 năm 2026, ví deployer của Esteban và estebanabaroa.eth đã gửi 86,6% token thanh khoản của pool Uniswap đến địa chỉ số không, nơi không ai có thể rút chúng ra. Đội ngũ giữ dưới 0,01%, phần còn lại thuộc về các nhà cung cấp thanh khoản khác. Phần đã bị đốt trị giá {{value}} gồm BSO và ETH theo giá tại thời điểm chụp dữ liệu."
+    },
+    "airdrops": {
+      "title": "Ba đợt airdrop, 2022",
+      "lead": "PLEB, thế hệ đầu tiên của BSO, ra mắt trên Avalanche mà không có đợt bán nào. Nó được phát miễn phí trong ba đợt, và mọi lượt nhận đều được chuyển sang BSO theo cùng một tỷ lệ: 7.114,6 PLEB đổi 1 BSO.",
+      "caption": "Ba đợt airdrop và giá trị hôm nay của số token đã được nhận",
+      "round": "Đợt {{number}}",
+      "total": "Tổng",
+      "rounds": {
+        "telegram": {
+          "name": "Bot Telegram",
+          "how": "Gửi một địa chỉ Avalanche đến @plebbitbot, có thưởng cho người giới thiệu"
+        },
+        "twitter": {
+          "name": "Twitter",
+          "how": "Thích, retweet và gắn thẻ ba người bạn trong bài đăng của @getplebbit"
+        },
+        "reddit": {
+          "name": "Reddit",
+          "how": "Bình luận trong chủ đề r/plebbitairdrop; một bot kiểm tra lịch sử tài khoản"
+        }
+      },
+      "metrics": {
+        "how": "Cách tham gia",
+        "window": "Thời gian đăng ký",
+        "signups": "Số đăng ký được công bố",
+        "claimers": "Địa chỉ đã nhận",
+        "plebClaimed": "PLEB đã nhận",
+        "bsoToday": "BSO hôm nay",
+        "worthToday": "Giá trị hôm nay",
+        "medianClaim": "Lượt nhận trung vị hôm nay",
+        "largestClaim": "Lượt nhận lớn nhất hôm nay",
+        "sources": "Nguồn"
+      },
+      "dateRange": "{{start}} – {{end}}",
+      "overCount": "hơn {{amount}}",
+      "distinct": "{{amount}} địa chỉ riêng biệt",
+      "note": "Các giá trị giả định rằng mọi token đã nhận vẫn còn được nắm giữ, với giá {{price}} mỗi BSO vào ngày {{date}}. Nhiều lượt đăng ký là bot. Việc nhận đã đóng vào ngày 21 tháng 2 năm 2022, và những phần phân bổ không ai nhận chưa bao giờ được mint."
+    },
+    "history": {
+      "title": "Lịch sử",
+      "lead": "Từ một nhóm Telegram năm 2021 đến một ERC-20 bất biến năm 2026.",
+      "redditThread": "Chủ đề trên Reddit",
+      "events": {
+        "groupOpens": {
+          "title": "Nhóm Telegram của plebbit ra đời",
+          "body": "Nhóm mà nay là t.me/bitsocialnet bắt đầu vào ngày Giáng sinh năm 2021."
+        },
+        "telegramRound": {
+          "title": "Đợt 1: bot Telegram",
+          "body": "Trong một tuần, mọi người đăng ký với @plebbitbot. Nguồn cung được chia đều cho những người tham gia, có thưởng cho người giới thiệu. 3.312 địa chỉ đăng ký trước khi bot đóng vào ngày 14 tháng 1."
+        },
+        "launch": {
+          "title": "Thanh khoản trước, nhận sau",
+          "body": "Lúc 18:00 UTC, deployer thêm những token đầu tiên và 7 AVAX vào Trader Joe và Pangolin. Trang nhận mở khoảng 30 phút sau đó, nên mọi phần phân bổ đều đã được chốt trước khi bất kỳ ai có thể giao dịch."
+        },
+        "twitterRound": {
+          "title": "Đợt 2: Twitter",
+          "body": "Một đợt airdrop diễn ra hoàn toàn trên Twitter: thích, retweet và gắn thẻ ba người bạn. Hơn 1.500 người đăng ký trước ngày 6 tháng 2."
+        },
+        "redditRound": {
+          "title": "Đợt 3: Reddit",
+          "body": "Một đợt airdrop thử nghiệm trên r/plebbitairdrop, nơi một bot kiểm tra xem người bình luận có hoạt động Reddit từ trước hay không. Hơn 2.200 người đăng ký trước ngày 12 tháng 2, nhiều người trong số đó là bot."
+        },
+        "claimsClose": {
+          "title": "Đóng nhận",
+          "body": "Cả ba đợt airdrop đều không còn nhận được nữa. Token không ai nhận sẽ không bao giờ được mint."
+        },
+        "farm": {
+          "title": "Bắt đầu khai thác thanh khoản",
+          "body": "Những người stake thanh khoản trên Trader Joe nhận được token mới được mint. Farm trả thưởng cho đến khi chuyển sang Ethereum."
+        },
+        "ethereum": {
+          "title": "Chuyển sang Ethereum",
+          "body": "Sau một cuộc bỏ phiếu trên Snapshot, token trên Avalanche bị đóng băng và mọi số dư, bao gồm token bị khóa, vị thế thanh khoản và phần thưởng farm chưa trả, được phát hành lại trên Ethereum dưới dạng token thế hệ thứ hai. Người nắm giữ không cần làm gì cả."
+        },
+        "rebrand": {
+          "title": "plebbit trở thành Bitsocial",
+          "body": "plebbit công bố tên mới của mình, Bitsocial. Trên chuỗi, token vẫn giữ tên PLEB cho đến tháng 5."
+        },
+        "rebase": {
+          "title": "PLEB trở thành 210 triệu BSO",
+          "body": "Token thế hệ thứ hai được đổi tên thành BSO và được rebase để tổng nguồn cung đúng bằng 210 triệu: 7.114,6 PLEB trở thành 1 BSO."
+        },
+        "immutable": {
+          "title": "BSO trở nên bất biến",
+          "body": "Hợp đồng BSO cuối cùng đi vào hoạt động mà không có mint, chủ sở hữu, tạm dừng hay proxy. Toàn bộ 210 triệu được phát ra trong một giao dịch, theo tỷ lệ số dư sau rebase."
+        },
+        "liquidityBurned": {
+          "title": "86,6% thanh khoản bị đốt",
+          "body": "Hai ví của Esteban gửi 7.881 token thanh khoản Uniswap của mình, tức 86,6% pool BSO/ETH, đến địa chỉ số không. Không ai nắm giữ khóa của địa chỉ đó, nên phần BSO và ETH này trong pool bị khóa vĩnh viễn."
+        }
+      }
+    },
+    "method": {
+      "title": "Phương pháp và giới hạn",
+      "lead": "Các nhóm được tìm ra như thế nào, và những gì trang này không thể thấy.",
+      "howTitle": "Cách liên kết các ví",
+      "how": {
+        "transfers": "Mọi lần chuyển giữa hai ví thông thường trên cả ba hợp đồng, trên Avalanche và Ethereum, đều được truy vết, loại trừ các sàn giao dịch, router, pool và các hợp đồng khác. Các multisig Safe được liên kết với chủ sở hữu của chúng.",
+        "funders": "Mọi lần chuyển AVAX và ETH đến hoặc đi từ một ví nắm giữ ít nhất 0,01% nguồn cung cũng được truy vết, bao gồm cả việc ai là người đầu tiên gửi coin cho mỗi ví. Các sàn giao dịch và dịch vụ hoán đổi cấp vốn cho hàng nghìn ví, nên chỉ các ví riêng mới được tính là liên kết.",
+        "pattern": "Với các ví không có liên kết trực tiếp, hành vi mua được so sánh với mọi người mua trong cùng giai đoạn.",
+        "migrations": "Số dư được theo dõi qua cả hai đợt migration với tỷ lệ 7.114,6 PLEB mỗi BSO, cũng là tỷ lệ trang này dùng để hiển thị các khoản cũ hơn theo BSO."
+      },
+      "limitsTitle": "Giới hạn",
+      "limits": {
+        "exchangeOnly": "Một người nắm giữ cấp vốn cho mọi ví qua sàn giao dịch và không bao giờ chuyển token giữa chúng sẽ không để lại liên kết on-chain nào. Một số nhóm vẫn có thể đang ẩn thêm ví.",
+        "sales": "Một lần chuyển giữa hai ví có thể là một giao dịch bán hoặc một món quà, nên không nhóm nào chỉ dựa trên một lần chuyển duy nhất. Một số ví chỉ từng nhận token và coin từ nhóm của mình và chưa bao giờ gửi đi bất cứ thứ gì; đó cũng có thể là quà tặng.",
+        "contracts": "Token do các hợp đồng khác ngoài pool Uniswap và Safe nắm giữ được liệt kê nguyên trạng.",
+        "snapshot": "Số dư và giá được làm mới từ chuỗi mỗi năm phút khi trang này đang mở. Các liên kết giữa các ví được nghiên cứu thủ công và không tự cập nhật.",
+        "history": "Các đường lịch sử theo dõi lượng mà mỗi ví nắm giữ, cho các ví có ít nhất 0,01% nguồn cung và mọi ví của một người nắm giữ đã biết. Đường của một người nắm giữ đã biết cũng tính cả các ví đã rút hết mà token của họ đến từ đó, nên đường bắt đầu từ lần mua hoặc nhận (claim) đầu tiên. Token nằm trong pool thanh khoản, farm hoặc luồng vesting sẽ ra khỏi đường, và các đợt migration đã phát hành lại một phần trong số đó cho chủ sở hữu, nên một số đường nhảy vọt vào những ngày đó."
+      },
+      "contracts": {
+        "gen1": "Gen 1: PLEB trên Avalanche",
+        "gen2": "Gen 2: PLEB trên Ethereum, được đổi tên thành BSO vào tháng 5 năm 2026",
+        "gen3": "Gen 3: BSO hiện nay"
+      },
+      "snapshot": "Số dư và giá từ Blockscout: {{count}} ví tính đến {{date}}. Bạn thấy một liên kết sai hoặc bị thiếu? <contributeLink>Cải thiện trang này</contributeLink>."
+    },
+    "holderName": "Người nắm giữ {{letter}}"
+  },
+  "chart": {
+    "meta": {
+      "title": "Biểu đồ giá BSO - Mọi giao dịch từ năm 2022",
+      "description": "Giá và vốn hóa thị trường của BSO kể từ giao dịch đầu tiên năm 2022, trên cả ba hợp đồng: PLEB trên Avalanche, PLEB trên Ethereum và BSO hiện nay, trong một biểu đồ duy nhất dựng từ các lệnh swap trên chuỗi."
+    },
+    "hero": {
+      "title": "Giá BSO kể từ giao dịch đầu tiên",
+      "lead": "Một biểu đồ cho cả ba hợp đồng: PLEB trên Avalanche, PLEB trên Ethereum, được đổi tên thành BSO vào năm 2026, và BSO hiện nay. Giá cũ được quy đổi theo tỷ lệ 7.114,6 PLEB cho mỗi BSO, tỷ lệ mà cả hai đợt migration đều giữ nguyên. Chọn một chấm trên biểu đồ để xem điều gì đã xảy ra ngày hôm đó; toàn bộ câu chuyện của token có trong phần <historyLink>lịch sử</historyLink> của bảng xếp hạng ví.",
+      "status": {
+        "live": "Trực tiếp từ pool Uniswap: giá BSO {{price}}. Đã cập nhật {{ago}}.",
+        "loading": "Lịch sử theo ngày đến {{date}}. Đang tải giá mới nhất…",
+        "unavailable": "Hiện không có giá trực tiếp, nên biểu đồ kết thúc vào ngày {{date}}."
+      }
+    },
+    "panelTitle": "Biểu đồ giá theo ngày",
+    "summary": {
+      "price": "Giá BSO theo ngày từ {{from}} đến {{to}}. Giá đóng cửa thấp nhất {{low}}, giá đóng cửa cao nhất {{high}}, mới nhất {{latest}}.",
+      "mcap": "Vốn hóa thị trường BSO theo ngày từ {{from}} đến {{to}}. Mức đóng cửa thấp nhất {{low}}, mức đóng cửa cao nhất {{high}}, mới nhất {{latest}}."
+    },
+    "controls": {
+      "metricLabel": "Hiển thị",
+      "metrics": {
+        "price": "Giá",
+        "mcap": "Vốn hóa"
+      },
+      "rangeLabel": "Khoảng thời gian",
+      "ranges": {
+        "1M": "1M",
+        "3M": "3M",
+        "1Y": "1Y",
+        "all": "Tất cả"
+      },
+      "typeLabel": "Loại biểu đồ",
+      "types": {
+        "line": "Đường",
+        "candles": "Nến"
+      },
+      "scaleLabel": "Thang đo",
+      "scales": {
+        "log": "Log",
+        "linear": "Tuyến tính"
+      }
+    },
+    "legend": {
+      "since": "từ {{date}}",
+      "ohlc": "O {{open}} · H {{high}} · L {{low}} · C {{close}}",
+      "volume": "Khối lượng {{value}}"
+    },
+    "eras": {
+      "label": "Hợp đồng. Chọn một hợp đồng để phóng to vào giai đoạn của nó.",
+      "gen1": "PLEB trên Avalanche",
+      "gen2": "PLEB trên Ethereum",
+      "gen3": "BSO",
+      "years": "{{from}}–{{to}}",
+      "now": "nay",
+      "rebrand": "Đổi tên thành Bitsocial"
+    },
+    "method": {
+      "title": "Cách dựng biểu đồ",
+      "lead": "Mỗi cây nến đều đến từ các lệnh swap trên chuỗi, nên ngày nào cũng có thể kiểm tra trên trình khám phá khối.",
+      "steps": {
+        "swaps": "Giá mở cửa, cao nhất, thấp nhất và đóng cửa của một ngày là giá đầu tiên, cao nhất, thấp nhất và cuối cùng được trả trong các lệnh swap của ngày đó, theo giờ UTC, đọc từ các sự kiện Swap của từng pool.",
+        "usd": "Các pool giao dịch với AVAX hoặc ETH, nên mỗi lệnh swap được quy đổi sang đô la theo tỷ giá Coinbase của giờ diễn ra lệnh đó.",
+        "units": "PLEB, trên Avalanche và trên Ethereum cho đến <rebaseLink>đợt rebase ngày 2 tháng 5 năm 2026</rebaseLink>, được hiển thị theo mỗi BSO: giá của nó được nhân với 7.114,596, số PLEB mà mỗi BSO đã thay thế.",
+        "pools": "Khi có nhiều hơn một pool giao dịch trong cùng một ngày, pool có khối lượng lớn nhất sẽ quyết định cây nến của ngày đó, để một pool gần như trống không thể vẽ ra một bóng nến giả. Khối lượng là tổng của mọi pool, và một ngày không có giao dịch sẽ lặp lại giá đóng cửa gần nhất.",
+        "mcap": "Vốn hóa thị trường là giá đóng cửa nhân với tổng nguồn cung của ngày đó: mọi token hợp đồng đã mint trừ đi mọi token nó đã đốt, quy đổi sang BSO giống như giá. Sau đợt rebase, và đối với BSO hiện nay, nguồn cung cố định ở mức 210 triệu.",
+        "eras": "Lịch sử của mỗi hợp đồng kết thúc tại giao dịch đầu tiên của hợp đồng tiếp theo. Hợp đồng trên Ethereum giữ tên PLEB cho đến đợt nâng cấp thực hiện rebase, sáu tuần sau khi plebbit trở thành Bitsocial vào ngày 18 tháng 3 năm 2026."
+      },
+      "poolsTitle": "Các pool được đọc",
+      "eraDates": "{{from}} đến {{to}}",
+      "snapshot": "Lịch sử được dựng từ {{count}} lệnh swap tính đến {{date}}. Các ngày mới hơn lấy từ GeckoTerminal và được làm mới mỗi năm phút khi trang này đang mở. Bạn thấy một cây nến sai? <contributeLink>Cải thiện trang này</contributeLink>."
+    },
+    "eventList": "Các sự kiện được đánh dấu trên biểu đồ",
+    "eventDetails": {
+      "close": "Đóng",
+      "links": {
+        "reddit": "Bài đăng trên Reddit",
+        "release": "Bản phát hành trên GitHub",
+        "hackerNews": "Chủ đề trên Hacker News",
+        "tweet": "Tweet"
+      }
+    },
+    "events": {
+      "protocolLabsGrant": {
+        "title": "Khoản tài trợ từ Protocol Labs",
+        "body": "Protocol Labs, đội ngũ đứng sau IPFS và Filecoin, trao cho plebbit một khoản tài trợ để xây dựng giải pháp thay thế Reddit phi tập trung."
+      },
+      "firstApp": {
+        "title": "Ứng dụng plebbit đầu tiên",
+        "body": "Ứng dụng máy tính đầu tiên ra mắt cho Linux, Windows và Mac. Nó chạy node IPFS riêng, nên khác với bản demo web, nó hoàn toàn peer-to-peer."
+      },
+      "plebchan": {
+        "title": "plebchan ra mắt",
+        "body": "plebchan, một ứng dụng kiểu 4chan trên giao thức plebbit, phát hành phiên bản đầu tiên cho web, Mac và Linux."
+      },
+      "hackerNews": {
+        "title": "Lên trang nhất Hacker News",
+        "body": "Giữa làn sóng phản đối giá API mới của Reddit, bản demo plebbit lên trang nhất Hacker News với hơn 300 điểm. Cùng tuần đó, các bài đăng về nó lên trang nhất r/ethereum và đạt 30.000 lượt xem trên r/CryptoCurrency."
+      },
+      "coingecko": {
+        "title": "Niêm yết trên CoinGecko",
+        "body": "Sau nhiều lần từ chối kể từ đầu năm 2022, CoinGecko niêm yết token này."
+      },
+      "socialFi": {
+        "title": "Trong danh mục SocialFi của CoinGecko",
+        "body": "CoinGecko thêm token này vào danh mục SocialFi sau khi đội ngũ đề nghị, và một danh sách token SocialFi được chia sẻ trên X cũng có tên nó. Giá gần như tăng gấp đôi trong năm ngày."
+      },
+      "seedit": {
+        "title": "Seedit ra mắt",
+        "body": "Seedit, một ứng dụng có giao diện và cách hoạt động giống Reddit phiên bản cũ, phát hành phiên bản đầu tiên."
+      },
+      "marchRally": {
+        "title": "Đợt tăng giá tháng 3 năm 2024",
+        "body": "Ngày 1 tháng 3, nhà đầu tư Jason Calacanis tweet rằng ông muốn có một Reddit phân tán, không cần cấp phép, và plebbit trả lời bằng bản demo của mình. Seedit 0.1.6 ra mắt ngày 3 tháng 3, và ngày 4 tháng 3 đội ngũ công bố các cộng đồng chỉ dành cho người nắm giữ token. Khi ETH vượt mốc 4.000 USD trong tháng đó, giá gần như tăng gấp đôi vào ngày 4 tháng 3 và tăng gấp ba vào cuối tháng 3, với khối lượng giao dịch 2,2 triệu USD, cao nhất trong mọi tháng trên biểu đồ này."
+      }
+    }
+  }
+}
