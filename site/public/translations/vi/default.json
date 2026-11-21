@@ -884,11 +884,13 @@
         "InsufficientFee": "Giá đã thay đổi. Hãy thử lại.",
         "Expired": "Tên này đã hết hạn.",
         "Unauthorized": "Ví này không sở hữu tên đó.",
-        "Replaced": "Ví đã hủy hoặc thay thế giao dịch này, nên giao dịch không được thực hiện."
+        "Replaced": "Ví đã hủy hoặc thay thế giao dịch này, nên giao dịch không được thực hiện.",
+        "Reverted": "Giao dịch đã thất bại trên chuỗi, nên giao dịch không được thực hiện."
       },
       "notSaved": "Trình duyệt này không lưu được lượt đặt trước. Hãy giữ tab này mở cho đến khi bạn nhận tên.",
       "stopWaiting": "Dừng chờ",
-      "unresolved": "Giao dịch này chưa được xác nhận. Hãy kiểm tra trước khi gửi giao dịch khác, nếu không bạn có thể thanh toán hai lần."
+      "unresolved": "Giao dịch này chưa được xác nhận. Hãy kiểm tra trước khi gửi giao dịch khác, nếu không bạn có thể thanh toán hai lần.",
+      "noAccount": "Ví không trả về tài khoản nào."
     },
     "activity": {
       "title": "Tên mới nhất",

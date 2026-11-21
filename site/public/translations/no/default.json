@@ -889,11 +889,13 @@
         "InsufficientFee": "Prisen har endret seg. Prøv igjen.",
         "Expired": "Dette navnet har utløpt.",
         "Unauthorized": "Denne lommeboken eier ikke navnet.",
-        "Replaced": "Lommeboken avbrøt eller erstattet denne transaksjonen, så den gikk ikke gjennom."
+        "Replaced": "Lommeboken avbrøt eller erstattet denne transaksjonen, så den gikk ikke gjennom.",
+        "Reverted": "Transaksjonen mislyktes på kjeden, så den gikk ikke gjennom."
       },
       "notSaved": "Denne nettleseren kunne ikke lagre reservasjonen. Hold denne fanen åpen til du claimer navnet.",
       "stopWaiting": "Slutt å vente",
-      "unresolved": "Denne transaksjonen er ikke bekreftet ennå. Sjekk den før du sender en ny, ellers betaler du kanskje to ganger."
+      "unresolved": "Denne transaksjonen er ikke bekreftet ennå. Sjekk den før du sender en ny, ellers betaler du kanskje to ganger.",
+      "noAccount": "Lommeboken returnerte ingen konto."
     },
     "activity": {
       "title": "Siste navn",

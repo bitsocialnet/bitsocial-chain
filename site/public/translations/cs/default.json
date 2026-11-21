@@ -899,11 +899,13 @@
         "InsufficientFee": "Cena se změnila. Zkuste to znovu.",
         "Expired": "Platnost tohoto jména vypršela.",
         "Unauthorized": "Tato peněženka toto jméno nevlastní.",
-        "Replaced": "Peněženka tuto transakci zrušila nebo nahradila, takže neproběhla."
+        "Replaced": "Peněženka tuto transakci zrušila nebo nahradila, takže neproběhla.",
+        "Reverted": "Transakce na blockchainu selhala, takže neproběhla."
       },
       "notSaved": "Tento prohlížeč nemohl rezervaci uložit. Nechte tuto kartu otevřenou, dokud jméno nezískáte.",
       "stopWaiting": "Přestat čekat",
-      "unresolved": "Tato transakce ještě není potvrzená. Než odešlete další, zkontrolujte ji, jinak můžete zaplatit dvakrát."
+      "unresolved": "Tato transakce ještě není potvrzená. Než odešlete další, zkontrolujte ji, jinak můžete zaplatit dvakrát.",
+      "noAccount": "Peněženka nevrátila žádný účet."
     },
     "activity": {
       "title": "Nejnovější jména",

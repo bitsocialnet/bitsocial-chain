@@ -894,11 +894,13 @@
         "InsufficientFee": "O preço mudou. Tente de novo.",
         "Expired": "Este nome venceu.",
         "Unauthorized": "Esta carteira não é dona do nome.",
-        "Replaced": "A carteira cancelou ou substituiu esta transação, então ela não foi concluída."
+        "Replaced": "A carteira cancelou ou substituiu esta transação, então ela não foi concluída.",
+        "Reverted": "A transação falhou on-chain, então ela não foi concluída."
       },
       "notSaved": "Este navegador não conseguiu salvar a reserva. Mantenha esta aba aberta até resgatar o nome.",
       "stopWaiting": "Parar de esperar",
-      "unresolved": "Esta transação ainda não foi confirmada. Verifique-a antes de enviar outra, senão você pode pagar duas vezes."
+      "unresolved": "Esta transação ainda não foi confirmada. Verifique-a antes de enviar outra, senão você pode pagar duas vezes.",
+      "noAccount": "A carteira não retornou nenhuma conta."
     },
     "activity": {
       "title": "Nomes mais recentes",

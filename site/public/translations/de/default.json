@@ -889,11 +889,13 @@
         "InsufficientFee": "Der Preis hat sich geändert. Versuch es erneut.",
         "Expired": "Dieser Name ist abgelaufen.",
         "Unauthorized": "Dieser Wallet gehört der Name nicht.",
-        "Replaced": "Die Wallet hat diese Transaktion abgebrochen oder ersetzt, daher wurde sie nicht ausgeführt."
+        "Replaced": "Die Wallet hat diese Transaktion abgebrochen oder ersetzt, daher wurde sie nicht ausgeführt.",
+        "Reverted": "Die Transaktion ist on-chain fehlgeschlagen, daher wurde sie nicht ausgeführt."
       },
       "notSaved": "Dieser Browser konnte die Reservierung nicht speichern. Lass diesen Tab offen, bis du den Namen claimst.",
       "stopWaiting": "Warten beenden",
-      "unresolved": "Diese Transaktion ist noch nicht bestätigt. Prüfe sie, bevor du eine weitere sendest, sonst zahlst du womöglich doppelt."
+      "unresolved": "Diese Transaktion ist noch nicht bestätigt. Prüfe sie, bevor du eine weitere sendest, sonst zahlst du womöglich doppelt.",
+      "noAccount": "Die Wallet hat kein Konto zurückgegeben."
     },
     "activity": {
       "title": "Neueste Namen",

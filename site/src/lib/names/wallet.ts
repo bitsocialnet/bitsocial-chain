@@ -83,7 +83,7 @@ export function useWallets(): WalletOption[] {
 export async function connectWallet(wallet: WalletOption): Promise<Address> {
   const accounts = (await wallet.provider.request({ method: "eth_requestAccounts" })) as string[];
   const account = accounts[0];
-  if (!account) throw new Error("The wallet returned no account.");
+  if (!account) throw new NoAccountError();
   await ensureChain(wallet.provider);
   return getAddress(account);
 }
@@ -117,10 +117,20 @@ type RegistryCall =
   | { functionName: "renew"; args: readonly [bigint]; value: bigint }
   | { functionName: "setText"; args: readonly [bigint, string, string] };
 
+// `revert` errors are the registry's error names, plus the page's own `Replaced` and `Reverted`,
+// each with copy under names.claim.errors. `other` carries a wallet's or library's own message.
 export type TransactionProblem =
   | { kind: "rejected" }
+  | { kind: "noAccount" }
   | { kind: "revert"; error: string }
   | { kind: "other"; message: string };
+
+class NoAccountError extends Error {
+  constructor() {
+    super("The wallet returned no account.");
+    this.name = "NoAccountError";
+  }
+}
 
 /**
  * A registry call that is known not to have run: it was stopped before sending, it reverted, or
@@ -170,9 +180,8 @@ export async function sendRegistryCall(
     signal,
   );
   if (replaced) throw new RegistryCallFailed({ kind: "revert", error: "Replaced" });
-  if (receipt.status !== "success") {
-    throw new RegistryCallFailed({ kind: "other", message: "The transaction reverted." });
-  }
+  if (receipt.status !== "success")
+    throw new RegistryCallFailed({ kind: "revert", error: "Reverted" });
   return receipt;
 }
 
@@ -218,6 +227,7 @@ async function waitForReceipt(
 /** Sorts a wallet or contract error into what the page can explain. */
 export function describeError(error: unknown): TransactionProblem {
   if (error instanceof RegistryCallFailed) return error.problem;
+  if (error instanceof NoAccountError) return { kind: "noAccount" };
   if (error instanceof BaseError) {
     if (error.walk((cause) => cause instanceof UserRejectedRequestError))
       return { kind: "rejected" };

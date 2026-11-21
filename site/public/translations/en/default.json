@@ -889,11 +889,13 @@
         "InsufficientFee": "The price changed. Try again.",
         "Expired": "This name has expired.",
         "Unauthorized": "This wallet doesn't own the name.",
-        "Replaced": "The wallet cancelled or replaced this transaction, so it didn't go through."
+        "Replaced": "The wallet cancelled or replaced this transaction, so it didn't go through.",
+        "Reverted": "The transaction failed on chain, so it didn't go through."
       },
       "notSaved": "This browser couldn't save the reservation. Keep this tab open until you claim the name.",
       "stopWaiting": "Stop waiting",
-      "unresolved": "This transaction isn't confirmed yet. Check it before you send another, or you may pay twice."
+      "unresolved": "This transaction isn't confirmed yet. Check it before you send another, or you may pay twice.",
+      "noAccount": "The wallet returned no account."
     },
     "activity": {
       "title": "Latest names",

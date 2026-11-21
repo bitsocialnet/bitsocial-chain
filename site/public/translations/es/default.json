@@ -894,11 +894,13 @@
         "InsufficientFee": "El precio cambió. Vuelve a intentarlo.",
         "Expired": "Este nombre ha vencido.",
         "Unauthorized": "Esta billetera no es dueña del nombre.",
-        "Replaced": "La billetera canceló o reemplazó esta transacción, así que no se completó."
+        "Replaced": "La billetera canceló o reemplazó esta transacción, así que no se completó.",
+        "Reverted": "La transacción falló on-chain, así que no se completó."
       },
       "notSaved": "Este navegador no pudo guardar la reserva. Mantén esta pestaña abierta hasta que reclames el nombre.",
       "stopWaiting": "Dejar de esperar",
-      "unresolved": "Esta transacción aún no está confirmada. Revísala antes de enviar otra, o podrías pagar dos veces."
+      "unresolved": "Esta transacción aún no está confirmada. Revísala antes de enviar otra, o podrías pagar dos veces.",
+      "noAccount": "La billetera no devolvió ninguna cuenta."
     },
     "activity": {
       "title": "Últimos nombres",

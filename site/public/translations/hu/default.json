@@ -889,11 +889,13 @@
         "InsufficientFee": "Az ár megváltozott. Próbáld újra.",
         "Expired": "Ez a név lejárt.",
         "Unauthorized": "Ez a tárca nem tulajdonosa a névnek.",
-        "Replaced": "A tárca visszavonta vagy lecserélte ezt a tranzakciót, így nem ment végbe."
+        "Replaced": "A tárca visszavonta vagy lecserélte ezt a tranzakciót, így nem ment végbe.",
+        "Reverted": "A tranzakció a láncon meghiúsult, így nem ment végbe."
       },
       "notSaved": "Ez a böngésző nem tudta elmenteni a foglalást. Tartsd nyitva ezt a lapot, amíg nem igényled a nevet.",
       "stopWaiting": "Várakozás leállítása",
-      "unresolved": "Ez a tranzakció még nincs megerősítve. Ellenőrizd, mielőtt újat küldesz, különben kétszer fizethetsz."
+      "unresolved": "Ez a tranzakció még nincs megerősítve. Ellenőrizd, mielőtt újat küldesz, különben kétszer fizethetsz.",
+      "noAccount": "A tárca nem adott vissza fiókot."
     },
     "activity": {
       "title": "Legújabb nevek",

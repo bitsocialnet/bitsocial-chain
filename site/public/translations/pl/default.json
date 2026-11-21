@@ -899,11 +899,13 @@
         "InsufficientFee": "Cena się zmieniła. Spróbuj ponownie.",
         "Expired": "Ta nazwa wygasła.",
         "Unauthorized": "Ten portfel nie jest właścicielem tej nazwy.",
-        "Replaced": "Portfel anulował lub zastąpił tę transakcję, więc nie została zrealizowana."
+        "Replaced": "Portfel anulował lub zastąpił tę transakcję, więc nie została zrealizowana.",
+        "Reverted": "Transakcja nie powiodła się na łańcuchu, więc nie została zrealizowana."
       },
       "notSaved": "Ta przeglądarka nie mogła zapisać rezerwacji. Zostaw tę kartę otwartą, dopóki nie odbierzesz nazwy.",
       "stopWaiting": "Przestań czekać",
-      "unresolved": "Ta transakcja nie jest jeszcze potwierdzona. Sprawdź ją, zanim wyślesz kolejną, bo możesz zapłacić dwa razy."
+      "unresolved": "Ta transakcja nie jest jeszcze potwierdzona. Sprawdź ją, zanim wyślesz kolejną, bo możesz zapłacić dwa razy.",
+      "noAccount": "Portfel nie zwrócił żadnego konta."
     },
     "activity": {
       "title": "Najnowsze nazwy",

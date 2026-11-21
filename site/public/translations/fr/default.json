@@ -894,11 +894,13 @@
         "InsufficientFee": "Le prix a changé. Réessayez.",
         "Expired": "Ce nom a expiré.",
         "Unauthorized": "Ce portefeuille ne possède pas le nom.",
-        "Replaced": "Le portefeuille a annulé ou remplacé cette transaction, elle n’a donc pas abouti."
+        "Replaced": "Le portefeuille a annulé ou remplacé cette transaction, elle n’a donc pas abouti.",
+        "Reverted": "La transaction a échoué on-chain, elle n’a donc pas abouti."
       },
       "notSaved": "Ce navigateur n’a pas pu sauvegarder la réservation. Gardez cet onglet ouvert jusqu’à ce que vous réclamiez le nom.",
       "stopWaiting": "Arrêter d’attendre",
-      "unresolved": "Cette transaction n’est pas encore confirmée. Vérifiez-la avant d’en envoyer une autre, sinon vous risquez de payer deux fois."
+      "unresolved": "Cette transaction n’est pas encore confirmée. Vérifiez-la avant d’en envoyer une autre, sinon vous risquez de payer deux fois.",
+      "noAccount": "Le portefeuille n’a renvoyé aucun compte."
     },
     "activity": {
       "title": "Derniers noms",

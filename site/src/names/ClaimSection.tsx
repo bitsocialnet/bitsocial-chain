@@ -462,11 +462,13 @@ export default function ClaimSection({
     problem &&
     (problem.kind === "rejected"
       ? t("names.claim.rejected")
-      : problem.kind === "revert"
-        ? i18n.exists(`names.claim.errors.${problem.error}`)
-          ? t(`names.claim.errors.${problem.error}`)
-          : t("names.claim.reverted", { error: problem.error })
-        : t("names.claim.failed", { message: problem.message }));
+      : problem.kind === "noAccount"
+        ? t("names.claim.noAccount")
+        : problem.kind === "revert"
+          ? i18n.exists(`names.claim.errors.${problem.error}`)
+            ? t(`names.claim.errors.${problem.error}`)
+            : t("names.claim.reverted", { error: problem.error })
+          : t("names.claim.failed", { message: problem.message }));
 
   // Step 2 becomes available 60 seconds after the commit is mined, and not before the opening.
   const openingAt = opening.status === "known" ? opening.at : null;

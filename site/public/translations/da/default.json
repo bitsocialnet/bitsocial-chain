@@ -889,11 +889,13 @@
         "InsufficientFee": "Prisen har ændret sig. Prøv igen.",
         "Expired": "Dette navn er udløbet.",
         "Unauthorized": "Denne wallet ejer ikke navnet.",
-        "Replaced": "Din wallet annullerede eller erstattede denne transaktion, så den gik ikke igennem."
+        "Replaced": "Din wallet annullerede eller erstattede denne transaktion, så den gik ikke igennem.",
+        "Reverted": "Transaktionen fejlede på kæden, så den gik ikke igennem."
       },
       "notSaved": "Denne browser kunne ikke gemme reservationen. Hold denne fane åben, indtil du claimer navnet.",
       "stopWaiting": "Stop med at vente",
-      "unresolved": "Denne transaktion er ikke bekræftet endnu. Tjek den, før du sender en til, ellers betaler du måske to gange."
+      "unresolved": "Denne transaktion er ikke bekræftet endnu. Tjek den, før du sender en til, ellers betaler du måske to gange.",
+      "noAccount": "Din wallet returnerede ingen konto."
     },
     "activity": {
       "title": "Seneste navne",

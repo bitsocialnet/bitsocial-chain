@@ -894,11 +894,13 @@
         "InsufficientFee": "El preu ha canviat. Torna-ho a provar.",
         "Expired": "Aquest nom ha vençut.",
         "Unauthorized": "Aquesta cartera no és la propietària del nom.",
-        "Replaced": "La cartera ha cancel·lat o substituït aquesta transacció, així que no s'ha completat."
+        "Replaced": "La cartera ha cancel·lat o substituït aquesta transacció, així que no s'ha completat.",
+        "Reverted": "La transacció ha fallat on-chain, així que no s'ha completat."
       },
       "notSaved": "Aquest navegador no ha pogut desar la reserva. Mantén aquesta pestanya oberta fins que reclamis el nom.",
       "stopWaiting": "Deixa d'esperar",
-      "unresolved": "Aquesta transacció encara no s'ha confirmat. Comprova-la abans d'enviar-ne una altra, o podries pagar dues vegades."
+      "unresolved": "Aquesta transacció encara no s'ha confirmat. Comprova-la abans d'enviar-ne una altra, o podries pagar dues vegades.",
+      "noAccount": "La cartera no ha retornat cap compte."
     },
     "activity": {
       "title": "Últims noms",
