@@ -10,6 +10,7 @@ import {
   type Hash,
   numberToHex,
   UserRejectedRequestError,
+  WaitForTransactionReceiptTimeoutError,
 } from "viem";
 import { NAMES_CHAIN, publicClient, REGISTRY, REGISTRY_ABI } from "./registry";
 
@@ -186,13 +187,15 @@ export async function sendRegistryCall(
 }
 
 const RECEIPT_RETRY_MS = 12_000;
+// viem can't cancel a receipt wait, so each one ends after this long and the next starts while
+// the transaction is still awaited. A wait the visitor gave up on stops polling within this time.
+const RECEIPT_WAIT_MS = 60_000;
 
 /**
  * Waits as long as a sent transaction takes. Reporting a slow one as failed would offer the
  * visitor the same action again, and a renewal sent twice is paid for twice, so there is no
- * timeout, and an RPC error while waiting is retried rather than reported. Only `signal` ends the
- * wait early, when the visitor gives up on a transaction that may never be mined; viem then stops
- * watching once the transaction is mined or replaced.
+ * overall timeout, and an RPC error while waiting is retried rather than reported. Only `signal`
+ * ends the wait early, when the visitor gives up on a transaction that may never be mined.
  */
 async function waitForReceipt(
   hash: Hash,
@@ -210,11 +213,12 @@ async function waitForReceipt(
   for (;;) {
     try {
       return await Promise.race([
-        publicClient.waitForTransactionReceipt({ hash, onReplaced, timeout: 0 }),
+        publicClient.waitForTransactionReceipt({ hash, onReplaced, timeout: RECEIPT_WAIT_MS }),
         abandoned,
       ]);
     } catch (error) {
       if (signal?.aborted) throw error;
+      if (error instanceof WaitForTransactionReceiptTimeoutError) continue;
       console.warn("Still waiting for the transaction; checking again.", error);
       await Promise.race([
         new Promise((resolve) => window.setTimeout(resolve, RECEIPT_RETRY_MS)),
