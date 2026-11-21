@@ -13,8 +13,8 @@ import {
   type TransactionReceipt,
   TransactionReceiptNotFoundError,
   UserRejectedRequestError,
-  WaitForTransactionReceiptTimeoutError,
 } from "viem";
+import { type Followed, settleFollowed } from "./follow-transaction";
 import { NAMES_CHAIN, publicClient, REGISTRY, REGISTRY_ABI } from "./registry";
 
 export type WalletOption = {
@@ -173,62 +173,36 @@ export async function sendRegistryCall(
     chain: NAMES_CHAIN,
     transport: custom(wallet.provider),
   });
+  // Read before sending, so the transaction's nonce is still unused at this block.
+  const openAt = await publicClient.getBlockNumber();
   const hash = await walletClient.writeContract(request);
+  following.set(hash, { hash, openAt });
   onSent(hash);
-  let replaced = false;
-  const receipt = await waitForReceipt(
-    hash,
-    ({ reason }) => {
-      replaced = reason !== "repriced";
-    },
-    signal,
-  );
+  const { receipt, replaced } = await settleTransaction(hash, signal);
   if (replaced) throw new RegistryCallFailed({ kind: "revert", error: "Replaced" });
   if (receipt.status !== "success")
     throw new RegistryCallFailed({ kind: "revert", error: "Reverted" });
   return receipt;
 }
 
-const RECEIPT_RETRY_MS = 12_000;
-// viem can't cancel a receipt wait, so each one ends after this long and the next starts while
-// the transaction is still awaited. A wait the visitor gave up on stops polling within this time.
-const RECEIPT_WAIT_MS = 60_000;
+const FOLLOW_POLL_MS = 4_000;
+// Every transaction this tab sent, by hash, so following one again after Stop waiting carries on
+// from what the earlier checks saw, even once the RPC has forgotten the original.
+const following = new Map<Hash, Followed>();
 
 /**
- * Waits as long as a sent transaction takes. Reporting a slow one as failed would offer the
- * visitor the same action again, and a renewal sent twice is paid for twice, so there is no
- * overall timeout, and an RPC error while waiting is retried rather than reported. Only `signal`
- * ends the wait early, when the visitor gives up on a transaction that may never be mined.
+ * Waits until no transaction with the sender and nonce of one this tab sent can be mined any more,
+ * however long that takes: reporting a slow one as failed would offer the visitor the same action
+ * again, and a renewal sent twice is paid for twice. Only `signal` ends the wait early, when the
+ * visitor gives up on a transaction that may never be mined, and polling stops with it.
  */
-async function waitForReceipt(
-  hash: Hash,
-  onReplaced: (replacement: { reason: "cancelled" | "replaced" | "repriced" }) => void,
-  signal?: AbortSignal,
-) {
-  const abandoned = new Promise<never>((_, reject) => {
-    if (!signal) return;
-    const stop = () => reject(signal.reason);
-    if (signal.aborted) stop();
-    else signal.addEventListener("abort", stop, { once: true });
+export async function settleTransaction(hash: Hash, signal?: AbortSignal) {
+  const followed = following.get(hash);
+  if (!followed) throw new Error(`Transaction ${hash} was not sent from this tab.`);
+  return settleFollowed(publicClient, followed, {
+    pollMs: FOLLOW_POLL_MS,
+    signal,
   });
-  // The wait may finish first, leaving nothing to observe this rejection.
-  abandoned.catch(() => {});
-  for (;;) {
-    try {
-      return await Promise.race([
-        publicClient.waitForTransactionReceipt({ hash, onReplaced, timeout: RECEIPT_WAIT_MS }),
-        abandoned,
-      ]);
-    } catch (error) {
-      if (signal?.aborted) throw error;
-      if (error instanceof WaitForTransactionReceiptTimeoutError) continue;
-      console.warn("Still waiting for the transaction; checking again.", error);
-      await Promise.race([
-        new Promise((resolve) => window.setTimeout(resolve, RECEIPT_RETRY_MS)),
-        abandoned,
-      ]);
-    }
-  }
 }
 
 /**
