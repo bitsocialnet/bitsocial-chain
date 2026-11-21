@@ -27,6 +27,7 @@ import {
   tokenIdFor,
 } from "@/lib/names/registry";
 import {
+  checkTransaction,
   connectWallet,
   describeError,
   RegistryCallFailed,
@@ -47,6 +48,8 @@ type Step = "commit" | "reveal" | "renew" | "record";
 // The name and account a transaction is for: `scope` (see below) and the two parts, for display.
 type For = { scope: string; label: string; account: Address | null };
 type Activity = ({ step: Step; hash: Hash | null; sentAt: number | null } & For) | null;
+// A transaction the visitor stopped waiting for; `pending` while the RPC still has it.
+type Unresolved = { step: Step; hash: Hash; pending: boolean } & For;
 
 // The reveal is simulated against the latest block, which trails this browser's clock by up to
 // one 12-second slot, and the clocks can differ by a few seconds. Waiting this much past the
@@ -84,8 +87,10 @@ export default function ClaimSection({
   const wallets = useWallets();
   const [connecting, setConnecting] = useState(false);
   const [activity, setActivity] = useState<Activity>(null);
-  // A transaction the visitor stopped waiting for: it may still be mined, so the page says so.
-  const [unresolved, setUnresolved] = useState<({ step: Step; hash: Hash } & For) | null>(null);
+  // Transactions the visitor stopped waiting for. Each may still be mined, so the page says so,
+  // and while one is pending its step stays disabled for its name and account: sending it again
+  // could pay twice, as two renewals both charge the fee.
+  const [unresolved, setUnresolved] = useState<Unresolved[]>([]);
   const [problemState, setProblemState] = useState<{
     for: string;
     problem: TransactionProblem;
@@ -122,6 +127,8 @@ export default function ClaimSection({
   const fee = feeForLength(bytes);
   const premium = nameState?.status === "premium" ? nameState.premium : 0n;
   const busy = activity !== null;
+  const blocked = (step: Step) =>
+    unresolved.some((item) => item.pending && item.step === step && item.scope === scope);
   const bumpPending = () => setPendingVersion((value) => value + 1);
 
   // A reservation saved when the wallet signed waits for the registry's record of its commit,
@@ -182,7 +189,7 @@ export default function ClaimSection({
     const runScope = scope;
     setProblem(null);
     setDone(null);
-    setUnresolved(null);
+    setUnresolved((list) => list.filter((item) => item.step !== step || item.scope !== runScope));
     const runFor: For = { scope: runScope, label: label ?? "", account };
     setActivity({ step, hash: null, sentAt: null, ...runFor });
     try {
@@ -334,11 +341,63 @@ export default function ClaimSection({
   function stopWaiting() {
     if (!activity?.hash) return;
     const { step, hash, scope: forScope, label: forLabel, account: forAccount } = activity;
-    setUnresolved({ step, hash, scope: forScope, label: forLabel, account: forAccount });
+    const item: Unresolved = {
+      step,
+      hash,
+      pending: true,
+      scope: forScope,
+      label: forLabel,
+      account: forAccount,
+    };
+    setUnresolved((list) => [
+      ...list.filter((other) => other.step !== step || other.scope !== forScope),
+      item,
+    ]);
     runningRef.current?.abort();
     runningRef.current = null;
     setActivity(null);
     onChanged();
+    void followUnresolved(item);
+  }
+
+  // Checks a transaction the visitor stopped waiting for until it is settled. Once mined, the page
+  // shows the outcome as if it had waited. Once the RPC has twice not known it (dropped, or
+  // replaced in the wallet), its step can be sent again, and the warning stays.
+  async function followUnresolved(item: Unresolved) {
+    let unknown = 0;
+    while (unknown < 2) {
+      await new Promise((resolve) => window.setTimeout(resolve, CONFIRM_POLL_MS));
+      let state: Awaited<ReturnType<typeof checkTransaction>>;
+      try {
+        state = await checkTransaction(item.hash);
+      } catch (error) {
+        console.warn("Could not check the transaction.", error);
+        continue;
+      }
+      if (state === "pending" || state === "unknown") {
+        unknown = state === "unknown" ? unknown + 1 : 0;
+        continue;
+      }
+      setUnresolved((list) => list.filter((other) => other.hash !== item.hash));
+      if (state.status === "success") {
+        const revealed =
+          item.step === "reveal" && item.account
+            ? findPendingClaim(item.label, item.account)
+            : null;
+        if (revealed) {
+          removePendingClaim(revealed);
+          bumpPending();
+        }
+        setDone({ step: item.step, hash: item.hash, label: item.label });
+      } else {
+        setProblem({ kind: "revert", error: "Reverted" }, item.scope);
+      }
+      onChanged();
+      return;
+    }
+    setUnresolved((list) =>
+      list.map((other) => (other.hash === item.hash ? { ...other, pending: false } : other)),
+    );
   }
 
   function renew() {
@@ -423,7 +482,7 @@ export default function ClaimSection({
     );
   };
 
-  const unresolvedLine = (item: NonNullable<typeof unresolved>, context: string | null) => (
+  const unresolvedLine = (item: Unresolved, context: string | null) => (
     <p className="nm-step-status" role="status">
       {context}
       {t("names.claim.unresolved")}
@@ -431,16 +490,18 @@ export default function ClaimSection({
     </p>
   );
 
+  const unresolvedAway = unresolved.find((item) => !cardShows(item));
   const elsewhere =
     activity && !cardShows(activity)
       ? activityLine(activity, forText(activity))
-      : unresolved && !cardShows(unresolved)
-        ? unresolvedLine(unresolved, forText(unresolved))
+      : unresolvedAway
+        ? unresolvedLine(unresolvedAway, forText(unresolvedAway))
         : null;
 
   const status = (step: Step): ReactNode => {
     if (activity?.step === step && cardShows(activity)) return activityLine(activity, null);
-    if (unresolved?.step === step && cardShows(unresolved)) return unresolvedLine(unresolved, null);
+    const stopped = unresolved.find((item) => item.step === step && cardShows(item));
+    if (stopped) return unresolvedLine(stopped, null);
     if (done?.step === step && done.label === label) {
       const text =
         step === "record"
@@ -653,7 +714,7 @@ export default function ClaimSection({
                         <button
                           type="button"
                           className="nm-button nm-button-primary"
-                          disabled={busy}
+                          disabled={busy || blocked("reveal")}
                           onClick={() => claim(pending)}
                         >
                           {t("names.claim.claimAction", { name, price: priceText })}
@@ -711,7 +772,7 @@ export default function ClaimSection({
                   <button
                     type="button"
                     className="nm-button nm-button-primary"
-                    disabled={busy || !recordValid}
+                    disabled={busy || !recordValid || blocked("record")}
                     onClick={saveRecord}
                   >
                     {t("names.claim.recordAction")}
@@ -749,7 +810,7 @@ export default function ClaimSection({
                 "nm-button",
                 state === "current" ? "nm-button-primary" : "nm-button-quiet",
               )}
-              disabled={busy}
+              disabled={busy || blocked("renew")}
               onClick={renew}
             >
               {t("names.claim.renewAction", { name, price: format.eth(fee) })}

@@ -9,6 +9,9 @@ import {
   getAddress,
   type Hash,
   numberToHex,
+  TransactionNotFoundError,
+  type TransactionReceipt,
+  TransactionReceiptNotFoundError,
   UserRejectedRequestError,
   WaitForTransactionReceiptTimeoutError,
 } from "viem";
@@ -225,6 +228,27 @@ async function waitForReceipt(
         abandoned,
       ]);
     }
+  }
+}
+
+/**
+ * Where a sent transaction stands: its receipt once mined, "pending" while the RPC has it, or
+ * "unknown" when the RPC doesn't know it, as after it was dropped or replaced in the wallet.
+ */
+export async function checkTransaction(
+  hash: Hash,
+): Promise<TransactionReceipt | "pending" | "unknown"> {
+  try {
+    return await publicClient.getTransactionReceipt({ hash });
+  } catch (error) {
+    if (!(error instanceof TransactionReceiptNotFoundError)) throw error;
+  }
+  try {
+    await publicClient.getTransaction({ hash });
+    return "pending";
+  } catch (error) {
+    if (error instanceof TransactionNotFoundError) return "unknown";
+    throw error;
   }
 }
 
