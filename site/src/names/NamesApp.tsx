@@ -83,8 +83,8 @@ export default function NamesApp() {
     return () => provider.removeListener("accountsChanged", onAccounts);
   }, [wallet?.option.provider]);
 
-  const onChanged = (after?: { block: bigint; registration?: Registration }) => {
-    refresh(after?.block);
+  const onChanged = (after?: { label: string; block: bigint; registration?: Registration }) => {
+    refresh(after && { label: after.label, block: after.block });
     const registration = after?.registration;
     if (registration) setLocal((current) => [registration, ...current]);
   };

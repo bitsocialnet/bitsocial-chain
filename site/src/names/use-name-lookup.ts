@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { lookupName, type NameState, REGISTRY } from "@/lib/names/registry";
 
 export type Lookup =
@@ -16,23 +16,22 @@ const DEBOUNCE_MS = 250;
  * arrives.
  */
 export function useNameLookup(label: string | null) {
-  // `atBlock`: a refresh after a mined transaction reads at its block (see `lookupName`).
-  const [request, setRequest] = useState<{ label: string | null; id: number; atBlock?: bigint }>({
-    label,
-    id: 0,
-  });
+  const [request, setRequest] = useState({ label, id: 0 });
   const [result, setResult] = useState<{ id: number; state?: NameState } | null>(null);
+  // Per name, the newest block a transaction for it was mined in. Its reads never go older (see
+  // `lookupName`), whichever transaction is reported last.
+  const floors = useRef(new Map<string, bigint>());
 
   // A changed label is a new request, so even a label searched before waits for a fresh answer.
   if (request.label !== label) setRequest({ label, id: request.id + 1 });
 
   useEffect(() => {
-    const { label: current, id, atBlock } = request;
+    const { label: current, id } = request;
     if (!current || !REGISTRY) return;
     let cancelled = false;
     const timer = window.setTimeout(async () => {
       try {
-        const state = await lookupName(current, atBlock);
+        const state = await lookupName(current, floors.current.get(current));
         if (!cancelled) setResult({ id, state });
       } catch (error) {
         console.warn(`Could not look up ${current}.bso.`, error);
@@ -45,10 +44,16 @@ export function useNameLookup(label: string | null) {
     };
   }, [request]);
 
-  const refresh = useCallback(
-    (atBlock?: bigint) => setRequest((current) => ({ ...current, id: current.id + 1, atBlock })),
-    [],
-  );
+  // After a mined transaction, `mined` names its name and block; another name's stays as it is.
+  const refresh = useCallback((mined?: { label: string; block: bigint }) => {
+    if (mined) {
+      const floor = floors.current.get(mined.label);
+      if (floor === undefined || mined.block > floor) floors.current.set(mined.label, mined.block);
+    }
+    setRequest((current) =>
+      mined && mined.label !== current.label ? current : { ...current, id: current.id + 1 },
+    );
+  }, []);
 
   let lookup: Lookup;
   if (!label || !REGISTRY) lookup = { status: "idle" };

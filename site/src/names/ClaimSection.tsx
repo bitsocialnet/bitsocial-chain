@@ -80,8 +80,8 @@ export default function ClaimSection({
   nowMs: number;
   wallet: ConnectedWallet | null;
   onWallet: (wallet: ConnectedWallet) => void;
-  // Re-reads the name; after a mined transaction, at its block.
-  onChanged: (after?: { block: bigint; registration?: Registration }) => void;
+  // Re-reads the name on screen; after a mined transaction, `label` no older than its block.
+  onChanged: (after?: { label: string; block: bigint; registration?: Registration }) => void;
 }) {
   const { t, i18n } = useTranslation();
   const format = useNamesFormat();
@@ -314,6 +314,7 @@ export default function ClaimSection({
       removePendingClaim(claimToReveal);
       bumpPending();
       onChanged({
+        label: claimToReveal.label,
         block: receipt.blockNumber,
         registration: {
           tokenId: tokenIdFor(claimToReveal.label),
@@ -380,7 +381,7 @@ export default function ClaimSection({
     } else {
       setProblem({ kind: "revert", error: replaced ? "Replaced" : "Reverted" }, item.scope);
     }
-    onChanged({ block: receipt.blockNumber });
+    onChanged({ label: item.label, block: receipt.blockNumber });
   }
 
   function renew() {
@@ -394,7 +395,7 @@ export default function ClaimSection({
         onSent,
         signal,
       );
-      onChanged({ block: receipt.blockNumber });
+      onChanged({ label, block: receipt.blockNumber });
       return receipt.transactionHash;
     });
   }
@@ -413,7 +414,7 @@ export default function ClaimSection({
         onSent,
         signal,
       );
-      onChanged({ block: receipt.blockNumber });
+      onChanged({ label, block: receipt.blockNumber });
       return receipt.transactionHash;
     });
   }

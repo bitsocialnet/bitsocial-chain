@@ -113,13 +113,18 @@ export type NameState =
   | { status: "taken"; owner: Address; expiresAt: number; record: string };
 
 /**
- * A name's state at the latest block, or at `blockNumber`. Right after a transaction the page reads
- * at the transaction's block: the public RPCs are load balancers, and the node answering the read
- * can be a block behind the one that returned the receipt.
+ * A name's state at the latest block, or after a transaction for it, at the latest block but no
+ * older than `minBlock`, the transaction's: the public RPCs are load balancers, and the node
+ * answering the read can be a block behind the one that returned the receipt.
  */
-export async function lookupName(label: string, blockNumber?: bigint): Promise<NameState> {
+export async function lookupName(label: string, minBlock?: bigint): Promise<NameState> {
   const registry = requireRegistry();
   const tokenId = tokenIdFor(label);
+  let blockNumber: bigint | undefined;
+  if (minBlock !== undefined) {
+    const head = await publicClient.getBlockNumber();
+    blockNumber = head > minBlock ? head : minBlock;
+  }
   const read = { address: registry.address, abi: REGISTRY_ABI, blockNumber } as const;
   const [record, premium, block] = await Promise.all([
     publicClient.readContract({ ...read, functionName: "records", args: [tokenId] }),
