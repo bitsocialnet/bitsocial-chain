@@ -118,6 +118,14 @@ export type NameState =
  * answering the read can be a block behind the one that returned the receipt.
  */
 export async function lookupName(label: string, minBlock?: bigint): Promise<NameState> {
+  return (await lookupNameAt(label, minBlock)).state;
+}
+
+/** `lookupName`, with the block it read at, so a later read of the name can stay at or above it. */
+export async function lookupNameAt(
+  label: string,
+  minBlock?: bigint,
+): Promise<{ state: NameState; block: bigint }> {
   const registry = requireRegistry();
   const tokenId = tokenIdFor(label);
   let blockNumber: bigint | undefined;
@@ -136,9 +144,11 @@ export async function lookupName(label: string, minBlock?: bigint): Promise<Name
   const expiresAt = Number(expiresAtRaw);
 
   if (!storedLabel || now > expiresAt + GRACE_PERIOD) {
-    return premium > 0n
-      ? { status: "premium", premium, releasedAt: expiresAt + GRACE_PERIOD }
-      : { status: "available", premium };
+    const state: NameState =
+      premium > 0n
+        ? { status: "premium", premium, releasedAt: expiresAt + GRACE_PERIOD }
+        : { status: "available", premium };
+    return { state, block: block.number };
   }
 
   const owner = await publicClient.readContract({
@@ -146,14 +156,14 @@ export async function lookupName(label: string, minBlock?: bigint): Promise<Name
     functionName: "ownerOf",
     args: [tokenId],
   });
-  if (now > expiresAt) return { status: "grace", owner, expiresAt };
+  if (now > expiresAt) return { state: { status: "grace", owner, expiresAt }, block: block.number };
 
   const value = await publicClient.readContract({
     ...read,
     functionName: "text",
     args: [tokenId, RECORD_KEY],
   });
-  return { status: "taken", owner, expiresAt, record: value };
+  return { state: { status: "taken", owner, expiresAt, record: value }, block: block.number };
 }
 
 /**

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { lookupName, type NameState, REGISTRY } from "@/lib/names/registry";
+import { lookupNameAt, type NameState, REGISTRY } from "@/lib/names/registry";
 
 export type Lookup =
   | { status: "idle" }
@@ -8,6 +8,11 @@ export type Lookup =
   | { status: "ready"; state: NameState };
 
 const DEBOUNCE_MS = 250;
+
+function raiseFloor(floors: Map<string, bigint>, label: string, block: bigint) {
+  const floor = floors.get(label);
+  if (floor === undefined || block > floor) floors.set(label, block);
+}
 
 /**
  * Reads a label's registry state, a moment after typing stops. Every new label and every refresh
@@ -18,8 +23,8 @@ const DEBOUNCE_MS = 250;
 export function useNameLookup(label: string | null) {
   const [request, setRequest] = useState({ label, id: 0 });
   const [result, setResult] = useState<{ id: number; state?: NameState } | null>(null);
-  // Per name, the newest block a transaction for it was mined in. Its reads never go older (see
-  // `lookupName`), whichever transaction is reported last.
+  // Per name, the newest block it was read at or a transaction for it was mined in. Its reads never
+  // go older (see `lookupName`), whichever transaction is reported last and whichever node answers.
   const floors = useRef(new Map<string, bigint>());
 
   // A changed label is a new request, so even a label searched before waits for a fresh answer.
@@ -31,7 +36,8 @@ export function useNameLookup(label: string | null) {
     let cancelled = false;
     const timer = window.setTimeout(async () => {
       try {
-        const state = await lookupName(current, floors.current.get(current));
+        const { state, block } = await lookupNameAt(current, floors.current.get(current));
+        raiseFloor(floors.current, current, block);
         if (!cancelled) setResult({ id, state });
       } catch (error) {
         console.warn(`Could not look up ${current}.bso.`, error);
@@ -46,10 +52,7 @@ export function useNameLookup(label: string | null) {
 
   // After a mined transaction, `mined` names its name and block; another name's stays as it is.
   const refresh = useCallback((mined?: { label: string; block: bigint }) => {
-    if (mined) {
-      const floor = floors.current.get(mined.label);
-      if (floor === undefined || mined.block > floor) floors.current.set(mined.label, mined.block);
-    }
+    if (mined) raiseFloor(floors.current, mined.label, mined.block);
     setRequest((current) =>
       mined && mined.label !== current.label ? current : { ...current, id: current.id + 1 },
     );
