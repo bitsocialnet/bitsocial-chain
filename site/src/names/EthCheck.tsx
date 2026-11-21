@@ -11,11 +11,13 @@ import {
 import { checkSpelling, type Spelling } from "@/lib/names/spelling";
 import { shortAddress, shortKey, spellingProblemText, useNamesFormat } from "./format";
 
+// `early`: read before registration was known to be open, which goes stale once it opens.
 type Result =
-  | { kind: "name"; label: string; state: NameState }
+  | { kind: "name"; label: string; state: NameState; early: boolean }
   | {
       kind: "subname";
       labels: string[];
+      early: boolean;
       // Null when the subname was never registered. An existing one is inactive while its parent
       // has expired or changed hands, and then it neither resolves nor has a date it runs until.
       found: { owner: Address; active: boolean; until: number; record: string } | null;
@@ -38,14 +40,14 @@ export default function EthCheck({
   const format = useNamesFormat();
   const [input, setInput] = useState("");
   const [checking, setChecking] = useState(false);
-  const [result, setResult] = useState<Result | null>(null);
+  const [stored, setStored] = useState<Result | null>(null);
   // Each check and each edit gets a new number; an answer for an older one is dropped.
   const requestRef = useRef(0);
 
   function edit(value: string) {
     requestRef.current += 1;
     setInput(value);
-    setResult(null);
+    setStored(null);
     setChecking(false);
   }
 
@@ -62,7 +64,7 @@ export default function EthCheck({
     if (!input.trim()) return;
     // An empty label, as in alice..bravo.eth, is a dot where none is allowed.
     if (spellings.some((spelling) => spelling === null)) {
-      setResult({
+      setStored({
         kind: "invalid",
         spelling: { ok: false, problem: "character", suggestion: null },
       });
@@ -70,22 +72,29 @@ export default function EthCheck({
     }
     const invalid = spellings.find((spelling) => spelling?.ok === false);
     if (invalid && !invalid.ok) {
-      setResult({ kind: "invalid", spelling: invalid });
+      setStored({ kind: "invalid", spelling: invalid });
       return;
     }
     const labels = spellings.map((spelling) => (spelling?.ok ? spelling.label : ""));
     const request = (requestRef.current += 1);
     setChecking(true);
     try {
-      const next = await lookUp(labels);
-      if (request === requestRef.current) setResult(next);
+      const next = await lookUp(labels, opened !== true);
+      if (request === requestRef.current) setStored(next);
     } catch (error) {
       console.warn("Could not check the .eth name.", error);
-      if (request === requestRef.current) setResult({ kind: "failed" });
+      if (request === requestRef.current) setStored({ kind: "failed" });
     } finally {
       if (request === requestRef.current) setChecking(false);
     }
   }
+
+  // A name found unregistered before registration opened may have been airdropped since, so once
+  // it opens, an answer read before then is dropped and the visitor checks again.
+  const result =
+    (stored?.kind === "name" || stored?.kind === "subname") && stored.early && opened === true
+      ? null
+      : stored;
 
   let message: ReactNode = null;
   if (result?.kind === "invalid") message = spellingProblemText(t, result.spelling);
@@ -210,17 +219,18 @@ export default function EthCheck({
   );
 }
 
-async function lookUp(labels: string[]): Promise<Result> {
+async function lookUp(labels: string[], early: boolean): Promise<Result> {
   const top = labels[labels.length - 1];
-  if (labels.length === 1) return { kind: "name", label: top, state: await lookupName(top) };
+  if (labels.length === 1) return { kind: "name", label: top, state: await lookupName(top), early };
   const [subname, parent] = await Promise.all([lookupSubname(labels), lookupName(top)]);
-  if (!subname) return { kind: "subname", labels, found: null };
+  if (!subname) return { kind: "subname", labels, early, found: null };
   // A subname lasts as long as its top-level name, which gives the date it is held until.
   const active = subname.active && parent.status === "taken";
   const until = parent.status === "taken" ? parent.expiresAt : 0;
   return {
     kind: "subname",
     labels,
+    early,
     found: { owner: subname.owner, active, until, record: subname.record },
   };
 }
