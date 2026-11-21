@@ -4,6 +4,7 @@ export {
   type DerivationNodeOptions,
   type NodeLogger,
   type NodeStatus,
+  type SyncPhase,
   type SyncResult,
 } from "./derivation.js";
 export { startReadApi, type ReadApiHandle, type ReadApiOptions } from "./server.js";

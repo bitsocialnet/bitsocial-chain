@@ -12,12 +12,22 @@ import {
   MemoryStateStore,
   startReadApi,
   TursoStateStore,
+  type NodeState,
+  type StateStore,
 } from "@bitsocial/bso-chain-node";
-import { createPublicClient, createWalletClient, http, type Hex, type PublicClient } from "viem";
+import {
+  BlockNotFoundError,
+  createPublicClient,
+  createWalletClient,
+  http,
+  type Hex,
+  type PublicClient,
+} from "viem";
 import { privateKeyToAccount, type PrivateKeyAccount } from "viem/accounts";
 import { hardhat } from "viem/chains";
-import { afterAll, beforeAll, describe, expect, it } from "vitest";
+import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 import { startDevChain, type DevChainHandle } from "./dev-chain.js";
+import { startMockRpc } from "./mock-rpc.js";
 
 const alice = privateKeyToAccount(
   "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80",
@@ -73,6 +83,52 @@ async function rpc(method: string, params: unknown[] = []): Promise<unknown> {
     throw new Error(`${method} failed: ${body.error.message}`);
   }
   return body.result;
+}
+
+/**
+ * In-memory store whose next save() blocks until released, so a test can
+ * observe a node in the middle of a sync. Counts saves made after close().
+ */
+class PausingStore implements StateStore {
+  private state: NodeState | undefined;
+  private gate: { reached: () => void; resume: Promise<void> } | null = null;
+  private closed = false;
+  savesAfterClose = 0;
+
+  load(): NodeState | undefined {
+    return this.state;
+  }
+
+  close(): void {
+    this.closed = true;
+  }
+
+  async save(state: NodeState): Promise<void> {
+    if (this.closed) {
+      this.savesAfterClose += 1;
+    }
+    this.state = state;
+    const gate = this.gate;
+    if (gate !== null) {
+      this.gate = null;
+      gate.reached();
+      await gate.resume;
+    }
+  }
+
+  /** Block the next save(); `reached` resolves once a sync is parked there. */
+  pauseNextSave(): { reached: Promise<void>; release: () => void } {
+    let reached!: () => void;
+    let release!: () => void;
+    const reachedPromise = new Promise<void>((resolve) => {
+      reached = resolve;
+    });
+    const resume = new Promise<void>((resolve) => {
+      release = resolve;
+    });
+    this.gate = { reached, resume };
+    return { reached: reachedPromise, release };
+  }
 }
 
 describe("derivation node", () => {
@@ -250,5 +306,221 @@ describe("derivation node", () => {
 
     const clean = await freshDerivation();
     expect(node.stateHash()).toBe(clean.stateHash());
+  });
+
+  it("keeps its state when a larger confirmations setting puts the target below the cursor", async () => {
+    const store = new MemoryStateStore();
+    const node = new DerivationNode({ rpcUrl: chain.rpcUrl, store });
+    await node.init();
+    await node.syncOnce();
+    const processedTo = node.getStatus().lastProcessedBlock;
+    const hash = node.stateHash();
+
+    // Restart on the same store with confirmations 5: target = head - 5 is
+    // below the persisted cursor, but the processed block is still canonical.
+    const lagging = new DerivationNode({ rpcUrl: chain.rpcUrl, store, confirmations: 5 });
+    await lagging.init();
+    const waiting = await lagging.syncOnce();
+    expect(waiting).toEqual({ processedTo: processedTo?.number, blocksApplied: 0, reorged: false });
+    expect(lagging.getStatus().lastProcessedBlock).toEqual(processedTo);
+    expect(lagging.stateHash()).toBe(hash);
+    expect(lagging.getPhase()).toBe("synced");
+
+    // Once head moves past cursor + confirmations, it resumes from the cursor.
+    for (let i = 0; i < 6; i += 1) {
+      await rpc("evm_mine");
+    }
+    const resumed = await lagging.syncOnce();
+    expect(resumed).toEqual({ processedTo: (processedTo?.number ?? 0) + 1, blocksApplied: 1, reorged: false });
+  });
+
+  it("retries instead of re-deriving when a lagging RPC briefly cannot serve the processed block", async () => {
+    const mock = await startMockRpc();
+    try {
+      mock.head = 5;
+      const node = new DerivationNode({ rpcUrl: mock.rpcUrl });
+      await node.init();
+      await node.syncOnce();
+
+      // Head is past the cursor, but the backend answering getBlock lags and
+      // does not have block 5 yet: not a reorg, so keep state and retry.
+      mock.head = 6;
+      let dropped = false;
+      mock.onGetBlock = (blockNumber) => {
+        if (blockNumber === 5 && !dropped) {
+          dropped = true;
+          return "missing";
+        }
+        return "serve";
+      };
+      await expect(node.syncOnce()).rejects.toBeInstanceOf(BlockNotFoundError);
+      expect(node.getStatus().lastProcessedBlock?.number).toBe(5);
+      expect(node.getPhase()).toBe("synced");
+
+      expect(await node.syncOnce()).toEqual({ processedTo: 6, blocksApplied: 1, reorged: false });
+    } finally {
+      await mock.close();
+    }
+  });
+
+  it("answers 503 on derived-state routes while a fresh node backfills", async () => {
+    await sendIntent(bob, { op: "register", name: "gina.bso", publicKey: KEY_B });
+    const store = new PausingStore();
+    const node = new DerivationNode({ rpcUrl: chain.rpcUrl, store });
+    await node.init();
+    const api = await startReadApi(node, { port: 0 });
+    const paused = store.pauseNextSave();
+    try {
+      const sync = node.syncOnce();
+      await paused.reached;
+      // Parked after the first block: the registry is only a prefix of L1
+      // history, so gina.bso (registered later) must not be reported missing.
+      expect((await fetch(`${api.endpoint}/v1/names/gina.bso`)).status).toBe(503);
+      expect((await fetch(`${api.endpoint}/v1/names`)).status).toBe(503);
+      expect((await fetch(`${api.endpoint}/v1/rejected`)).status).toBe(503);
+      // Answers that do not depend on derived state stay deterministic.
+      expect((await fetch(`${api.endpoint}/v1/names/not%20a%20name`)).status).toBe(400);
+      expect((await fetch(`${api.endpoint}/v1/names/gina.bso/extra`)).status).toBe(404);
+      const status = (await (await fetch(`${api.endpoint}/v1/status`)).json()) as Record<string, unknown>;
+      expect(status.phase).toBe("syncing");
+
+      paused.release();
+      await sync;
+      expect(node.getStatus().phase).toBe("synced");
+      expect((await fetch(`${api.endpoint}/v1/names/gina.bso`)).status).toBe(200);
+    } finally {
+      paused.release();
+      await api.close();
+    }
+  });
+
+  it("answers 503 while re-deriving after a reorg instead of serving the genesis prefix", async () => {
+    await sendIntent(bob, { op: "register", name: "hank.bso", publicKey: KEY_B });
+    const store = new PausingStore();
+    const node = new DerivationNode({ rpcUrl: chain.rpcUrl, store });
+    await node.init();
+    await node.syncOnce();
+    const api = await startReadApi(node, { port: 0 });
+    const snapshot = await rpc("evm_snapshot");
+    await sendIntent(alice, { op: "register", name: "frank.bso", publicKey: KEY_A });
+    await node.syncOnce();
+    await rpc("evm_revert", [snapshot]);
+    const paused = store.pauseNextSave();
+    try {
+      expect((await fetch(`${api.endpoint}/v1/names/hank.bso`)).status).toBe(200);
+      const sync = node.syncOnce();
+      await paused.reached;
+      // Parked on the reset to genesis: hank.bso is still registered on L1.
+      expect((await fetch(`${api.endpoint}/v1/names/hank.bso`)).status).toBe(503);
+      expect(node.getStatus().phase).toBe("syncing");
+
+      paused.release();
+      expect((await sync).reorged).toBe(true);
+      expect(node.getStatus().phase).toBe("synced");
+      expect((await fetch(`${api.endpoint}/v1/names/hank.bso`)).status).toBe(200);
+      expect((await fetch(`${api.endpoint}/v1/names/frank.bso`)).status).toBe(404);
+    } finally {
+      paused.release();
+      await api.close();
+    }
+  });
+
+  it("close() ends an in-flight sync before closing the store", async () => {
+    await rpc("evm_mine");
+    await rpc("evm_mine");
+    const store = new PausingStore();
+    const node = new DerivationNode({ rpcUrl: chain.rpcUrl, store });
+    await node.init();
+    const paused = store.pauseNextSave();
+    const sync = node.syncOnce();
+    await paused.reached;
+
+    // Close while the sync is parked on its first block, then let it resume.
+    const closing = node.close();
+    paused.release();
+    await closing;
+    const result = await sync;
+
+    expect(store.savesAfterClose).toBe(0);
+    expect(result.blocksApplied).toBe(1);
+    await expect(node.syncOnce()).rejects.toThrow(/closed/);
+    expect(() => node.start()).toThrow(/closed/);
+  });
+
+  it.each([
+    { step: "a block fetch", resumed: false },
+    { step: "the anchor lookup of a reorged block", resumed: true },
+  ])("close() does not wait for an RPC call pending in $step and saves nothing after", async ({ resumed }) => {
+    const mock = await startMockRpc();
+    let release = () => {};
+    try {
+      mock.head = 3;
+      const store = new PausingStore();
+      const node = new DerivationNode({ rpcUrl: mock.rpcUrl, store });
+      await node.init();
+      if (resumed) {
+        await node.syncOnce();
+        mock.fork = 1; // block 3 now has another hash: the sync would reset state
+      }
+
+      // Hold the RPC answer for the block the sync fetches next.
+      const heldBlock = resumed ? 3 : 0;
+      const reached = new Promise<void>((resolveReached) => {
+        const released = new Promise<void>((resolveReleased) => {
+          release = resolveReleased;
+        });
+        mock.onGetBlock = async (blockNumber) => {
+          if (blockNumber === heldBlock) {
+            resolveReached();
+            await released;
+          }
+          return "serve";
+        };
+      });
+      const sync = node.syncOnce();
+      await reached;
+
+      const closing = node.close();
+      const closedPromptly = await Promise.race([
+        closing.then(() => true),
+        new Promise<boolean>((resolveLate) => setTimeout(() => resolveLate(false), 2_000)),
+      ]);
+      release();
+      const result = await sync;
+      await closing;
+
+      expect(closedPromptly).toBe(true);
+      expect(store.savesAfterClose).toBe(0);
+      expect(result).toMatchObject({ blocksApplied: 0, reorged: false });
+    } finally {
+      release();
+      await mock.close();
+    }
+  });
+
+  it("stop() then start() during a tick keeps a single poll loop", async () => {
+    const pollIntervalMs = 4_321;
+    const store = new PausingStore();
+    const node = new DerivationNode({ rpcUrl: chain.rpcUrl, store, pollIntervalMs });
+    await node.init();
+    const paused = store.pauseNextSave();
+    const timeouts = vi.spyOn(globalThis, "setTimeout");
+    try {
+      node.start();
+      await paused.reached;
+      node.stop();
+      node.start();
+      paused.release();
+      // Joins the in-flight sync; both ticks have rescheduled (or not) by now.
+      await node.syncOnce();
+      await new Promise((resolve) => setImmediate(resolve));
+
+      const pollTimers = timeouts.mock.calls.filter(([, delay]) => delay === pollIntervalMs);
+      expect(pollTimers).toHaveLength(1);
+    } finally {
+      timeouts.mockRestore();
+      paused.release();
+      await node.close();
+    }
   });
 });

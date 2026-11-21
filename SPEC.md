@@ -143,8 +143,8 @@ Full derived state is `{ schemaVersion, names, rejected, acceptedIntents }`. The
 
 The node records `{ number, hash }` of the last processed block and, per sync:
 
-1. **Head regression** — if the target height drops below the cursor, reorg.
-2. **Anchor check** — if the block at the cursor height no longer has the recorded hash, reorg (catches same/greater-height divergence).
+1. **Head regression** — a target height below the cursor is not a reorg by itself. If the block at the cursor height is unchanged (rule 2), for example because `confirmations` was raised on restart or the RPC reports a lagging head, the node keeps its state and waits for the target to catch up.
+2. **Anchor check** — if the block at the cursor height no longer has the recorded hash, reorg (catches same/greater-height divergence). If that block is missing, reorg only when head is below the cursor (the chain got shorter); with head at or past the cursor the RPC is lagging, so the sync fails and is retried on the next poll with derived state kept.
 3. **Parent linkage** — while advancing, each new block's `parentHash` must match the previous processed hash, else reorg.
 
 On reorg the POC node discards derived state and re-derives from `startBlock` — registries are small, and full re-derivation is the simplest provably-correct recovery. A `confirmations` option lags the head as a cheap buffer; a production node would follow L1 finality and checkpoint instead. Both reorg paths are integration-tested against a dev chain using `evm_snapshot`/`evm_revert`.
@@ -155,9 +155,11 @@ Served by the derivation node over HTTP, JSON responses, CORS `*`:
 
 | Route | Returns |
 | --- | --- |
-| `GET /v1/status` | `{ chainId, startBlock, intentAddress, lastProcessedBlock, stateHash, names, acceptedIntents, rejectedIntents }` |
+| `GET /v1/status` | `{ chainId, startBlock, intentAddress, phase, lastProcessedBlock, stateHash, names, acceptedIntents, rejectedIntents }` |
 | `GET /v1/names` | all records (active and tombstoned), sorted by name |
 | `GET /v1/names/:name` | `200` record · `400 INVALID_NAME` · `404 NAME_NOT_REGISTERED` · `410 NAME_REVOKED` (tombstone included) |
 | `GET /v1/rejected` | the deterministic rejection log |
+
+`phase` is `"syncing"` while the node catches up after start-up or re-derives from `startBlock` after a reorg, and `"synced"` once a sync has reached the target block. While syncing, the derived state is only a prefix of L1 history, so `GET /v1/names`, `GET /v1/names/:name` and `GET /v1/rejected` answer `503 NODE_SYNCING` instead of a `404` or an older record that would look final. A malformed name still gets `400 INVALID_NAME`.
 
 The read API is a convenience view over local derived state; it carries no authority. Clients that do not want to trust any read API can run the derivation themselves — that is the point of the architecture.

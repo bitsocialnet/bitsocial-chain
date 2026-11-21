@@ -18,7 +18,7 @@ export interface ReadApiHandle {
 /**
  * Minimal JSON read API over derived state. Zero dependencies (node:http).
  *
- *   GET /v1/status        — derivation status + state hash
+ *   GET /v1/status        — derivation status (including sync phase) + state hash
  *   GET /v1/names         — all records (active and revoked), sorted by name
  *   GET /v1/names/:name   — resolve one name
  *   GET /v1/rejected      — deterministically rejected intents
@@ -28,6 +28,10 @@ export interface ReadApiHandle {
  *   400 INVALID_NAME      — not a well-formed .bso name
  *   404 NAME_NOT_REGISTERED
  *   410 NAME_REVOKED      — tombstoned record included for transparency
+ *
+ * While the node is syncing (backfilling or re-deriving after a reorg), the
+ * names and rejected routes answer 503 NODE_SYNCING instead of serving a
+ * partial registry as if it were final.
  */
 export function startReadApi(node: DerivationNode, options: ReadApiOptions): Promise<ReadApiHandle> {
   const host = options.host ?? "127.0.0.1";
@@ -59,7 +63,17 @@ export function startReadApi(node: DerivationNode, options: ReadApiOptions): Pro
       return;
     }
 
+    // Mid-sync the registry is only a prefix of L1 history: a 404 or an old
+    // record would look final to clients, so derived-state routes refuse until
+    // the node catches up. Malformed names and unknown routes still get 400/404.
+    const syncing = node.getPhase() === "syncing";
+    const sendSyncing = () => sendJson(503, { error: "NODE_SYNCING" });
+
     if (segments[1] === "names" && segments.length === 2) {
+      if (syncing) {
+        sendSyncing();
+        return;
+      }
       const registry = node.getRegistry();
       const names = Object.keys(registry.names)
         .sort()
@@ -70,6 +84,10 @@ export function startReadApi(node: DerivationNode, options: ReadApiOptions): Pro
 
     if (segments[1] === "names" && segments.length === 3) {
       const outcome = node.resolve(decodeURIComponent(segments[2] ?? ""));
+      if (syncing && outcome.status !== "invalid_name") {
+        sendSyncing();
+        return;
+      }
       switch (outcome.status) {
         case "active":
           sendJson(200, outcome.record);
@@ -87,6 +105,10 @@ export function startReadApi(node: DerivationNode, options: ReadApiOptions): Pro
     }
 
     if (segments[1] === "rejected" && segments.length === 2) {
+      if (syncing) {
+        sendSyncing();
+        return;
+      }
       sendJson(200, { rejected: node.getRegistry().rejected });
       return;
     }

@@ -37,6 +37,9 @@ beforeAll(async () => {
       case "/v1/names/broken.bso":
         send(500, { error: "BOOM" });
         return;
+      case "/v1/names/syncing.bso":
+        send(503, { error: "NODE_SYNCING" });
+        return;
       case "/v1/names/slow.bso":
         // Never responds; used for abort tests.
         return;
@@ -96,6 +99,11 @@ describe("BsoChainResolver", () => {
   it("throws on unexpected node errors", async () => {
     const resolver = new BsoChainResolver({ endpoint });
     await expect(resolver.resolve({ name: "broken.bso" })).rejects.toThrow(/500/);
+  });
+
+  it("throws instead of reporting a name missing while the node is syncing", async () => {
+    const resolver = new BsoChainResolver({ endpoint });
+    await expect(resolver.resolve({ name: "syncing.bso" })).rejects.toThrow(/503/);
   });
 
   it("honors caller abort signals", async () => {

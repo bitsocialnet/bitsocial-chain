@@ -53,6 +53,22 @@ function assert(condition: boolean, message: string): asserts condition {
   }
 }
 
+/**
+ * Cleanup for everything main() starts, run in reverse order whether the demo
+ * passes or fails, so a failed step never leaves the Hardhat child running.
+ */
+const teardown: Array<() => unknown> = [];
+
+async function runTeardown(): Promise<void> {
+  for (const task of teardown.splice(0).reverse()) {
+    try {
+      await task();
+    } catch (error) {
+      console.error(error);
+    }
+  }
+}
+
 async function main(): Promise<void> {
   assert(isValidBitsocialPublicKey(ALICE_PUBLIC_KEY), "alice fixture key is valid");
   assert(isValidBitsocialPublicKey(BOB_PUBLIC_KEY), "bob fixture key is valid");
@@ -62,6 +78,7 @@ async function main(): Promise<void> {
 
   step("Start a local Ethereum L1 dev chain (Hardhat node)");
   const chain = await startDevChain();
+  teardown.push(() => chain.stop());
   ok(`L1 JSON-RPC at ${chain.rpcUrl}`);
 
   const publicClient = createPublicClient({
@@ -87,11 +104,14 @@ async function main(): Promise<void> {
   });
   await node.init();
   node.start();
+  teardown.push(() => node.close());
   const api = await startReadApi(node, { port: 0 });
+  teardown.push(() => api.close());
   ok(`derivation node following L1, read API at ${api.endpoint}`);
   ok(`derived state persisted to ${stateFile}`);
 
   const resolver = new BsoChainResolver({ endpoint: api.endpoint });
+  teardown.push(() => resolver.destroy());
 
   const sendIntent = async (who: "alice" | "bob", intent: BsoIntent): Promise<void> => {
     const hash = await wallets[who].sendTransaction({
@@ -188,15 +208,12 @@ async function main(): Promise<void> {
   console.log(`  accepted intents: ${status.acceptedIntents}, rejected intents: ${status.rejectedIntents}`);
   console.log("\nAll steps passed. State was derived purely from Ethereum L1 history —");
   console.log("no sequencer, no admin keys, no contract. Anyone can run this node.");
-
-  node.stop();
-  nodeB.stop();
-  await api.close();
-  await resolver.destroy();
-  await chain.stop();
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exit(1);
-});
+main()
+  .then(runTeardown)
+  .catch(async (error) => {
+    console.error(error);
+    await runTeardown();
+    process.exit(1);
+  });

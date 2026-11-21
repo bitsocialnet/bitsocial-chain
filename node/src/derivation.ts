@@ -9,7 +9,7 @@ import {
   type RegistryState,
   type ResolveOutcome,
 } from "@bitsocial/bso-chain-protocol";
-import { createPublicClient, http, type PublicClient } from "viem";
+import { BlockNotFoundError, createPublicClient, http, type PublicClient } from "viem";
 import { MemoryStateStore, type NodeState, type StateStore } from "./store.js";
 
 export interface NodeLogger {
@@ -47,10 +47,18 @@ export interface SyncResult {
   reorged: boolean;
 }
 
+/**
+ * "syncing" while the node is backfilling or re-deriving after a reorg, when
+ * its registry is only a prefix of L1 history; "synced" once a sync has
+ * reached the target block.
+ */
+export type SyncPhase = "syncing" | "synced";
+
 export interface NodeStatus {
   chainId: number;
   startBlock: number;
   intentAddress: string;
+  phase: SyncPhase;
   lastProcessedBlock: { number: number; hash: string } | null;
   stateHash: string;
   names: number;
@@ -70,10 +78,14 @@ export interface NodeStatus {
  * derives byte-identical state — verify with {@link DerivationNode.stateHash}.
  *
  * Reorg handling (POC rule, documented in SPEC.md): the node remembers the
- * hash of the last processed block. If the chain head moves backwards or the
- * next block's parentHash no longer matches, the node discards derived state
- * and re-derives from the start block. Registries are small, so full
- * re-derivation is acceptable here; checkpointing is future work.
+ * hash of the last processed block. If that block has a different hash, or is
+ * gone while head is below it, or the next block's parentHash no longer
+ * matches, the node discards derived state and re-derives from the start
+ * block. Registries are small, so full re-derivation is acceptable here;
+ * checkpointing is future work. A target below the cursor with the last
+ * processed block unchanged (a larger `confirmations`, a lagging RPC) is not a
+ * reorg: the node waits for head. If the block is missing while head is at or
+ * past it, the sync fails and is retried on the next poll.
  */
 export class DerivationNode {
   private readonly client: PublicClient;
@@ -85,9 +97,14 @@ export class DerivationNode {
   private readonly logger: NodeLogger;
 
   private state: NodeState | null = null;
+  private phase: SyncPhase = "syncing";
   private pollTimer: NodeJS.Timeout | null = null;
-  private stopped = false;
+  /** Token of the current start() loop; stop() clears it so older ticks end. */
+  private pollRun: object | null = null;
+  private closed = false;
   private syncing: Promise<SyncResult> | null = null;
+  /** The store write in progress, which close() waits for. */
+  private saving: Promise<void> | null = null;
 
   constructor(options: DerivationNodeOptions) {
     // cacheTime: 0 — the node's poll loop sets its own cadence; a cached
@@ -105,6 +122,7 @@ export class DerivationNode {
   async init(): Promise<void> {
     const chainId = await this.client.getChainId();
     const persisted = await this.store.load();
+    this.phase = "syncing";
     if (
       persisted !== undefined &&
       persisted.chainId === chainId &&
@@ -145,6 +163,9 @@ export class DerivationNode {
    * Serialized: concurrent callers share the same in-flight sync.
    */
   syncOnce(): Promise<SyncResult> {
+    if (this.closed) {
+      return Promise.reject(new Error("DerivationNode is closed."));
+    }
     if (this.syncing === null) {
       this.syncing = this.doSync().finally(() => {
         this.syncing = null;
@@ -155,44 +176,68 @@ export class DerivationNode {
 
   private async doSync(): Promise<SyncResult> {
     const state = this.requireState();
-    const head = Number(await this.client.getBlockNumber());
-    const target = head - this.confirmations;
     let reorged = false;
     let blocksApplied = 0;
+    const result = (): SyncResult => ({
+      processedTo: this.state!.lastProcessed?.number ?? null,
+      blocksApplied,
+      reorged,
+    });
 
-    // Head moved backwards past our cursor: reorg on a dev chain
-    // (e.g. evm_revert) or an RPC pointing at a different history.
-    if (state.lastProcessed !== null && target < state.lastProcessed.number) {
-      this.logger.warn(
-        `reorg detected: target block ${target} < last processed ${state.lastProcessed.number}; re-deriving`,
-      );
-      await this.resetDerivedState();
-      reorged = true;
+    // close() does not wait for RPC calls, so after each one a closed node
+    // returns before changing or saving state.
+    const head = Number(await this.client.getBlockNumber());
+    if (this.closed) {
+      return result();
     }
+    const target = head - this.confirmations;
 
     // Anchor check: the block we processed last must still be canonical.
     // Catches reorgs that rebuilt the chain to the same (or greater) height,
-    // which neither the regression check above nor the parentHash check
-    // below would see.
-    const anchor = this.state!.lastProcessed;
-    if (anchor !== null && target >= anchor.number) {
-      const block = await this.client.getBlock({ blockNumber: BigInt(anchor.number) });
-      if (block.hash !== anchor.hash) {
+    // which the parentHash check below would not see. A missing block is a
+    // reorg only when head is below it (the chain got shorter, e.g.
+    // evm_revert). With head at or past it, the RPC is lagging: getBlock
+    // throws, and the sync is retried on the next tick with state kept.
+    const anchor = state.lastProcessed;
+    if (anchor !== null) {
+      const block =
+        head < anchor.number
+          ? await this.getBlockIfExists(anchor.number)
+          : await this.client.getBlock({ blockNumber: BigInt(anchor.number) });
+      if (this.closed) {
+        return result();
+      }
+      if (block === null) {
+        this.logger.warn(
+          `reorg detected: block ${anchor.number} is no longer on the chain (head ${head}); re-deriving`,
+        );
+        await this.resetDerivedState();
+        reorged = true;
+      } else if (block.hash !== anchor.hash) {
         this.logger.warn(
           `reorg detected: block ${anchor.number} is now ${block.hash}, expected ${anchor.hash}; re-deriving`,
         );
         await this.resetDerivedState();
         reorged = true;
+      } else if (target < anchor.number) {
+        // Target below the cursor but the processed block is unchanged: a
+        // larger confirmations setting or a lagging RPC, not a reorg. Keep the
+        // state and wait for head to catch up.
+        this.phase = "synced";
+        return { processedTo: anchor.number, blocksApplied: 0, reorged: false };
       }
     }
 
     let cursor = this.state!.lastProcessed === null ? this.startBlock : this.state!.lastProcessed.number + 1;
 
-    while (cursor <= target) {
+    while (cursor <= target && !this.closed) {
       const block = await this.client.getBlock({
         blockNumber: BigInt(cursor),
         includeTransactions: true,
       });
+      if (this.closed) {
+        break;
+      }
 
       const lastProcessed = this.state!.lastProcessed;
       if (lastProcessed !== null && block.parentHash !== lastProcessed.hash) {
@@ -207,18 +252,43 @@ export class DerivationNode {
 
       this.applyBlock(this.state!.registry, block);
       this.state!.lastProcessed = { number: cursor, hash: block.hash ?? "" };
-      await this.store.save(this.state!);
+      await this.save(this.state!);
       blocksApplied += 1;
       cursor += 1;
     }
 
-    return { processedTo: this.state!.lastProcessed?.number ?? null, blocksApplied, reorged };
+    if (cursor > target) {
+      this.phase = "synced";
+    }
+    return result();
+  }
+
+  private async getBlockIfExists(blockNumber: number) {
+    try {
+      return await this.client.getBlock({ blockNumber: BigInt(blockNumber) });
+    } catch (error) {
+      if (error instanceof BlockNotFoundError) {
+        return null;
+      }
+      throw error;
+    }
   }
 
   private async resetDerivedState(): Promise<void> {
     const state = this.requireState();
     this.state = this.freshState(state.chainId);
-    await this.store.save(this.state);
+    this.phase = "syncing";
+    await this.save(this.state);
+  }
+
+  /** Persist state, tracking the write so close() can wait for it. */
+  private async save(state: NodeState): Promise<void> {
+    this.saving = Promise.resolve(this.store.save(state));
+    try {
+      await this.saving;
+    } finally {
+      this.saving = null;
+    }
   }
 
   private applyBlock(
@@ -261,11 +331,19 @@ export class DerivationNode {
     }
   }
 
-  /** Start polling L1. Errors are logged and retried on the next tick. */
+  /**
+   * Start polling L1, replacing any earlier poll loop. Errors are logged and
+   * retried on the next tick.
+   */
   start(): void {
-    this.stopped = false;
+    if (this.closed) {
+      throw new Error("DerivationNode is closed.");
+    }
+    this.stop();
+    const run = {};
+    this.pollRun = run;
     const tick = async () => {
-      if (this.stopped) {
+      if (this.pollRun !== run) {
         return;
       }
       try {
@@ -273,7 +351,7 @@ export class DerivationNode {
       } catch (error) {
         this.logger.warn(`sync failed: ${error instanceof Error ? error.message : String(error)}`);
       }
-      if (!this.stopped) {
+      if (this.pollRun === run) {
         this.pollTimer = setTimeout(tick, this.pollIntervalMs);
       }
     };
@@ -281,15 +359,23 @@ export class DerivationNode {
   }
 
   stop(): void {
-    this.stopped = true;
+    this.pollRun = null;
     if (this.pollTimer !== null) {
       clearTimeout(this.pollTimer);
       this.pollTimer = null;
     }
   }
 
+  /**
+   * Stop polling and close the store. An in-flight sync stops at its next step
+   * without changing or saving state; close() waits for a store write in
+   * progress, not for pending RPC calls. The node cannot sync or start again
+   * afterwards.
+   */
   async close(): Promise<void> {
+    this.closed = true;
     this.stop();
+    await this.saving?.catch(() => {});
     await this.store.close?.();
   }
 
@@ -314,6 +400,11 @@ export class DerivationNode {
     return resolveName(this.requireState().registry, name);
   }
 
+  /** Whether derived state is final up to the last sync target. See {@link SyncPhase}. */
+  getPhase(): SyncPhase {
+    return this.phase;
+  }
+
   stateHash(): string {
     return computeStateHash(this.requireState().registry);
   }
@@ -324,6 +415,7 @@ export class DerivationNode {
       chainId: state.chainId,
       startBlock: state.startBlock,
       intentAddress: state.intentAddress,
+      phase: this.phase,
       lastProcessedBlock: state.lastProcessed,
       stateHash: this.stateHash(),
       names: Object.keys(state.registry.names).length,
