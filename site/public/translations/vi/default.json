@@ -1050,7 +1050,7 @@
           "q": "Chuyển sang Bitsocial Chain nghĩa là gì?",
           "a": [
             "Bitsocial Chain là giai đoạn 3 trong kế hoạch tổng thể của Bitsocial: một chuỗi riêng lưu giữ tên .bso một cách nguyên bản. Khi một BSIP cho sổ đăng ký tên của nó đạt trạng thái Last Call, Safe có thể khởi động cơ chế khép lại. Khi đó hợp đồng đưa ra thông báo trước 30 ngày, không thể hủy hay rút ngắn. Trong thời gian thông báo, mọi thứ vẫn hoạt động như trước, nên các lượt gia hạn và chuyển nhượng vẫn có hiệu lực.",
-            "Sau thời gian thông báo, sổ đăng ký trên Ethereum bị đóng băng. Không gì có thể được đăng ký, gia hạn, chuyển nhượng hay chỉnh sửa, và các tên tiếp tục được phân giải từ trạng thái đã đóng băng. Bitsocial Chain nhập miễn phí mọi tên đang hoạt động hoặc đang trong thời gian ân hạn, với cùng chủ sở hữu, ngày hết hạn và bản ghi. Bạn không cần làm gì cả.",
+            "Sau thời gian thông báo, sổ đăng ký trên Ethereum bị đóng băng. Không gì có thể được đăng ký, gia hạn, chuyển nhượng hay chỉnh sửa, và các tên tiếp tục được phân giải từ trạng thái đã đóng băng. Theo đề xuất, Bitsocial Chain sẽ nhập miễn phí mọi tên đang hoạt động hoặc đang trong thời gian ân hạn, với cùng chủ sở hữu, ngày hết hạn và bản ghi, nên bạn sẽ không cần làm gì cả.",
             "BSIP-13 chỉ cho phép cơ chế khép lại cho đúng lần chuyển này, và hợp đồng bắt buộc thời gian thông báo 30 ngày."
           ]
         },

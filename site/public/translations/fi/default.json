@@ -1057,7 +1057,7 @@
           "q": "Mitä siirtyminen Bitsocial Chainiin tarkoittaa?",
           "a": [
             "Bitsocial Chain on Bitsocialin yleissuunnitelman vaihe 3: oma ketju, joka säilyttää .bso-nimet natiivisti. Kun sen nimirekisteriä koskeva BSIP etenee Last Call -vaiheeseen, Safe voi käynnistää alasajon. Sopimus antaa silloin 30 päivän ennakkoilmoituksen, jota ei voi perua eikä lyhentää. Ilmoitusaikana kaikki toimii kuten ennenkin, joten uusimiset ja siirrot lasketaan edelleen.",
-            "Ilmoitusajan jälkeen Ethereumin rekisteri jäädytetään. Mitään ei voi rekisteröidä, uusia, siirtää tai muokata, ja nimet selvitetään edelleen jäädytetystä tilasta. Bitsocial Chain tuo ilmaiseksi jokaisen voimassa olevan tai armonajalla olevan nimen samalla omistajalla, vanhenemispäivällä ja tietueella. Sinun ei tarvitse tehdä mitään.",
+            "Ilmoitusajan jälkeen Ethereumin rekisteri jäädytetään. Mitään ei voi rekisteröidä, uusia, siirtää tai muokata, ja nimet selvitetään edelleen jäädytetystä tilasta. Ehdotuksen mukaan Bitsocial Chain toisi ilmaiseksi jokaisen voimassa olevan tai armonajalla olevan nimen samalla omistajalla, vanhenemispäivällä ja tietueella, joten sinun ei tarvitsisi tehdä mitään.",
             "BSIP-13 sallii alasajon vain tätä siirtoa varten, ja sopimus valvoo 30 päivän ennakkoilmoitusta."
           ]
         },

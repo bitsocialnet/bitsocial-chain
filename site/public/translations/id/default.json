@@ -1050,7 +1050,7 @@
           "q": "Apa arti pindah ke Bitsocial Chain?",
           "a": [
             "Bitsocial Chain adalah fase 3 dari rencana induk Bitsocial: chain tersendiri yang menyimpan nama .bso secara native. Setelah BSIP untuk registri namanya mencapai status Last Call, Safe bisa memulai penutupan. Kontrak lalu memberi pemberitahuan 30 hari, yang tidak bisa dibatalkan atau dipersingkat. Selama masa pemberitahuan semuanya berjalan seperti biasa, jadi perpanjangan dan transfer tetap berlaku.",
-            "Setelah masa pemberitahuan, registri Ethereum dibekukan. Tidak ada yang bisa didaftarkan, diperpanjang, ditransfer, atau diubah, dan nama tetap ter-resolve dari keadaan yang dibekukan. Bitsocial Chain mengimpor setiap nama yang aktif atau sedang dalam masa tenggang secara gratis, dengan pemilik, tanggal kedaluwarsa, dan catatan yang sama. Kamu tidak perlu melakukan apa pun.",
+            "Setelah masa pemberitahuan, registri Ethereum dibekukan. Tidak ada yang bisa didaftarkan, diperpanjang, ditransfer, atau diubah, dan nama tetap ter-resolve dari keadaan yang dibekukan. Sesuai usulan, Bitsocial Chain akan mengimpor setiap nama yang aktif atau sedang dalam masa tenggang secara gratis, dengan pemilik, tanggal kedaluwarsa, dan catatan yang sama, jadi kamu tidak perlu melakukan apa pun.",
             "BSIP-13 hanya mengizinkan penutupan untuk perpindahan ini, dan kontrak memberlakukan pemberitahuan 30 hari itu."
           ]
         },

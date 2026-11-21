@@ -1057,7 +1057,7 @@
           "q": "Wat betekent de verhuizing naar Bitsocial Chain?",
           "a": [
             "Bitsocial Chain is fase 3 van het masterplan van Bitsocial: een eigen chain die .bso-namen native bevat. Zodra een BSIP voor het naamregister ervan Last Call bereikt, kan de Safe de uitfasering starten. Het contract kondigt die dan 30 dagen van tevoren aan, en die termijn kan niet worden geannuleerd of ingekort. Tijdens die termijn werkt alles zoals eerst, dus verlengingen en overdrachten tellen nog steeds.",
-            "Na de termijn bevriest het Ethereum-register. Er kan niets meer worden geregistreerd, verlengd, overgedragen of bewerkt, en namen blijven resolven vanuit de bevroren staat. Bitsocial Chain importeert elke naam die actief is of in de respijtperiode zit gratis, met dezelfde eigenaar, dezelfde vervaldatum en hetzelfde record. Je hoeft niets te doen.",
+            "Na de termijn bevriest het Ethereum-register. Er kan niets meer worden geregistreerd, verlengd, overgedragen of bewerkt, en namen blijven resolven vanuit de bevroren staat. Volgens het voorstel zou Bitsocial Chain elke naam die actief is of in de respijtperiode zit gratis importeren, met dezelfde eigenaar, dezelfde vervaldatum en hetzelfde record, dus je zou niets hoeven te doen.",
             "BSIP-13 staat de uitfasering alleen voor deze verhuizing toe, en het contract dwingt de termijn van 30 dagen af."
           ]
         },

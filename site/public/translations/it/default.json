@@ -1064,7 +1064,7 @@
           "q": "Cosa significa passare a Bitsocial Chain?",
           "a": [
             "Bitsocial Chain è la fase 3 del master plan di Bitsocial: una chain propria che contiene i nomi .bso in modo nativo. Quando un BSIP per il suo registro dei nomi raggiunge Last Call, il Safe può avviare la dismissione. Il contratto dà allora un preavviso di 30 giorni, che non può essere annullato né accorciato. Durante il preavviso tutto funziona come prima, quindi rinnovi e trasferimenti contano ancora.",
-            "Dopo il preavviso il registro su Ethereum si congela. Non si può più registrare, rinnovare, trasferire o modificare nulla, e i nomi continuano a risolversi dallo stato congelato. Bitsocial Chain importa gratis ogni nome attivo o nel periodo di grazia, con lo stesso proprietario, la stessa scadenza e lo stesso record. Non devi fare nulla.",
+            "Dopo il preavviso il registro su Ethereum si congela. Non si può più registrare, rinnovare, trasferire o modificare nulla, e i nomi continuano a risolversi dallo stato congelato. Secondo la proposta, Bitsocial Chain importerebbe gratis ogni nome attivo o nel periodo di grazia, con lo stesso proprietario, la stessa scadenza e lo stesso record, quindi non dovresti fare nulla.",
             "BSIP-13 consente la dismissione solo per questo passaggio, e il contratto impone il preavviso di 30 giorni."
           ]
         },

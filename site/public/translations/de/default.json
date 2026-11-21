@@ -1057,7 +1057,7 @@
           "q": "Was bedeutet der Umzug auf Bitsocial Chain?",
           "a": [
             "Bitsocial Chain ist Phase 3 des Masterplans von Bitsocial: eine eigene Chain, die .bso-Namen nativ hält. Sobald ein BSIP für ihre Namens-Registry Last Call erreicht, kann der Safe die Stilllegung einleiten. Der Contract kündigt sie dann mit einer Frist von 30 Tagen an, die weder abgebrochen noch verkürzt werden kann. Während dieser Frist funktioniert alles wie bisher, Verlängerungen und Übertragungen zählen also weiterhin.",
-            "Nach der Frist wird die Ethereum-Registry eingefroren. Nichts kann mehr registriert, verlängert, übertragen oder bearbeitet werden, und Namen werden weiterhin aus dem eingefrorenen Zustand aufgelöst. Bitsocial Chain übernimmt jeden Namen, der aktiv oder in seiner Schonfrist ist, kostenlos mit demselben Besitzer, Ablaufdatum und Eintrag. Du musst nichts tun.",
+            "Nach der Frist wird die Ethereum-Registry eingefroren. Nichts kann mehr registriert, verlängert, übertragen oder bearbeitet werden, und Namen werden weiterhin aus dem eingefrorenen Zustand aufgelöst. Laut Vorschlag würde Bitsocial Chain jeden Namen, der aktiv oder in seiner Schonfrist ist, kostenlos mit demselben Besitzer, Ablaufdatum und Eintrag übernehmen, sodass du nichts tun müsstest.",
             "BSIP-13 erlaubt die Stilllegung nur für diesen Umzug, und der Contract erzwingt die 30-tägige Frist."
           ]
         },

@@ -1057,7 +1057,7 @@
           "q": "Hvad betyder flytningen til Bitsocial Chain?",
           "a": [
             "Bitsocial Chain er fase 3 i Bitsocials masterplan: en egen kæde, der rummer .bso-navne indbygget. Når en BSIP for dens navneregister når Last Call, kan Safen starte afviklingen. Kontrakten giver så 30 dages varsel, som ikke kan annulleres eller forkortes. I varslingsperioden virker alt som før, så fornyelser og overførsler tæller stadig.",
-            "Efter varslingsperioden fryses registret på Ethereum. Intet kan registreres, fornyes, overføres eller redigeres, og navne bliver ved med at blive slået op fra den frosne tilstand. Bitsocial Chain importerer gratis hvert navn, der er aktivt eller i sin henstandsperiode, med samme ejer, udløbsdato og record. Du behøver ikke at gøre noget.",
+            "Efter varslingsperioden fryses registret på Ethereum. Intet kan registreres, fornyes, overføres eller redigeres, og navne bliver ved med at blive slået op fra den frosne tilstand. Ifølge forslaget ville Bitsocial Chain gratis importere hvert navn, der er aktivt eller i sin henstandsperiode, med samme ejer, udløbsdato og record, så du ikke ville behøve at gøre noget.",
             "BSIP-13 tillader kun afviklingen til denne flytning, og kontrakten håndhæver de 30 dages varsel."
           ]
         },

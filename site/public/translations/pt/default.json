@@ -1064,7 +1064,7 @@
           "q": "O que significa a mudança para a Bitsocial Chain?",
           "a": [
             "A Bitsocial Chain é a fase 3 do plano mestre do Bitsocial: uma cadeia própria que guarda nomes .bso nativamente. Quando um BSIP para o registro de nomes dela chegar a Last Call, o Safe pode iniciar o encerramento. O contrato então dá um aviso prévio de 30 dias, que não pode ser cancelado nem encurtado. Durante o aviso, tudo funciona como antes, então renovações e transferências continuam valendo.",
-            "Depois do aviso, o registro no Ethereum congela. Nada pode ser registrado, renovado, transferido ou editado, e os nomes continuam resolvendo a partir do estado congelado. A Bitsocial Chain importa de graça todo nome ativo ou em período de carência, com o mesmo dono, vencimento e registro. Você não precisa fazer nada.",
+            "Depois do aviso, o registro no Ethereum congela. Nada pode ser registrado, renovado, transferido ou editado, e os nomes continuam resolvendo a partir do estado congelado. Pela proposta, a Bitsocial Chain importaria de graça todo nome ativo ou em período de carência, com o mesmo dono, vencimento e registro, então você não precisaria fazer nada.",
             "O BSIP-13 só permite o encerramento para essa mudança, e o contrato impõe o aviso prévio de 30 dias."
           ]
         },

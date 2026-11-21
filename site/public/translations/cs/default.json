@@ -1071,7 +1071,7 @@
           "q": "Co znamená přesun na Bitsocial Chain?",
           "a": [
             "Bitsocial Chain je fáze 3 hlavního plánu Bitsocialu: vlastní blockchain, který drží jména .bso nativně. Jakmile BSIP pro jeho registr jmen dosáhne stavu Last Call, Safe může spustit ukončení. Kontrakt pak dá 30denní výpovědní lhůtu, kterou nelze zrušit ani zkrátit. Během ní vše funguje jako dřív, takže obnovení a převody se pořád počítají.",
-            "Po výpovědní lhůtě registr na Ethereu zamrzne. Nic nelze registrovat, obnovovat, převádět ani upravovat a jména se dál překládají ze zmrazeného stavu. Bitsocial Chain zdarma importuje každé jméno, které je aktivní nebo v ochranné lhůtě, se stejným vlastníkem, datem vypršení i záznamem. Nemusíte dělat nic.",
+            "Po výpovědní lhůtě registr na Ethereu zamrzne. Nic nelze registrovat, obnovovat, převádět ani upravovat a jména se dál překládají ze zmrazeného stavu. Podle návrhu by se každé jméno, které je aktivní nebo v ochranné lhůtě, zdarma importovalo do Bitsocial Chain se stejným vlastníkem, datem vypršení i záznamem, takže byste nemuseli dělat nic.",
             "BSIP-13 povoluje ukončení jen pro tento přesun a kontrakt vynucuje 30denní výpovědní lhůtu."
           ]
         },

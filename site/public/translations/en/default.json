@@ -1057,7 +1057,7 @@
           "q": "What does moving to Bitsocial Chain mean?",
           "a": [
             "Bitsocial Chain is phase 3 of Bitsocial's master plan: a chain of its own that holds .bso names natively. Once a BSIP for its name registry reaches Last Call, the Safe can start the sunset. The contract then gives 30 days' notice, which can't be cancelled or shortened. During the notice everything works as before, so renewals and transfers still count.",
-            "After the notice the Ethereum registry freezes. Nothing can be registered, renewed, transferred or edited, and names keep resolving from the frozen state. Bitsocial Chain imports every name that is active or in its grace period for free, with the same owner, expiry and record. You don't have to do anything.",
+            "After the notice the Ethereum registry freezes. Nothing can be registered, renewed, transferred or edited, and names keep resolving from the frozen state. As proposed, Bitsocial Chain would import every name that is active or in its grace period for free, with the same owner, expiry and record, so you wouldn't have to do anything.",
             "BSIP-13 allows the sunset only for this move, and the contract enforces the 30-day notice."
           ]
         },

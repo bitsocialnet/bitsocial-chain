@@ -1064,7 +1064,7 @@
           "q": "Què vol dir passar a Bitsocial Chain?",
           "a": [
             "Bitsocial Chain és la fase 3 del pla mestre de Bitsocial: una cadena pròpia que té els noms .bso de manera nativa. Quan un BSIP per al seu registre de noms arribi a Last Call, el Safe pot iniciar el tancament. Llavors el contracte dona un preavís de 30 dies, que no es pot cancel·lar ni escurçar. Durant el preavís tot funciona com abans, així que les renovacions i les transferències continuen comptant.",
-            "Després del preavís, el registre d'Ethereum es congela. No es pot registrar, renovar, transferir ni editar res, i els noms es continuen resolent a partir de l'estat congelat. Bitsocial Chain importa gratis cada nom actiu o en període de gràcia, amb el mateix propietari, venciment i registre. No has de fer res.",
+            "Després del preavís, el registre d'Ethereum es congela. No es pot registrar, renovar, transferir ni editar res, i els noms es continuen resolent a partir de l'estat congelat. Segons la proposta, Bitsocial Chain importaria gratis cada nom actiu o en període de gràcia, amb el mateix propietari, venciment i registre, així que no hauries de fer res.",
             "BSIP-13 només permet el tancament per a aquest pas, i el contracte imposa el preavís de 30 dies."
           ]
         },

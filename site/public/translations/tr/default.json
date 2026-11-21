@@ -1057,7 +1057,7 @@
           "q": "Bitsocial Chain'e geçmek ne anlama geliyor?",
           "a": [
             "Bitsocial Chain, Bitsocial'ın ana planının 3. aşamasıdır: .bso adlarını yerel olarak tutan kendi zinciri. Ad kayıt defteri için bir BSIP Last Call aşamasına ulaştığında Safe kapanışı başlatabilir. Sözleşme bunun ardından iptal edilemeyen ve kısaltılamayan 30 günlük bir bildirim süresi verir. Bildirim süresince her şey eskisi gibi çalışır, dolayısıyla yenilemeler ve transferler geçerli olmaya devam eder.",
-            "Bildirim süresinden sonra Ethereum'daki kayıt defteri dondurulur. Hiçbir şey kaydedilemez, yenilenemez, transfer edilemez veya düzenlenemez ve adlar dondurulmuş durumdan çözümlenmeye devam eder. Bitsocial Chain, etkin olan veya ek süresindeki her adı aynı sahip, bitiş tarihi ve kayıtla ücretsiz olarak içe aktarır. Sizin hiçbir şey yapmanız gerekmez.",
+            "Bildirim süresinden sonra Ethereum'daki kayıt defteri dondurulur. Hiçbir şey kaydedilemez, yenilenemez, transfer edilemez veya düzenlenemez ve adlar dondurulmuş durumdan çözümlenmeye devam eder. Önerildiği şekliyle Bitsocial Chain, etkin olan veya ek süresindeki her adı aynı sahip, bitiş tarihi ve kayıtla ücretsiz olarak içe aktaracak, böylece sizin hiçbir şey yapmanız gerekmeyecek.",
             "BSIP-13 kapanışa yalnızca bu geçiş için izin verir ve 30 günlük bildirim süresini sözleşme zorunlu kılar."
           ]
         },

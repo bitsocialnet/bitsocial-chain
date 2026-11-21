@@ -1064,7 +1064,7 @@
           "q": "Que signifie le passage à Bitsocial Chain ?",
           "a": [
             "Bitsocial Chain est la phase 3 du plan directeur de Bitsocial : une chaîne à part entière qui détient les noms .bso nativement. Dès qu’un BSIP pour son registre de noms atteint le statut Last Call, le Safe peut lancer la procédure d’extinction. Le contrat donne alors un préavis de 30 jours, qui ne peut être ni annulé ni raccourci. Pendant le préavis, tout fonctionne comme avant, donc les renouvellements et les transferts comptent toujours.",
-            "Après le préavis, le registre Ethereum se fige. Plus rien ne peut être enregistré, renouvelé, transféré ou modifié, et les noms continuent d’être résolus à partir de l’état figé. Bitsocial Chain importe gratuitement chaque nom actif ou en période de grâce, avec le même propriétaire, la même expiration et le même enregistrement. Vous n’avez rien à faire.",
+            "Après le préavis, le registre Ethereum se fige. Plus rien ne peut être enregistré, renouvelé, transféré ou modifié, et les noms continuent d’être résolus à partir de l’état figé. Selon la proposition, Bitsocial Chain importerait gratuitement chaque nom actif ou en période de grâce, avec le même propriétaire, la même expiration et le même enregistrement, et vous n’auriez donc rien à faire.",
             "BSIP-13 n’autorise la procédure d’extinction que pour ce passage, et le contrat impose le préavis de 30 jours."
           ]
         },

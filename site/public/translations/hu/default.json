@@ -1057,7 +1057,7 @@
           "q": "Mit jelent az átköltözés a Bitsocial Chainre?",
           "a": [
             "A Bitsocial Chain a Bitsocial főtervének 3. fázisa: egy saját lánc, amely natívan tárolja a .bso neveket. Amint a névnyilvántartására vonatkozó BSIP eléri a Last Call állapotot, a Safe elindíthatja a kivezetést. A szerződés ekkor 30 napos előzetes értesítést ad, amelyet nem lehet visszavonni vagy lerövidíteni. Az értesítési idő alatt minden a korábbiak szerint működik, így a megújítások és az átruházások továbbra is számítanak.",
-            "Az értesítési idő után az Ethereum-nyilvántartás befagy. Semmit nem lehet regisztrálni, megújítani, átruházni vagy szerkeszteni, a nevek pedig a befagyott állapotból oldódnak fel tovább. A Bitsocial Chain ingyen importál minden aktív vagy türelmi időben lévő nevet, ugyanazzal a tulajdonossal, lejárattal és rekorddal. Neked semmit sem kell tenned.",
+            "Az értesítési idő után az Ethereum-nyilvántartás befagy. Semmit nem lehet regisztrálni, megújítani, átruházni vagy szerkeszteni, a nevek pedig a befagyott állapotból oldódnak fel tovább. A javaslat szerint a Bitsocial Chain ingyen importálna minden aktív vagy türelmi időben lévő nevet, ugyanazzal a tulajdonossal, lejárattal és rekorddal, így neked semmit sem kellene tenned.",
             "A BSIP-13 csak ehhez az átköltözéshez engedi meg a kivezetést, és a szerződés kikényszeríti a 30 napos értesítési időt."
           ]
         },

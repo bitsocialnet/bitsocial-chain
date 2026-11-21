@@ -1057,7 +1057,7 @@
           "q": "Çfarë do të thotë kalimi në Bitsocial Chain?",
           "a": [
             "Bitsocial Chain është faza 3 e planit kryesor të Bitsocial: një zinxhir më vete që i mban emrat .bso në mënyrë native. Sapo një BSIP për regjistrin e tij të emrave të arrijë në Last Call, Safe-i mund ta nisë mbylljen. Kontrata pastaj jep një njoftim paraprak 30-ditor, që nuk mund të anulohet ose shkurtohet. Gjatë njoftimit gjithçka funksionon si më parë, kështu që rinovimet dhe transferimet vazhdojnë të vlejnë.",
-            "Pas njoftimit, regjistri në Ethereum ngrin. Asgjë nuk mund të regjistrohet, rinovohet, transferohet ose ndryshohet, dhe emrat vazhdojnë të zgjidhen nga gjendja e ngrirë. Bitsocial Chain e importon falas çdo emër që është aktiv ose në periudhën e faljes, me të njëjtin pronar, skadim dhe regjistrim. Nuk ke nevojë të bësh asgjë.",
+            "Pas njoftimit, regjistri në Ethereum ngrin. Asgjë nuk mund të regjistrohet, rinovohet, transferohet ose ndryshohet, dhe emrat vazhdojnë të zgjidhen nga gjendja e ngrirë. Sipas propozimit, Bitsocial Chain do ta importonte falas çdo emër që është aktiv ose në periudhën e faljes, me të njëjtin pronar, skadim dhe regjistrim, kështu që nuk do të kishe nevojë të bëje asgjë.",
             "BSIP-13 e lejon mbylljen vetëm për këtë kalim, dhe kontrata e zbaton njoftimin 30-ditor."
           ]
         },

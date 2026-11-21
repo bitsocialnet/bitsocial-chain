@@ -1071,7 +1071,7 @@
           "q": "Co oznacza przejście na Bitsocial Chain?",
           "a": [
             "Bitsocial Chain to faza 3 planu głównego Bitsocial: własny łańcuch, który przechowuje nazwy .bso natywnie. Gdy BSIP dla jego rejestru nazw osiągnie status Last Call, Safe może uruchomić wygaszenie. Kontrakt daje wtedy 30 dni wypowiedzenia, których nie można anulować ani skrócić. W okresie wypowiedzenia wszystko działa jak dotąd, więc odnowienia i transfery nadal się liczą.",
-            "Po upływie wypowiedzenia rejestr na Ethereum zostaje zamrożony. Nie da się niczego zarejestrować, odnowić, przenieść ani edytować, a nazwy nadal rozwiązują się z zamrożonego stanu. Bitsocial Chain bezpłatnie importuje każdą nazwę, która jest aktywna lub w okresie ochronnym, z tym samym właścicielem, datą wygaśnięcia i rekordem. Nie musisz nic robić.",
+            "Po upływie wypowiedzenia rejestr na Ethereum zostaje zamrożony. Nie da się niczego zarejestrować, odnowić, przenieść ani edytować, a nazwy nadal rozwiązują się z zamrożonego stanu. Zgodnie z propozycją każda nazwa, która jest aktywna lub w okresie ochronnym, zostałaby bezpłatnie zaimportowana do Bitsocial Chain z tym samym właścicielem, datą wygaśnięcia i rekordem, więc nie trzeba by było nic robić.",
             "BSIP-13 dopuszcza wygaszenie tylko na potrzeby tego przejścia, a kontrakt wymusza 30-dniowe wypowiedzenie."
           ]
         },

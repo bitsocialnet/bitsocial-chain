@@ -1064,7 +1064,7 @@
           "q": "Ce înseamnă mutarea pe Bitsocial Chain?",
           "a": [
             "Bitsocial Chain este faza 3 a planului general al Bitsocial: un lanț propriu care deține nativ numele .bso. Odată ce un BSIP pentru registrul său de nume ajunge la Last Call, Safe-ul poate porni procedura de închidere. Contractul dă atunci un preaviz de 30 de zile, care nu poate fi anulat sau scurtat. În timpul preavizului totul funcționează ca înainte, așa că reînnoirile și transferurile contează în continuare.",
-            "După preaviz, registrul de pe Ethereum se îngheață. Nimic nu mai poate fi înregistrat, reînnoit, transferat sau editat, iar numele continuă să se rezolve din starea înghețată. Bitsocial Chain importă gratuit fiecare nume activ sau aflat în perioada de grație, cu același proprietar, aceeași dată de expirare și aceeași înregistrare. Nu trebuie să faci nimic.",
+            "După preaviz, registrul de pe Ethereum se îngheață. Nimic nu mai poate fi înregistrat, reînnoit, transferat sau editat, iar numele continuă să se rezolve din starea înghețată. Conform propunerii, Bitsocial Chain ar importa gratuit fiecare nume activ sau aflat în perioada de grație, cu același proprietar, aceeași dată de expirare și aceeași înregistrare, așa că nu ar trebui să faci nimic.",
             "BSIP-13 permite procedura de închidere doar pentru această mutare, iar contractul impune preavizul de 30 de zile."
           ]
         },

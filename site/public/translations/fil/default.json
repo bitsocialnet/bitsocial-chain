@@ -1057,7 +1057,7 @@
           "q": "Ano ang ibig sabihin ng paglipat sa Bitsocial Chain?",
           "a": [
             "Ang Bitsocial Chain ay phase 3 ng master plan ng Bitsocial: isang sariling chain na humahawak ng mga .bso name nang native. Kapag umabot sa Last Call ang isang BSIP para sa name registry nito, puwedeng simulan ng Safe ang sunset. Magbibigay ang kontrata ng 30 araw na abiso, na hindi puwedeng kanselahin o paikliin. Habang may abiso, gumagana ang lahat gaya ng dati, kaya bilang pa rin ang mga renewal at transfer.",
-            "Pagkatapos ng abiso, mafi-freeze ang registry sa Ethereum. Wala nang mare-register, mare-renew, mata-transfer o mae-edit, at patuloy na magre-resolve ang mga pangalan mula sa naka-freeze na estado. Ii-import nang libre ng Bitsocial Chain ang bawat pangalang aktibo o nasa grace period nito, na may parehong may-ari, expiry at record. Wala kang kailangang gawin.",
+            "Pagkatapos ng abiso, mafi-freeze ang registry sa Ethereum. Wala nang mare-register, mare-renew, mata-transfer o mae-edit, at patuloy na magre-resolve ang mga pangalan mula sa naka-freeze na estado. Ayon sa panukala, ii-import nang libre ng Bitsocial Chain ang bawat pangalang aktibo o nasa grace period nito, na may parehong may-ari, expiry at record, kaya wala ka nang kailangang gawin.",
             "Pinapayagan lang ng BSIP-13 ang sunset para sa paglipat na ito, at ipinapatupad ng kontrata ang 30 araw na abiso."
           ]
         },
