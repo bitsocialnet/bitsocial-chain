@@ -16,19 +16,23 @@ const DEBOUNCE_MS = 250;
  * arrives.
  */
 export function useNameLookup(label: string | null) {
-  const [request, setRequest] = useState({ label, id: 0 });
+  // `atBlock`: a refresh after a mined transaction reads at its block (see `lookupName`).
+  const [request, setRequest] = useState<{ label: string | null; id: number; atBlock?: bigint }>({
+    label,
+    id: 0,
+  });
   const [result, setResult] = useState<{ id: number; state?: NameState } | null>(null);
 
   // A changed label is a new request, so even a label searched before waits for a fresh answer.
   if (request.label !== label) setRequest({ label, id: request.id + 1 });
 
   useEffect(() => {
-    const { label: current, id } = request;
+    const { label: current, id, atBlock } = request;
     if (!current || !REGISTRY) return;
     let cancelled = false;
     const timer = window.setTimeout(async () => {
       try {
-        const state = await lookupName(current);
+        const state = await lookupName(current, atBlock);
         if (!cancelled) setResult({ id, state });
       } catch (error) {
         console.warn(`Could not look up ${current}.bso.`, error);
@@ -42,7 +46,7 @@ export function useNameLookup(label: string | null) {
   }, [request]);
 
   const refresh = useCallback(
-    () => setRequest((current) => ({ ...current, id: current.id + 1 })),
+    (atBlock?: bigint) => setRequest((current) => ({ ...current, id: current.id + 1, atBlock })),
     [],
   );
 

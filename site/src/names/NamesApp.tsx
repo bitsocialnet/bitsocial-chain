@@ -83,8 +83,9 @@ export default function NamesApp() {
     return () => provider.removeListener("accountsChanged", onAccounts);
   }, [wallet?.option.provider]);
 
-  const onChanged = (registration?: Registration) => {
-    refresh();
+  const onChanged = (after?: { block: bigint; registration?: Registration }) => {
+    refresh(after?.block);
+    const registration = after?.registration;
     if (registration) setLocal((current) => [registration, ...current]);
   };
 
@@ -127,7 +128,7 @@ export default function NamesApp() {
               onQuery={changeQuery}
               spelling={spelling}
               lookup={lookup}
-              onRetry={refresh}
+              onRetry={() => refresh()}
               account={wallet?.account ?? null}
               opening={opening}
               onRetryOpening={retryOpening}

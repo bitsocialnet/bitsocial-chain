@@ -80,7 +80,8 @@ export default function ClaimSection({
   nowMs: number;
   wallet: ConnectedWallet | null;
   onWallet: (wallet: ConnectedWallet) => void;
-  onChanged: (registration?: Registration) => void;
+  // Re-reads the name; after a mined transaction, at its block.
+  onChanged: (after?: { block: bigint; registration?: Registration }) => void;
 }) {
   const { t, i18n } = useTranslation();
   const format = useNamesFormat();
@@ -313,11 +314,14 @@ export default function ClaimSection({
       removePendingClaim(claimToReveal);
       bumpPending();
       onChanged({
-        tokenId: tokenIdFor(claimToReveal.label),
-        label: claimToReveal.label,
-        owner: wallet.account,
-        registeredAt: Math.floor(Date.now() / 1000),
-        txHash: receipt.transactionHash,
+        block: receipt.blockNumber,
+        registration: {
+          tokenId: tokenIdFor(claimToReveal.label),
+          label: claimToReveal.label,
+          owner: wallet.account,
+          registeredAt: Math.floor(Date.now() / 1000),
+          txHash: receipt.transactionHash,
+        },
       });
       return receipt.transactionHash;
     });
@@ -392,7 +396,7 @@ export default function ClaimSection({
       } else {
         setProblem({ kind: "revert", error: "Reverted" }, item.scope);
       }
-      onChanged();
+      onChanged({ block: state.blockNumber });
       return;
     }
     setUnresolved((list) =>
@@ -411,7 +415,7 @@ export default function ClaimSection({
         onSent,
         signal,
       );
-      onChanged();
+      onChanged({ block: receipt.blockNumber });
       return receipt.transactionHash;
     });
   }
@@ -430,7 +434,7 @@ export default function ClaimSection({
         onSent,
         signal,
       );
-      onChanged();
+      onChanged({ block: receipt.blockNumber });
       return receipt.transactionHash;
     });
   }
