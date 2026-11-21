@@ -899,7 +899,7 @@
       },
       "notSaved": "Acest browser nu a putut salva rezervarea. Ține această filă deschisă până revendici numele.",
       "stopWaiting": "Nu mai aștepta",
-      "unresolved": "Această tranzacție nu este încă confirmată. Verific-o înainte să trimiți alta, altfel s-ar putea să plătești de două ori.",
+      "unresolved": "Această tranzacție nu este încă confirmată. Acest pas rămâne închis până când este confirmată sau portofelul tău o anulează, ca să nu plătești de două ori.",
       "noAccount": "Portofelul nu a returnat niciun cont."
     },
     "activity": {

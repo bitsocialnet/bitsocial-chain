@@ -894,7 +894,7 @@
       },
       "notSaved": "Ez a böngésző nem tudta elmenteni a foglalást. Tartsd nyitva ezt a lapot, amíg nem igényled a nevet.",
       "stopWaiting": "Várakozás leállítása",
-      "unresolved": "Ez a tranzakció még nincs megerősítve. Ellenőrizd, mielőtt újat küldesz, különben kétszer fizethetsz.",
+      "unresolved": "Ez a tranzakció még nincs megerősítve. Ez a lépés zárva marad, amíg meg nem erősítik, vagy a tárcád vissza nem vonja, hogy ne fizess kétszer.",
       "noAccount": "A tárca nem adott vissza fiókot."
     },
     "activity": {

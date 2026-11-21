@@ -899,7 +899,7 @@
       },
       "notSaved": "Este navegador no pudo guardar la reserva. Mantén esta pestaña abierta hasta que reclames el nombre.",
       "stopWaiting": "Dejar de esperar",
-      "unresolved": "Esta transacción aún no está confirmada. Revísala antes de enviar otra, o podrías pagar dos veces.",
+      "unresolved": "Esta transacción aún no está confirmada. Este paso queda cerrado hasta que se confirme o tu billetera la cancele, para que no pagues dos veces.",
       "noAccount": "La billetera no devolvió ninguna cuenta."
     },
     "activity": {

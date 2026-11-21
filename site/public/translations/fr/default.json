@@ -899,7 +899,7 @@
       },
       "notSaved": "Ce navigateur n’a pas pu sauvegarder la réservation. Gardez cet onglet ouvert jusqu’à ce que vous réclamiez le nom.",
       "stopWaiting": "Arrêter d’attendre",
-      "unresolved": "Cette transaction n’est pas encore confirmée. Vérifiez-la avant d’en envoyer une autre, sinon vous risquez de payer deux fois.",
+      "unresolved": "Cette transaction n’est pas encore confirmée. Cette étape reste fermée jusqu’à sa confirmation ou son annulation par votre portefeuille, pour que vous ne payiez pas deux fois.",
       "noAccount": "Le portefeuille n’a renvoyé aucun compte."
     },
     "activity": {

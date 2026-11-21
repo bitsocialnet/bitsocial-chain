@@ -894,7 +894,7 @@
       },
       "notSaved": "Dieser Browser konnte die Reservierung nicht speichern. Lass diesen Tab offen, bis du den Namen claimst.",
       "stopWaiting": "Warten beenden",
-      "unresolved": "Diese Transaktion ist noch nicht bestätigt. Prüfe sie, bevor du eine weitere sendest, sonst zahlst du womöglich doppelt.",
+      "unresolved": "Diese Transaktion ist noch nicht bestätigt. Dieser Schritt bleibt gesperrt, bis sie bestätigt ist oder deine Wallet sie abbricht, damit du nicht doppelt zahlst.",
       "noAccount": "Die Wallet hat kein Konto zurückgegeben."
     },
     "activity": {

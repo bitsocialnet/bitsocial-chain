@@ -889,7 +889,7 @@
       },
       "notSaved": "Trình duyệt này không lưu được lượt đặt trước. Hãy giữ tab này mở cho đến khi bạn nhận tên.",
       "stopWaiting": "Dừng chờ",
-      "unresolved": "Giao dịch này chưa được xác nhận. Hãy kiểm tra trước khi gửi giao dịch khác, nếu không bạn có thể thanh toán hai lần.",
+      "unresolved": "Giao dịch này chưa được xác nhận. Bước này sẽ đóng cho đến khi giao dịch được xác nhận hoặc ví của bạn hủy nó, để bạn không thanh toán hai lần.",
       "noAccount": "Ví không trả về tài khoản nào."
     },
     "activity": {

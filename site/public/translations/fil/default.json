@@ -894,7 +894,7 @@
       },
       "notSaved": "Hindi ma-save ng browser na ito ang reservation. Panatilihing bukas ang tab na ito hanggang ma-claim mo ang pangalan.",
       "stopWaiting": "Itigil ang paghihintay",
-      "unresolved": "Hindi pa nakukumpirma ang transaction na ito. Tingnan muna ito bago ka magpadala ng isa pa, o baka dalawang beses kang magbayad.",
+      "unresolved": "Hindi pa nakukumpirma ang transaction na ito. Mananatiling sarado ang hakbang na ito hanggang makumpirma ito o kanselahin ito ng iyong wallet, para hindi ka magbayad nang dalawang beses.",
       "noAccount": "Walang ibinalik na account ang wallet."
     },
     "activity": {

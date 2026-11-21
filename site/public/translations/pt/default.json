@@ -899,7 +899,7 @@
       },
       "notSaved": "Este navegador não conseguiu salvar a reserva. Mantenha esta aba aberta até resgatar o nome.",
       "stopWaiting": "Parar de esperar",
-      "unresolved": "Esta transação ainda não foi confirmada. Verifique-a antes de enviar outra, senão você pode pagar duas vezes.",
+      "unresolved": "Esta transação ainda não foi confirmada. Esta etapa fica fechada até que ela seja confirmada ou sua carteira a cancele, para que você não pague duas vezes.",
       "noAccount": "A carteira não retornou nenhuma conta."
     },
     "activity": {

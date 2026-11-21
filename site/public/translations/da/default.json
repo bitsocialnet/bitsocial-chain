@@ -894,7 +894,7 @@
       },
       "notSaved": "Denne browser kunne ikke gemme reservationen. Hold denne fane åben, indtil du claimer navnet.",
       "stopWaiting": "Stop med at vente",
-      "unresolved": "Denne transaktion er ikke bekræftet endnu. Tjek den, før du sender en til, ellers betaler du måske to gange.",
+      "unresolved": "Denne transaktion er ikke bekræftet endnu. Dette trin forbliver lukket, indtil den er bekræftet, eller din wallet annullerer den, så du ikke betaler to gange.",
       "noAccount": "Din wallet returnerede ingen konto."
     },
     "activity": {

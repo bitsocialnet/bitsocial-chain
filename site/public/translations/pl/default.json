@@ -904,7 +904,7 @@
       },
       "notSaved": "Ta przeglądarka nie mogła zapisać rezerwacji. Zostaw tę kartę otwartą, dopóki nie odbierzesz nazwy.",
       "stopWaiting": "Przestań czekać",
-      "unresolved": "Ta transakcja nie jest jeszcze potwierdzona. Sprawdź ją, zanim wyślesz kolejną, bo możesz zapłacić dwa razy.",
+      "unresolved": "Ta transakcja nie jest jeszcze potwierdzona. Ten krok pozostaje zamknięty, dopóki nie zostanie potwierdzona albo twój portfel jej nie anuluje, żeby nie zapłacić dwa razy.",
       "noAccount": "Portfel nie zwrócił żadnego konta."
     },
     "activity": {

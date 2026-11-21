@@ -899,7 +899,7 @@
       },
       "notSaved": "Questo browser non è riuscito a salvare la prenotazione. Tieni aperta questa scheda finché non rivendichi il nome.",
       "stopWaiting": "Smetti di aspettare",
-      "unresolved": "Questa transazione non è ancora confermata. Controllala prima di inviarne un'altra, o potresti pagare due volte.",
+      "unresolved": "Questa transazione non è ancora confermata. Questo passaggio resta chiuso finché non viene confermata o il tuo portafoglio non la annulla, così non paghi due volte.",
       "noAccount": "Il portafoglio non ha restituito alcun account."
     },
     "activity": {

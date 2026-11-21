@@ -894,7 +894,7 @@
       },
       "notSaved": "Tämä selain ei voinut tallentaa varausta. Pidä tämä välilehti auki, kunnes lunastat nimen.",
       "stopWaiting": "Lopeta odottaminen",
-      "unresolved": "Tätä transaktiota ei ole vielä vahvistettu. Tarkista se ennen kuin lähetät uuden, muuten saatat maksaa kahdesti.",
+      "unresolved": "Tätä transaktiota ei ole vielä vahvistettu. Tämä vaihe pysyy suljettuna, kunnes se vahvistetaan tai lompakkosi peruuttaa sen, jottet maksa kahdesti.",
       "noAccount": "Lompakko ei palauttanut tiliä."
     },
     "activity": {

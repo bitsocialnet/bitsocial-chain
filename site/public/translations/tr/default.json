@@ -894,7 +894,7 @@
       },
       "notSaved": "Bu tarayıcı rezervasyonu kaydedemedi. Adı talep edene kadar bu sekmeyi açık tutun.",
       "stopWaiting": "Beklemeyi bırak",
-      "unresolved": "Bu işlem henüz onaylanmadı. Başka bir işlem göndermeden önce kontrol edin, yoksa iki kez ödeme yapmış olabilirsiniz.",
+      "unresolved": "Bu işlem henüz onaylanmadı. İki kez ödeme yapmamanız için bu adım, işlem onaylanana veya cüzdanınız iptal edene kadar kapalı kalır.",
       "noAccount": "Cüzdan herhangi bir hesap döndürmedi."
     },
     "activity": {

@@ -894,7 +894,7 @@
       },
       "notSaved": "Denne nettleseren kunne ikke lagre reservasjonen. Hold denne fanen åpen til du claimer navnet.",
       "stopWaiting": "Slutt å vente",
-      "unresolved": "Denne transaksjonen er ikke bekreftet ennå. Sjekk den før du sender en ny, ellers betaler du kanskje to ganger.",
+      "unresolved": "Denne transaksjonen er ikke bekreftet ennå. Dette steget forblir stengt til den er bekreftet eller lommeboken din avbryter den, så du ikke betaler to ganger.",
       "noAccount": "Lommeboken returnerte ingen konto."
     },
     "activity": {

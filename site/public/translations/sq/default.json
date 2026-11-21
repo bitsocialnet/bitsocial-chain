@@ -894,7 +894,7 @@
       },
       "notSaved": "Ky shfletues nuk mundi ta ruante rezervimin. Mbaje këtë skedë të hapur derisa ta marrësh emrin.",
       "stopWaiting": "Ndalo pritjen",
-      "unresolved": "Ky transaksion nuk është konfirmuar ende. Kontrolloje para se të dërgosh një tjetër, përndryshe mund të paguash dy herë.",
+      "unresolved": "Ky transaksion nuk është konfirmuar ende. Ky hap mbetet i mbyllur derisa të konfirmohet ose portofoli yt ta anulojë, që të mos paguash dy herë.",
       "noAccount": "Portofoli nuk ktheu asnjë llogari."
     },
     "activity": {

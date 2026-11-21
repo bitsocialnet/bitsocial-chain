@@ -894,7 +894,7 @@
       },
       "notSaved": "Den här webbläsaren kunde inte spara reservationen. Håll den här fliken öppen tills du claimar namnet.",
       "stopWaiting": "Sluta vänta",
-      "unresolved": "Den här transaktionen är inte bekräftad än. Kontrollera den innan du skickar en till, annars kanske du betalar två gånger.",
+      "unresolved": "Den här transaktionen är inte bekräftad än. Det här steget förblir stängt tills den är bekräftad eller din plånbok avbryter den, så att du inte betalar två gånger.",
       "noAccount": "Plånboken returnerade inget konto."
     },
     "activity": {

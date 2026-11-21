@@ -889,7 +889,7 @@
       },
       "notSaved": "Browser ini tidak bisa menyimpan pemesanan. Biarkan tab ini terbuka sampai kamu mengklaim namanya.",
       "stopWaiting": "Berhenti menunggu",
-      "unresolved": "Transaksi ini belum dikonfirmasi. Periksa dulu sebelum kamu mengirim yang lain, atau kamu bisa membayar dua kali.",
+      "unresolved": "Transaksi ini belum dikonfirmasi. Langkah ini tetap tertutup sampai transaksinya dikonfirmasi atau dibatalkan oleh dompetmu, agar kamu tidak membayar dua kali.",
       "noAccount": "Dompet tidak mengembalikan akun apa pun."
     },
     "activity": {

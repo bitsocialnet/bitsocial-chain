@@ -899,7 +899,7 @@
       },
       "notSaved": "Aquest navegador no ha pogut desar la reserva. Mantén aquesta pestanya oberta fins que reclamis el nom.",
       "stopWaiting": "Deixa d'esperar",
-      "unresolved": "Aquesta transacció encara no s'ha confirmat. Comprova-la abans d'enviar-ne una altra, o podries pagar dues vegades.",
+      "unresolved": "Aquesta transacció encara no s'ha confirmat. Aquest pas queda tancat fins que es confirmi o fins que la teva cartera la cancel·li, perquè no paguis dues vegades.",
       "noAccount": "La cartera no ha retornat cap compte."
     },
     "activity": {

@@ -9,9 +9,6 @@ import {
   getAddress,
   type Hash,
   numberToHex,
-  TransactionNotFoundError,
-  type TransactionReceipt,
-  TransactionReceiptNotFoundError,
   UserRejectedRequestError,
 } from "viem";
 import { type Followed, settleFollowed } from "./follow-transaction";
@@ -203,27 +200,6 @@ export async function settleTransaction(hash: Hash, signal?: AbortSignal) {
     pollMs: FOLLOW_POLL_MS,
     signal,
   });
-}
-
-/**
- * Where a sent transaction stands: its receipt once mined, "pending" while the RPC has it, or
- * "unknown" when the RPC doesn't know it, as after it was dropped or replaced in the wallet.
- */
-export async function checkTransaction(
-  hash: Hash,
-): Promise<TransactionReceipt | "pending" | "unknown"> {
-  try {
-    return await publicClient.getTransactionReceipt({ hash });
-  } catch (error) {
-    if (!(error instanceof TransactionReceiptNotFoundError)) throw error;
-  }
-  try {
-    await publicClient.getTransaction({ hash });
-    return "pending";
-  } catch (error) {
-    if (error instanceof TransactionNotFoundError) return "unknown";
-    throw error;
-  }
 }
 
 /** Sorts a wallet or contract error into what the page can explain. */

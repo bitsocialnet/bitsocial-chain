@@ -904,7 +904,7 @@
       },
       "notSaved": "Tento prohlížeč nemohl rezervaci uložit. Nechte tuto kartu otevřenou, dokud jméno nezískáte.",
       "stopWaiting": "Přestat čekat",
-      "unresolved": "Tato transakce ještě není potvrzená. Než odešlete další, zkontrolujte ji, jinak můžete zaplatit dvakrát.",
+      "unresolved": "Tato transakce ještě není potvrzená. Tento krok zůstane zavřený, dokud nebude potvrzená nebo dokud ji vaše peněženka nezruší, abyste nezaplatili dvakrát.",
       "noAccount": "Peněženka nevrátila žádný účet."
     },
     "activity": {

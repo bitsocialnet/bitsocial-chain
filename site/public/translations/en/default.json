@@ -894,7 +894,7 @@
       },
       "notSaved": "This browser couldn't save the reservation. Keep this tab open until you claim the name.",
       "stopWaiting": "Stop waiting",
-      "unresolved": "This transaction isn't confirmed yet. Check it before you send another, or you may pay twice.",
+      "unresolved": "This transaction isn't confirmed yet. This step stays closed until it is, or until your wallet cancels it, so you can't pay twice.",
       "noAccount": "The wallet returned no account."
     },
     "activity": {
