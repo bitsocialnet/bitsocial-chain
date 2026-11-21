@@ -923,7 +923,7 @@
     "eth": {
       "badge": "Falas për emrat në përdorim",
       "title": "Përdor tashmë një emër .bso? Është yti.",
-      "lead": "Deri tani, aplikacionet e lexonin memes.bso nga memes.eth. Në lansim, çdo emër .eth me një regjistrim bitsocial, përfshirë nënemrat, shpërndahet me airdrop si i njëjti emër .bso te portofoli që e mban, me të njëjtin regjistrim dhe me vitin e parë të paguar. Nuk ka asgjë për të marrë dhe asgjë për të paguar.",
+      "lead": "Deri tani, aplikacionet e lexonin memes.bso nga memes.eth. Në lansim, çdo emër .eth me një regjistrim bitsocial, përfshirë nënemrat, shpërndahet me airdrop si i njëjti emër .bso te portofoli që e mban, me të njëjtin regjistrim dhe me vitin e parë të paguar. Pasi emri yt të regjistrohet, nuk ka asgjë për të marrë dhe asgjë për të paguar. Nëse airdrop-i ngec, regjistrimi i emrave hapet gjithsesi për të gjithë shtatë ditë pas vendosjes së kontratës, ndaj kontrollo emrin tënd më poshtë.",
       "caveat": "Përfshihen vetëm emrat që kishin një regjistrim bitsocial në snapshot-in e lansimit. Nëse yti e mori regjistrimin më vonë, merre emrin .bso sapo të hapet regjistrimi i emrave, para se ta bëjë dikush tjetër.",
       "label": "Kontrollo emrin tënd .eth",
       "placeholder": "memes.eth",

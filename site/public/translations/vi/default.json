@@ -918,7 +918,7 @@
     "eth": {
       "badge": "Miễn phí cho tên đang dùng",
       "title": "Đã dùng tên .bso? Tên đó là của bạn.",
-      "lead": "Cho đến nay, các ứng dụng đọc memes.bso từ memes.eth. Khi ra mắt, mọi tên .eth có bản ghi bitsocial, kể cả tên con, sẽ được airdrop dưới dạng tên .bso tương ứng cho ví đang nắm giữ nó, với cùng bản ghi và đã trả phí năm đầu. Không có gì để nhận và không phải trả gì.",
+      "lead": "Cho đến nay, các ứng dụng đọc memes.bso từ memes.eth. Khi ra mắt, mọi tên .eth có bản ghi bitsocial, kể cả tên con, sẽ được airdrop dưới dạng tên .bso tương ứng cho ví đang nắm giữ nó, với cùng bản ghi và đã trả phí năm đầu. Khi tên của bạn đã được đăng ký, không có gì để nhận và không phải trả gì. Nếu airdrop bị đình trệ, đăng ký vẫn mở cho mọi người sau bảy ngày kể từ khi triển khai, vì vậy hãy kiểm tra tên của bạn bên dưới.",
       "caveat": "Chỉ những tên có bản ghi bitsocial tại thời điểm chụp dữ liệu lúc ra mắt mới được tính. Nếu tên của bạn có bản ghi sau đó, hãy nhận tên .bso ngay khi mở đăng ký, trước khi người khác làm vậy.",
       "label": "Kiểm tra tên .eth của bạn",
       "placeholder": "memes.eth",

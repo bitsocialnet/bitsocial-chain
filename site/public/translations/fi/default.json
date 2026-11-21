@@ -923,7 +923,7 @@
     "eth": {
       "badge": "Ilmainen käytössä oleville nimille",
       "title": "Käytätkö jo .bso-nimeä? Se on sinun.",
-      "lead": "Tähän asti sovellukset ovat lukeneet memes.bso:n memes.eth:stä. Käynnistyksessä jokainen .eth-nimi, jolla on bitsocial-tietue, alinimet mukaan lukien, jaetaan airdropilla samana .bso-nimenä sen omistavalle lompakolle samalla tietueella ja ensimmäinen vuosi maksettuna. Mitään ei tarvitse lunastaa eikä maksaa.",
+      "lead": "Tähän asti sovellukset ovat lukeneet memes.bso:n memes.eth:stä. Käynnistyksessä jokainen .eth-nimi, jolla on bitsocial-tietue, alinimet mukaan lukien, jaetaan airdropilla samana .bso-nimenä sen omistavalle lompakolle samalla tietueella ja ensimmäinen vuosi maksettuna. Kun nimesi on rekisteröity, mitään ei tarvitse lunastaa eikä maksaa. Jos airdrop jumittuu, rekisteröinti avautuu silti kaikille seitsemän päivän kuluttua käyttöönotosta, joten tarkista nimesi alta.",
       "caveat": "Mukana ovat vain nimet, joilla oli bitsocial-tietue käynnistyksen tilannekuvassa. Jos nimesi sai tietueensa myöhemmin, lunasta .bso-nimi heti kun rekisteröinti avautuu, ennen kuin joku muu ehtii.",
       "label": "Tarkista .eth-nimesi",
       "placeholder": "memes.eth",

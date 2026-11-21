@@ -923,7 +923,7 @@
     "eth": {
       "badge": "Gratis för namn som används",
       "title": "Använder du redan ett .bso-namn? Det är ditt.",
-      "lead": "Hittills har appar läst memes.bso från memes.eth. Vid lanseringen delas varje .eth-namn med en bitsocial-record, undernamn inräknade, ut via airdrop som samma .bso-namn till plånboken som innehar det, med samma record och första året betalt. Det finns inget att claima och inget att betala.",
+      "lead": "Hittills har appar läst memes.bso från memes.eth. Vid lanseringen delas varje .eth-namn med en bitsocial-record, undernamn inräknade, ut via airdrop som samma .bso-namn till plånboken som innehar det, med samma record och första året betalt. När ditt väl är registrerat finns det inget att claima och inget att betala. Om airdropen stannar av öppnar registreringen ändå för alla sju dagar efter driftsättningen, så kolla ditt namn nedan.",
       "caveat": "Bara namn som hade en bitsocial-record vid lanseringens ögonblicksbild ingår. Om ditt fick sin record senare, claima .bso-namnet så snart registreringen öppnar, innan någon annan gör det.",
       "label": "Kontrollera ditt .eth-namn",
       "placeholder": "memes.eth",

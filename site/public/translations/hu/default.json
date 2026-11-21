@@ -923,7 +923,7 @@
     "eth": {
       "badge": "Ingyenes a használatban lévő neveknek",
       "title": "Már használsz .bso nevet? A tiéd.",
-      "lead": "Eddig az alkalmazások a memes.bso nevet a memes.eth-ből olvasták. Induláskor minden bitsocial rekorddal rendelkező .eth név, az alneveket is beleértve, ugyanazon .bso névként airdroppal kerül az azt birtokló tárcához, ugyanazzal a rekorddal és kifizetett első évvel. Semmit sem kell igényelni, és semmit sem kell fizetni.",
+      "lead": "Eddig az alkalmazások a memes.bso nevet a memes.eth-ből olvasták. Induláskor minden bitsocial rekorddal rendelkező .eth név, az alneveket is beleértve, ugyanazon .bso névként airdroppal kerül az azt birtokló tárcához, ugyanazzal a rekorddal és kifizetett első évvel. Amint a neved regisztrálva van, semmit sem kell igényelni, és semmit sem kell fizetni. Ha az airdrop elakad, a regisztráció a telepítés után hét nappal így is megnyílik mindenki számára, ezért ellenőrizd lent a nevedet.",
       "caveat": "Csak azok a nevek szerepelnek, amelyeknek volt bitsocial rekordjuk az induláskori pillanatképnél. Ha a tiéd később kapta meg a rekordját, igényeld a .bso nevet, amint megnyílik a regisztráció, mielőtt más tenné meg.",
       "label": "Ellenőrizd a .eth nevedet",
       "placeholder": "memes.eth",

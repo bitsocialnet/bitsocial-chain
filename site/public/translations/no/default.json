@@ -923,7 +923,7 @@
     "eth": {
       "badge": "Gratis for navn i bruk",
       "title": "Bruker du allerede et .bso-navn? Det er ditt.",
-      "lead": "Til nå har apper lest memes.bso fra memes.eth. Ved lanseringen blir hvert .eth-navn med en bitsocial-oppføring, undernavn inkludert, airdroppet som det samme .bso-navnet til lommeboken som eier det, med samme oppføring og det første året betalt. Det er ingenting å claime og ingenting å betale.",
+      "lead": "Til nå har apper lest memes.bso fra memes.eth. Ved lanseringen blir hvert .eth-navn med en bitsocial-oppføring, undernavn inkludert, airdroppet som det samme .bso-navnet til lommeboken som eier det, med samme oppføring og det første året betalt. Når ditt er registrert, er det ingenting å claime og ingenting å betale. Hvis airdroppen stopper opp, åpner registreringen likevel for alle sju dager etter utrullingen, så sjekk navnet ditt nedenfor.",
       "caveat": "Bare navn som hadde en bitsocial-oppføring i lanseringens øyeblikksbilde, er med. Hvis ditt fikk oppføringen senere, claim .bso-navnet så snart registreringen åpner, før noen andre gjør det.",
       "label": "Sjekk .eth-navnet ditt",
       "placeholder": "memes.eth",

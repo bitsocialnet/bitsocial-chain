@@ -933,7 +933,7 @@
     "eth": {
       "badge": "Zdarma pro používaná jména",
       "title": "Už používáte jméno .bso? Je vaše.",
-      "lead": "Aplikace dosud četly memes.bso z memes.eth. Při spuštění přijde každé jméno .eth se záznamem bitsocial, včetně podjmen, airdropem jako stejné jméno .bso do peněženky, která ho drží, se stejným záznamem a zaplaceným prvním rokem. Není co vyzvedávat a není co platit.",
+      "lead": "Aplikace dosud četly memes.bso z memes.eth. Při spuštění přijde každé jméno .eth se záznamem bitsocial, včetně podjmen, airdropem jako stejné jméno .bso do peněženky, která ho drží, se stejným záznamem a zaplaceným prvním rokem. Jakmile je vaše jméno zaregistrováno, není co vyzvedávat a není co platit. Pokud se airdrop zadrhne, registrace se stejně otevře všem sedm dní po nasazení, takže si své jméno zkontrolujte níže.",
       "caveat": "Započítají se jen jména, která měla záznam bitsocial ve chvíli snímku při spuštění. Pokud vaše jméno dostalo záznam později, získejte jméno .bso hned po otevření registrace, než to udělá někdo jiný.",
       "label": "Ověřte své jméno .eth",
       "placeholder": "memes.eth",

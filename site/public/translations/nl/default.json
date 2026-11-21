@@ -923,7 +923,7 @@
     "eth": {
       "badge": "Gratis voor namen in gebruik",
       "title": "Gebruik je al een .bso-naam? Hij is van jou.",
-      "lead": "Tot nu toe lazen apps memes.bso uit memes.eth. Bij de lancering wordt elke .eth-naam met een bitsocial-record, subnamen inbegrepen, via een airdrop als dezelfde .bso-naam toegewezen aan de wallet die hem bezit, met hetzelfde record en het eerste jaar betaald. Er valt niets te claimen en niets te betalen.",
+      "lead": "Tot nu toe lazen apps memes.bso uit memes.eth. Bij de lancering wordt elke .eth-naam met een bitsocial-record, subnamen inbegrepen, via een airdrop als dezelfde .bso-naam toegewezen aan de wallet die hem bezit, met hetzelfde record en het eerste jaar betaald. Zodra de jouwe geregistreerd is, valt er niets te claimen en niets te betalen. Loopt de airdrop vast, dan opent de registratie zeven dagen na de deployment toch voor iedereen, dus controleer hieronder je naam.",
       "caveat": "Alleen namen die bij de momentopname van de lancering een bitsocial-record hadden, doen mee. Kreeg de jouwe zijn record later, claim de .bso-naam dan zodra de registratie opent, voordat iemand anders het doet.",
       "label": "Controleer je .eth-naam",
       "placeholder": "memes.eth",

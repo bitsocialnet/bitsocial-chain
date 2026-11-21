@@ -933,7 +933,7 @@
     "eth": {
       "badge": "Za darmo dla używanych nazw",
       "title": "Już używasz nazwy .bso? Jest twoja.",
-      "lead": "Do tej pory aplikacje odczytywały memes.bso z memes.eth. Przy starcie każda nazwa .eth z rekordem bitsocial, łącznie z nazwami podrzędnymi, trafi w airdropie jako ta sama nazwa .bso do portfela, który ją posiada, z tym samym rekordem i opłaconym pierwszym rokiem. Nie trzeba niczego odbierać ani za nic płacić.",
+      "lead": "Do tej pory aplikacje odczytywały memes.bso z memes.eth. Przy starcie każda nazwa .eth z rekordem bitsocial, łącznie z nazwami podrzędnymi, trafi w airdropie jako ta sama nazwa .bso do portfela, który ją posiada, z tym samym rekordem i opłaconym pierwszym rokiem. Gdy twoja zostanie zarejestrowana, nie trzeba niczego odbierać ani za nic płacić. Jeśli airdrop utknie, rejestracja i tak ruszy dla wszystkich siedem dni po wdrożeniu, więc sprawdź swoją nazwę poniżej.",
       "caveat": "Uwzględniane są tylko nazwy, które miały rekord bitsocial w chwili migawki przy starcie. Jeśli twoja dostała rekord później, odbierz nazwę .bso, gdy tylko ruszy rejestracja, zanim zrobi to ktoś inny.",
       "label": "Sprawdź swoją nazwę .eth",
       "placeholder": "memes.eth",

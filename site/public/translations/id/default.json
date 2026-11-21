@@ -918,7 +918,7 @@
     "eth": {
       "badge": "Gratis untuk nama yang sudah dipakai",
       "title": "Sudah memakai nama .bso? Nama itu milikmu.",
-      "lead": "Selama ini, aplikasi membaca memes.bso dari memes.eth. Saat peluncuran, setiap nama .eth yang punya catatan bitsocial, termasuk subnama, di-airdrop sebagai nama .bso yang sama ke dompet yang memegangnya, dengan catatan yang sama dan tahun pertama sudah dibayar. Tidak ada yang perlu diklaim dan tidak ada yang perlu dibayar.",
+      "lead": "Selama ini, aplikasi membaca memes.bso dari memes.eth. Saat peluncuran, setiap nama .eth yang punya catatan bitsocial, termasuk subnama, di-airdrop sebagai nama .bso yang sama ke dompet yang memegangnya, dengan catatan yang sama dan tahun pertama sudah dibayar. Setelah namamu terdaftar, tidak ada yang perlu diklaim dan tidak ada yang perlu dibayar. Jika airdrop macet, pendaftaran tetap dibuka untuk semua orang tujuh hari setelah deployment, jadi periksa namamu di bawah.",
       "caveat": "Hanya nama yang punya catatan bitsocial pada snapshot peluncuran yang disertakan. Jika namamu baru mendapat catatannya setelah itu, klaim nama .bso-nya begitu pendaftaran dibuka, sebelum orang lain melakukannya.",
       "label": "Cek nama .eth-mu",
       "placeholder": "memes.eth",

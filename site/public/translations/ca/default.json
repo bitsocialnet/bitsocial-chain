@@ -928,7 +928,7 @@
     "eth": {
       "badge": "Gratis per als noms en ús",
       "title": "Ja fas servir un nom .bso? És teu.",
-      "lead": "Fins ara, les aplicacions llegien memes.bso des de memes.eth. En el llançament, cada nom .eth amb un registre bitsocial, inclosos els subnoms, es reparteix per airdrop com el mateix nom .bso a la cartera que el té, amb el mateix registre i el primer any pagat. No hi ha res a reclamar ni res a pagar.",
+      "lead": "Fins ara, les aplicacions llegien memes.bso des de memes.eth. En el llançament, cada nom .eth amb un registre bitsocial, inclosos els subnoms, es reparteix per airdrop com el mateix nom .bso a la cartera que el té, amb el mateix registre i el primer any pagat. Un cop el teu nom estigui registrat, no hi ha res a reclamar ni res a pagar. Si l'airdrop s'encalla, el registre de noms s'obre igualment a tothom set dies després del desplegament, així que comprova el teu nom més avall.",
       "caveat": "Només s'hi inclouen els noms que tenien un registre bitsocial a la instantània del llançament. Si el teu va rebre el registre més tard, reclama el nom .bso tan aviat com s'obri el registre de noms, abans que ho faci algú altre.",
       "label": "Comprova el teu nom .eth",
       "placeholder": "memes.eth",

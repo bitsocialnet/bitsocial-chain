@@ -928,7 +928,7 @@
     "eth": {
       "badge": "Grátis para nomes em uso",
       "title": "Já usa um nome .bso? Ele é seu.",
-      "lead": "Até agora, os apps liam memes.bso a partir de memes.eth. No lançamento, cada nome .eth com um registro bitsocial, incluindo subnomes, é distribuído por airdrop como o mesmo nome .bso para a carteira que o detém, com o mesmo registro e o primeiro ano pago. Não há nada para resgatar nem nada para pagar.",
+      "lead": "Até agora, os apps liam memes.bso a partir de memes.eth. No lançamento, cada nome .eth com um registro bitsocial, incluindo subnomes, é distribuído por airdrop como o mesmo nome .bso para a carteira que o detém, com o mesmo registro e o primeiro ano pago. Depois que o seu for registrado, não há nada para resgatar nem nada para pagar. Se o airdrop travar, o registro de nomes abre mesmo assim para todos sete dias após o deploy, então confira seu nome abaixo.",
       "caveat": "Só entram os nomes que tinham um registro bitsocial no snapshot do lançamento. Se o seu ganhou o registro depois, resgate o nome .bso assim que o registro de nomes abrir, antes que outra pessoa faça isso.",
       "label": "Verifique seu nome .eth",
       "placeholder": "memes.eth",

@@ -928,7 +928,7 @@
     "eth": {
       "badge": "Gratuit pentru numele folosite",
       "title": "Folosești deja un nume .bso? Este al tău.",
-      "lead": "Până acum, aplicațiile citeau memes.bso din memes.eth. La lansare, fiecare nume .eth cu o înregistrare bitsocial, inclusiv subnumele, este distribuit prin airdrop ca același nume .bso către portofelul care îl deține, cu aceeași înregistrare și cu primul an plătit. Nu ai nimic de revendicat și nimic de plătit.",
+      "lead": "Până acum, aplicațiile citeau memes.bso din memes.eth. La lansare, fiecare nume .eth cu o înregistrare bitsocial, inclusiv subnumele, este distribuit prin airdrop ca același nume .bso către portofelul care îl deține, cu aceeași înregistrare și cu primul an plătit. Odată ce al tău este înregistrat, nu ai nimic de revendicat și nimic de plătit. Dacă airdropul se blochează, înregistrările se deschid oricum pentru toată lumea la șapte zile după implementare, așa că verifică-ți numele mai jos.",
       "caveat": "Sunt incluse doar numele care aveau o înregistrare bitsocial la instantaneul lansării. Dacă al tău a primit înregistrarea mai târziu, revendică numele .bso imediat ce se deschid înregistrările, înainte să o facă altcineva.",
       "label": "Verifică-ți numele .eth",
       "placeholder": "memes.eth",

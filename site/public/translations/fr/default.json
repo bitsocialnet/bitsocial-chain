@@ -928,7 +928,7 @@
     "eth": {
       "badge": "Gratuit pour les noms utilisés",
       "title": "Vous utilisez déjà un nom .bso ? Il est à vous.",
-      "lead": "Jusqu’ici, les applications lisaient memes.bso depuis memes.eth. Au lancement, chaque nom .eth doté d’un enregistrement bitsocial, sous-noms compris, est distribué par airdrop sous le même nom .bso au portefeuille qui le détient, avec le même enregistrement et sa première année payée. Il n’y a rien à réclamer et rien à payer.",
+      "lead": "Jusqu’ici, les applications lisaient memes.bso depuis memes.eth. Au lancement, chaque nom .eth doté d’un enregistrement bitsocial, sous-noms compris, est distribué par airdrop sous le même nom .bso au portefeuille qui le détient, avec le même enregistrement et sa première année payée. Une fois votre nom enregistré, il n’y a rien à réclamer et rien à payer. Si l’airdrop se bloque, l’enregistrement ouvre quand même à tout le monde sept jours après le déploiement, alors vérifiez votre nom ci-dessous.",
       "caveat": "Seuls les noms qui avaient un enregistrement bitsocial lors de l’instantané du lancement sont inclus. Si le vôtre a reçu son enregistrement plus tard, réclamez le nom .bso dès l’ouverture des enregistrements, avant que quelqu’un d’autre ne le fasse.",
       "label": "Vérifiez votre nom .eth",
       "placeholder": "memes.eth",

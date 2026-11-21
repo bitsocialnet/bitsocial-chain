@@ -923,7 +923,7 @@
     "eth": {
       "badge": "Free for names in use",
       "title": "Already using a .bso name? It's yours.",
-      "lead": "Until now, apps read memes.bso from memes.eth. At launch, every .eth name with a bitsocial record, subnames included, is airdropped as the same .bso name to the wallet that holds it, with the same record and its first year paid. There is nothing to claim and nothing to pay.",
+      "lead": "Until now, apps read memes.bso from memes.eth. At launch, every .eth name with a bitsocial record, subnames included, is airdropped as the same .bso name to the wallet that holds it, with the same record and its first year paid. Once yours is registered, there is nothing to claim and nothing to pay. If the airdrop stalls, registration still opens to everyone seven days after deployment, so check your name below.",
       "caveat": "Only names that had a bitsocial record at the launch snapshot are included. If yours got its record later, claim the .bso name as soon as registration opens, before someone else does.",
       "label": "Check your .eth name",
       "placeholder": "memes.eth",

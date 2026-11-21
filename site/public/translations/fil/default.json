@@ -923,7 +923,7 @@
     "eth": {
       "badge": "Libre para sa mga ginagamit nang pangalan",
       "title": "Gumagamit ka na ng .bso name? Sa iyo iyon.",
-      "lead": "Hanggang ngayon, binabasa ng mga app ang memes.bso mula sa memes.eth. Sa paglulunsad, bawat .eth name na may bitsocial record, kasama ang mga subname, ay ia-airdrop bilang parehong .bso name sa wallet na may hawak nito, na may parehong record at bayad na ang unang taon. Walang kailangang i-claim at walang kailangang bayaran.",
+      "lead": "Hanggang ngayon, binabasa ng mga app ang memes.bso mula sa memes.eth. Sa paglulunsad, bawat .eth name na may bitsocial record, kasama ang mga subname, ay ia-airdrop bilang parehong .bso name sa wallet na may hawak nito, na may parehong record at bayad na ang unang taon. Kapag na-register na ang pangalan mo, walang kailangang i-claim at walang kailangang bayaran. Kung matigil ang airdrop, magbubukas pa rin ang registration para sa lahat pitong araw pagkatapos ng deployment, kaya tingnan ang pangalan mo sa ibaba.",
       "caveat": "Kasama lang ang mga pangalang may bitsocial record sa snapshot ng paglulunsad. Kung nakuha ng pangalan mo ang record nito pagkatapos noon, i-claim ang .bso name sa sandaling magbukas ang registration, bago ka maunahan ng iba.",
       "label": "Tingnan ang .eth name mo",
       "placeholder": "memes.eth",

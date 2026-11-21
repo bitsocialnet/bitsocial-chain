@@ -923,7 +923,7 @@
     "eth": {
       "badge": "Kullanımdaki adlar için ücretsiz",
       "title": "Zaten bir .bso adı mı kullanıyorsunuz? O ad sizin.",
-      "lead": "Şimdiye kadar uygulamalar memes.bso adını memes.eth üzerinden okuyordu. Lansmanda, bitsocial kaydı olan her .eth adı, alt adlar dahil, aynı kayıtla ve ilk yılı ödenmiş olarak, aynı .bso adı şeklinde onu elinde tutan cüzdana airdrop edilir. Talep edilecek ve ödenecek hiçbir şey yok.",
+      "lead": "Şimdiye kadar uygulamalar memes.bso adını memes.eth üzerinden okuyordu. Lansmanda, bitsocial kaydı olan her .eth adı, alt adlar dahil, aynı kayıtla ve ilk yılı ödenmiş olarak, aynı .bso adı şeklinde onu elinde tutan cüzdana airdrop edilir. Adınız kaydedildikten sonra talep edilecek ve ödenecek hiçbir şey yok. Airdrop takılırsa kayıtlar yine de sözleşmenin yayına alınmasından yedi gün sonra herkese açılır, bu yüzden adınızı aşağıdan kontrol edin.",
       "caveat": "Yalnızca lansman anlık görüntüsünde bitsocial kaydı olan adlar dahildir. Adınızın kaydı daha sonra eklendiyse, başkası almadan önce kayıtlar açılır açılmaz .bso adını talep edin.",
       "label": ".eth adınızı kontrol edin",
       "placeholder": "memes.eth",
