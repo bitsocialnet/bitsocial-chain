@@ -113,9 +113,9 @@ export type NameState =
   | { status: "taken"; owner: Address; expiresAt: number; record: string };
 
 /**
- * A name's state at the latest block, or after a transaction for it, at the latest block but no
- * older than `minBlock`, the transaction's: the public RPCs are load balancers, and the node
- * answering the read can be a block behind the one that returned the receipt.
+ * A name's state at the latest block, but no older than `minBlock` (a transaction's block, or the
+ * block of an earlier read): the public RPCs are load balancers, and the node answering the read
+ * can be a block behind the one that returned the receipt or answered last time.
  */
 export async function lookupName(label: string, minBlock?: bigint): Promise<NameState> {
   return (await lookupNameAt(label, minBlock)).state;
@@ -128,11 +128,10 @@ export async function lookupNameAt(
 ): Promise<{ state: NameState; block: bigint }> {
   const registry = requireRegistry();
   const tokenId = tokenIdFor(label);
-  let blockNumber: bigint | undefined;
-  if (minBlock !== undefined) {
-    const head = await publicClient.getBlockNumber();
-    blockNumber = head > minBlock ? head : minBlock;
-  }
+  // One block for every read below: left at "latest", each call could be answered at a different
+  // head, and the block reported back could be older than the state that was read.
+  const head = await publicClient.getBlockNumber();
+  const blockNumber = minBlock !== undefined && minBlock > head ? minBlock : head;
   const read = { address: registry.address, abi: REGISTRY_ABI, blockNumber } as const;
   const [record, premium, block] = await Promise.all([
     publicClient.readContract({ ...read, functionName: "records", args: [tokenId] }),
