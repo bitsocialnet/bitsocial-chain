@@ -3,7 +3,7 @@ import { isAnalyticsEnabled, type NewsletterSignupOutcome } from "./shared";
 
 export const NOT_FOUND_PATH = "/not-found";
 
-// The site's three HTML entries, each reachable with or without its trailing slash or index.html.
+// The site's four HTML entries, each reachable with or without its trailing slash or index.html.
 const PAGE_PATHS = new Map([
   ["/", "/"],
   ["/index.html", "/"],
@@ -13,6 +13,9 @@ const PAGE_PATHS = new Map([
   ["/rich-list", "/rich-list"],
   ["/rich-list/", "/rich-list"],
   ["/rich-list/index.html", "/rich-list"],
+  ["/domains", "/domains"],
+  ["/domains/", "/domains"],
+  ["/domains/index.html", "/domains"],
 ]);
 // Only the five standard campaign tags are kept: any other utm_ name could itself carry an identifier.
 const UTM_KEYS = new Set(["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"]);
