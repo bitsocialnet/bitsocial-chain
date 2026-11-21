@@ -47,6 +47,14 @@ type View = Range | `era-${number}` | null;
 
 const RANGE_DAYS: Record<Exclude<Range, "all">, number> = { "1M": 30, "3M": 91, "1Y": 365 };
 
+/**
+ * The scale a view opens on until the reader picks one: the whole history and the eras span
+ * orders of magnitude, so they read best on log, while the short presets read best on linear.
+ */
+function defaultScaleFor(view: Exclude<View, null>): Scale {
+  return view in RANGE_DAYS ? "linear" : "log";
+}
+
 /** A pan or zoom this soon after the reader's own input is theirs, so it clears the preset. */
 const INTERACTION_WINDOW_MS = 300;
 
@@ -205,6 +213,8 @@ function Chart({ candles }: { candles: Candle[] }) {
   const detailsRef = useRef<HTMLDialogElement>(null);
   // Not 0: performance.now() starts near 0 on load, so the chart's first fit would read as input.
   const lastInteractionRef = useRef(Number.NEGATIVE_INFINITY);
+  // Once the reader picks a scale, presets stop switching it for them.
+  const scaleChosenRef = useRef(false);
   const legendRef = useRef<LegendNodes>({
     swatch: null,
     era: null,
@@ -612,6 +622,9 @@ function Chart({ candles }: { candles: Candle[] }) {
 
   const selectView = (next: View) => {
     setView(next);
+    if (next !== null && !scaleChosenRef.current) {
+      applyScale(defaultScaleFor(next));
+    }
     // A preset picked right after a drag must not be cleared by its own range change.
     lastInteractionRef.current = Number.NEGATIVE_INFINITY;
     if (handlesRef.current) {
@@ -625,11 +638,16 @@ function Chart({ candles }: { candles: Candle[] }) {
     handlesRef.current?.candles.applyOptions({ visible: next === "candles" });
   };
 
-  const selectScale = (next: Scale) => {
+  const applyScale = (next: Scale) => {
     setScale(next);
     handlesRef.current?.chart.priceScale("right").applyOptions({
       mode: next === "log" ? PriceScaleMode.Logarithmic : PriceScaleMode.Normal,
     });
+  };
+
+  const selectScale = (next: Scale) => {
+    scaleChosenRef.current = true;
+    applyScale(next);
   };
 
   const setLegendNode = (key: keyof LegendNodes) => (node: HTMLSpanElement | null) => {
