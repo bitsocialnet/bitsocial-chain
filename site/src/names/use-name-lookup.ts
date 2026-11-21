@@ -37,8 +37,16 @@ export function useNameLookup(label: string | null) {
     const timer = window.setTimeout(async () => {
       try {
         const { state, block } = await lookupNameAt(current, floors.current.get(current));
+        // A superseded read shows nothing, so it must not move the floor either.
+        if (cancelled) return;
+        const floor = floors.current.get(current);
+        if (floor !== undefined && block < floor) {
+          // The floor rose while this read was out: read again instead of showing older state.
+          setRequest((latest) => (latest.id === id ? { ...latest, id: id + 1 } : latest));
+          return;
+        }
         raiseFloor(floors.current, current, block);
-        if (!cancelled) setResult({ id, state });
+        setResult({ id, state });
       } catch (error) {
         console.warn(`Could not look up ${current}.bso.`, error);
         if (!cancelled) setResult({ id });
