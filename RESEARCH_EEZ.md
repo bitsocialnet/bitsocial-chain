@@ -2,7 +2,7 @@
 
 Research snapshot, 2026-11-05, after the EEZ demos at Devcon (2026-11-04) and Gnosis's announcement that Gnosis Chain relaunches as the first production EEZ network. Sources: eez.io, build.eez.io (including its `llms.txt` and `llms-full.txt`), eez.dev, `github.com/eez-association/eez-core-protocol` (README, `docs/CORE_PROTOCOL_SPEC.md`, `docs/MULTI_PROVER_SPEC.md`, `deployment/README.md`), `github.com/eez-association/eez-rollupX` (README), GnosisDAO GIP-153 on forum.gnosis.io, gnosis.io/chain, and posts from @etheconomiczone, @gnosis_, @tw_tter and @koeppelmann. Companion docs: [RESEARCH_NATIVE_ROLLUPS.md](RESEARCH_NATIVE_ROLLUPS.md), [ECONOMICS_DISCUSSION.md](ECONOMICS_DISCUSSION.md), [DESIGN.md](DESIGN.md), and [BSIP-13](https://bsips.bitsocial.net/bsip-13) (interim `.bso` registry on Ethereum mainnet).
 
-**Status of this document: candidate evaluation, not a decision.** Nothing described here is implemented, and native rollups remain the leading candidate in RESEARCH_NATIVE_ROLLUPS.md.
+**Candidate ranking as of 2026-11-23.** Native rollups remain the leading production candidate for Bitsocial Chain. EEZ ranks second because its shared registry and rollup manager still have privileged owners, and Gnosis's launch plan relies on an operator for inclusion. The November 5 evaluation below records the original rationale. [November 23 findings](#follow-up-2026-11-23)
 
 ## TL;DR
 
@@ -54,6 +54,14 @@ Christoph Koeppelmann (Gnosis co-founder), who gave a talk on native rollups two
 | Composability direction at Gnosis launch | L2→L1 calls only; "Full bidirectional, cross-instance composability follows" (GIP-153) |
 | Real-time ZK proving, bidirectional and nested calls | "expected to land over the course of 2027" (GIP-153) |
 | First production network | Gnosis Chain, "next spring" (2027) |
+
+### Follow-up, 2026-11-23
+
+**Independent signers settled a batch on Chiado.** On November 19, Rollup X added support for an operator-configured M-of-N signature threshold. On November 23, Nethermind reported that its independently implemented signer and an existing signer met a 2-of-3 threshold for a batch on the shared Chiado devnet. This demonstrates that different clients can re-execute a batch and agree on its result. Settlement still relies on ECDSA attestations. EEZ lists real-time ZK proving as planned and the independent core protocol audit as in progress. [Rollup X PR #180](https://github.com/eez-association/eez-rollupX/pull/180) · [Nethermind's November 23 report](https://forum.gnosis.io/t/gip-126-should-the-gnosisdao-renew-its-long-term-partnership-with-nethermind-for-gnosis-chain-maintenance/10186/12) · [EEZ project status](https://eez.io/)
+
+**The Ethereum-connected Rollup X devnet still accepted one signature.** At Ethereum block **26,480,272**, the L1 manager for rollup ID 2 returned `threshold() = 1`. Its `owner()` and the shared EEZ registry's `ProxyAdmin.owner()` returned the same externally owned account, `0xceaf908c05b277e92e89b51b281ec76305b9a141`. That account could upgrade the registry, change verification keys or the signing threshold, and replace the rollup state root through `setRoot`. [Block 26,480,272](https://etherscan.io/block/26480272) · [Rollup X deployment addresses](https://rollupx.eez.dev/dashboard/config.json) · [Registry proxy admin](https://etherscan.io/address/0x57bf29a07746a25b87c613e01d5da49f6119e96c) · [Manager source at the deployed revision](https://github.com/eez-association/eez-core-protocol/blob/84a5b5207880f192a6a5896cbfe0bac5249db47f/src/rollupContract/Rollup.sol)
+
+**Gnosis still targets spring 2027.** Under GIP-153, Gnosis Ltd will operate the composer at launch. Forced inclusion through L1 remains a future governance question. The launch plan supports synchronous L2→L1 calls and defers the reverse direction. The November 9 EEZ report documents calls in both directions on a test network connected to Ethereum mainnet. That strengthens the case for AgoraSwap to reach L1 liquidity, while all five production criteria in section 6 remain open. [Gnosis launch timeline](https://www.gnosis.io/chain) · [GIP-153](https://forum.gnosis.io/t/gip-153-should-gnosis-chain-transition-into-the-ethereum-economic-zone/12397) · [EEZ's November 9 report](https://eez.io/blog/monthly-update---october-devcon-mumbai)
 
 ## 3. Gnosis Chain's move
 
