@@ -5,8 +5,8 @@ Instructions for agents working on the Bitsocial Chain landing site in `site/`. 
 ## Boundaries
 
 - `site/` is a standalone Yarn 4 project, licensed AGPL-3.0-only. The rest of the repository is an npm-workspaces proof of concept under GPL-3.0-or-later. Do not add `site` to the root workspaces, run npm inside `site/`, or run Yarn at the repository root.
-- Preserve static deployment and the three existing pages (`/`, `/rich-list/`, `/chart/`). Vercel builds this folder as the root directory; see [vercel.json](vercel.json).
-- BSO is live; Bitsocial Chain is a proposal. Do not build wallet integration, authentication, governance, token dashboards, or backend services here.
+- Preserve static deployment and the four existing pages (`/`, `/rich-list/`, `/chart/`, `/domains/`). Vercel builds this folder as the root directory; see [vercel.json](vercel.json).
+- BSO is live; Bitsocial Chain is a proposal. Do not build authentication, governance, token dashboards, or backend services here.
 
 ## Packages and dependencies
 

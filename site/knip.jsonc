@@ -1,5 +1,5 @@
 {
   "$schema": "https://unpkg.com/knip@6.1.0/schema-jsonc.json",
   // One module per HTML entry: Knip's Vite plugin only follows the root index.html.
-  "entry": ["src/rich-list-main.tsx!", "src/chart-main.tsx!"],
+  "entry": ["src/rich-list-main.tsx!", "src/chart-main.tsx!", "src/names-main.tsx!"],
 }
